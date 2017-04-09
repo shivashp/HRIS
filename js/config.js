@@ -52,6 +52,13 @@ function active(link){
   });
 }
 
+function checkEmpty(arr){
+	arr = arr.filter(data => data)
+	if(arr.length > 0){
+		return true;
+	}
+	return false;
+}
 
 $(document).ready(function() {
   $(".sp-add-btn").click(function() {

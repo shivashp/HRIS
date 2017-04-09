@@ -61,7 +61,7 @@
                           <p>User Setup</p>
                       </a>
                   </li>
-                  <li class="link branch">
+                  <li class="link agency">
                       <a href="agencies.php" class="menu" data-name = 'users' > <i class="material-icons">people</i>
                           <p>Agencies</p>
                       </a>
@@ -76,7 +76,7 @@
         </div>
         <div class="main-panel">
             <nav class="navbar navbar-transparent navbar-absolute">
-                <div class="container-fluid">                
+                <div class="container-fluid">
                   <div class="navbar-header">
                       <button type="button" class="navbar-toggle" data-toggle="collapse">
                           <span class="sr-only">Toggle navigation</span>

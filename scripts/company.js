@@ -16,15 +16,6 @@ var COUNTRY_LIST = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguil
 		,"Yemen","Zambia","Zimbabwe"];
 
 
-
-function checkEmpty(arr){
-	arr = arr.filter(data => data)
-	if(arr.length > 0){
-		return true;
-	}
-	return false;
-}
-
 $(function() {
 	demo.initFormExtendedDatetimepickers();
   (function() {
