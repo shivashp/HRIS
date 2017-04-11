@@ -5,7 +5,7 @@
     <div class="card">
         <form method="get" action="#" class="form-horizontal">
             <div class="card-header card-header-text" data-background-color="rose">
-                <h4 class="card-title">Add Agency</h4>
+                <h4 class="card-title">Add Branch</h4>
             </div>
             <div class="card-content">
                 <div class="row">
@@ -94,7 +94,7 @@
 </div><!-- content -->
 
 <?php include('footer.php'); ?>
-<script src="scripts/add-agency.js"></script>
+<script src="scripts/add-branch.js"></script>
 <script>
-  active('agency')
+  active('branch')
 </script>

@@ -85,7 +85,7 @@ div#overlay {
   display: none;
 }
 .loader img {
-    width: 4%;
+    width:3%;
 }
 .alert span, .alert .close i {
   font-weight: 500;
@@ -108,4 +108,34 @@ button#submit {
 }
 table.dataTable > thead > tr > th, table.dataTable > tbody > tr > th, table.dataTable > tfoot > tr > th, table.dataTable > thead > tr > td, table.dataTable > tbody > tr > td, table.dataTable > tfoot > tr > td {
   font-size: 17px;
+}
+.sp-alert {
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+  display: none;
+}
+.sp-alert-danger {
+  color: red;
+}
+.sp-alert-success {
+  color: green;
+}
+a.navbar-brand {
+    font-weight: 500;
+    font-size: 28px;
+}
+.form-group.label-static label.control-label, .form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label {
+  font-size: 14px;
+}
+
+.sidebar .nav>li>div>ul>li a {
+    box-shadow: none !important;
+    font-weight: 500;
+    transition: all 0.2s linear;
+}
+.sidebar .nav>li>div>ul>li:hover a {
+    color: #3aaf85;
+    background: transparent;
+    font-size: 16px;
 }

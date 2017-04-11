@@ -9,8 +9,8 @@ $(function() {
     var arr = [health_facility_name.isBlank('Health Facility Name'), type.isBlank('Type of Health Facility'), llg.isBlank('LLG'), district.isBlank('District'), province.isBlank('Province'), region.isBlank('Region')]
     if(checkEmpty(arr)){
 			return false;
-		}    
-		showSuccess("Agency added successfully!");
+		}
+		showSuccess("Branch added successfully!");
 
 
   });// Submit

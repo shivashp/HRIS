@@ -15,6 +15,7 @@ var COUNTRY_LIST = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguil
 		,"Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","United States Minor Outlying Islands","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)"
 		,"Yemen","Zambia","Zimbabwe"];
 
+var token = localStorage.getItem("token");
 
 $(function() {
 	demo.initFormExtendedDatetimepickers();
@@ -39,8 +40,40 @@ $(function() {
 		var arr = [name.isBlank('Name'), desc.isBlank('Desc'), symbol.isBlank('Symbol'), country.isBlank('Country')]
 		if(checkEmpty(arr)){
 			return false;
-		}
-		console.log(currency_placement);
-		showSuccess("Company Details Updated!");
-	})
-})
+		}				
+		$.ajax({
+        url: basepath + "company",
+        type: "POST",
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+					xhr.setRequestHeader('Token', token);
+          $(".loader").show();
+          $("#submit").hide();
+        },
+        data: JSON.stringify({
+          "name": name,
+					"description": desc,
+					"currency_symbol": symbol,
+					"is_prefix": currency_placement,
+					"country": country
+        }),
+        success: function(data) {
+          $(".loader").hide();
+          $("#submit").show();
+          console.log(data);
+          if(data.status == 'success') {
+						showSuccess("Company Details Updated!")
+          } else {
+            showError(data.message);
+          }
+        },
+        error: function(error) {
+          $(".loader").hide();
+          $("#submit").show();
+          showError("Error in Server! Try again!")
+        },
+    });// Ajax
+
+	})//submit
+})// Document

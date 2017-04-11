@@ -6,5 +6,5 @@
 
 <?php include('footer.php'); ?>
 <script>
-  active('dashboard')
+  active('dashboard')  
 </script>

@@ -1,3 +1,9 @@
+var basepath = "http://192.168.100.47:9000/api/";
+var TOKEN = localStorage.getItem('token');
+if(TOKEN === undefined || TOKEN == ''){
+  window.location.href = "index.html";
+}
+
 function toggle_top_menu() {
   $(".form-input").slideToggle("slow");
   $('.sp-add-btn').html($('.sp-add-btn').text() == 'Add' ? 'Close' : 'Add');
@@ -71,9 +77,17 @@ function active(link){
   });
 }
 
+function checkEmpty(arr){
+	arr = arr.filter(data => {return !data})  
+	if(arr.length > 0){
+		return true;
+	}
+	return false;
+}
+
 $(document).ready(function() {
   $(".sp-add-btn").click(function() {
-    var value = $(this).attr("value");    
+    var value = $(this).attr("value");
     (value == 1)?pullMenu():slideMenu();
   });//sp-add-btn
 })//Document

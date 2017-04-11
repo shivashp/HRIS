@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-12" style = "text-align:center;margin-top:30px">
                         <div class="form-group form-button">
-                          <button type="button" id="add" class="btn btn-fill btn-success sp-save-btn">Save</button>
+                          <span class="loader"><img src="img/loader.gif"></span><button type="button" id="add" class="btn btn-fill btn-success sp-save-btn">Save</button>
                           <button type="reset" class="btn btn-fill btn-danger"><i class="material-icons">delete_forever</i> Clear</button>
                         </div>
                     </div>
@@ -48,13 +48,8 @@
                           <th class="disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>
-                  <tbody>
-                      <tr>
-                          <td>Kapilvastu</td>
-                          <td class="text-right">
-                              <a class="btn btn-simple btn-danger btn-icon edit"><i class="material-icons">edit</i></a>
-                          </td>
-                      </tr>
+                  <tbody id="data-body">
+
                   </tbody>
               </table>
           </div>
@@ -62,11 +57,11 @@
   </div> <!--  end card  -->
 </div><!-- content -->
 <?php include('footer.php'); ?>
+<script src="scripts/district.js"></script>
 <script>
   active('settings')
 
-  $(function() {
-    var table = $('#datatables').DataTable();
+  $(function() {    
     $(".edit").click(function() {
       slideMenu();
     })

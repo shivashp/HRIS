@@ -23,7 +23,7 @@
           <div class="sidebar-wrapper">
               <div class="user">
                   <div class="photo">
-                      <img src="http://demos.creative-tim.com/material-dashboard-pro/assets/img/faces/avatar.jpg" />
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/97/f1/1e/97f11ea8bf2b7ec3545420e537af0e88.jpg" />
                   </div>
                   <div class="info">
                       <a data-toggle="collapse" href="calendar.html#collapseExample" class="collapsed">
@@ -51,9 +51,14 @@
                           <p>Dashboard</p>
                       </a>
                   </li>
-                  <li class="link page">
-                      <a href="dashboard.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
-                          <p>Page</p>
+                  <li class="link branch">
+                      <a href="branch.php" class="menu" data-name = 'branch'> <i class="material-icons">book</i>
+                          <p>Branches</p>
+                      </a>
+                  </li>
+                  <li class="link agency">
+                      <a href="agency.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
+                          <p>Agencies</p>
                       </a>
                   </li>
                   <li class="link settings">

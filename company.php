@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="row sp-save-btn-row">
-                  <button type="button" id="submit" class="btn btn-success">Save</button>
+                  <span class="loader"><img src="img/loader.gif"></span><button type="button" id="submit" class="btn btn-success">Save</button>
                 </div>
             </div><!-- card-content -->
         </form>
