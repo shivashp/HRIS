@@ -34,13 +34,13 @@ $(function() {
 		var name = $("#name").val();
 		var desc = $("#desc").val();
 		var symbol = $("#symbol").val();
-		var date_picker = $("#date-picker").val();
-		var currency_placement = $('input[name=currency_placement]:checked').val() || '';
+		var currency_placement = $('input[name=currency_placement]:checked').val() || 'false';
 		var country = $("#country").selectpicker('val');
-		var arr = [name.isBlank('Name'), desc.isBlank('Desc'), symbol.isBlank('Symbol'), date_picker.isBlank('Established Date'), currency_placement.isBlank('Currency Placement'), country.isBlank('Country')]
+		var arr = [name.isBlank('Name'), desc.isBlank('Desc'), symbol.isBlank('Symbol'), country.isBlank('Country')]
 		if(checkEmpty(arr)){
 			return false;
 		}
+		console.log(currency_placement);
 		showSuccess("Company Details Updated!");
 	})
 })

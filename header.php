@@ -51,25 +51,40 @@
                           <p>Dashboard</p>
                       </a>
                   </li>
-                  <li class="link company">
-                      <a href="company.php" class="menu" data-name = 'denomination'> <i class="material-icons">note</i>
-                          <p>Company Setup</p>
-                      </a>
-                  </li>
-                  <li class="link users">
-                      <a href="#" class="menu" data-name = 'users' > <i class="material-icons">people</i>
-                          <p>User Setup</p>
-                      </a>
-                  </li>
-                  <li class="link agency">
-                      <a href="agencies.php" class="menu" data-name = 'users' > <i class="material-icons">people</i>
-                          <p>Agencies</p>
+                  <li class="link page">
+                      <a href="dashboard.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
+                          <p>Page</p>
                       </a>
                   </li>
                   <li class="link settings">
-                      <a href="#"> <i class="material-icons">settings</i>
-                          <p>Settings</p>
+                      <a data-toggle="collapse" href="#setup">
+                          <i class="material-icons">settings</i>
+                          <p>Settings
+                              <b class="caret"></b>
+                          </p>
                       </a>
+                      <div class="collapse" id="setup">
+                          <ul class="nav">
+                              <li>
+                                  <a href="company.php">Company Setup</a>
+                              </li>
+                              <li>
+                                  <a href="district.php">District Setup</a>
+                              </li>
+                              <li>
+                                  <a href="province.php">Province Setup</a>
+                              </li>
+                              <li>
+                                  <a href="region.php">Region Setup</a>
+                              </li>
+                              <li>
+                                  <a href="llg.php">LLG Setup</a>
+                              </li>
+                              <li>
+                                  <a href="facility.php">Facilities Setup</a>
+                              </li>
+                          </ul>
+                      </div>
                   </li>
               </ul>
           </div>

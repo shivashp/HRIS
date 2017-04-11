@@ -36,29 +36,6 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label class="col-sm-2 label-on-left">Currency Placement</label>
-                    <div class="col-sm-10 checkbox-radios">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" id="prefix" name="currency_placement" value="prefix"> Prefix
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" id="suffix" name="currency_placement" value="suffix"> Suffix
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="col-sm-2 label-on-left">Established Date</label>
-                    <div class="col-sm-10">
-                        <div class="form-group label-floating is-empty">
-                          <input type="text" id="date-picker" class="form-control datepicker" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
                   <label class="col-sm-2 label-on-left">Country</label>
                     <div class="col-sm-3">
                         <div class="form-group label-floating is-empty">
@@ -79,5 +56,5 @@
 <?php include('footer.php'); ?>
 <script src="scripts/company.js"></script>
 <script>
-  active('company');
+  active('settings');
 </script>

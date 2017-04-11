@@ -41,7 +41,10 @@ div#overlay {
     background: #3aaf85;
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(23, 175, 126, 0.4);
 }
-
+.sidebar .nav li:hover > a, .sidebar .nav li.active > [data-toggle="collapse"], .off-canvas-sidebar .nav li:hover > a, .off-canvas-sidebar .nav li.active > [data-toggle="collapse"] {
+  background: #3aaf85;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(23, 175, 126, 0.4);
+}
 .sidebar[data-background-color="black"], .off-canvas-sidebar[data-background-color="black"] {
     background: url(../img/sidebar-1.jpg) top center;
     background-position-y: -55px;
@@ -99,4 +102,10 @@ button#submit {
     font-size: 15px;
     padding-left: 50px;
     padding-right: 50px;
+}
+.form-group-sm .form-control {
+  font-size: 16px;
+}
+table.dataTable > thead > tr > th, table.dataTable > tbody > tr > th, table.dataTable > tfoot > tr > th, table.dataTable > thead > tr > td, table.dataTable > tbody > tr > td, table.dataTable > tfoot > tr > td {
+  font-size: 17px;
 }

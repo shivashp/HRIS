@@ -1,4 +1,23 @@
-var basepath = 'http://139.59.37.232:4000/'
+function toggle_top_menu() {
+  $(".form-input").slideToggle("slow");
+  $('.sp-add-btn').html($('.sp-add-btn').text() == 'Add' ? 'Close' : 'Add');
+}
+
+// Slides the top menu down
+function slideMenu(){
+  $(".form-input").slideDown();
+  console.log("Pull Down");
+  $('.sp-add-btn').html('Close');
+  $('.sp-add-btn').attr("value", 1);
+}
+
+//Pulls the top menu up
+function pullMenu() {
+  console.log("Pull Up");
+  $(".form-input").slideUp("slow");
+  $('.sp-add-btn').html('Add');
+  $('.sp-add-btn').attr("value", 0);
+}
 
 // Displays the error notification
 function showError(message) {
@@ -16,10 +35,10 @@ String.prototype.isBlank = function (type = 'Field') {
   value = value.trim();
   if (value == '' || (/^\s*$/.test(value))) {
     showError(type + " Can Not Be Empty");
-    return true;
+    return false;
   }
   else
-  return false;
+  return true;
 };
 
 // Checks if the string is equal to another string
@@ -52,37 +71,9 @@ function active(link){
   });
 }
 
-function checkEmpty(arr){
-	arr = arr.filter(data => data)
-	if(arr.length > 0){
-		return true;
-	}
-	return false;
-}
-
 $(document).ready(function() {
   $(".sp-add-btn").click(function() {
-    toggle_top_menu();
+    var value = $(this).attr("value");    
+    (value == 1)?pullMenu():slideMenu();
   });//sp-add-btn
-
-  $(".menu").click(function() {
-    var name = $(this).attr("data-name");
-    switch (name) {
-      case 'branch':
-        get_branches();
-        active('branch');
-      break;
-
-      case 'denomination':
-        get_denominations();
-        active('denomination');
-      break;
-
-      case 'users':
-        get_users();
-        active('users');
-      break;
-    }
-  })
-
 })//Document
