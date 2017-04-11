@@ -1,14 +1,14 @@
 $(function() {
-  get_branches();
+  get_agencies();
   var llg = JSON.parse(localStorage.getItem('llg')) || get_llg();
   var district = JSON.parse(localStorage.getItem('district')) || get_district();
   var province = JSON.parse(localStorage.getItem('province')) || get_province();
   var region = JSON.parse(localStorage.getItem('region')) || get_region();
   var facility = JSON.parse(localStorage.getItem('facility')) || get_facility();
 
-  function get_branches() {
+  function get_agencies() {
     $.ajax({
-        url: basepath + "branches",
+        url: basepath + "agencies",
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
@@ -238,7 +238,7 @@ $(function() {
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "is_branch": "true",
+          "is_branch": "false",
           "facility_name": name,
           "facility_type_id": type,
           "llg_id": llg,
@@ -250,9 +250,9 @@ $(function() {
           $(".loader").hide();
           $("#add").show();
           if(data.status == 'success') {
-            showSuccess("Branch Added Successfully!");
+            showSuccess("Agency Added Successfully!");
             pullMenu();
-            get_branches();
+            get_agencies();
           } else {
             showError(data.message);
           }
