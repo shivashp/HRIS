@@ -48,13 +48,8 @@
                           <th class="disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>
-                  <tbody>
-                      <tr>
-                          <td>Bagmati</td>
-                          <td class="text-right">
-                              <a class="btn btn-simple btn-danger btn-icon edit"><i class="material-icons">edit</i></a>
-                          </td>
-                      </tr>
+                  <tbody id="data-body">
+
                   </tbody>
               </table>
           </div>
@@ -62,12 +57,7 @@
   </div> <!--  end card  -->
 </div><!-- content -->
 <?php include('footer.php'); ?>
+<script src="scripts/region.js"></script>
 <script>
   active('settings')
-  $(function() {
-    var table = $('#datatables').DataTable();
-    $(".edit").click(function() {
-      slideMenu();
-    })
-  })
 </script>

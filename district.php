@@ -59,11 +59,5 @@
 <?php include('footer.php'); ?>
 <script src="scripts/district.js"></script>
 <script>
-  active('settings')
-
-  $(function() {    
-    $(".edit").click(function() {
-      slideMenu();
-    })
-  })
+  active('settings')  
 </script>

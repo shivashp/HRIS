@@ -1,12 +1,12 @@
-var DISTRICT_JSON;
+var PROVINCE_JSON;
 
 $(function() {
 
-get_district();
+get_province();
 
-  function get_district() {
+  function get_province() {
     $.ajax({
-        url: basepath + "districts",
+        url: basepath + "provinces",
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
@@ -15,7 +15,7 @@ get_district();
         success: function(data) {
           console.log(data);
           if(data.status == 'success') {
-            DISTRICT_JSON = data.data;
+            PROVINCE_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
@@ -27,7 +27,7 @@ get_district();
               str += "                      <\/tr>";
             }
             $("#data-body").html(str);
-            var table = $('#datatables').DataTable();
+            var table = $('#datatables').DataTable();            
           }
         },
         error: function(error) {
@@ -36,16 +36,16 @@ get_district();
           showError("Error in Server! Try again!")
         },
     });// Ajax
-  };// Get District
+  };// Get Province
 
 
-  function add_district(){
-    var name = $("#district-name").val();
+  function add_province(){
+    var name = $("#province-name").val();
     if(!name.isBlank("Name")){
       return false;
     }
     $.ajax({
-        url: basepath + "districts",
+        url: basepath + "provinces",
         type: "POST",
         contentType: 'application/json',
         dataType: 'json',
@@ -62,9 +62,9 @@ get_district();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            showSuccess("District Added Successfully!");
+            showSuccess("Province Added Successfully!");
             pullMenu();
-            get_district();
+            get_province();
           } else {
             showError(data.message);
           }
@@ -75,23 +75,23 @@ get_district();
           showError("Error in Server! Try again!")
         },
     });// Ajax
-  }// Add District
+  }// Add Province
 
-  function edit_district(i) {
-    var name = DISTRICT_JSON[i].name;
-    var id = DISTRICT_JSON[i].id;
-    $("#district-name").val(name);
+  function edit_province(i) {
+    var name = PROVINCE_JSON[i].name;
+    var id = PROVINCE_JSON[i].id;
+    $("#province-name").val(name);
     $("#add").attr({"status": 1, "data-id": id});
   }
 
-  function update_district(){
-    var name = $("#district-name").val();
+  function update_province(){
+    var name = $("#province-name").val();
     var id = $("#add").attr("data-id");
     if(!name.isBlank("Name")){
       return false;
     }
     $.ajax({
-        url: basepath + "districts/"+id,
+        url: basepath + "provinces/"+id,
         type: "PUT",
         contentType: 'application/json',
         dataType: 'json',
@@ -108,9 +108,9 @@ get_district();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            showSuccess("District Updated Successfully!");
+            showSuccess("Province Updated Successfully!");
             pullMenu();
-            get_district();
+            get_province();
           } else {
             showError(data.message);
           }
@@ -126,15 +126,15 @@ get_district();
   $("#add").click(function() {
     var status = $(this).attr("status");
     if(status === "1") {
-      $(this).attr("status", 0)
-      update_district();
+      $(this).attr("status", 0);
+      update_province();
     } else {
-      add_district();
+      add_province();
     }
   })
   $(document).delegate(".edit", "click", function() {
     var i = $(this).attr("data-id");
-    edit_district(i);
+    edit_province(i);
     slideMenu();
   })
 })// Document

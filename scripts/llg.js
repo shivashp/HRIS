@@ -1,12 +1,12 @@
-var DISTRICT_JSON;
+var LLG_JSON;
 
 $(function() {
 
-get_district();
+get_llg();
 
-  function get_district() {
+  function get_llg() {
     $.ajax({
-        url: basepath + "districts",
+        url: basepath + "llg",
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
@@ -15,7 +15,7 @@ get_district();
         success: function(data) {
           console.log(data);
           if(data.status == 'success') {
-            DISTRICT_JSON = data.data;
+            LLG_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
@@ -36,16 +36,16 @@ get_district();
           showError("Error in Server! Try again!")
         },
     });// Ajax
-  };// Get District
+  };// Get LLG
 
 
-  function add_district(){
-    var name = $("#district-name").val();
+  function add_llg(){
+    var name = $("#llg-name").val();
     if(!name.isBlank("Name")){
       return false;
     }
     $.ajax({
-        url: basepath + "districts",
+        url: basepath + "llg",
         type: "POST",
         contentType: 'application/json',
         dataType: 'json',
@@ -62,9 +62,9 @@ get_district();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            showSuccess("District Added Successfully!");
+            showSuccess("LLG Added Successfully!");
             pullMenu();
-            get_district();
+            get_llg();
           } else {
             showError(data.message);
           }
@@ -75,23 +75,23 @@ get_district();
           showError("Error in Server! Try again!")
         },
     });// Ajax
-  }// Add District
+  }// Add LLG
 
-  function edit_district(i) {
-    var name = DISTRICT_JSON[i].name;
-    var id = DISTRICT_JSON[i].id;
-    $("#district-name").val(name);
+  function edit_llg(i) {
+    var name = LLG_JSON[i].name;
+    var id = LLG_JSON[i].id;
+    $("#llg-name").val(name);
     $("#add").attr({"status": 1, "data-id": id});
   }
 
-  function update_district(){
-    var name = $("#district-name").val();
+  function update_llg(){
+    var name = $("#llg-name").val();
     var id = $("#add").attr("data-id");
     if(!name.isBlank("Name")){
       return false;
     }
     $.ajax({
-        url: basepath + "districts/"+id,
+        url: basepath + "llg/"+id,
         type: "PUT",
         contentType: 'application/json',
         dataType: 'json',
@@ -108,9 +108,9 @@ get_district();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            showSuccess("District Updated Successfully!");
+            showSuccess("LLG Updated Successfully!");
             pullMenu();
-            get_district();
+            get_llg();
           } else {
             showError(data.message);
           }
@@ -127,14 +127,14 @@ get_district();
     var status = $(this).attr("status");
     if(status === "1") {
       $(this).attr("status", 0)
-      update_district();
+      update_llg();
     } else {
-      add_district();
+      add_llg();
     }
   })
   $(document).delegate(".edit", "click", function() {
     var i = $(this).attr("data-id");
-    edit_district(i);
+    edit_llg(i);
     slideMenu();
   })
 })// Document

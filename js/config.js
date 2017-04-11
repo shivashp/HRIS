@@ -12,14 +12,12 @@ function toggle_top_menu() {
 // Slides the top menu down
 function slideMenu(){
   $(".form-input").slideDown();
-  console.log("Pull Down");
   $('.sp-add-btn').html('Close');
   $('.sp-add-btn').attr("value", 1);
 }
 
 //Pulls the top menu up
 function pullMenu() {
-  console.log("Pull Up");
   $(".form-input").slideUp("slow");
   $('.sp-add-btn').html('Add');
   $('.sp-add-btn').attr("value", 0);
@@ -78,7 +76,7 @@ function active(link){
 }
 
 function checkEmpty(arr){
-	arr = arr.filter(data => {return !data})  
+	arr = arr.filter(data => {return !data})
 	if(arr.length > 0){
 		return true;
 	}
@@ -87,6 +85,7 @@ function checkEmpty(arr){
 
 $(document).ready(function() {
   $(".sp-add-btn").click(function() {
+    $(".form-horizontal")[0].reset();
     var value = $(this).attr("value");
     (value == 1)?pullMenu():slideMenu();
   });//sp-add-btn
