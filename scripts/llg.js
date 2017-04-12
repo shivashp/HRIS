@@ -108,6 +108,7 @@ get_llg();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
+            $("#add").attr("status", 0)
             showSuccess("LLG Updated Successfully!");
             pullMenu();
             get_llg();
@@ -125,8 +126,7 @@ get_llg();
 
   $("#add").click(function() {
     var status = $(this).attr("status");
-    if(status === "1") {
-      $(this).attr("status", 0)
+    if(status === "1") {      
       update_llg();
     } else {
       add_llg();

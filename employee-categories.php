@@ -24,8 +24,7 @@
                     <label class="col-sm-3 label-on-left">Category Rank</label>
                       <div class="col-sm-9">
                           <div class="form-group label-floating is-empty">
-                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="category-rank"  title="Choose Rank">
-                              <option value="0">Category A</option>
+                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="category-rank"  title="Choose Rank">                              
                             </select>
                           </div>
                       </div>

@@ -1,4 +1,4 @@
-var basepath = "http://192.168.100.47:5000/api/";
+var basepath = "http://139.59.37.232:5000/api/";
 var TOKEN = localStorage.getItem('token');
 if(TOKEN === undefined || TOKEN == ''){
   window.location.href = "index.html";
@@ -21,6 +21,7 @@ function pullMenu() {
   $(".form-input").slideUp("slow");
   $('.sp-add-btn').html('Add');
   $('.sp-add-btn').attr("value", 0);
+  $("#add").attr("status", 0);
 }
 
 // Displays the error notification

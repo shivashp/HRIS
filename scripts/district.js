@@ -108,6 +108,7 @@ get_district();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
+            $(this).attr("status", 0)
             showSuccess("District Updated Successfully!");
             pullMenu();
             get_district();
@@ -125,8 +126,7 @@ get_district();
 
   $("#add").click(function() {
     var status = $(this).attr("status");
-    if(status === "1") {
-      $(this).attr("status", 0)
+    if(status === "1") {      
       update_district();
     } else {
       add_district();

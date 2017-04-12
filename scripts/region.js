@@ -108,6 +108,7 @@ get_region();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
+            $("#add").attr("status", 0)
             showSuccess("Region Updated Successfully!");
             pullMenu();
             get_region();
@@ -125,8 +126,7 @@ get_region();
 
   $("#add").click(function() {
     var status = $(this).attr("status");
-    if(status === "1") {
-      $(this).attr("status", 0)
+    if(status === "1") {      
       update_region();
     } else {
       add_region();

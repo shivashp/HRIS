@@ -1,4 +1,4 @@
-var basepath = "http://192.168.100.47:5000/api/"
+var basepath = "http://139.59.37.232:5000/api/";
 
 function clearAlert() {
   $(".sp-alert-danger").html('');

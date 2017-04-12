@@ -1,10 +1,29 @@
 var RANK_JSON;
+var CATEGORY_JSON;
 
 $(function() {
-//get_category();
+get_category();
 get_rank();
 
 
+  function generate_select(data, selected = null) {
+    var str="";
+    for (var i = 0; i < data.length; i++) {
+      var name = data[i].name;
+      var id = data[i].id;
+      if(name.toLowerCase() == selected) {
+        str += `<option value = "${id}" selected>${name}</option>`;
+      } else {
+        str += `<option value = "${id}">${name}</option>`;
+      }
+
+    }
+    $("#category-rank").html(str);
+    $('#category-rank').selectpicker({
+      size: 7,
+      // liveSearch: true
+    });
+  }
 
   function get_rank() {
     $.ajax({
@@ -18,16 +37,7 @@ get_rank();
           console.log(data);
           if(data.status == 'success') {
             RANK_JSON = data.data;
-            var str="";
-            for (var i = 0; i < data.data.length; i++) {
-              var name = data.data[i].name;
-              var id = data.data[i].id;
-              str += `<option value = "${id}">${name}</option>`;
-            }
-            $("#category-rank").html(str);
-            $('#category-rank').selectpicker({
-              size: 7
-            });
+            generate_select(data.data)
           }
         },
         error: function(error) {
@@ -47,14 +57,16 @@ get_rank();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-          console.log(data);
           if(data.status == 'success') {
-            RANK_JSON = data.data;
+            console.log(data);
+            CATEGORY_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
+              var rank = data.data[i].emp_cat_rank;
               str += "<tr>";
               str += "                          <td>"+name+"<\/td>";
+              str += "                          <td>"+rank+"<\/td>";
               str += "                          <td class=\"text-right\">";
               str += "                              <a class=\"btn btn-simple btn-danger btn-icon edit\" data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
@@ -79,10 +91,8 @@ get_rank();
     if(!name.isBlank("Name") || !rank.isBlank("Rank")){
       return false;
     }
-    console.log(name, rank);
-    return false;
     $.ajax({
-        url: basepath + "empccategories",
+        url: basepath + "empcategoryranks/" + rank + "/empcategories",
         type: "POST",
         contentType: 'application/json',
         dataType: 'json',
@@ -99,7 +109,7 @@ get_rank();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            showSuccess("Rank Added Successfully!");
+            showSuccess("Category Added Successfully!");
             pullMenu();
             get_category();
           } else {
@@ -115,8 +125,11 @@ get_rank();
   }// Add Rank
 
   function edit_category(i) {
-    var name = RANK_JSON[i].name;
-    var id = RANK_JSON[i].id;
+    var name = CATEGORY_JSON[i].name;
+    var id = CATEGORY_JSON[i].id;
+    var rank = CATEGORY_JSON[i].emp_cat_rank;
+    var rank_id = CATEGORY_JSON[i].emp_cat_rank_id;
+    $('#category-rank').selectpicker('val', rank_id);
     $("#category-name").val(name);
     $("#add").attr({"status": 1, "data-id": id});
   }
@@ -124,11 +137,13 @@ get_rank();
   function update_category(){
     var name = $("#category-name").val();
     var id = $("#add").attr("data-id");
+    var rank = $("#category-rank").val();
+    console.log(rank);
     if(!name.isBlank("Name")){
       return false;
     }
     $.ajax({
-        url: basepath + "empcategories/"+id,
+        url: basepath + "empcategories/" + id,
         type: "PUT",
         contentType: 'application/json',
         dataType: 'json',
@@ -138,14 +153,18 @@ get_rank();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "name": name
+          "name": name,
+          "emp_cat_rank_id": rank
         }),
         success: function(data) {
           $(".loader").hide();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            showSuccess("Rank Updated Successfully!");
+            $(this).attr("status", 0);
+            // generate_select(RANK_JSON, null);
+            $('#category-rank').selectpicker('render');
+            showSuccess("Category Updated Successfully!");
             pullMenu();
             get_category();
           } else {
@@ -163,7 +182,6 @@ get_rank();
   $("#add").click(function() {
     var status = $(this).attr("status");
     if(status === "1") {
-      $(this).attr("status", 0)
       update_category();
     } else {
       add_category();

@@ -27,7 +27,7 @@ get_province();
               str += "                      <\/tr>";
             }
             $("#data-body").html(str);
-            var table = $('#datatables').DataTable();            
+            var table = $('#datatables').DataTable();
           }
         },
         error: function(error) {
@@ -108,6 +108,7 @@ get_province();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
+            $("#add").attr("status", 0)
             showSuccess("Province Updated Successfully!");
             pullMenu();
             get_province();
@@ -125,8 +126,7 @@ get_province();
 
   $("#add").click(function() {
     var status = $(this).attr("status");
-    if(status === "1") {
-      $(this).attr("status", 0);
+    if(status === "1") {      
       update_province();
     } else {
       add_province();

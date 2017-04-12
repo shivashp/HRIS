@@ -2,11 +2,11 @@ var TYPE_JSON;
 
 $(function() {
 
-//get_type();
+get_type();
 
   function get_type() {
     $.ajax({
-        url: basepath + "types",
+        url: basepath + "employeetypes",
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
@@ -45,7 +45,7 @@ $(function() {
       return false;
     }
     $.ajax({
-        url: basepath + "types",
+        url: basepath + "employeetypes",
         type: "POST",
         contentType: 'application/json',
         dataType: 'json',
@@ -91,7 +91,7 @@ $(function() {
       return false;
     }
     $.ajax({
-        url: basepath + "types/"+id,
+        url: basepath + "employeetypes/"+id,
         type: "PUT",
         contentType: 'application/json',
         dataType: 'json',
@@ -108,6 +108,7 @@ $(function() {
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
+            $(this).attr("status", 0)
             showSuccess("Employee Type Updated Successfully!");
             pullMenu();
             get_type();
@@ -126,7 +127,6 @@ $(function() {
   $("#add").click(function() {
     var status = $(this).attr("status");
     if(status === "1") {
-      $(this).attr("status", 0)
       update_type();
     } else {
       add_type();

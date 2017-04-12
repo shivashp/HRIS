@@ -79,6 +79,9 @@
                               <li>
                                   <a href="employment-type.php">Employment Type</a>
                               </li>
+                              <li>
+                                  <a href="employee.php">Employees</a>
+                              </li>
                           </ul>
                       </div>
                   </li>

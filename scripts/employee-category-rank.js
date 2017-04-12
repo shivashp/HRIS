@@ -108,6 +108,7 @@ get_rank();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
+            $(this).attr("status", 0)
             showSuccess("Rank Updated Successfully!");
             pullMenu();
             get_rank();
@@ -126,7 +127,6 @@ get_rank();
   $("#add").click(function() {
     var status = $(this).attr("status");
     if(status === "1") {
-      $(this).attr("status", 0)
       update_rank();
     } else {
       add_rank();
