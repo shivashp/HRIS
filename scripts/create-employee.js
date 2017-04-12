@@ -267,14 +267,70 @@ get_category();
     var employee_type = $("#employee-type").val();
     var end_date = $("#contract-end-date").val();
 
-    var arr = [first_name, middle_name,last_name, sex, age, dob, address1, address2,
-    village, llg, district, province, region, country, email, phone, phone1,
-  employee_number, salary_step, retirement_age, start_date, branch_agency_id,
-employee_category, employee_type, end_date];
-    var obj = generate_json(arr);
-    console.log(obj);
+    var my_json = {
+      "first_name" : first_name,
+      "middle_name": middle_name,
+      "last_name" : last_name,
+      "sex" : sex,
+      "age" : age,
+      "date_of_birth" : dob,
+      "address_one" : address1,
+      "address_two" : address2,
+      "village": village,
+      "llg": llg,
+      "district": district,
+      "province": province,
+      "region": region,
+      "country": country,
+      "email_address": email,
+      "contact_number": phone,
+      "alt_contact_number": phone1,
+      "employement_number" :employee_number,
+      "salary_step": salary_step,
+      "retirement_age" : retirement_age,
+      "date_of_commencement": start_date,
+      "employee_branch_id" : branch_agency_id,
+      "employee_category_id" : employee_category,
+      "employee_type_id" : employee_type,
+      "contract_end_date": end_date
+    }
 
-  })
+    // Traverse each data and remove any blank, null and undefined value rows
+    $.each(my_json, function(key, value) {
+      if(value == '' || value == null || value == undefined) {
+        delete my_json[key];
+      }
+    })
+
+    $.ajax({
+        url: basepath + "employees",
+        type: "POST",
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+          $(".loader").show();
+          $("#add").hide();
+					xhr.setRequestHeader('Token', TOKEN);
+        },
+        data: JSON.stringify(my_json),
+        success: function(data) {
+          $(".loader").hide();
+          $("#add").show();
+          if(data.status == 'success') {
+            showSuccess("Employee Added Successfully!");            
+          } else {
+            showError(data.message);
+          }
+        },
+        error: function(error) {
+          $(".loader").hide();
+          $("#add").show();
+          showError("Error in Server! Try again!")
+        },
+    });// Ajax
+
+
+  })//button click
 
   function generate_json(arr){
     var obj = arr.filter(data => {

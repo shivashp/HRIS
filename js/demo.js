@@ -188,19 +188,64 @@ demo = {
     },
 
     initMaterialWizard: function(){
+        var $validator = $('.wizard-card form').validate({
+      		  rules: {
+      		    firstname: {
+      		      required: true,
+      		      minlength: 3
+      		    },
+      		    lastname: {
+      		      required: true,
+      		      minlength: 3
+      		    },
+              age: {
+                required: true,
+              },
+              dob: {
+                required: true
+              },
+              address1: {
+                required: true,
+                minlength: 3
+              },
+              village: {
+                required: true
+              },
+              email: {
+                required: true
+              },
+              phone: {
+                required: true
+              },
+              employeenumber: {
+                required: true
+              },
+              salaryStep: {
+                required: true
+              },
+              startdate: {
+                required: true
+              },
+
+              },
+
+              errorPlacement: function(error, element) {
+                  $(element).parent('div').addClass('has-error');
+               }
+      	});
         // Wizard Initialization
       	$('.wizard-card').bootstrapWizard({
             'tabClass': 'nav nav-pills',
             'nextSelector': '.btn-next',
             'previousSelector': '.btn-previous',
 
-            // onNext: function(tab, navigation, index) {
-            // 	var $valid = $('.wizard-card form').valid();
-            // 	if(!$valid) {
-            // 		$validator.focusInvalid();
-            // 		return false;
-            // 	}
-            // },
+            onNext: function(tab, navigation, index) {
+            	var $valid = $('.wizard-card form').valid();
+            	if(!$valid) {
+            		$validator.focusInvalid();
+            		return false;
+            	}
+            },
 
             onInit : function(tab, navigation, index){
 
@@ -223,15 +268,15 @@ demo = {
                $('.moving-tab').css('transition','transform 0s');
            },
 
-            // onTabClick : function(tab, navigation, index){
-            //     var $valid = $('.wizard-card form').valid();
-            //
-            //     if(!$valid){
-            //         return false;
-            //     } else{
-            //         return true;
-            //     }
-            // },
+            onTabClick : function(tab, navigation, index){
+                var $valid = $('.wizard-card form').valid();
+
+                if(!$valid){
+                    return false;
+                } else{
+                    return true;
+                }
+            },
 
             onTabShow: function(tab, navigation, index) {
                 var $total = navigation.find('li').length;

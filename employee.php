@@ -24,6 +24,9 @@
                               <li>
                                   <a href="#employment" data-toggle="tab">Employment Details</a>
                               </li>
+                              <li>
+                                  <a href="#finish-screen" data-toggle="tab">Submit</a>
+                              </li>
                           </ul>
                       </div>
                       <div class="tab-content">
@@ -44,6 +47,7 @@
                                           <div class="form-group label-floating">
                                               <label class="control-label">First Name<small>(required)</small></label>
                                               <input name="firstname" type="text" id="first-name" class="form-control">
+                                              <span class="help-block with-errors">First name is required</span>
                                           </div>
                                       </div><!-- input-group-->
                                       <div class="input-group">
@@ -58,6 +62,7 @@
                                           <div class="form-group label-floating">
                                               <label class="control-label">Last Name<small>(required)</small></label>
                                               <input name="lastname" id="last-name" type="text" class="form-control">
+                                              <span class="help-block with-errors">Last name is required</span>
                                           </div>
                                       </div><!-- input-group-->
 
@@ -76,13 +81,15 @@
                                         <span class="input-group-addon">Age</span>
                                           <div class="form-group label-floating">
                                               <input name="age" id="age" type="number" class="form-control">
+                                              <span class="help-block with-errors">Age should be greater than 18 and less than 7</span>
                                           </div>
                                       </div><!-- input-group-->
 
                                       <div class="input-group">
                                           <span class="input-group-addon">DoB</span>
                                           <div class="form-group label-floating is-empty">
-                                              <input type="text" id="dob" class="form-control datepicker" />
+                                              <input name="dob" type="text" id="dob" class="form-control datepicker" />
+                                              <span class="help-block with-errors">Date is required</span>
                                           </div>
                                       </div><!-- input-group-->
                                   </div>
@@ -96,6 +103,7 @@
                                     <span class="input-group-addon">Address 1</span>
                                       <div class="form-group label-floating">
                                           <input name="address1" id="address1" type="text" class="form-control">
+                                          <span class="help-block with-errors">Address length should be greater than 3 characters</span>
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
@@ -114,6 +122,7 @@
                                     <span class="input-group-addon">Village</span>
                                       <div class="form-group label-floating">
                                           <input name="village" id="village" type="text" class="form-control">
+                                          <span class="help-block with-errors">Village is required</span>
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
@@ -123,7 +132,7 @@
                                     <span class="input-group-addon">LLG</span>
                                       <div class="form-group label-floating">
                                         <select class="form-control" id="llg" name="">
-                                          <option value="">LLG1</option>
+                                          <option value="1">LLG1</option>
                                         </select>
                                       </div>
                                   </div><!-- input-group-->
@@ -134,7 +143,7 @@
                                     <span class="input-group-addon">District</span>
                                       <div class="form-group label-floating">
                                         <select class="form-control" id="district" name="">
-                                          <option value="">Abc</option>
+                                          <option value="1">Abc</option>
                                         </select>
                                       </div>
                                   </div><!-- input-group-->
@@ -145,7 +154,7 @@
                                     <span class="input-group-addon">Province</span>
                                       <div class="form-group label-floating">
                                         <select class="form-control" id="province" name="">
-                                          <option value="">LLG1</option>
+                                          <option value="2">LLG1</option>
                                         </select>
                                       </div>
                                   </div><!-- input-group-->
@@ -156,7 +165,7 @@
                                     <span class="input-group-addon">Region</span>
                                       <div class="form-group label-floating">
                                         <select class="form-control" id="region" name="">
-                                          <option value="">region</option>
+                                          <option value="3">region</option>
                                         </select>
                                       </div>
                                   </div><!-- input-group-->
@@ -177,6 +186,7 @@
                                     <span class="input-group-addon">Email</span>
                                       <div class="form-group label-floating">
                                         <input type="email" id="email" name="email" class="form-control">
+                                        <span class="help-block with-errors">Email should be valid and not empty</span>
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
@@ -186,6 +196,7 @@
                                     <span class="input-group-addon">Phone No</span>
                                       <div class="form-group label-floating">
                                         <input type="text" id="phone" name="phone" class="form-control">
+                                        <span class="help-block with-errors">Phone number is required</span>
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
@@ -210,6 +221,7 @@
                                     <span class="input-group-addon">Employee Number</span>
                                       <div class="form-group label-floating">
                                           <input name="employeenumber" id="employee-number" type="text" class="form-control">
+                                          <span class="help-block with-errors">Employee number is required</span>
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
@@ -219,6 +231,7 @@
                                     <span class="input-group-addon">Salary Step</span>
                                       <div class="form-group label-floating">
                                           <input name="salaryStep" id="salary-step" type="text" class="form-control">
+                                          <span class="help-block with-errors">Salary step is required</span>
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
@@ -237,6 +250,7 @@
                                     <span class="input-group-addon">Date of Commencement</span>
                                       <div class="form-group label-floating">
                                           <input name="startdate" id="start-date" type="text" class="form-control datepicker">
+                                          <span class="help-block with-errors">Date of Commencement is required</span>
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
@@ -310,6 +324,14 @@
 
                               </div><!--row -->
                           </div><!-- employment-details -->
+                          <div class="tab-pane" id="finish-screen">
+                            <div class="row">
+                              <div class="col-lg-10 col-lg-offset-1" style="text-align: center;">
+                                <h2>Employee Data Entry Finished!</h2>
+                                <h5>If you want to change any details press previous button to go back and change details</h5>
+                              </div>
+                            </div>
+                          </div><!-- finish-screen -->
                       </div>
                       <div class="wizard-footer">
                           <div class="pull-right">
@@ -328,6 +350,8 @@
   </div>
 </div><!-- content-->
 <?php include('footer.php'); ?>
+<!-- Forms Validations Plugin -->
+<script src="http://demos.creative-tim.com/material-dashboard-pro/assets/js/jquery.validate.min.js"></script>
 <!--  Plugin for the Wizard -->
 <script src="js/bootstrap-wizard.js"></script>
 <script src="scripts/create-employee.js"></script>
