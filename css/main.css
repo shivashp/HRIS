@@ -142,3 +142,16 @@ a.navbar-brand {
 table > thead > tr > th {
     font-weight: 500 !important;
 }
+
+/* ========================================= */
+/*           Create Employee                 */
+/* ========================================= */
+
+#choose-agency, #contract-end {
+  display: none;
+}
+.input-group .input-group-addon {    
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    font-size: 16px;
+}

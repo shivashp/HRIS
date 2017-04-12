@@ -16,21 +16,21 @@
                       <div class="wizard-navigation">
                           <ul>
                               <li>
-                                  <a href="wizard.html#about" data-toggle="tab">Personal Details</a>
+                                  <a href="#personal" data-toggle="tab">Personal Details</a>
                               </li>
                               <li>
-                                  <a href="wizard.html#account" data-toggle="tab">Contact Details</a>
+                                  <a href="#contact" data-toggle="tab">Contact Details</a>
                               </li>
                               <li>
-                                  <a href="wizard.html#address" data-toggle="tab">Employment Details</a>
+                                  <a href="#employment" data-toggle="tab">Employment Details</a>
                               </li>
                           </ul>
                       </div>
                       <div class="tab-content">
-                          <div class="tab-pane" id="about">
+                          <div class="tab-pane" id="personal">
                               <div class="row">
                                   <div class="col-sm-4">
-                                      <div class="picture-container">
+                                      <div class="picture-container" style="margin-top: 100px;">
                                           <div class="picture">
                                               <img src="img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
                                               <input type="file" id="wizard-picture">
@@ -43,7 +43,7 @@
                                           <span class="input-group-addon"><i class="material-icons">face</i></span>
                                           <div class="form-group label-floating">
                                               <label class="control-label">First Name<small>(required)</small></label>
-                                              <input name="firstname" type="text" class="form-control">
+                                              <input name="firstname" type="text" id="first-name" class="form-control">
                                           </div>
                                       </div><!-- input-group-->
                                       <div class="input-group">
@@ -60,130 +60,261 @@
                                               <input name="lastname" id="last-name" type="text" class="form-control">
                                           </div>
                                       </div><!-- input-group-->
+
+                                      <div class="input-group">
+                                        <span class="input-group-addon">Sex</span>
+                                          <div class="form-group label-floating">
+                                              <select class="selectpicker1 form-control" data-style="btn select-with-transition sp-select" id="sex"  title="Choose Sex">
+                                                <option value="M">Male</option>
+                                                <option value="F">Female</option>
+                                                <option value="O">Others</option>
+                                              </select>
+                                          </div>
+                                      </div><!-- input-group -->
+
+                                      <div class="input-group">
+                                        <span class="input-group-addon">Age</span>
+                                          <div class="form-group label-floating">
+                                              <input name="age" id="age" type="number" class="form-control">
+                                          </div>
+                                      </div><!-- input-group-->
+
+                                      <div class="input-group">
+                                          <span class="input-group-addon">DoB</span>
+                                          <div class="form-group label-floating is-empty">
+                                              <input type="text" id="dob" class="form-control datepicker" />
+                                          </div>
+                                      </div><!-- input-group-->
                                   </div>
-                              </div><!-- row -->
-                              <div class="row">
-                                <div class="col-lg-11">
-                                  <div class="col-md-6">
-                                    <div class="input-group">
-                                      <span class="input-group-addon">Employee Number</span>
-                                        <div class="form-group label-floating">
-                                            <input name="employeenumber" id="employee-number" type="text" class="form-control">
-                                        </div>
-                                    </div><!-- input-group-->
-                                  </div><!-- col-md-3 -->
-                                  <div class="col-md-6">
-                                    <div class="input-group">
-                                      <span class="input-group-addon">Sex</span>
-                                        <div class="form-group label-floating">
-                                            <select class="selectpicker" data-style="btn select-with-transition sp-select" id="sex"  title="Choose Sex">
-                                              <option value="M">Male</option>
-                                              <option value="F">Female</option>
-                                              <option value="O">Others</option>
-                                            </select>
-                                        </div>
-                                    </div><!-- input-group-->
-                                  </div><!-- col-md-3 -->
-                                  <div class="col-md-6">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Date Of Birth</span>
-                                        <div class="form-group label-floating is-empty">
-                                            <input type="text" id="dob" class="form-control datepicker" />
-                                        </div>
-                                    </div><!-- input-group-->
-                                  </div><!-- col-md-3-->
-                                  <div class="col-md-6">
-                                    <div class="input-group">
-                                      <span class="input-group-addon">Age</span>
-                                        <div class="form-group label-floating">
-                                            <input name="age" id="age" type="text" class="form-control">
-                                        </div>
-                                    </div><!-- input-group-->
-                                  </div>
-                                </div><!-- col-lg-->
                               </div><!-- row -->
                           </div><!-- about -->
-                          <div class="tab-pane" id="account">
-                              <h4 class="info-text"> What are you doing? (checkboxes) </h4>
+                          <div class="tab-pane" id="contact">
                               <div class="row">
-                                  <div class="col-lg-10 col-lg-offset-1">
-                                      <div class="col-sm-4">
-                                          <div class="choice" data-toggle="wizard-checkbox">
-                                              <input type="checkbox" name="jobb" value="Design">
-                                              <div class="icon">
-                                                  <i class="fa fa-pencil"></i>
-                                              </div>
-                                              <h6>Design</h6>
-                                          </div>
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Address 1</span>
+                                      <div class="form-group label-floating">
+                                          <input name="address1" id="address1" type="text" class="form-control">
                                       </div>
-                                      <div class="col-sm-4">
-                                          <div class="choice" data-toggle="wizard-checkbox">
-                                              <input type="checkbox" name="jobb" value="Code">
-                                              <div class="icon">
-                                                  <i class="fa fa-terminal"></i>
-                                              </div>
-                                              <h6>Code</h6>
-                                          </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Address 2</span>
+                                      <div class="form-group label-floating">
+                                          <input name="address2" id="address2" type="text" class="form-control">
                                       </div>
-                                      <div class="col-sm-4">
-                                          <div class="choice" data-toggle="wizard-checkbox">
-                                              <input type="checkbox" name="jobb" value="Develop">
-                                              <div class="icon">
-                                                  <i class="fa fa-laptop"></i>
-                                              </div>
-                                              <h6>Develop</h6>
-                                          </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Village</span>
+                                      <div class="form-group label-floating">
+                                          <input name="village" id="village" type="text" class="form-control">
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="tab-pane" id="address">
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">LLG</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="llg" name="">
+                                          <option value="">LLG1</option>
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">District</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="district" name="">
+                                          <option value="">Abc</option>
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Province</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="province" name="">
+                                          <option value="">LLG1</option>
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Region</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="region" name="">
+                                          <option value="">region</option>
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Country</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="country" name="">
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Email</span>
+                                      <div class="form-group label-floating">
+                                        <input type="email" id="email" name="email" class="form-control">
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Phone No</span>
+                                      <div class="form-group label-floating">
+                                        <input type="text" id="phone" name="phone" class="form-control">
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Alternate Phone No</span>
+                                      <div class="form-group label-floating">
+                                        <input type="text" id="phone1" name="phone" class="form-control">
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+
+                              </div><!-- row -->
+                          </div><!-- contact -->
+                          <div class="tab-pane" id="employment">
                               <div class="row">
-                                  <div class="col-sm-12">
-                                      <h4 class="info-text"> Are you living in a nice area? </h4>
-                                  </div>
-                                  <div class="col-sm-7 col-sm-offset-1">
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Employee Number</span>
                                       <div class="form-group label-floating">
-                                          <label class="control-label">Street Name</label>
-                                          <input type="text" class="form-control">
+                                          <input name="employeenumber" id="employee-number" type="text" class="form-control">
                                       </div>
-                                  </div>
-                                  <div class="col-sm-3">
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Salary Step</span>
                                       <div class="form-group label-floating">
-                                          <label class="control-label">Street No.</label>
-                                          <input type="text" class="form-control">
+                                          <input name="salaryStep" id="salary-step" type="text" class="form-control">
                                       </div>
-                                  </div>
-                                  <div class="col-sm-5 col-sm-offset-1">
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Retirement Age</span>
                                       <div class="form-group label-floating">
-                                          <label class="control-label">City</label>
-                                          <input type="text" class="form-control">
+                                          <input name="retirementage" id="retirement-age" type="number" class="form-control">
                                       </div>
-                                  </div>
-                                  <div class="col-sm-5">
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Date of Commencement</span>
                                       <div class="form-group label-floating">
-                                          <label class="control-label">Country</label>
-                                          <select name="country" class="form-control">
-                                              <option disabled="" selected=""></option>
-                                              <option value="Afghanistan"> Afghanistan </option>
-                                              <option value="Albania"> Albania </option>
-                                              <option value="Algeria"> Algeria </option>
-                                              <option value="American Samoa"> American Samoa </option>
-                                              <option value="Andorra"> Andorra </option>
-                                              <option value="Angola"> Angola </option>
-                                              <option value="Anguilla"> Anguilla </option>
-                                              <option value="Antarctica"> Antarctica </option>
-                                              <option value="...">...</option>
-                                          </select>
+                                          <input name="startdate" id="start-date" type="text" class="form-control datepicker">
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Branch/Agency</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="branch-agency" name="">
+                                          <!-- <option value="" disabled selected>Choose Branch/Agency</option> -->
+                                          <option value="branch">Branch</option>
+                                          <option value="agency">Agency</option>
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6" id="choose-branch">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Branch</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="branch" name="">
+
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6" id="choose-agency">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Agency</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="agency" name="">
+
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Employee Category</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="employee-category" name="">
+
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Employee Type</span>
+                                      <div class="form-group label-floating">
+                                        <select class="form-control" id="employee-type" name="">
+
+                                        </select>
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+                                <div class="col-md-6" id="contract-end">
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Contract End Date</span>
+                                      <div class="form-group label-floating">
+                                        <input type="text" class="form-control datepicker" id="contract-end-date" name="" value="">
+                                      </div>
+                                  </div><!-- input-group-->
+                                </div><!-- col-md-6 -->
+
+
+                              </div><!--row -->
+                          </div><!-- employment-details -->
                       </div>
                       <div class="wizard-footer">
                           <div class="pull-right">
                               <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
-                              <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Finish' />
+                              <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' id="finish" name='finish' value='Finish' />
                           </div>
                           <div class="pull-left">
                               <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
@@ -199,6 +330,7 @@
 <?php include('footer.php'); ?>
 <!--  Plugin for the Wizard -->
 <script src="js/bootstrap-wizard.js"></script>
+<script src="scripts/create-employee.js"></script>
 <script>
   active('employee')
   $().ready(function() {
