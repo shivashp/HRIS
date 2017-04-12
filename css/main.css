@@ -150,8 +150,55 @@ table > thead > tr > th {
 #choose-agency, #contract-end {
   display: none;
 }
-.input-group .input-group-addon {    
+.input-group .input-group-addon {
     font-weight: bold;
     letter-spacing: 0.3px;
     font-size: 16px;
+}
+
+/* ========================================= */
+/*           Single Employee                 */
+/* ========================================= */
+
+div#prfl-intro {
+    text-align: center;
+}
+h3#prfl-name {
+    font-weight: 400;
+}
+img#prfl-img {
+    width: 150px;
+}
+#tabs>ul.nav>li {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 16px;
+}
+#tabs>ul.nav>li>a {
+  border-radius: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+li.nav-item.active>a {
+    color: white;
+    background: #9c27b0;
+}
+div#tabs {
+  text-align: center;
+      margin-top: 40px;
+      border-top: 1px solid #efefef;
+      border-bottom: 1px solid #efefef;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 50px;
+}
+span.se-label {
+    font-weight: 500;
+    font-size: 17px;
+}
+span.se-value {
+    font-size: 17px;
+}
+.se-single-data {
+    padding-bottom: 15px;
 }

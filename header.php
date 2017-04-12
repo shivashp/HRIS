@@ -71,6 +71,9 @@
                       <div class="collapse" id="employee">
                           <ul class="nav">
                               <li>
+                                  <a href="single-employee.php">Single Employee</a>
+                              </li>
+                              <li>
                                   <a href="employee-category-rank.php">Employee Category Rank</a>
                               </li>
                               <li>

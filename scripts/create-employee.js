@@ -267,6 +267,14 @@ get_category();
     var employee_type = $("#employee-type").val();
     var end_date = $("#contract-end-date").val();
 
+    dob = new Date(dob);
+    end_date = new Date(end_date);
+    start_date = new Date(start_date);
+    dob = moment(dob).format("YYYY-MM-DD");
+    start_date = moment(start_date).format("YYYY-MM-DD");
+    end_date = moment(end_date).format("YYYY-MM-DD");
+    console.log(end_date);
+
     var my_json = {
       "first_name" : first_name,
       "middle_name": middle_name,
@@ -317,7 +325,7 @@ get_category();
           $(".loader").hide();
           $("#add").show();
           if(data.status == 'success') {
-            showSuccess("Employee Added Successfully!");            
+            showSuccess("Employee Added Successfully!");
           } else {
             showError(data.message);
           }
@@ -331,6 +339,8 @@ get_category();
 
 
   })//button click
+
+
 
   function generate_json(arr){
     var obj = arr.filter(data => {
