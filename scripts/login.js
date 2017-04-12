@@ -1,4 +1,4 @@
-var basepath = "http://192.168.100.47:9000/api/"
+var basepath = "http://192.168.100.47:5000/api/"
 
 function clearAlert() {
   $(".sp-alert-danger").html('');
@@ -20,7 +20,7 @@ String.prototype.isBlank = function (type = 'Field') {
   return false;
 };
 
-$(function() {  
+$(function() {
   $("#login-btn").click(function() {
     var username = $("#username").val();
     var password = $("#password").val();

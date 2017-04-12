@@ -33,13 +33,13 @@
                       <div class="collapse" id="collapseExample">
                           <ul class="nav">
                               <li>
-                                  <a href="calendar.html#">My Profile</a>
+                                  <a href="#">My Profile</a>
                               </li>
                               <li>
-                                  <a href="calendar.html#">Edit Profile</a>
+                                  <a href="#">Edit Profile</a>
                               </li>
                               <li>
-                                  <a href="calendar.html#">Settings</a>
+                                  <a href="#">Settings</a>
                               </li>
                           </ul>
                       </div>
@@ -60,6 +60,27 @@
                       <a href="agency.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
                           <p>Agencies</p>
                       </a>
+                  </li>
+                  <li class="link employee">
+                      <a data-toggle="collapse" href="#employee">
+                          <i class="material-icons">people</i>
+                          <p>Employees
+                              <b class="caret"></b>
+                          </p>
+                      </a>
+                      <div class="collapse" id="employee">
+                          <ul class="nav">
+                              <li>
+                                  <a href="employee-category-rank.php">Employee Category Rank</a>
+                              </li>
+                              <li>
+                                  <a href="employee-categories.php">Employee Categories</a>
+                              </li>
+                              <li>
+                                  <a href="employment-type.php">Employment Type</a>
+                              </li>
+                          </ul>
+                      </div>
                   </li>
                   <li class="link settings">
                       <a data-toggle="collapse" href="#setup">
