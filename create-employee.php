@@ -158,7 +158,7 @@
                                   <div class="input-group">
                                     <span class="input-group-addon">Region</span>
                                       <div class="form-group label-floating">
-                                        <input type="text" name="region" id="region" class="form-control">                                        
+                                        <input type="text" name="region" id="region" class="form-control">
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
@@ -343,7 +343,7 @@
 </div><!-- content-->
 <?php include('footer.php'); ?>
 <!-- Forms Validations Plugin -->
-<script src="http://demos.creative-tim.com/material-dashboard-pro/assets/js/jquery.validate.min.js"></script>
+<script src="js/jquery-validate.js"></script>
 <!--  Plugin for the Wizard -->
 <script src="js/bootstrap-wizard.js"></script>
 <script src="scripts/create-employee.js"></script>

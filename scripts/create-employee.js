@@ -267,7 +267,7 @@ get_category();
     start_date = new Date(start_date);
     dob = moment(dob).format("YYYY-MM-DD");
     start_date = moment(start_date).format("YYYY-MM-DD");
-    if(end_date.trim() == ''){
+    if(end_date.trim() !== ''){
       end_date = new Date(end_date);
       end_date = moment(end_date).format("YYYY-MM-DD");
     }
@@ -323,6 +323,7 @@ get_category();
           $("#add").show();
           if(data.status == 'success') {
             showSuccess("Employee Added Successfully!");
+            window.location.href= 'employee.php'
           } else {
             showError(data.message);
           }
