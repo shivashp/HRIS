@@ -68,31 +68,31 @@
                     <!-- Data on right side -->
 
                     <div class="se-single-data row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-5">
                         <span class="se-label">Middle Name</span>
                       </div>
                       <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
+                      <div class="col-sm-6">
                         <span class="se-value"></span>
                       </div>
                     </div><!--se-single-data-->
 
                     <div class="se-single-data row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-5">
                         <span class="se-label">Age</span>
                       </div>
                       <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
+                      <div class="col-sm-6">
                         <span class="se-value">23</span>
                       </div>
                     </div><!--se-single-data-->
 
                     <div class="se-single-data row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-5">
                         <span class="se-label">Date of Birth</span>
                       </div>
                       <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
+                      <div class="col-sm-6">
                         <span class="se-value">1993-12-19</span>
                       </div>
                     </div><!--se-single-data-->
@@ -102,7 +102,7 @@
               </div><!-- personal -->
               <div class="tab-pane" id="contact">
                 <div class="row">
-                  <div class="col-md-5 col-md-offset-2">
+                  <div class="col-md-5 col-md-offset-1">
 
                     <div class="se-single-data row">
                       <div class="col-sm-4">
@@ -166,7 +166,7 @@
 
                   </div><!-- col-md-6 -->
 
-                  <div class="col-md-5 ">
+                  <div class="col-md-6">
                     <!-- Data on right side -->
 
                     <div class="se-single-data row">
@@ -223,7 +223,86 @@
                 </div><!-- row -->
               </div><!-- contact -->
               <div class="tab-pane" id="employment">
-                This is contact
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-1">
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-6">
+                        <span class="se-label">Employee Number</span>
+                      </div>
+                      <div class="col-sm-1">:</div>
+                      <div class="col-sm-5">
+                        <span class="se-value">12345</span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-6">
+                        <span class="se-label">Retirement Age</span>
+                      </div>
+                      <div class="col-sm-1">:</div>
+                      <div class="col-sm-5">
+                        <span class="se-value">79</span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-6">
+                        <span class="se-label">Branch/Agency</span>
+                      </div>
+                      <div class="col-sm-1">:</div>
+                      <div class="col-sm-5">
+                        <span class="se-value">Kathmandu</span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-6">
+                        <span class="se-label">Employee Type</span>
+                      </div>
+                      <div class="col-sm-1">:</div>
+                      <div class="col-sm-5">
+                        <span class="se-value">Full Time</span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                  </div><!-- col-md-6 -->
+
+                  <div class="col-md-5 ">
+                    <!-- Data on right side -->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-6">
+                        <span class="se-label">Salary Step</span>
+                      </div>
+                      <div class="col-sm-1">:</div>
+                      <div class="col-sm-5">
+                        <span class="se-value">2.2</span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-6">
+                        <span class="se-label">Date of Commencement</span>
+                      </div>
+                      <div class="col-sm-1">:</div>
+                      <div class="col-sm-5">
+                        <span class="se-value">2016-01-01</span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-6">
+                        <span class="se-label">Employee Category</span>
+                      </div>
+                      <div class="col-sm-1">:</div>
+                      <div class="col-sm-5">
+                        <span class="se-value">Doctor</span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                  </div><!-- col-md-6-->
+                </div><!-- row -->
               </div><!-- employmnet -->
           </div><!--tab-content-->
       </div><!-- card-content -->

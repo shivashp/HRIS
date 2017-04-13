@@ -142,6 +142,9 @@ a.navbar-brand {
 table > thead > tr > th {
     font-weight: 500 !important;
 }
+.content {
+    overflow: hidden;
+}
 
 /* ========================================= */
 /*           Create Employee                 */
@@ -178,10 +181,11 @@ img#prfl-img {
   border-radius: 30px;
   margin-left: 10px;
   margin-right: 10px;
+  color: #3aaf85;
 }
 li.nav-item.active>a {
-    color: white;
-    background: #9c27b0;
+    color: white !important;
+    background: #3aaf85;
 }
 div#tabs {
   text-align: center;
@@ -201,4 +205,47 @@ span.se-value {
 }
 .se-single-data {
     padding-bottom: 15px;
+}
+.container {
+    max-width: 100%;
+}
+
+/* ========================================= */
+/*           All Employee                 */
+/* ========================================= */
+
+div#top-bar {
+    background: white;
+    padding-right: 50px;
+    padding-left: 20px;
+}
+form#employee-search {
+    margin-top: 3px;
+}
+#employee-search .form-control {
+    /*width: 200px;*/
+}
+.single-box a {
+    color: #3C4858;
+}
+.single-box {
+    background: white;
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+.emp-image {
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+.single-box {
+  transition: all 0.5s ease-in-out;
+  min-height: 234px;
+}
+.single-box:hover {
+  transform: scale(1.1);
+}
+div#branch-agency-select {
+    margin-top: 16px;
+    margin-bottom: -5px;
 }

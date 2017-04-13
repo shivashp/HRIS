@@ -200,6 +200,7 @@ demo = {
       		    },
               age: {
                 required: true,
+                min: 18,                
               },
               dob: {
                 required: true
@@ -209,6 +210,9 @@ demo = {
                 minlength: 3
               },
               village: {
+                required: true
+              },
+              country: {
                 required: true
               },
               email: {

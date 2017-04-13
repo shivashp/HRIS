@@ -1,8 +1,13 @@
 var basepath = "http://139.59.37.232:5000/api/";
 var TOKEN = localStorage.getItem('token');
-if(TOKEN === undefined || TOKEN == ''){
+if(TOKEN === undefined || TOKEN == '' || TOKEN == null){
+  console.log("Undefined");
   window.location.href = "index.html";
 }
+$(".logout").click(function() {
+  localStorage.clear();
+  window.location.href="index.html";
+})
 
 function toggle_top_menu() {
   $(".form-input").slideToggle("slow");
