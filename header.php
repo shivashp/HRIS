@@ -18,105 +18,129 @@
 <body>
     <div class="wrapper">
         <div class="sidebar" data-active-color="rose" data-background-color="black" data-image="img/sidebar-1.jpg">
-          <div class="logo"> <a href="javascript:;" class="simple-text"> HRIS</a> </div>
+          <div class="logo"> <a href="javascript:;" class="simple-text">
+              National Department<br> of Health</a>
+          </div>
           <div class="logo logo-mini"> <a href="#" class="simple-text"> HRIS </a> </div>
           <div class="sidebar-wrapper">
-              <div class="user">
-                  <div class="photo">
-                      <img src="https://s-media-cache-ak0.pinimg.com/564x/97/f1/1e/97f11ea8bf2b7ec3545420e537af0e88.jpg" />
-                  </div>
-                  <div class="info">
-                      <a data-toggle="collapse" href="calendar.html#collapseExample" class="collapsed">
-                          Tania Andrew
-                          <b class="caret"></b>
-                      </a>
-                      <div class="collapse" id="collapseExample">
-                          <ul class="nav">
-                              <li>
-                                  <a href="#">My Profile</a>
-                              </li>
-                              <li>
-                                  <a href="#">Settings</a>
-                              </li>
-                              <li>
-                                  <a class="logout" href="#">Logout</a>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
               <ul class="nav">
                   <li class="link dashboard">
                       <a href="dashboard.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
                           <p>Dashboard</p>
                       </a>
                   </li>
-                  <li class="link branch">
-                      <a href="branch.php" class="menu" data-name = 'branch'> <i class="material-icons">book</i>
-                          <p>Branches</p>
+                  <li class="link dashboard">
+                      <a href="#" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
+                          <p>My Profile</p>
                       </a>
                   </li>
-                  <li class="link agency">
-                      <a href="agency.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
-                          <p>Agencies</p>
+                  <li class="link create-employees">
+                      <a href="create-employee.php" class="menu">
+                        <i class="material-icons">person</i>
+                          <p>Add Employee</p>
                       </a>
                   </li>
-                  <li class="link employee">
-                      <a data-toggle="collapse" href="#employee">
-                          <i class="material-icons">people</i>
-                          <p>Employees
-                              <b class="caret"></b>
-                          </p>
+
+                  <li class="nav-title"><i class="material-icons">person</i> Employees Listing</li>
+
+                  <li class="link sub all-employees">
+                      <a href="employee.php" class="menu">
+                          <p>All Employees</p>
                       </a>
-                      <div class="collapse" id="employee">
-                          <ul class="nav">
-                              <li>
-                                  <a href="single-employee.php">Single Employee</a>
-                              </li>
-                              <li>
-                                  <a href="employee-category-rank.php">Employee Category Rank</a>
-                              </li>
-                              <li>
-                                  <a href="employee-categories.php">Employee Categories</a>
-                              </li>
-                              <li>
-                                  <a href="employment-type.php">Employment Type</a>
-                              </li>
-                              <li>
-                                  <a href="employee.php">Employees</a>
-                              </li>
-                          </ul>
-                      </div>
                   </li>
-                  <li class="link settings">
-                      <a data-toggle="collapse" href="#setup">
-                          <i class="material-icons">settings</i>
-                          <p>Settings
-                              <b class="caret"></b>
-                          </p>
+                  <li class="link sub employees-by-divisions">
+                      <a href="employees-by-divisions.php" class="menu" >
+                          <p>Employees By Divisions</p>
                       </a>
-                      <div class="collapse" id="setup">
-                          <ul class="nav">
-                              <li>
-                                  <a href="company.php">Company Setup</a>
-                              </li>
-                              <li>
-                                  <a href="district.php">District Setup</a>
-                              </li>
-                              <li>
-                                  <a href="province.php">Province Setup</a>
-                              </li>
-                              <li>
-                                  <a href="region.php">Region Setup</a>
-                              </li>
-                              <li>
-                                  <a href="llg.php">LLG Setup</a>
-                              </li>
-                              <li>
-                                  <a href="facility.php">Facilities Setup</a>
-                              </li>
-                          </ul>
-                      </div>
+                  </li>
+                  <li class="link sub employees-by-agencies">
+                      <a href="employees-by-agencies.php" class="menu" >
+                          <p>Employees By Agencies</p>
+                      </a>
+                  </li>
+                  <li class="link sub employees-by-category">
+                      <a href="employees-by-category.php" class="menu" >
+                          <p>Employees By Category</p>
+                      </a>
+                  </li>
+                  <li class="link sub employees-by-rank">
+                      <a href="employees-by-rank.php" class="menu" >
+                          <p>Employees By Rank</p>
+                      </a>
+                  </li>
+
+
+                  <li class="nav-title"><i class="material-icons">book</i> Division Settings</li>
+                  <li class="link sub branch">
+                      <a href="branch.php" class="menu" data-name = 'branch'>
+                          <p>Division Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub agency">
+                      <a href="agency.php" class="menu" data-name = 'branch'>
+                          <p>Agency Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub facility">
+                      <a href="facility.php" class="menu" data-name = 'branch'>
+                          <p>Facility Setup</p>
+                      </a>
+                  </li>
+
+                  <li class="nav-title"><i class="material-icons">book</i> NDOH Settings</li>
+                  <li class="link sub company">
+                      <a href="company.php" class="menu" data-name = 'branch'>
+                          <p>NDOH Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub district">
+                      <a href="district.php" class="menu" data-name = 'branch'>
+                          <p>District Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub province">
+                      <a href="province.php" class="menu" data-name = 'branch'>
+                          <p>Province Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub region">
+                      <a href="region.php" class="menu" data-name = 'branch'>
+                          <p>Region Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub llg">
+                      <a href="llg.php" class="menu" data-name = 'branch'>
+                          <p>Llg Setup</p>
+                      </a>
+                  </li>
+
+                  <li class="nav-title"><i class="material-icons">person</i> Employee Settings</li>
+                  <li class="link sub employee-category-rank">
+                      <a href="employee-category-rank.php" class="menu" data-name = 'branch'>
+                          <p>Rank Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub employee-category">
+                      <a href="employee-categories.php" class="menu" data-name = 'branch'>
+                          <p>Category Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub employment-type">
+                      <a href="employment-type.php" class="menu" data-name = 'branch'>
+                          <p>Type Setup</p>
+                      </a>
+                  </li>
+
+                  <li class="nav-title"><i class="material-icons">book</i> Roles &amp; Permissions</li>
+                  <li class="link sub role">
+                      <a href="role.php" class="menu">
+                          <p>Role Setup</p>
+                      </a>
+                  </li>
+                  <li class="link sub permissions">
+                      <a href="permissions.php" class="menu" >
+                          <p>Permissions Setup</p>
+                      </a>
                   </li>
               </ul>
           </div>
@@ -136,55 +160,12 @@
                       <ul class="nav navbar-nav navbar-right">
                           <li>
                               <a href="charts.html#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                                  <i class="material-icons">dashboard</i>
-                                  <p class="hidden-lg hidden-md">Dashboard</p>
-                              </a>
-                          </li>
-                          <li class="dropdown">
-                              <a href="charts.html#" class="dropdown-toggle" data-toggle="dropdown">
-                                  <i class="material-icons">notifications</i>
-                                  <span class="notification">5</span>
-                                  <p class="hidden-lg hidden-md">
-                                      Notifications
-                                      <b class="caret"></b>
-                                  </p>
-                              </a>
-                              <ul class="dropdown-menu">
-                                  <li>
-                                      <a href="charts.html#">Mike John responded to your email</a>
-                                  </li>
-                                  <li>
-                                      <a href="charts.html#">You have 5 new tasks</a>
-                                  </li>
-                                  <li>
-                                      <a href="charts.html#">You're now friend with Andrew</a>
-                                  </li>
-                                  <li>
-                                      <a href="charts.html#">Another Notification</a>
-                                  </li>
-                                  <li>
-                                      <a href="charts.html#">Another One</a>
-                                  </li>
-                              </ul>
-                          </li>
-                          <li>
-                              <a href="charts.html#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                                  <i class="material-icons">person</i>
+                                  <i class="material-icons">person</i> User
                                   <p class="hidden-lg hidden-md">Profile</p>
                               </a>
                           </li>
                           <li class="separator hidden-lg hidden-md"></li>
                       </ul>
-                      <!-- <form class="navbar-form navbar-right" role="search">
-                          <div class="form-group form-search is-empty">
-                              <input type="text" class="form-control" placeholder="Search">
-                              <span class="material-input"></span>
-                          </div>
-                          <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                              <i class="material-icons">search</i>
-                              <div class="ripple-container"></div>
-                          </button>
-                      </form> -->
                     </div>
                 </div>
             </nav>

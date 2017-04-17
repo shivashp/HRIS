@@ -25,7 +25,7 @@ get_agency_employee();
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {          
+        success: function(data) {
           var data1 = [];
           if(data.status === 'success') {
             for (var i = 0; i < data.data.length; i++) {
@@ -52,7 +52,11 @@ get_agency_employee();
                 data1.push(json);
             }
             EMPLOYEES = data1;
-            $("#employee-data").html(data1.map(data => generate_box(data)).join(''))
+            // $("#employee-data").html(data1.map(data => generate_box(data)).join(''))
+            console.log(data1);
+            $("#data-body").html(data1.map(data => generate_table(data)).join(''));
+            $('#datatables').DataTable();
+
           }
         },
         error: function(error) {
@@ -64,7 +68,7 @@ get_agency_employee();
   }// get agency employees
 
 
-  function generate_box(data) {        
+  function generate_box(data) {
     var str="";
     str += "<div class=\"col-lg-4 col-md-6 col-sm-6 col-xs-12\">";
     str += "        <div class=\"single-box\">";
@@ -91,6 +95,21 @@ get_agency_employee();
     return str;
   }
 
+function generate_table(data) {
+  var str = '';
+  str += "<tr>";
+  str += "                          <td>"+data.employee_number+"<\/td>";
+  str += "                          <td>"+data.name+"<\/td>";
+  str += "                          <td>"+data.address1+"<\/td>";
+  str += "                          <td>"+data.contact_number+"<\/td>";
+  str += "                          <td>"+data.country+"<\/td>";
+  str += "                          <td class=\"text-right\">";
+  str += "                              <a class=\"btn btn-success btn-sm btn-danger btn-icon edit\" href= \"single-employee.php?action="+data.id+"\">View<\/a>";
+  str += "                              <a class=\"btn btn-success btn-sm btn-danger btn-icon edit\" data-id=\""+data.i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+  str += "                          <\/td>";
+  str += "                      <\/tr>";
+  return str;
+}
 
 
 

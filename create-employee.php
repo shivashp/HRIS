@@ -327,8 +327,8 @@
                       </div>
                       <div class="wizard-footer">
                           <div class="pull-right">
-                              <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
-                              <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' id="finish" name='finish' value='Finish' />
+                              <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
+                              <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' id="finish" name='finish' value='Finish' />
                           </div>
                           <div class="pull-left">
                               <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />

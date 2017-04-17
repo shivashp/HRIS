@@ -94,5 +94,5 @@ $(document).ready(function() {
     $(".form-horizontal")[0].reset();
     var value = $(this).attr("value");
     (value == 1)?pullMenu():slideMenu();
-  });//sp-add-btn
+  });//sp-add-btn  
 })//Document

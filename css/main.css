@@ -1,9 +1,27 @@
-.perfect-scrollbar-on .sidebar .sidebar-wrapper, .sidebar .sidebar-wrapper, .perfect-scrollbar-on
+/*
+
+  primary-color: #355089
+
+*/
 .main-panel, .main-panel {
   overflow-y: auto;
 }
 .navbar-absolute {
       padding-top: 35px;
+}
+.wizard-card[data-color="rose"] .moving-tab {
+      background-color: #355089;
+      box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(42, 91, 193, 0.4);
+}
+th {
+    background: #355089;
+    color: white;
+    padding-top: 9px !important;
+    padding-bottom: 8px !important;
+}
+table.dataTable > thead > tr > th, table.dataTable > tbody > tr > th, table.dataTable > tfoot > tr > th, table.dataTable > thead > tr > td, table.dataTable > tbody > tr > td, table.dataTable > tfoot > tr > td {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
 }
 body#login {
   background: url('../img/login.jpeg') center center;
@@ -42,19 +60,16 @@ div#overlay {
   font-weight: 400;
 }
 .sidebar[data-active-color="rose"] li.active > a, .off-canvas-sidebar[data-active-color="rose"] li.active > a {
-    background: #3aaf85;
-    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(23, 175, 126, 0.4);
+    background: #355089;
+    box-shadow: none;
 }
+
 .sidebar .nav li:hover > a, .sidebar .nav li.active > [data-toggle="collapse"], .off-canvas-sidebar .nav li:hover > a, .off-canvas-sidebar .nav li.active > [data-toggle="collapse"] {
-  background: #3aaf85;
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(23, 175, 126, 0.4);
-}
-.sidebar[data-background-color="black"], .off-canvas-sidebar[data-background-color="black"] {
-    background: url(../img/sidebar-1.jpg) top center;
-    background-position-y: -55px;
+  background: #355089;
+  box-shadow: none;
 }
 .sidebar:before, .sidebar:after, .off-canvas-sidebar:before, .off-canvas-sidebar:after {
-  background: rgba(0,0,0,0.6) !important;
+  background: #253a67;
 }
 .label {
   box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
@@ -64,10 +79,10 @@ div#overlay {
   background-color: #f44336;
 }
 .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
-  background: #3aaf85;
+  background: #355089;
 }
 .btn-success {
-  background-color: #3aaf85 !important;
+  background-color: #355089 !important;
 }
 .btn {
   font-weight: 600;
@@ -112,6 +127,7 @@ button#submit {
 }
 table.dataTable > thead > tr > th, table.dataTable > tbody > tr > th, table.dataTable > tfoot > tr > th, table.dataTable > thead > tr > td, table.dataTable > tbody > tr > td, table.dataTable > tfoot > tr > td {
   font-size: 17px;
+  font-weight: 400;
 }
 .sp-alert {
   font-weight: 500;
@@ -149,7 +165,60 @@ table > thead > tr > th {
 .content {
     overflow: hidden;
 }
-
+li.nav-title {
+    margin: 30px 0px 0px;
+    padding: 10px 15px;
+    color: white;
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    background: #21335a;
+}
+li.nav-title i {
+    position: relative;
+    top: -5px;
+    left: 12px;
+    font-size: 20px !important;
+}
+.nav>li.sub>a {
+  padding: 10px 58px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.sidebar, .off-canvas-sidebar, .sidebar .sidebar-wrapper, .off-canvas-sidebar .sidebar-wrapper {
+  width: 287px;
+}
+.main-panel {
+  width: calc(100% - 287px);
+}
+#ndoh-logo {
+    width: 10%;
+}
+div#dashboard-title-bar {
+    text-align: center;
+        margin-top: -30px;
+}
+h3#dashboard-title {
+    font-weight: 500;
+}
+.card [data-background-color="rose"], .card [data-background-color="purple"] {
+    background: #355089;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(42, 91, 193, 0.4);
+}
+.btn.btn-success:focus, .btn.btn-success:active, .btn.btn-success:hover, .navbar .navbar-nav > li > a.btn.btn-success:focus, .navbar .navbar-nav > li > a.btn.btn-success:active, .navbar .navbar-nav > li > a.btn.btn-success:hover {
+    box-shadow: 0 14px 26px -12px rgba(51, 122, 183, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(51, 122, 183, 0.4);
+}
+nav.navbar.navbar-transparent.navbar-absolute {
+    display: none;
+}
+.main-panel > .content {
+  margin-top:0;
+}
+.sp-add-btn {
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 16px;
+}
 /* ========================================= */
 /*           Create Employee                 */
 /* ========================================= */

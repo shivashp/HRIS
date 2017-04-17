@@ -1,4 +1,4 @@
-<?php include('header.php'); 
+<?php include('header.php');
   if(!isset($_GET['action'])){
     echo '<script>
             window.location.href="employee.php"
@@ -49,7 +49,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Shiva</span>
+                        <span class="se-value" id="first-name">Shiva</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -59,7 +59,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Pandey</span>
+                        <span class="se-value" id="last-name">Pandey</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -69,7 +69,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Male</span>
+                        <span class="se-value" id="sex">Male</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -84,7 +84,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-6">
-                        <span class="se-value"></span>
+                        <span class="se-value" id="middle-name"></span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -94,7 +94,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-6">
-                        <span class="se-value">23</span>
+                        <span class="se-value" id="age">23</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -104,7 +104,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-6">
-                        <span class="se-value">1993-12-19</span>
+                        <span class="se-value" id="dob">1993-12-19</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -121,7 +121,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Old baneshwor</span>
+                        <span class="se-value" id="address1">Old baneshwor</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -131,7 +131,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Ambika Marg</span>
+                        <span class="se-value" id="villlage">Ambika Marg</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -141,7 +141,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Kathmandu</span>
+                        <span class="se-value" id="district">Kathmandu</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -151,7 +151,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Central</span>
+                        <span class="se-value" id="region">Central</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -161,7 +161,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">9811934727</span>
+                        <span class="se-value" id="phone">9811934727</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -171,7 +171,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">9867274283</span>
+                        <span class="se-value" id="phone1">9867274283</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -186,7 +186,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value"></span>
+                        <span class="se-value" id="address2"></span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -196,7 +196,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">llg</span>
+                        <span class="se-value" id="llg">llg</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -206,7 +206,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Bagmati</span>
+                        <span class="se-value" id="province">Bagmati</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -216,7 +216,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">Nepal</span>
+                        <span class="se-value" id="country">Nepal</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -226,7 +226,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-7">
-                        <span class="se-value">shivapandey2022@gmai.com</span>
+                        <span class="se-value" id="email"></span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -243,7 +243,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-5">
-                        <span class="se-value">12345</span>
+                        <span class="se-value" id="emp-number">12345</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -253,7 +253,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-5">
-                        <span class="se-value">79</span>
+                        <span class="se-value" id="retirement-age">79</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -263,7 +263,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-5">
-                        <span class="se-value">Kathmandu</span>
+                        <span class="se-value" id="branch-agency">Kathmandu</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -273,7 +273,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-5">
-                        <span class="se-value">Full Time</span>
+                        <span class="se-value" id="emp_type">Full Time</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -288,7 +288,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-5">
-                        <span class="se-value">2.2</span>
+                        <span class="se-value" id="salary-step">2.2</span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -298,7 +298,7 @@
                       </div>
                       <div class="col-sm-1">:</div>
                       <div class="col-sm-5">
-                        <span class="se-value">2016-01-01</span>
+                        <span class="se-value" id="date-of-commencement">2016-01-01</span>
                       </div>
                     </div><!--se-single-data-->
 

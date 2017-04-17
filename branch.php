@@ -7,7 +7,7 @@
   <div class ="form-input">
     <div class="card">
         <div class="card-content">
-            <h4 class="card-title">Add Branch</h4>
+            <h4 class="card-title">Add Division</h4>
             <form method="get" action="#" class="form-horizontal">
                 <div class="card-content">
                     <div class="row">
@@ -23,7 +23,7 @@
                       <label class="col-sm-2 label-on-left">Type of Health Facility</label>
                         <div class="col-sm-6">
                             <div class="form-group label-floating is-empty">
-                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="facility"  title="Choose Health Facility">                                
+                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="facility"  title="Choose Health Facility">
                               </select>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
   </div><!-- from-input -->
   <div class="card">
       <div class="card-header card-header-text" data-background-color="rose">
-          <h4 class="card-title"><span class="fa fa-home"> </span> Branches</h4>
+          <h4 class="card-title"><span class="fa fa-home"> </span> Divisions</h4>
       </div>
       <div class="card-content">
           <div class="material-datatables">
