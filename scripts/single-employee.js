@@ -23,6 +23,70 @@ $(function() {
     (value == 1)?pullMenu(".qualification-input", "#add-qualification", "Qualification"):slideMenu(".qualification-input", "#add-qualification");
   });//add-qualification
 
+	$("#add-emp-extra").click(function() {
+    $(".form-horizontal")[0].reset();
+    var value = $(this).attr("value");
+    (value == 1)?pullMenu(".emp-extra-input", "#add-emp-extra", "Employee Extras"):slideMenu(".emp-extra-input", "#add-emp-extra");
+  });//add-qualification
+
+
+
+	$("#add-emp-extra").click(function() {
+		var father_name = $("#father-name").val();
+		var mother_name = $("#mother-name").val();
+		var children = $("#children").val();
+		var maritial_status = $("#maritial-status").val();
+		var wife_name = $("#wife_name").val();
+		var address = $("#emp-address").val();
+		var contact = $("#emp-contact-number").val();
+		var ref_name = $("#emp-ref-name").val();
+
+		var my_json = {
+			"emp_father_name": father_name,
+			"emp_mother_name": mother_name,
+			"emp_num_of_children": children,
+			"emp_single": maritial_status,
+			"emp_wife_name": wife_name,
+			"ref_address": address,
+			"ref_contact_number": contact,
+			"ref_name": ref_name
+		 }
+
+		 $.each(my_json, function(key, value) {
+       if(value == '' || value == null || value == undefined) {
+         delete my_json[key];
+       }
+     })
+
+		$.ajax({
+        url: basepath + "employees/"+action_id+"/empextras",
+        type: "POST",
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+          $(".loader").show();
+          $("#add").hide();
+					xhr.setRequestHeader('Token', TOKEN);
+        },
+        data: JSON.stringify(my_json),
+        success: function(data) {
+          $(".loader").hide();
+          $("#add").show();
+          if(data.status == 'success') {
+            showSuccess("Emp Extras Added Successfully!");
+            pullMenu(".emp-extras-input", "#add-emp-extras");
+						// get_trainings();
+          } else {
+            showError(data.message);
+          }
+        },
+        error: function(error) {
+          $(".loader").hide();
+          $("#add").show();
+          showError("Error in Server! Try again!")
+        },
+    });// Ajax
+	})// Emp extras
 
 	$("#save-training").click(function() {
 		var name = $("#name").val();
