@@ -9,23 +9,23 @@ $(".logout").click(function() {
   window.location.href="index.html";
 })
 
-function toggle_top_menu() {
-  $(".form-input").slideToggle("slow");
+function toggle_top_menu(className = '.form-input') {
+  $(className).slideToggle("slow");
   $('.sp-add-btn').html($('.sp-add-btn').text() == 'Add' ? 'Close' : 'Add');
 }
 
 // Slides the top menu down
-function slideMenu(){
-  $(".form-input").slideDown();
-  $('.sp-add-btn').html('Close');
-  $('.sp-add-btn').attr("value", 1);
+function slideMenu(className = '.form-input', btnName = '.sp-add-btn'){
+  $(className).slideDown();
+  $(btnName).html('Close');
+  $(btnName).attr("value", 1);
 }
 
 //Pulls the top menu up
-function pullMenu() {
-  $(".form-input").slideUp("slow");
-  $('.sp-add-btn').html('Add');
-  $('.sp-add-btn').attr("value", 0);
+function pullMenu(className = '.form-input', btnName = '.sp-add-btn', name = '') {
+  $(className).slideUp("slow");
+  $(btnName).html('Add '+ name);
+  $(btnName).attr("value", 0);
   $("#add").attr("status", 0);
 }
 
@@ -94,5 +94,5 @@ $(document).ready(function() {
     $(".form-horizontal")[0].reset();
     var value = $(this).attr("value");
     (value == 1)?pullMenu():slideMenu();
-  });//sp-add-btn  
+  });//sp-add-btn
 })//Document

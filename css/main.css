@@ -13,7 +13,7 @@
       background-color: #355089;
       box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(42, 91, 193, 0.4);
 }
-th {
+#datatables th {
     background: #355089;
     color: white;
     padding-top: 9px !important;
@@ -22,6 +22,13 @@ th {
 table.dataTable > thead > tr > th, table.dataTable > tbody > tr > th, table.dataTable > tfoot > tr > th, table.dataTable > thead > tr > td, table.dataTable > tbody > tr > td, table.dataTable > tfoot > tr > td {
     padding-right: 16px !important;
     padding-left: 16px !important;
+}
+td {
+    font-size: 16px;
+    font-weight: 400;
+}
+label.col-sm-2.label-on-left {
+    text-align: left !important;
 }
 body#login {
   background: url('../img/login.jpeg') center center;
@@ -235,6 +242,9 @@ nav.navbar.navbar-transparent.navbar-absolute {
 /* ========================================= */
 /*           Single Employee                 */
 /* ========================================= */
+.se-single-data.row:nth-child(odd) {
+    background: #dcecf9;
+}
 
 div#prfl-intro {
     text-align: center;
@@ -270,19 +280,29 @@ div#tabs {
       margin-bottom: 50px;
 }
 span.se-label {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 17px;
 }
 span.se-value {
     font-size: 17px;
+    float: right;
+    letter-spacing: 1px;
 }
 .se-single-data {
-    padding-bottom: 15px;
+  margin-left: 15px;
+margin-right: 15px;
+padding-top: 8px;
+padding-bottom: 8px;
 }
 .container {
     max-width: 100%;
 }
-
+/* ========================================= */
+/*           Training & Certification        */
+/* ========================================= */
+.training-input, .certification-input, .qualification-input {
+  display: none;
+}
 /* ========================================= */
 /*           All Employee                 */
 /* ========================================= */

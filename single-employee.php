@@ -18,38 +18,17 @@
           <i class="material-icons">assignment</i>
       </div>
       <div class="card-content">
-          <h4 class="card-title">Employee Details</h4>
-          <div class="row">
-            <div id="prfl-intro">
-              <img src="img/user.jpg" class="img-circle" id="prfl-img">
-              <h3 id="prfl-name">Shiva Pandey</h3>
-            </div><!-- prfl-intro -->
-          </div><!-- row -->
-          <div id="tabs">
-            <ul class="nav">
-              <li class="nav-item active">
-                <a class="nav-link" data-toggle="tab" href="#personal">Personal Details</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#contact">Contact Details</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#employment">Employment Details</a>
-              </li>
-            </ul>
-          </div><!-- row -->
+          <h4 class="card-title">Personal Details</h4>
           <div class="tab-content">
               <div class="tab-pane active" id="personal">
                 <div class="row">
-                  <div class="col-md-5 col-md-offset-2">
-
                     <div class="se-single-data row">
                       <div class="col-sm-4">
                         <span class="se-label">First Name</span>
                       </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="first-name">Shiva</span>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="first-name"></span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -57,9 +36,9 @@
                       <div class="col-sm-4">
                         <span class="se-label">Last Name</span>
                       </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="last-name">Pandey</span>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="last-name"></span>
                       </div>
                     </div><!--se-single-data-->
 
@@ -67,258 +46,642 @@
                       <div class="col-sm-4">
                         <span class="se-label">Sex</span>
                       </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="sex">Male</span>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="sex"></span>
                       </div>
                     </div><!--se-single-data-->
 
-                  </div><!-- col-md-6 -->
-
-                  <div class="col-md-5 ">
-                    <!-- Data on right side -->
-
                     <div class="se-single-data row">
-                      <div class="col-sm-5">
+                      <div class="col-sm-4">
                         <span class="se-label">Middle Name</span>
                       </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-6">
+
+                      <div class="col-sm-8">
                         <span class="se-value" id="middle-name"></span>
                       </div>
                     </div><!--se-single-data-->
 
                     <div class="se-single-data row">
-                      <div class="col-sm-5">
+                      <div class="col-sm-4">
                         <span class="se-label">Age</span>
                       </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-6">
-                        <span class="se-value" id="age">23</span>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="age"></span>
                       </div>
                     </div><!--se-single-data-->
 
                     <div class="se-single-data row">
-                      <div class="col-sm-5">
+                      <div class="col-sm-4">
                         <span class="se-label">Date of Birth</span>
                       </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-6">
-                        <span class="se-value" id="dob">1993-12-19</span>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="dob"></span>
                       </div>
                     </div><!--se-single-data-->
-
-                  </div><!-- col-md-6-->
                 </div><!-- row -->
               </div><!-- personal -->
-              <div class="tab-pane" id="contact">
-                <div class="row">
-                  <div class="col-md-5 col-md-offset-1">
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Address 1</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="address1">Old baneshwor</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Village</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="villlage">Ambika Marg</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">District</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="district">Kathmandu</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Region</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="region">Central</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Phone No</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="phone">9811934727</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Alternate Phone No</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="phone1">9867274283</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                  </div><!-- col-md-6 -->
-
-                  <div class="col-md-6">
-                    <!-- Data on right side -->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Address 2</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="address2"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">LLG</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="llg">llg</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Province</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="province">Bagmati</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Country</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="country">Nepal</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Email</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-7">
-                        <span class="se-value" id="email"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                  </div><!-- col-md-6-->
-                </div><!-- row -->
-              </div><!-- contact -->
-              <div class="tab-pane" id="employment">
-                <div class="row">
-                  <div class="col-md-6 col-md-offset-1">
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-6">
-                        <span class="se-label">Employee Number</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-5">
-                        <span class="se-value" id="emp-number">12345</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-6">
-                        <span class="se-label">Retirement Age</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-5">
-                        <span class="se-value" id="retirement-age">79</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-6">
-                        <span class="se-label">Branch/Agency</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-5">
-                        <span class="se-value" id="branch-agency">Kathmandu</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-6">
-                        <span class="se-label">Employee Type</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-5">
-                        <span class="se-value" id="emp_type">Full Time</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                  </div><!-- col-md-6 -->
-
-                  <div class="col-md-5 ">
-                    <!-- Data on right side -->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-6">
-                        <span class="se-label">Salary Step</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-5">
-                        <span class="se-value" id="salary-step">2.2</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-6">
-                        <span class="se-label">Date of Commencement</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-5">
-                        <span class="se-value" id="date-of-commencement">2016-01-01</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-6">
-                        <span class="se-label">Employee Category</span>
-                      </div>
-                      <div class="col-sm-1">:</div>
-                      <div class="col-sm-5">
-                        <span class="se-value">Doctor</span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                  </div><!-- col-md-6-->
-                </div><!-- row -->
-              </div><!-- employmnet -->
           </div><!--tab-content-->
       </div><!-- card-content -->
-
     </div><!-- card -->
+
+    <div class="card">
+      <div class="card-header card-header-icon" data-background-color="purple">
+          <i class="material-icons">assignment</i>
+      </div>
+        <div class="card-content">
+            <h4 class="card-title">Contact Details</h4>
+            <form class="form-horizontal">
+              <div class="row">
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Address 1</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="address1"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Village</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="villlage"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">District</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="district"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Region</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="region"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Phone No</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="phone"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Alternate Phone No</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="phone1"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Address 2</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="address2"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">LLG</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="llg"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Province</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="province"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Country</span>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <span class="se-value" id="country"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-4">
+                      <span class="se-label">Email</span>
+                    </div>
+                    <div class="col-sm-8">
+                      <span class="se-value" id="email"></span>
+                    </div>
+                  </div><!--se-single-data-->
+              </div><!-- row -->
+            </form>
+        </div>
+    </div><!-- card-->
+
+    <div class="card">
+      <div class="card-header card-header-icon" data-background-color="purple">
+          <i class="material-icons">assignment</i>
+      </div>
+        <div class="card-content">
+            <h4 class="card-title">Employment Details</h4>
+            <form class="form-horizontal">
+              <div class="row">
+                  <div class="se-single-data row">
+                    <div class="col-sm-6">
+                      <span class="se-label">Employee Number</span>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <span class="se-value" id="emp-number"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-6">
+                      <span class="se-label">Retirement Age</span>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <span class="se-value" id="retirement-age"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-6">
+                      <span class="se-label">Branch/Agency</span>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <span class="se-value" id="branch-agency"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-6">
+                      <span class="se-label">Employee Type</span>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <span class="se-value" id="emp_type"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-6">
+                      <span class="se-label">Salary Step</span>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <span class="se-value" id="salary-step"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-6">
+                      <span class="se-label">Date of Commencement</span>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <span class="se-value" id="date-of-commencement"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+                  <div class="se-single-data row">
+                    <div class="col-sm-6">
+                      <span class="se-label">Employee Category</span>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <span class="se-value"></span>
+                    </div>
+                  </div><!--se-single-data-->
+
+              </div><!-- row -->
+            </form>
+        </div>
+    </div><!-- card-->
+
+
+    <div class ="training-input">
+      <div class="card">
+          <div class="card-content">
+              <h4 class="card-title">Add Training</h4>
+              <form method="get" action="#" class="form-horizontal">
+                  <div class="card-content">
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Name</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="name" class="form-control" placeholder = "Name" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Organizer Name</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="organizer-name" class="form-control" placeholder = "Organizer Name" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Funding Source</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="funding-source" class="form-control" placeholder = "Funding Source" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Duration</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="duration" class="form-control" placeholder = "Duration" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Institute</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="institute" class="form-control" placeholder = "Institute" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">City</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="training-city" class="form-control" placeholder = "City" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">State</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="training-state" class="form-control" placeholder = "State" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Province</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="training-province" class="form-control" placeholder = "Province" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Country</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="training-country" class="form-control" />
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Start Date</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="start-date" class="form-control datepicker" />
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">End Date</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="end-date" class="form-control datepicker" />
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <div class="col-md-12" style = "text-align:center;margin-top:30px">
+                              <div class="form-group form-button">
+                                <span class="loader"><img src="img/loader.gif"></span><button type="button" id="save-training" class="btn btn-fill btn-success sp-save-btn">Save</button>
+                                <button type="reset" class="btn btn-fill btn-danger"><i class="material-icons">delete_forever</i> Clear</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div><!-- card-content -->
+              </form>
+          </div>
+      </div><!-- card-->
+    </div><!-- training-input -->
+
+    <div class="card" id="trainings">
+      <div class="card-header card-header-icon" data-background-color="purple">
+          <i class="material-icons">assignment</i>
+      </div>
+      <div class="card-header card-header-icon" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
+          <a href="#" id="add-training">Add Training</a>
+      </div>
+
+        <div class="card-content">
+            <h4 class="card-title">Trainings</h4>
+            <table id="1training-datatables" class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Organizer</th>
+                  <th>Duration</th>
+                  <th>Institute</th>
+                  <th>Start Date</th>
+                  <th>Country</th>
+                  <th class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="training-body">
+              </tbody>
+            </table>
+        </div>
+    </div><!-- card-->
+
+    <div class ="certification-input">
+      <div class="card">
+          <div class="card-content">
+              <h4 class="card-title">Add Certification</h4>
+              <form method="get" action="#" class="form-horizontal">
+                  <div class="card-content">
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Registration Type</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="registration-type" class="form-control" placeholder = "Registration Type" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Regulatory Body</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="regulatory-body" class="form-control" placeholder = "Regulatory Body" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Registration Number</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="registration-number" class="form-control" placeholder = "Registration Number" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Expiry Date</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="expiry-date" class="form-control datepicker" placeholder="Expiry Date"/>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Last Renewal Date</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="last-renewal-date" class="form-control datepicker" placeholder="Last Renewal Date" />
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <div class="col-md-12" style = "text-align:center;margin-top:30px">
+                              <div class="form-group form-button">
+                                <span class="loader"><img src="img/loader.gif"></span><button type="button" id="save-certification" class="btn btn-fill btn-success sp-save-btn">Save</button>
+                                <button type="reset" class="btn btn-fill btn-danger"><i class="material-icons">delete_forever</i> Clear</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div><!-- card-content -->
+              </form>
+          </div>
+      </div><!-- card-->
+    </div><!-- certification-input -->
+
+    <div class="card" id="certifications">
+      <div class="card-header card-header-icon" data-background-color="purple">
+          <i class="material-icons">assignment</i>
+      </div>
+      <div class="card-header card-header-icon" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
+          <a href="#" id="add-certification">Add Certification</a>
+      </div>
+
+        <div class="card-content">
+            <h4 class="card-title">Certifications</h4>
+            <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+              <thead>
+                <tr>
+                  <th>Registration No.</th>
+                  <th>Registration Type</th>
+                  <th>Regulatory Body</th>
+                  <th>Last Renewal Date</th>
+                  <th>Expiry Date</th>
+                  <th class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="certification-body">
+
+              </tbody>
+            </table>
+        </div>
+    </div><!-- card-->
+
+    <div class ="qualification-input">
+      <div class="card">
+          <div class="card-content">
+              <h4 class="card-title">Add Qualification</h4>
+              <form method="get" action="#" class="form-horizontal">
+                  <div class="card-content">
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Qualification Name</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="qualification-name" class="form-control" placeholder = "Qualification Name" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Institute Name</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="institute-name" class="form-control" placeholder = "Institute Name" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Start Date</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="qualification-start-date" class="form-control datepicker" placeholder="Start Date"/>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">End Date</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="qualification-end-date" class="form-control datepicker" placeholder="End Date" />
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Province</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="qualification-province" class="form-control" placeholder = "Province" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">City</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="qualification-city" class="form-control" placeholder = "City" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">State</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="qualification-state" class="form-control" placeholder = "State" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Country</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="qualification-country" class="form-control" placeholder = "Country" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <div class="col-md-12" style = "text-align:center;margin-top:30px">
+                              <div class="form-group form-button">
+                                <span class="loader"><img src="img/loader.gif"></span><button type="button" id="save-qualification" class="btn btn-fill btn-success sp-save-btn">Save</button>
+                                <button type="reset" class="btn btn-fill btn-danger"><i class="material-icons">delete_forever</i> Clear</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div><!-- card-content -->
+              </form>
+          </div>
+      </div><!-- card-->
+    </div><!-- qualification-input -->
+
+    <div class="card" id="qualifications">
+      <div class="card-header card-header-icon" data-background-color="purple">
+          <i class="material-icons">assignment</i>
+      </div>
+      <div class="card-header card-header-icon" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
+          <a href="#" id="add-qualification">Add Qualification</a>
+      </div>
+
+        <div class="card-content">
+            <h4 class="card-title">Qualifications</h4>
+            <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Institute Name</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Province</th>
+                  <th>City</th>
+                  <th>State</th>
+                  <th>Country</th>
+                  <th class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="qualification-body">
+
+              </tbody>
+            </table>
+        </div>
+    </div><!-- card-->
+
   </div><!-- form-section -->
 </div><!-- content -->
 
@@ -326,4 +689,7 @@
 <script src = 'scripts/single-employee.js'></script>
 <script>
   active('employee')
+  $(function() {
+    demo.initFormExtendedDatetimepickers();
+  })
 </script>
