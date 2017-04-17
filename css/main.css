@@ -1,3 +1,7 @@
+.perfect-scrollbar-on .sidebar .sidebar-wrapper, .sidebar .sidebar-wrapper, .perfect-scrollbar-on
+.main-panel, .main-panel {
+  overflow-y: auto;
+}
 .navbar-absolute {
       padding-top: 35px;
 }

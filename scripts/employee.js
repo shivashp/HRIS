@@ -25,10 +25,11 @@ get_agency_employee();
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {
+        success: function(data) {          
           var data1 = [];
           if(data.status === 'success') {
             for (var i = 0; i < data.data.length; i++) {
+                var id = data.data[i].id;
                 var first_name = data.data[i].first_name;
                 var last_name = data.data[i].last_name;
                 var middle_name = data.data[i].middle_name;
@@ -40,6 +41,7 @@ get_agency_employee();
 
                 middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
                 var json = {
+                  id: id,
                   name: first_name + middle_name + last_name,
                   address1: address1,
                   employee_number: employee_number,
@@ -62,11 +64,11 @@ get_agency_employee();
   }// get agency employees
 
 
-  function generate_box(data) {
+  function generate_box(data) {        
     var str="";
     str += "<div class=\"col-lg-4 col-md-6 col-sm-6 col-xs-12\">";
     str += "        <div class=\"single-box\">";
-    str += "          <a href=\"single-employee.php\">";
+    str += "          <a href=\"single-employee.php?action="+data.id+"\">";
     str += "            <div class=\"col-sm-4\">";
     str += "                <div class=\"text-center\">";
     str += "                    <img alt=\"image\" class=\"img-circle emp-image img-responsive\" src=\"img\/user.jpg\">";

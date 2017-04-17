@@ -1,4 +1,15 @@
-<?php include('header.php'); ?>
+<?php include('header.php'); 
+  if(!isset($_GET['action'])){
+    echo '<script>
+            window.location.href="employee.php"
+          </script>';
+  }
+?>
+
+<script>
+  var action_id = "<?php echo $_GET['action']; ?>" || false;
+  console.log(action_id);
+</script>
 
 <div class="content">
   <div class="form-section">
@@ -312,6 +323,7 @@
 </div><!-- content -->
 
 <?php include('footer.php'); ?>
+<script src = 'scripts/single-employee.js'></script>
 <script>
   active('employee')
 </script>
