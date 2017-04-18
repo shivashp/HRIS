@@ -1,9 +1,39 @@
 $(function() {
+	var COUNTRY_LIST = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
+  		,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands"
+  		,"Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica"
+  		,"Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea"
+  		,"Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana"
+  		,"Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India"
+  		,"Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia"
+  		,"Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania"
+  		,"Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia"
+  		,"New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal"
+  		,"Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles"
+  		,"Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan"
+  		,"Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia"
+  		,"Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","United States Minor Outlying Islands","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)"
+  		,"Yemen","Zambia","Zimbabwe"];
+
+
 	get_user_details();
 	get_trainings();
 	get_certifications();
 	get_qualifications();
+	get_country();
 
+
+	function get_country() {
+		var country_obj = COUNTRY_LIST.map((country) => {
+			var str = `<option value ="${country}">${country}</option>`;
+			return str;
+		})
+		country_obj = country_obj.join('');
+		$(".country").html(country_obj);
+		$('.country').selectpicker({
+      size: 7
+    });
+	}
 
 	$("#add-training").click(function() {
     $(".form-horizontal")[0].reset();
@@ -232,8 +262,6 @@ $(function() {
 		var state = $("#qualification-state").val();
 		var country = $("#qualification-country").val();
 
-		console.log(name, institute_name, start_date, end_date, province, state, city, country);
-
 
 		if(start_date.trim() !== ''){
       start_date = new Date(start_date);
@@ -277,7 +305,7 @@ $(function() {
           $("#add").show();
           if(data.status == 'success') {
             showSuccess("Qualification Added Successfully!");
-            pullMenu(".qualification-input", "#add-qualification");
+            pullMenu(".qualification-input", "#add-qualification", "Qualification");
 						get_qualifications();
           } else {
             showError(data.message);
@@ -322,7 +350,7 @@ $(function() {
 							str += "                  <td>"+city+"<\/td>";
 							str += "                  <td>"+state+"<\/td>";
 							str += "                  <td>"+country+"<\/td>";
-							str += "                  <td class=\"text-center\"><a href=\"#\" class=\"btn btn-success btn-sm\">View<\/a><\/td>";
+							// str += "                  <td class=\"text-center\"><a href=\"#\" class=\"btn btn-success btn-sm\">View<\/a><\/td>";
 							str += "                <\/tr>";
 						}
           }
@@ -404,7 +432,7 @@ $(function() {
 							str += "                  <td>Freakoids<\/td>";
 							str += "                  <td>2016-12-12<\/td>";
 							str += "                  <td>2016-14-13<\/td>";
-							str += "                  <td class=\"text-center\"><a href=\"#\" class=\"btn btn-success btn-sm\">View<\/a><\/td>";
+							// str += "                  <td class=\"text-center\"><a href=\"#\" class=\"btn btn-success btn-sm\">View<\/a><\/td>";
 							str += "                <\/tr>";
 
 						}
@@ -428,28 +456,35 @@ $(function() {
           xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-        console.log(data);
+					console.log(data);
           if(data) {
             var id = data.id;
-            var first_name = data.first_name;
-            var last_name = data.last_name;
-            var middle_name = data.middle_name;
-						var age = data.age;
-						var sex = data.sex;
-						var dob = data.date_of_birth;
-            var address1 = data.address_one;
-						var address2 = data.address_two;
-						var village = data.village;
-						var district = data.district;
-						var region = data.region;
-            var email = data.email_address;
-            var contact_number =data.contact_number;
-						var phone1 = data.alt_phone_number;
-            var country = data.country;
-            var employee_number = data.employement_number;
-						var retirement_age = data.retirement_age;
+            var first_name = data.first_name || "N/A";
+            var last_name = data.last_name || "N/A";
+            var middle_name = data.middle_name || "N/A";
+						var age = data.age || "N/A";
+						var sex = data.sex || "N/A";
+						var dob = data.date_of_birth || "N/A";
+            var address1 = data.address_one || "N/A";
+						var address2 = data.address_two || "N/A";
+						var llg = data.llg || "N/A";
+						var province = data.province || "N/A";
+						var village = data.village || "N/A";
+						var district = data.district || "N/A";
+						var region = data.region || "N/A";
+            var email = data.email_address || "N/A";
+            var contact_number =data.contact_number || "N/A";
+						var phone1 = data.alt_phone_number || "N/A";
+            var country = data.country || "N/A";
+            var employee_number = data.employement_number || "N/A";
+						var retirement_age = data.retirement_age || "N/A";
+						var salary_step = data.salary_step || "N/A";
+						var date_of_commencement = data.date_of_commencement || "N/A";
+						var emp_category = "N/A";
 						var branch_agency = "N/A";
 						var emp_type = "N/A";
+
+						console.log(village);
 
 						middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
 
@@ -473,12 +508,17 @@ $(function() {
 						$("#province").html(province);
 						$("#country").html(country);
 						$("#email").html(email);
+						$("#village").html(village);
 
 						$("#emp-number").html(employee_number);
 						$("#retirement-age").html(retirement_age);
 						$("#branch-agency").html(branch_agency);
-						$("#emp-type").html(emp_type);
-						// $("#salary-step").html(salary_step);
+						$("#emp_type").html(emp_type);
+						$("#salary-step").html(salary_step);
+						$("#date-of-commencement").html(date_of_commencement);
+						$("#emp-category").html(emp_category);
+
+
 
           }
         },

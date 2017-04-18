@@ -3,6 +3,12 @@
   primary-color: #355089
 
 */
+html .per1, html .per2 {
+  display: none;
+}
+html.per1 .per1, html.per2 .per2 {
+  display: inherit;
+}
 .main-panel, .main-panel {
   overflow-y: auto;
 }
@@ -300,7 +306,7 @@ padding-bottom: 8px;
 /* ========================================= */
 /*           Training & Certification        */
 /* ========================================= */
-.training-input, .certification-input, .qualification-input, .emp-extra-input {
+.training-input, .certification-input, .qualification-input, .emp-extra-input, .username-input, .password-input{
   display: none;
 }
 /* ========================================= */

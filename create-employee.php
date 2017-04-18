@@ -312,10 +312,9 @@
                                       </div>
                                   </div><!-- input-group-->
                                 </div><!-- col-md-6 -->
-
-
                               </div><!--row -->
                           </div><!-- employment-details -->
+
                           <div class="tab-pane" id="finish-screen">
                             <div class="row">
                               <div class="col-lg-10 col-lg-offset-1" style="text-align: center;">

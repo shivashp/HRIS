@@ -1,23 +1,23 @@
-var FACILITY_JSON;
+var ROLE_JSON;
 
 $(function() {
 
-get_facility();
+get_role();
 
-  function get_facility() {
+  function get_role() {
     $.ajax({
-        url: basepath + "facilities",
+        url: basepath + "roles",
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
 					xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {          
+        success: function(data) {
           if(data.status == 'success') {
-            FACILITY_JSON = data.data;
+            ROLE_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
-              var name = data.data[i].name;
+              var name = data.data[i].role_type;
               str += "<tr>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"text-right\">";
@@ -35,16 +35,16 @@ get_facility();
           showError("Error in Server! Try again!")
         },
     });// Ajax
-  };// Get Facility
+  };// Get Role
 
 
-  function add_facility(){
-    var name = $("#facility-name").val();
-    if(!name.isBlank("Name")){
+  function add_role(){
+    var name = $("#role-name").val();
+    if(!name.isBlank("Role")){
       return false;
     }
     $.ajax({
-        url: basepath + "facilities",
+        url: basepath + "roles",
         type: "POST",
         contentType: 'application/json',
         dataType: 'json',
@@ -54,16 +54,25 @@ get_facility();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "name": name
+          "role_type": name,
+          'permission_two': false,
+          "permission_four": false,
+          "permission_three": false,
+          "permission_six": false,
+          "permission_nine": false,
+          "permission_ten": false,
+          "permission_five": false,
+          "permission_one": false,
+          "permission_seven": false,
+          "permission_eight": false
         }),
         success: function(data) {
           $(".loader").hide();
           $("#add").show();
-          console.log(data);
           if(data.status == 'success') {
-            showSuccess("Facility Added Successfully!");
+            showSuccess("Role Added Successfully!");
             pullMenu();
-            get_facility();
+            get_role();
           } else {
             showError(data.message);
           }
@@ -74,23 +83,23 @@ get_facility();
           showError("Error in Server! Try again!")
         },
     });// Ajax
-  }// Add Facility
+  }// Add Role
 
-  function edit_facility(i) {
-    var name = FACILITY_JSON[i].name;
-    var id = FACILITY_JSON[i].id;
-    $("#facility-name").val(name);
+  function edit_role(i) {
+    var name = ROLE_JSON[i].role_type;
+    var id = ROLE_JSON[i].id;
+    $("#role-name").val(name);
     $("#add").attr({"status": 1, "data-id": id});
   }
 
-  function update_facility(){
-    var name = $("#facility-name").val();
+  function update_role(){
+    var name = $("#role-name").val();
     var id = $("#add").attr("data-id");
-    if(!name.isBlank("Name")){
+    if(!name.isBlank("Role")){
       return false;
     }
     $.ajax({
-        url: basepath + "facilities/"+id,
+        url: basepath + "roles/"+id,
         type: "PUT",
         contentType: 'application/json',
         dataType: 'json',
@@ -100,7 +109,17 @@ get_facility();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "name": name
+          "role_type": name,
+          'permission_two': false,
+          "permission_four": false,
+          "permission_three": false,
+          "permission_six": false,
+          "permission_nine": false,
+          "permission_ten": false,
+          "permission_five": false,
+          "permission_one": false,
+          "permission_seven": false,
+          "permission_eight": false
         }),
         success: function(data) {
           $(".loader").hide();
@@ -108,9 +127,9 @@ get_facility();
           console.log(data);
           if(data.status == 'success') {
             $("#add").attr("status", 0)
-            showSuccess("Facility Updated Successfully!");
+            showSuccess("Role Updated Successfully!");
             pullMenu();
-            get_facility();
+            get_role();
           } else {
             showError(data.message);
           }
@@ -125,16 +144,15 @@ get_facility();
 
   $("#add").click(function() {
     var status = $(this).attr("status");
-    console.log(status);
     if(status === "1") {
-      update_facility();
+      update_role();
     } else {
-      add_facility();
+      add_role();
     }
   })
   $(document).delegate(".edit", "click", function() {
     var i = $(this).attr("data-id");
-    edit_facility(i);
+    edit_role(i);
     slideMenu();
   })
 })// Document

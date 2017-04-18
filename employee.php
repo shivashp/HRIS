@@ -13,7 +13,7 @@
                       <tr>
                         <th>Emp No.</th>
                         <th>Name</th>
-                        <th>Address</th>                        
+                        <th>Address</th>
                         <th>Contact</th>
                         <th>Country</th>
                         <th class="disabled-sorting text-right">Actions</th>

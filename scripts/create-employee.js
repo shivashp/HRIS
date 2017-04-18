@@ -262,6 +262,7 @@ get_category();
     var employee_category = $("#employee-category").val();
     var employee_type = $("#employee-type").val();
     var end_date = $("#contract-end-date").val() || '';
+    var is_branch = $("#branch-agency").val() == 'branch'?true:false;
 
     dob = new Date(dob);
     start_date = new Date(start_date);
@@ -297,12 +298,13 @@ get_category();
       "employee_branch_id" : branch_agency_id,
       "employee_category_id" : employee_category,
       "employee_type_id" : employee_type,
-      "contract_end_date": end_date
+      "contract_end_date": end_date,
+      "is_branch":is_branch
     }
 
     // Traverse each data and remove any blank, null and undefined value rows
     $.each(my_json, function(key, value) {
-      if(value == '' || value == null || value == undefined) {
+      if(value === '' || value === null || value === undefined) {
         delete my_json[key];
       }
     })

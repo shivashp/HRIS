@@ -8,7 +8,6 @@
 
 <script>
   var action_id = "<?php echo $_GET['action']; ?>" || false;
-  console.log(action_id);
 </script>
 
 <div class="content">
@@ -111,7 +110,7 @@
                     </div>
 
                     <div class="col-sm-8">
-                      <span class="se-value" id="villlage"></span>
+                      <span class="se-value" id="village"></span>
                     </div>
                   </div><!--se-single-data-->
 
@@ -282,7 +281,7 @@
                     </div>
 
                     <div class="col-sm-6">
-                      <span class="se-value"></span>
+                      <span class="se-value" id="emp-category"></span>
                     </div>
                   </div><!--se-single-data-->
 
@@ -383,7 +382,8 @@
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
                                   <label class="control-label"></label>
-                                  <input name="dob" type="text" id="training-country" class="form-control" />
+                                  <select class="selectpicker1 country" data-style="btn select-with-transition sp-select" id="training-country"  title="Choose Country">
+                                  </select>
                               </div>
                           </div>
                       </div><!--row-->
@@ -432,7 +432,7 @@
 
         <div class="card-content">
             <h4 class="card-title">Trainings</h4>
-            <table id="1training-datatables" class="table">
+            <table id="datatables" class="table">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -539,7 +539,7 @@
                   <th>Regulatory Body</th>
                   <th>Last Renewal Date</th>
                   <th>Expiry Date</th>
-                  <th class="text-center">Actions</th>
+                  <!-- <th class="text-center">Actions</th> -->
                 </tr>
               </thead>
               <tbody id="certification-body">
@@ -631,7 +631,8 @@
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
                                   <label class="control-label"></label>
-                                  <input type="text" id="qualification-country" class="form-control" placeholder = "Country" value>
+                                  <select class="selectpicker1 country" data-style="btn select-with-transition sp-select" id="qualification-country"  title="Choose Country">
+                                  </select>
                               </div>
                           </div>
                       </div><!--row-->
@@ -671,7 +672,7 @@
                   <th>City</th>
                   <th>State</th>
                   <th>Country</th>
-                  <th class="text-center">Actions</th>
+                  <!-- <th class="text-center">Actions</th> -->
                 </tr>
               </thead>
               <tbody id="qualification-body">
@@ -722,7 +723,7 @@
                           <label class="col-sm-2 label-on-left">Maritial Status</label>
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
-                                  <label class="control-label"></label>                                  
+                                  <label class="control-label"></label>
                                   <select class="selectpicker" data-style="btn select-with-transition sp-select" id="maritial-status"  title="Choose Maritial Status">
                                     <option value="true">Single</option>
                                     <option value="false">Married</option>
@@ -785,7 +786,7 @@
       </div><!-- card-->
     </div><!-- emp-extra-input -->
 
-    <div class="card" id="emp-extra">
+    <!-- <div class="card" id="emp-extra">
       <div class="card-header card-header-icon" data-background-color="purple">
           <i class="material-icons">assignment</i>
       </div>
@@ -811,7 +812,7 @@
               </tbody>
             </table>
         </div>
-    </div><!-- card-->
+    </div><!- card-> -->
 
   </div><!-- form-section -->
 </div><!-- content -->

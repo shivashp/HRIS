@@ -200,7 +200,7 @@ demo = {
       		    },
               age: {
                 required: true,
-                min: 18,                
+                min: 18,
               },
               dob: {
                 required: true
@@ -230,6 +230,9 @@ demo = {
               startdate: {
                 required: true
               },
+              retirement_age: {
+                required: true
+              }
 
               },
 
