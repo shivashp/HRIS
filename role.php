@@ -1,9 +1,6 @@
 <?php include('header.php'); ?>
 
 <div class="content">
-  <div class="row">
-    <a class="btn btn-success pull-right sp-add-btn">Add</a>
-  </div><!-- row-->
   <div class ="form-input">
     <div class="card">
         <div class="card-content">

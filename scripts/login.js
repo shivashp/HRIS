@@ -21,7 +21,8 @@ String.prototype.isBlank = function (type = 'Field') {
 };
 
 $(function() {
-  $("#login-btn").click(function() {
+  $("#login-btn").click(function(e) {
+    e.preventDefault();
     var username = $("#username").val();
     var password = $("#password").val();
     if(username.isBlank("Username")) {

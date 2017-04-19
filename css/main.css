@@ -9,12 +9,26 @@ html .per1, html .per2 {
 html.per1 .per1, html.per2 .per2 {
   display: inherit;
 }
-.main-panel, .main-panel {
-  overflow-y: auto;
+.table > thead > tr > th {
+  font-size: 17px;
 }
-.navbar-absolute {
-      padding-top: 35px;
+/* =============================================
+                  Navbar
+/* ============================================= */
+.navbar.navbar-blue {
+    background: #355089;
+    color: white;
+    padding-top: 10px;
+    border-radius: 0;
 }
+.main-header-section {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 13px;
+}
+
 .wizard-card[data-color="rose"] .moving-tab {
       background-color: #355089;
       box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(42, 91, 193, 0.4);
@@ -59,17 +73,8 @@ div#overlay {
 .login-page > .content, .lock-page > .content {
     padding-top: 25vh;
 }
-.btn-login {
-    background-color: #3aaf85;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 40px;
-}
-.btn-login:hover, .btn-login:active, .btn-login:visited {
-  background-color: #339874;
-}
 .sidebar .nav p, .off-canvas-sidebar .nav p {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 .sidebar[data-active-color="rose"] li.active > a, .off-canvas-sidebar[data-active-color="rose"] li.active > a {
@@ -111,7 +116,6 @@ div#overlay {
 }
 .checkbox label, .radio label, label, .label-on-left, .label-on-right {
     color: #333;
-    /*font-size: 17px;*/
 }
 .loader {
   display: none;
@@ -198,12 +202,6 @@ li.nav-title i {
   margin-right: 0px;
   margin-left: 0px;
 }
-.sidebar, .off-canvas-sidebar, .sidebar .sidebar-wrapper, .off-canvas-sidebar .sidebar-wrapper {
-  width: 287px;
-}
-.main-panel {
-  width: calc(100% - 287px);
-}
 #ndoh-logo {
     width: 10%;
 }
@@ -220,12 +218,6 @@ h3#dashboard-title {
 }
 .btn.btn-success:focus, .btn.btn-success:active, .btn.btn-success:hover, .navbar .navbar-nav > li > a.btn.btn-success:focus, .navbar .navbar-nav > li > a.btn.btn-success:active, .navbar .navbar-nav > li > a.btn.btn-success:hover {
     box-shadow: 0 14px 26px -12px rgba(51, 122, 183, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(51, 122, 183, 0.4);
-}
-nav.navbar.navbar-transparent.navbar-absolute {
-    display: none;
-}
-.main-panel > .content {
-  margin-top:0;
 }
 .sp-add-btn {
     padding-left: 60px;

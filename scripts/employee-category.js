@@ -106,8 +106,7 @@ get_rank();
         }),
         success: function(data) {
           $(".loader").hide();
-          $("#add").show();
-          console.log(data);
+          $("#add").show();          
           if(data.status == 'success') {
             showSuccess("Category Added Successfully!");
             pullMenu();

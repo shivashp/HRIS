@@ -13,11 +13,8 @@
   </div>
 </div>
 <style>
-  nav.navbar.navbar-transparent.navbar-absolute {
-      display: block;
-  }
   .main-panel > .content {
-    margin-top: 70px;
+    margin-top: 95px;
   }
 </style>
 <?php include('footer.php'); ?>
