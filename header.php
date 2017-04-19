@@ -66,12 +66,12 @@
                             </li>
                             <li>
                                 <a href="llg.php">
-                                    Llg Setup
+                                    LLG Setup
                                 </a>
                             </li>
                             <li>
                                 <a href="facility.php">
-                                    <p>Facility Setup</p>
+                                    Facility Setup
                                 </a>
                             </li>
                           </ul>
@@ -199,22 +199,22 @@
                       </a>
                       <div class="collapse" id="usermanagement">
                           <ul class="nav">
-                            <li>
+                            <li class="user-read">
                                 <a href="users.php" class="menu">
                                     Users
                                 </a>
                             </li>
-                            <li>
+                            <li class="user-write">
                                 <a href="add-user.php" class="menu">
                                     Add User
                                 </a>
                             </li>
-                            <li>
+                            <li class = "user-read">
                                 <a href="role.php" class="menu">
                                     Roles
                                 </a>
                             </li>
-                            <li>
+                            <li class="user-write">
                                 <a href="add-role.php" class="menu">
                                     Add Role
                                 </a>

@@ -228,7 +228,7 @@ $(function() {
 		}
 
     $.ajax({
-        url: basepath + "branches",
+        url: basepath + "agencies",
         type: "POST",
         contentType: 'application/json',
         dataType: 'json',
@@ -238,7 +238,7 @@ $(function() {
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "is_branch": "false",
+          // "is_branch": "false",
           "facility_name": name,
           "facility_type_id": type,
           "llg_id": llg,

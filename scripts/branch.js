@@ -288,7 +288,7 @@ $(function() {
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "is_branch": "true",
+          // "is_branch": "true",
           "facility_name": name,
           "facility_type_id": type,
           "llg_id": llg,
@@ -301,7 +301,7 @@ $(function() {
           $("#add").show();
           if(data.status == 'success') {
             showSuccess("Branch Updated Successfully!");
-            pullMenu();            
+            pullMenu();
             $("#facility").selectpicker('render');
             $('#llg').selectpicker('render');
             $('#district').selectpicker('render');
@@ -343,7 +343,7 @@ $(function() {
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "is_branch": "true",
+          // "is_branch": "true",
           "facility_name": name,
           "facility_type_id": type,
           "llg_id": llg,

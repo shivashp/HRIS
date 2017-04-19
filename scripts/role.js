@@ -21,7 +21,7 @@ get_role();
               str += "<tr>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"text-right\">";
-              str += "                              <a class=\"btn btn-simple btn-danger btn-icon\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += "                              <a class=\"btn btn-simple btn-danger btn-icon\" href='add-role.php?action=edit&id="+i+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }

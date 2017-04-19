@@ -1,5 +1,4 @@
 var basepath = "http://139.59.37.232:5000/api/";
-var basepath = "http://10.10.10.122:5000/api/";
 function clearAlert() {
   $(".sp-alert-danger").html('');
   $(".sp-alert-danger").hide();
@@ -51,8 +50,10 @@ $(function() {
           console.log(data);
           if(data.status == 'success') {
             var token = data.data.access_token;
-            console.log(token);
+            var role_id = data.data.role_id;
+            localStorage.clear();
             localStorage.setItem('token', token);
+            get_permissions(role_id);
             window.location.href = "dashboard.php";
           } else {
             showError(data.message);
@@ -65,4 +66,25 @@ $(function() {
         },
     });// Ajax
   })// Login click
+
+
+  function get_permissions(id) {
+    $.ajax({
+        url: basepath + "roles/"+id,
+        type: "GET",
+        contentType: 'application/json',
+        dataType: 'json',
+        success: function(data) {
+          if(data.status == 'success') {
+            localStorage.setItem("per_json", JSON.stringify(data.data))
+          }
+          return false;
+        },
+        error: function(error) {
+          $(".loader").hide();
+          $("#login-btn").show();
+          showError("Error in Server! Try again!")
+        },
+    });// Ajax
+  }
 })
