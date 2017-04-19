@@ -117,7 +117,7 @@
                           <ul class="nav">
                             <li>
                                 <a href="branch.php">
-                                    <p>Division Setup</p>
+                                    Division Setup
                                 </a>
                             </li>
                           </ul>
@@ -135,7 +135,7 @@
                           <ul class="nav">
                             <li>
                                 <a href="agency.php">
-                                    <p>Agency Setup</p>
+                                    Agency Setup
                                 </a>
                             </li>
                           </ul>

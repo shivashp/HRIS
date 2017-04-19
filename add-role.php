@@ -1,5 +1,13 @@
 <?php include('header.php'); ?>
 
+<script>
+  var role_action = "<?php $_GET['action']; ?>";
+  var id = "<?php $_GET['id']; ?>";
+  console.log(role_action);
+  console.log(id);
+
+</script>
+
 <div class="content">
   <div class="card">
       <div class="card-header card-header-icon" data-background-color="purple">
@@ -25,6 +33,15 @@
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <input type="text" id="role-code" class="form-control" placeholder="Code">
+                        </div>
+                    </div>
+                </div><!--row-->
+                <div class="row">
+                    <label class="col-md-3 label-on-left">Activate</label>
+                    <div class="col-md-9">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label"></label>
+                            <input type="checkbox" id="role-activate" class="form-control" placeholder="Code">
                         </div>
                     </div>
                 </div><!--row-->
@@ -54,38 +71,52 @@
            <tbody>
              <tr>
                 <td>Company Management</td>
-                <td><input type="radio" class="company" name="company" value = "0" checked></td>
-                <td><input type="radio" class="company" name="company" value = "1"></td>
-                <td><input type="radio" class="company" name="company" value = "2"></td>
-                <td><input type="radio" class="company" name="company" value = "3"></td>
+                <td><input type="radio" class="company" name="company" value = "N" checked></td>
+                <td><input type="radio" class="company" name="company" value = "R"></td>
+                <td><input type="radio" class="company" name="company" value = "W"></td>
+                <td><input type="radio" class="company" name="company" value = "E"></td>
              </tr>
               <tr>
                  <td>Division Management</td>
-                 <td><input type="radio" class = "division" name="division" value = "0" checked></td>
-                 <td><input type="radio" class = "division" name="division" value = "1"></td>
-                 <td><input type="radio" class = "division" name="division" value = "2"></td>
-                 <td><input type="radio" class = "division" name="division" value = "3"></td>
+                 <td><input type="radio" class = "division" name="division" value = "N" checked></td>
+                 <td><input type="radio" class = "division" name="division" value = "R"></td>
+                 <td><input type="radio" class = "division" name="division" value = "W"></td>
+                 <td><input type="radio" class = "division" name="division" value = "E"></td>
               </tr>
               <tr>
                  <td>Agency Mangement</td>
-                 <td><input type="radio" class = "agency" name="agency" value = "0" checked></td>
-                 <td><input type="radio" class = "agency" name="agency" value = "1"></td>
-                 <td><input type="radio" class = "agency" name="agency" value = "2"></td>
-                 <td><input type="radio" class = "agency" name="agency" value = "3"></td>
+                 <td><input type="radio" class = "agency" name="agency" value = "N" checked></td>
+                 <td><input type="radio" class = "agency" name="agency" value = "R"></td>
+                 <td><input type="radio" class = "agency" name="agency" value = "W"></td>
+                 <td><input type="radio" class = "agency" name="agency" value = "E"></td>
               </tr>
               <tr>
-                 <td>Employee Management</td>
-                 <td><input type="radio" class = "employee" name="employee" value = "0" checked></td>
-                 <td><input type="radio" class = "employee" name="employee" value = "1"></td>
-                 <td><input type="radio" class = "employee" name="employee" value = "2"></td>
-                 <td><input type="radio" class = "employee" name="employee" value = "3"></td>
+                 <td>Agency Employee Management</td>
+                 <td><input type="radio" class = "agency-employee" name="agency-employee" value = "N" checked></td>
+                 <td><input type="radio" class = "agency-employee" name="agency-employee" value = "R"></td>
+                 <td><input type="radio" class = "agency-employee" name="agency-employee" value = "W"></td>
+                 <td><input type="radio" class = "agency-employee" name="agency-employee" value = "E"></td>
+              </tr>
+              <tr>
+                 <td>Division Employee Management</td>
+                 <td><input type="radio" class = "division-employee" name="employee" value = "N" checked></td>
+                 <td><input type="radio" class = "division-employee" name="employee" value = "R"></td>
+                 <td><input type="radio" class = "division-employee" name="employee" value = "W"></td>
+                 <td><input type="radio" class = "division-employee" name="employee" value = "E"></td>
               </tr>
               <tr>
                  <td>User Management</td>
-                 <td><input type="radio" class = "user" name="user" value = "0" checked></td>
-                 <td><input type="radio" class = "user" name="user" value = "1"></td>
-                 <td><input type="radio" class = "user" name="user" value = "2"></td>
-                 <td><input type="radio" class = "user" name="user" value = "3"></td>
+                 <td><input type="radio" class = "user" name="user" value = "N" checked></td>
+                 <td><input type="radio" class = "user" name="user" value = "R"></td>
+                 <td><input type="radio" class = "user" name="user" value = "W"></td>
+                 <td><input type="radio" class = "user" name="user" value = "E"></td>
+              </tr>
+              <tr>
+                 <td>Configuration Management</td>
+                 <td><input type="radio" class = "config" name="config" value = "N" checked></td>
+                 <td><input type="radio" class = "config" name="config" value = "R"></td>
+                 <td><input type="radio" class = "config" name="config" value = "W"></td>
+                 <td><input type="radio" class = "config" name="config" value = "E"></td>
               </tr>
            </tbody>
         </table>

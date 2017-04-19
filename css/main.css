@@ -12,6 +12,16 @@ html.per1 .per1, html.per2 .per2 {
 .table > thead > tr > th {
   font-size: 17px;
 }
+
+/* =============================================
+                  Sidebar
+/* ============================================= */
+.sidebar .nav li > a, .off-canvas-sidebar .nav li > a {
+    margin: 4px 0px 0;
+}
+.sidebar .nav li:first-child > a, .off-canvas-sidebar .nav li:first-child > a {
+    margin: 0;
+}
 /* =============================================
                   Navbar
 /* ============================================= */

@@ -1,10 +1,13 @@
 var basepath = "http://139.59.37.232:5000/api/";
+var basepath = "http://10.10.10.122:5000/api/";
+
+var settimeout = 1000;
 $(".logout").click(function() {
   localStorage.clear();
   window.location.href="index.html";
 })
 
-var permission = 'emp-read';  
+var permission = 'emp=read';
 switch (permission) {
   case 'emp-read':
       $(".emp-execute").remove();
