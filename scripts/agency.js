@@ -215,7 +215,8 @@ $(function() {
   prepare_dropDown();
 
 
-  $("#add").click(function() {
+  $("#add").click(function(e) {
+    e.preventDefault();
     var type = $("#facility").val();
     var llg = $("#llg").val();
     var district = $("#district").val();

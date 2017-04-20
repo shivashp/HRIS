@@ -106,7 +106,7 @@ get_rank();
         }),
         success: function(data) {
           $(".loader").hide();
-          $("#add").show();          
+          $("#add").show();
           if(data.status == 'success') {
             showSuccess("Category Added Successfully!");
             pullMenu();
@@ -178,7 +178,8 @@ get_rank();
     });// Ajax
   }
 
-  $("#add").click(function() {
+  $("#add").click(function(e) {
+    e.preventDefault();
     var status = $(this).attr("status");
     if(status === "1") {
       update_category();

@@ -17,6 +17,7 @@
     <link href="css/demo.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="css/material-icons.css" />
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -180,17 +181,17 @@
                                     Users
                                 </a>
                             </li>
-                            <li class="user-write">
+                            <li class="user-write1">
                                 <a href="add-user.php" class="menu">
                                     Add User
                                 </a>
                             </li>
-                            <li class = "user-read">
+                            <li class = "user-read1">
                                 <a href="role.php" class="menu">
                                     Roles
                                 </a>
                             </li>
-                            <li class="user-write">
+                            <li class="user-write1">
                                 <a href="add-role.php" class="menu">
                                     Add Role
                                 </a>

@@ -255,7 +255,8 @@ $(function() {
   prepare_dropDown();
 
 
-  $("#add").click(function() {
+  $("#add").click(function(e) {
+    e.preventDefault();
     var status = $(this).attr("status");
     if(status === "1") {
       update_branch();

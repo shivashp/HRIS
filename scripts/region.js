@@ -124,9 +124,10 @@ get_region();
     });// Ajax
   }
 
-  $("#add").click(function() {
+  $("#add").click(function(e) {
+    e.preventDefault();
     var status = $(this).attr("status");
-    if(status === "1") {      
+    if(status === "1") {
       update_region();
     } else {
       add_region();

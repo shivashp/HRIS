@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-12" style = "text-align:center;margin-top:30px">
                         <div class="form-group form-button">
-                          <button type="button" id="add" class="btn btn-fill btn-success sp-save-btn">Save</button>
+                          <button type="submit" id="add" class="btn btn-fill btn-success sp-save-btn">Save</button>
                           <button type="reset" class="btn btn-fill btn-danger"><i class="material-icons">delete_forever</i> Clear</button>
                         </div>
                     </div>
@@ -59,5 +59,5 @@
 <?php include('footer.php'); ?>
 <script src="scripts/province.js"></script>
 <script>
-  active('settings')  
+  active('settings')
 </script>

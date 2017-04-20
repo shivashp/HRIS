@@ -12,7 +12,7 @@ get_facility();
         beforeSend: function(xhr) {
 					xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {          
+        success: function(data) {
           if(data.status == 'success') {
             FACILITY_JSON = data.data;
             var str="";
@@ -123,7 +123,8 @@ get_facility();
     });// Ajax
   }
 
-  $("#add").click(function() {
+  $("#add").click(function(e) {
+    e.preventDefault();
     var status = $(this).attr("status");
     console.log(status);
     if(status === "1") {
