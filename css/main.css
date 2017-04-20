@@ -12,7 +12,26 @@ html.per1 .per1, html.per2 .per2 {
 .table > thead > tr > th {
   font-size: 17px;
 }
+.main-panel, .main-panel {
+    overflow-y: auto;
+  }
+  .perfect-scrollbar-on .sidebar .sidebar-wrapper, .sidebar .sidebar-wrapper, .perfect-scrollbar-on
+  .main-panel, .main-panel {
+  overflow: auto !important;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
 /* =============================================
                   Sidebar
 /* ============================================= */
@@ -21,6 +40,10 @@ html.per1 .per1, html.per2 .per2 {
 }
 .sidebar .nav li:first-child > a, .off-canvas-sidebar .nav li:first-child > a {
     margin: 0;
+}
+.nav li.panel {
+    margin-bottom: 0;
+    border-bottom: 1px solid #364a73;
 }
 /* =============================================
                   Navbar
@@ -61,14 +84,15 @@ label.col-sm-2.label-on-left {
     text-align: left !important;
 }
 body#login {
-  background: url('../img/login.jpeg') center center;
+  /*background: url('../img/login.jpeg') center center;*/
+  background: #6a85ab;
 background-size: cover;
 position: relative;
 }
 .card .card-title {
   font-weight: 400;
 }
-div#overlay {
+div#ov1erlay {
     position: absolute;
     top: 0;
     left: 0;

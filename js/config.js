@@ -1,17 +1,36 @@
 var basepath = "http://139.59.37.232:5000/api/";
-var basepath = "http://10.10.10.122:5000/api/";
 
 var settimeout = 1000;
 $(".logout").click(function() {
   localStorage.clear();
   window.location.href="index.html";
 })
+//check_permissions()
+function check_permissions(){
+  var default_permission  = {
+    "company_mgmt_permission": "E",
+    "employee_mgmt_permission": "W",
+    "user_mgmt_permission": "R",
+  }
+  // Get permission instead of default_permission or logout user
+  var permission = localStorage.getItem("per_json") || default_permission;
+  $.map(permission, function(value, key) {
+    key = key.split("_")[0];
+    map_permission(key, value);
+  });
+}
 
-var permission = 'emp=read';
-switch (permission) {
-  case 'emp-read':
-      $(".emp-execute").remove();
-  break;
+function map_permission(key, value) {
+  var per_details = ['none', 'read', 'write', 'execute'];
+  var per_type = ['N', 'R', 'W', 'E'];
+  for(var i = per_type.length-1; i=>0; i--) {
+    if(value === per_type[i]){
+      break;
+    } else {
+      var selector = '.' + key + '-' + per_details[i];
+      $(selector).remove();
+    }
+  }
 }
 
 function toggle_top_menu(className = '.form-input') {

@@ -1,5 +1,4 @@
 <?php include('header.php'); ?>
-
 <div class="content">
   <div class="row">
     <a class="btn btn-success pull-right sp-add-btn">Add</a>
@@ -49,7 +48,14 @@
                       </tr>
                   </thead>
                   <tbody id="data-body">
-
+                    <tr>
+                      <td>Shiva</td>
+                      <td>a</td>
+                    </tr>
+                    <tr>
+                      <td>Pandey</td>
+                      <td>a</td>
+                    </tr>
                   </tbody>
               </table>
           </div>
@@ -59,5 +65,5 @@
 <?php include('footer.php'); ?>
 <script src="scripts/employee-category-rank.js"></script>
 <script>
-  active('employee')
+  active('employee')  
 </script>

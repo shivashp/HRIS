@@ -28,15 +28,15 @@
           </div>
           <div class="logo logo-mini"> <a href="#" class="simple-text"> HRIS </a> </div>
           <div class="sidebar-wrapper">
-              <ul class="nav">
+              <ul class="nav" id="main">
                   <li class="link dashboard">
                       <a href="dashboard.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
                           <p>Dashboard</p>
                       </a>
                   </li>
 
-                  <li>
-                      <a data-toggle="collapse" href="#companyManagement">
+                  <li class="panel">
+                      <a data-toggle="collapse" data-parent = "#main" href="#companyManagement">
                           <i class="material-icons">account_balance</i>
                           <p>Company Management
                               <b class="caret"></b>
@@ -78,8 +78,8 @@
                       </div><!-- company - management -->
                   </li><!-- company dropdown -->
 
-                  <li>
-                      <a data-toggle="collapse" href="#employeeconfiguration">
+                  <li class="panel">
+                      <a data-toggle="collapse" data-parent = "#main" href="#employeeconfiguration">
                           <i class="material-icons">group</i>
                           <p>Employee Configuration
                               <b class="caret"></b>
@@ -106,8 +106,8 @@
                       </div><!-- employee configuration -->
                   </li><!-- employee dropdown -->
 
-                  <li>
-                      <a data-toggle="collapse" href="#divisionmgmt">
+                  <li class="panel">
+                      <a data-toggle="collapse" data-parent = "#main" href="#divisionmgmt">
                           <i class="material-icons">domain</i>
                           <p>Division Management
                               <b class="caret"></b>
@@ -124,8 +124,8 @@
                       </div><!-- Division Management -->
                   </li><!-- Division dropdown -->
 
-                  <li>
-                      <a data-toggle="collapse" href="#agencymgmt">
+                  <li class="panel">
+                      <a data-toggle="collapse" data-parent = "#main" href="#agencymgmt">
                           <i class="material-icons">location_city</i>
                           <p>Agency Management
                               <b class="caret"></b>
@@ -142,42 +142,18 @@
                       </div><!-- Agency Management -->
                   </li><!-- Agency dropdown -->
 
-                  <li>
-                      <a data-toggle="collapse" href="#divisionemployee">
+                  <li class="panel">
+                      <a data-toggle="collapse" data-parent = "#main" href="#employee">
                           <i class="material-icons">group</i>
-                          <p>Division Employees
+                          <p>Employee Management
                               <b class="caret"></b>
                           </p>
                       </a>
-                      <div class="collapse emp-none" id="divisionemployee">
+                      <div class="collapse" id="employee">
                           <ul class="nav">
                             <li class="emp-read">
-                                <a href="employees-by-divisions.php">
+                                <a href="employee.php">
                                     Employees
-                                </a>
-                            </li>
-                            <li class="emp-execute">
-                                <a href="create-employee.php">
-                                    Add Employee
-                                </a>
-                            </li>
-
-                          </ul>
-                      </div><!-- Division Employee Management -->
-                  </li><!-- Division Employee dropdown -->
-
-                  <li>
-                      <a data-toggle="collapse" href="#agencyemployee">
-                          <i class="material-icons">group</i>
-                          <p>Agency Employees
-                              <b class="caret"></b>
-                          </p>
-                      </a>
-                      <div class="collapse" id="agencyemployee">
-                          <ul class="nav">
-                            <li class="emp-read">
-                                <a href="employees-by-agencies.php">
-                                    Employee
                                 </a>
                             </li>
                             <li class="emp-execute">
@@ -190,8 +166,8 @@
                       </div><!-- Agency Employee Management -->
                   </li><!-- Agency Employee dropdown -->
 
-                  <li>
-                      <a data-toggle="collapse" href="#usermanagement">
+                  <li class="panel">
+                      <a data-toggle="collapse" data-parent = "#main" href="#usermanagement">
                           <i class="material-icons">account_circle</i>
                           <p>User Management
                               <b class="caret"></b>

@@ -71,7 +71,7 @@
                       <th>Name</th>
                       <th>Address</th>
                       <th>Country</th>
-                      <th class="disabled-sorting text-right">Actions</th>
+                      <th class="user-write disabled-sorting text-right">Actions</th>
                     </tr>
                 </thead>
                 <tbody id="data-body">

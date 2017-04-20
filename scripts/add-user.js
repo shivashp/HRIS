@@ -163,8 +163,8 @@ function get_employees() {
           }
           EMPLOYEES = data1;
           $("#data-body").html(data1.map(data => generate_table(data)).join(''));
+          check_permissions();
           $('#datatables').DataTable();
-
         }
       },
       error: function(error) {
@@ -183,7 +183,7 @@ function generate_table(data) {
   str += "                          <td>"+data.name+"<\/td>";
   str += "                          <td>"+data.address1+"<\/td>";
   str += "                          <td>"+data.country+"<\/td>";
-  str += "                          <td class=\"text-right\">";
+  str += "                          <td class=\"user-write text-right\">";
   if(data.user_id.trim() !== '') {
       str += "                              <a class=\"btn btn-success btn-sm btn-icon update-password\" data-id= \""+data.user_id+"\">Update Password<\/a>";
   } else {
