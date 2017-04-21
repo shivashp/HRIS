@@ -36,7 +36,7 @@
                       </a>
                   </li>
 
-                  <li class="panel company-read">
+                  <li class="panel per company-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#companyManagement">
                           <i class="material-icons">account_balance</i>
                           <p>Company Management
@@ -45,7 +45,7 @@
                       </a>
                       <div class="collapse" id="companyManagement">
                           <ul class="nav">
-                            <li class="company-write">
+                            <li class="per company-write">
                                 <a href="company.php">
                                     NDOH Setup
                                 </a>
@@ -79,7 +79,7 @@
                       </div><!-- company - management -->
                   </li><!-- company dropdown -->
 
-                  <li class="panel config-read">
+                  <li class="panel per config-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#employeeconfiguration">
                           <i class="material-icons">group</i>
                           <p>Employee Configuration
@@ -107,7 +107,7 @@
                       </div><!-- employee configuration -->
                   </li><!-- employee dropdown -->
 
-                  <li class="panel division-read">
+                  <li class="panel per division-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#divisionmgmt">
                           <i class="material-icons">domain</i>
                           <p>Division Management
@@ -125,7 +125,7 @@
                       </div><!-- Division Management -->
                   </li><!-- Division dropdown -->
 
-                  <li class="panel agency-read">
+                  <li class="panel per agency-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#agencymgmt">
                           <i class="material-icons">location_city</i>
                           <p>Agency Management
@@ -143,7 +143,7 @@
                       </div><!-- Agency Management -->
                   </li><!-- Agency dropdown -->
 
-                  <li class="panel agencyemp-read">
+                  <li class="panel per agencyemp-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#employee">
                           <i class="material-icons">group</i>
                           <p>Employee Management
@@ -167,7 +167,7 @@
                       </div><!-- Agency Employee Management -->
                   </li><!-- Agency Employee dropdown -->
 
-                  <li class="panel user-read">
+                  <li class="panel per user-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#usermanagement">
                           <i class="material-icons">account_circle</i>
                           <p>User Management
