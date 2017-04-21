@@ -56,5 +56,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/company.js"></script>
 <script>
-  active('company');
+active('ndoh', 'sub-link')
+active('company')
 </script>

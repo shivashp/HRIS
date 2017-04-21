@@ -58,5 +58,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/facility.js"></script>
 <script>
-  active('settings')
+active('facility', 'sub-link')
+active('company')
 </script>

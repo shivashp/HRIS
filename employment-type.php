@@ -59,5 +59,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/employee-type.js"></script>
 <script>
-  active('employee')
+active('type', 'sub-link')
+active('config')
 </script>

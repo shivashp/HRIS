@@ -36,7 +36,7 @@
                       </a>
                   </li>
 
-                  <li class="panel per company-read">
+                  <li class="link company panel per company-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#companyManagement">
                           <i class="material-icons">account_balance</i>
                           <p>Company Management
@@ -45,32 +45,32 @@
                       </a>
                       <div class="collapse" id="companyManagement">
                           <ul class="nav">
-                            <li class="per company-write">
+                            <li class="sub-link ndoh per company-write">
                                 <a href="company.php">
                                     NDOH Setup
                                 </a>
                             </li>
-                            <li>
+                            <li class="sub-link district">
                                 <a href="district.php">
                                     District Setup
                                 </a>
                             </li>
-                            <li>
+                            <li class="sub-link province">
                                 <a href="province.php">
                                     Province Setup
                                 </a>
                             </li>
-                            <li>
+                            <li class="sub-link region">
                                 <a href="region.php">
                                     Region Setup
                                 </a>
                             </li>
-                            <li>
+                            <li class="sub-link llg">
                                 <a href="llg.php">
                                     LLG Setup
                                 </a>
                             </li>
-                            <li>
+                            <li class="sub-link facility">
                                 <a href="facility.php">
                                     Facility Setup
                                 </a>
@@ -79,7 +79,7 @@
                       </div><!-- company - management -->
                   </li><!-- company dropdown -->
 
-                  <li class="panel per config-read">
+                  <li class="link config panel per config-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#employeeconfiguration">
                           <i class="material-icons">group</i>
                           <p>Employee Configuration
@@ -88,17 +88,17 @@
                       </a>
                       <div class="collapse" id="employeeconfiguration">
                           <ul class="nav">
-                            <li>
+                            <li class="sub-link rank">
                                 <a href="employee-category-rank.php">
                                     Rank Setup
                                 </a>
                             </li>
-                            <li>
+                            <li class="sub-link category">
                                 <a href="employee-categories.php" >
                                     Category Setup
                                 </a>
                             </li>
-                            <li>
+                            <li class="sub-link type">
                                 <a href="employment-type.php">
                                     Type Setup
                                 </a>
@@ -107,7 +107,7 @@
                       </div><!-- employee configuration -->
                   </li><!-- employee dropdown -->
 
-                  <li class="panel per division-read">
+                  <li class="link division panel per division-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#divisionmgmt">
                           <i class="material-icons">domain</i>
                           <p>Division Management
@@ -116,7 +116,7 @@
                       </a>
                       <div class="collapse" id="divisionmgmt">
                           <ul class="nav">
-                            <li>
+                            <li class="sub-link division">
                                 <a href="branch.php">
                                     Division Setup
                                 </a>
@@ -125,7 +125,7 @@
                       </div><!-- Division Management -->
                   </li><!-- Division dropdown -->
 
-                  <li class="panel per agency-read">
+                  <li class="link agency panel per agency-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#agencymgmt">
                           <i class="material-icons">location_city</i>
                           <p>Agency Management
@@ -134,7 +134,7 @@
                       </a>
                       <div class="collapse" id="agencymgmt">
                           <ul class="nav">
-                            <li>
+                            <li class="sub-link agency">
                                 <a href="agency.php">
                                     Agency Setup
                                 </a>
@@ -143,7 +143,7 @@
                       </div><!-- Agency Management -->
                   </li><!-- Agency dropdown -->
 
-                  <li class="panel per agencyemp-read">
+                  <li class="link employee panel per agencyemp-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#employee">
                           <i class="material-icons">group</i>
                           <p>Employee Management
@@ -152,12 +152,12 @@
                       </a>
                       <div class="collapse" id="employee">
                           <ul class="nav">
-                            <li class="agencyemp-read">
+                            <li class="sub-link employees agencyemp-read">
                                 <a href="employee.php">
                                     Employees
                                 </a>
                             </li>
-                            <li class="agencyemp-write">
+                            <li class="sub-link add-employee agencyemp-write">
                                 <a href="create-employee.php">
                                     Add Employee
                                 </a>
@@ -167,7 +167,7 @@
                       </div><!-- Agency Employee Management -->
                   </li><!-- Agency Employee dropdown -->
 
-                  <li class="panel per user-read">
+                  <li class="link user-mgmt panel per user-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#usermanagement">
                           <i class="material-icons">account_circle</i>
                           <p>User Management
@@ -176,22 +176,22 @@
                       </a>
                       <div class="collapse" id="usermanagement">
                           <ul class="nav">
-                            <li class="user-read">
+                            <li class="sub-link users user-read">
                                 <a href="users.php" class="menu">
                                     Users
                                 </a>
                             </li>
-                            <li class="user-write">
+                            <li class="sub-link add-user user-write">
                                 <a href="add-user.php" class="menu">
                                     Add User
                                 </a>
                             </li>
-                            <li class = "user-read">
+                            <li class = "sub-link roles user-read">
                                 <a href="role.php" class="menu">
                                     Roles
                                 </a>
                             </li>
-                            <li class="user-write">
+                            <li class="sub-link add-role user-write">
                                 <a href="add-role.php" class="menu">
                                     Add Role
                                 </a>

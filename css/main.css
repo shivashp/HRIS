@@ -203,9 +203,12 @@ a.navbar-brand {
     transition: all 0.2s linear;
 }
 .sidebar .nav>li>div>ul>li:hover a {
-    color: #3aaf85;
+    /*color: #3aaf85;
     background: transparent;
-    font-size: 16px;
+    font-size: 16px;*/
+}
+.sidebar .nav>li>div>ul>li:hover a, .sidebar .nav>li>div>ul>li.active a {
+    background: #192d56;
 }
 table > thead > tr > th {
     font-weight: 500 !important;

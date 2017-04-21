@@ -108,5 +108,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/branch.js"></script>
 <script>
-  active('branch')
+active('division', 'sub-link')
+active('division')
 </script>

@@ -59,5 +59,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/region.js"></script>
 <script>
-  active('settings')
+active('region', 'sub-link')
+active('company')
 </script>

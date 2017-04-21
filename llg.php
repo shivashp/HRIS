@@ -59,5 +59,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/llg.js"></script>
 <script>
-  active('settings')
+active('llg', 'sub-link')
+active('company')
 </script>

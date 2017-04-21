@@ -58,5 +58,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/employee-category-rank.js"></script>
 <script>
-  active('employee')
+  active('rank', 'sub-link')
+  active('config')
 </script>

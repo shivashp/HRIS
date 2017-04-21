@@ -69,5 +69,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/employee-category.js"></script>
 <script>
-  active('employee')
+active('category', 'sub-link')
+active('config')
 </script>

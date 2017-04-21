@@ -84,5 +84,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/add-user.js"></script>
 <script>
-  active('settings')
+active('add-user', 'sub-link')
+active('user-mgmt')
 </script>

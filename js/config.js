@@ -97,10 +97,13 @@ String.prototype.isEmail = function (type = 'Email') {
   return true;
 };
 
-function active(link){
+function active(link, className = "link"){
   $(document).ready(function() {
-    $(".link").removeClass("active");
+    $("." + className).removeClass("active");
     $("."+link).addClass("active");
+    if(className == 'link') {
+      $("."+link).find('div').addClass('in');
+    }
   });
 }
 

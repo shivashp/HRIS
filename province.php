@@ -59,5 +59,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/province.js"></script>
 <script>
-  active('settings')
+active('province', 'sub-link')
+active('company')
 </script>

@@ -59,5 +59,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/district.js"></script>
 <script>
-  active('settings')
+  active('district', 'sub-link')
+  active('company')
 </script>

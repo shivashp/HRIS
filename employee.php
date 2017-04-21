@@ -29,5 +29,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/employee.js"></script>
 <script>
-  active('employee')
+active('employees', 'sub-link')
+active('employee')
 </script>

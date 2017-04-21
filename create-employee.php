@@ -347,7 +347,8 @@
 <script src="js/bootstrap-wizard.js"></script>
 <script src="scripts/create-employee.js"></script>
 <script>
-  active('employee')
+active('add-employee', 'sub-link')
+active('employee')
   $().ready(function() {
       demo.initMaterialWizard();
       demo.initFormExtendedDatetimepickers();

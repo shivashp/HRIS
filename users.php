@@ -29,5 +29,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/users.js"></script>
 <script>
-  active('settings')
+active('users', 'sub-link')
+active('user-mgmt')
 </script>

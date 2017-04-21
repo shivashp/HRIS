@@ -135,5 +135,6 @@
 <?php include('footer.php'); ?>
 <script src="scripts/add-role.js"></script>
 <script>
-  active('user')
+active('add-role', 'sub-link')
+active('user-mgmt')
 </script>
