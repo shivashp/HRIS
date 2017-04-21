@@ -36,7 +36,7 @@
                       </a>
                   </li>
 
-                  <li class="panel">
+                  <li class="panel company-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#companyManagement">
                           <i class="material-icons">account_balance</i>
                           <p>Company Management
@@ -45,7 +45,7 @@
                       </a>
                       <div class="collapse" id="companyManagement">
                           <ul class="nav">
-                            <li>
+                            <li class="company-write">
                                 <a href="company.php">
                                     NDOH Setup
                                 </a>
@@ -79,7 +79,7 @@
                       </div><!-- company - management -->
                   </li><!-- company dropdown -->
 
-                  <li class="panel">
+                  <li class="panel config-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#employeeconfiguration">
                           <i class="material-icons">group</i>
                           <p>Employee Configuration
@@ -107,7 +107,7 @@
                       </div><!-- employee configuration -->
                   </li><!-- employee dropdown -->
 
-                  <li class="panel">
+                  <li class="panel division-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#divisionmgmt">
                           <i class="material-icons">domain</i>
                           <p>Division Management
@@ -125,7 +125,7 @@
                       </div><!-- Division Management -->
                   </li><!-- Division dropdown -->
 
-                  <li class="panel">
+                  <li class="panel agency-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#agencymgmt">
                           <i class="material-icons">location_city</i>
                           <p>Agency Management
@@ -143,7 +143,7 @@
                       </div><!-- Agency Management -->
                   </li><!-- Agency dropdown -->
 
-                  <li class="panel">
+                  <li class="panel agencyemp-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#employee">
                           <i class="material-icons">group</i>
                           <p>Employee Management
@@ -152,12 +152,12 @@
                       </a>
                       <div class="collapse" id="employee">
                           <ul class="nav">
-                            <li class="emp-read">
+                            <li class="agencyemp-read">
                                 <a href="employee.php">
                                     Employees
                                 </a>
                             </li>
-                            <li class="emp-execute">
+                            <li class="agencyemp-write">
                                 <a href="create-employee.php">
                                     Add Employee
                                 </a>
@@ -167,7 +167,7 @@
                       </div><!-- Agency Employee Management -->
                   </li><!-- Agency Employee dropdown -->
 
-                  <li class="panel">
+                  <li class="panel user-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#usermanagement">
                           <i class="material-icons">account_circle</i>
                           <p>User Management
@@ -181,17 +181,17 @@
                                     Users
                                 </a>
                             </li>
-                            <li class="user-write1">
+                            <li class="user-write">
                                 <a href="add-user.php" class="menu">
                                     Add User
                                 </a>
                             </li>
-                            <li class = "user-read1">
+                            <li class = "user-read">
                                 <a href="role.php" class="menu">
                                     Roles
                                 </a>
                             </li>
-                            <li class="user-write1">
+                            <li class="user-write">
                                 <a href="add-role.php" class="menu">
                                     Add Role
                                 </a>
@@ -222,7 +222,7 @@
                       <ul class="nav navbar-nav navbar-right">
                           <li class="dropdown">
                               <a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="material-icons">account_circle</i> Administrator <b class="caret"></b>
+                                <i class="material-icons">account_circle</i> <span id="nav-username"></span> <b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
                                 <li>

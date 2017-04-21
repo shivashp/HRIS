@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
 <div class="content">
-  <div class="row">
+  <div class="row per config-write">
     <a class="btn btn-success pull-right sp-add-btn">Add</a>
   </div><!-- row-->
   <div class ="form-input">
@@ -45,7 +45,7 @@
                   <thead>
                       <tr>
                           <th>Type</th>
-                          <th class="disabled-sorting text-right">Actions</th>
+                          <th class="per config-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>
                   <tbody id="data-body">

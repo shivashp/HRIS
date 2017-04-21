@@ -47,14 +47,13 @@ $(function() {
         success: function(data) {
           $(".loader").hide();
           $("#login-btn").show();
-          console.log(data);
           if(data.status == 'success') {
             var token = data.data.access_token;
             var role_id = data.data.role_id;
             localStorage.clear();
+            localStorage.setItem('username', username);
             localStorage.setItem('token', token);
             get_permissions(role_id);
-            window.location.href = "dashboard.php";
           } else {
             showError(data.message);
           }
@@ -76,7 +75,13 @@ $(function() {
         dataType: 'json',
         success: function(data) {
           if(data.status == 'success') {
+            delete data.data['id'];
+            delete data.data['activate'];
+            delete data.data['role_type'];
             localStorage.setItem("per_json", JSON.stringify(data.data))
+            window.location.href = "dashboard.php";
+          } else {
+              showError("Error in Server! Try again!")
           }
           return false;
         },

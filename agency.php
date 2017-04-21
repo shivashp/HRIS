@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
 <div class="content">
-  <div class="row">
+  <div class="row per agency-write">
     <a class="btn btn-success pull-right sp-add-btn">Add</a>
   </div><!-- row-->
   <div class ="form-input">
@@ -94,7 +94,7 @@
                         <th>District</th>
                         <th>Province</th>
                         <th>Region</th>
-                        <th class="disabled-sorting text-right">Actions</th>
+                        <th class="per agency-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>
                   <tbody id = "data-body">

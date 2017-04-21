@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
 <div class="content">
-  <div class="row">
+  <div class="row per company-write">
     <a class="btn btn-success pull-right sp-add-btn">Add</a>
   </div><!-- row-->
   <div class ="form-input">
@@ -45,7 +45,7 @@
                   <thead>
                       <tr>
                           <th>Name</th>
-                          <th class="disabled-sorting text-right">Actions</th>
+                          <th class="per company-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>
                   <tbody id="data-body">

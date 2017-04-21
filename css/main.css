@@ -3,11 +3,8 @@
   primary-color: #355089
 
 */
-html .per1, html .per2 {
+html .per {
   display: none;
-}
-html.per1 .per1, html.per2 .per2 {
-  display: inherit;
 }
 .table > thead > tr > th {
   font-size: 17px;

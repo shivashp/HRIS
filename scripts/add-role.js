@@ -13,7 +13,7 @@ $(function() {
     var division = $(".division:checked").val();
     var agency = $(".agency:checked").val();
     var agency_employee = $(".agency-employee:checked").val();
-    var division_employee = $(".division-employee:checked").val();
+    // var division_employee = $(".division-employee:checked").val();
     var user = $(".user:checked").val();
     var config = $(".config:checked").val();
     var activate = $("#role-activate").is(':checked');
@@ -24,7 +24,7 @@ $(function() {
           "agency_management_perm": agency,
           "company_management_perm": company,
           "config_management_perm": config,
-          "division_emp_perm": division_employee,
+          "division_emp_perm": "N",
           "division_management_perm": division,
           "read_management_perm": "A",
           "role_type": title,

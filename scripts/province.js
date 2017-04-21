@@ -21,12 +21,13 @@ get_province();
               var name = data.data[i].name;
               str += "<tr>";
               str += "                          <td>"+name+"<\/td>";
-              str += "                          <td class=\"text-right\">";
+              str += "                          <td class=\"per company-write text-right\">";
               str += "                              <a class=\"btn btn-simple btn-danger btn-icon edit\" data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
             $("#data-body").html(str);
+            check_permissions();
             var table = $('#datatables').DataTable();
           }
         },

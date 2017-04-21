@@ -5,25 +5,23 @@ $(".logout").click(function() {
   localStorage.clear();
   window.location.href="index.html";
 })
-//check_permissions()
+
+check_permissions()
 function check_permissions(){
-  var default_permission  = {
-    "company_mgmt_permission": "E",
-    "employee_mgmt_permission": "W",
-    "user_mgmt_permission": "R",
-  }
-  // Get permission instead of default_permission or logout user
-  var permission = localStorage.getItem("per_json") || default_permission;
+  var permission = JSON.parse(localStorage.getItem("per_json"));
   $.map(permission, function(value, key) {
-    key = key.split("_")[0];
-    map_permission(key, value);
+    key = key.split("_");
+    if(key[1] === "emp"){
+      key[0] = key[0]+key[1];
+    }
+    map_permission(key[0], value);
   });
 }
 
 function map_permission(key, value) {
   var per_details = ['none', 'read', 'write', 'execute'];
   var per_type = ['N', 'R', 'W', 'E'];
-  for(var i = per_type.length-1; i=>0; i--) {
+  for(var i = per_type.length-1; i >= 0; i--) {
     if(value === per_type[i]){
       break;
     } else {
@@ -31,6 +29,7 @@ function map_permission(key, value) {
       $(selector).remove();
     }
   }
+  $(".per").show();
 }
 
 function toggle_top_menu(className = '.form-input') {
@@ -119,4 +118,6 @@ $(document).ready(function() {
     var value = $(this).attr("value");
     (value == 1)?pullMenu():slideMenu();
   });//sp-add-btn
+  var nav_username = localStorage.getItem('username') || 'user';
+  $("#nav-username").html(nav_username);
 })//Document

@@ -1,10 +1,10 @@
 $(function() {
   get_agencies();
-  var llg = JSON.parse(localStorage.getItem('llg')) || get_llg();
-  var district = JSON.parse(localStorage.getItem('district')) || get_district();
-  var province = JSON.parse(localStorage.getItem('province')) || get_province();
-  var region = JSON.parse(localStorage.getItem('region')) || get_region();
-  var facility = JSON.parse(localStorage.getItem('facility')) || get_facility();
+  get_llg();
+  get_district();
+  get_province();
+  get_region();
+  get_facility();
 
   function get_agencies() {
     $.ajax({
@@ -15,7 +15,6 @@ $(function() {
           xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-          console.log(data);
           if(data.status == 'success') {
             var st="";
             for (var i = 0; i < data.data.length; i++) {
@@ -32,12 +31,13 @@ $(function() {
               st += "                          <td>"+district+"<\/td>";
               st += "                          <td>"+province+"<\/td>";
               st += "                          <td>"+region+"<\/td>";
-              st += "                          <td class=\"text-right\">";
+              st += "                          <td class=\"per agency-write text-right\">";
               st += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"><i class=\"material-icons\">edit<\/i><\/a>";
               st += "                          <\/td>";
               st += "                      <\/tr>";
             }
             $("#data-body").html(st);
+            check_permissions();
             var table = $('#datatables').DataTable();
           }
         },
@@ -50,7 +50,15 @@ $(function() {
   }
 
   function get_llg() {
-    var LLG_JSON = {};
+    if(localStorage.getItem("llg")) {
+      var llg = JSON.parse(localStorage.getItem("llg"));
+      var llg_obj = prepare_selectpicker(llg);
+      $("#llg").html(llg_obj);
+      $('#llg').selectpicker({
+        size: 7
+      });
+      return false;
+    }
     $.ajax({
         url: basepath + "llg",
         type: "GET",
@@ -61,7 +69,11 @@ $(function() {
         success: function(data) {
           if(data.status == 'success') {
             localStorage.setItem("llg", JSON.stringify(data.data))
-            LLG_JSON = data.data;
+            var llg_obj = prepare_selectpicker(data.data);
+            $("#llg").html(llg_obj);
+            $('#llg').selectpicker({
+              size: 7
+            });
           }
         },
         error: function(error) {
@@ -74,6 +86,15 @@ $(function() {
 
   function get_district() {
     var DISTRICT_JSON = {};
+    if(localStorage.getItem("district")) {
+      var district = JSON.parse(localStorage.getItem("district"));
+      var district_obj = prepare_selectpicker(district);
+      $("#district").html(district_obj);
+      $('#district').selectpicker({
+        size: 7
+      });
+      return false;
+    }
     $.ajax({
         url: basepath + "districts",
         type: "GET",
@@ -85,6 +106,11 @@ $(function() {
           if(data.status == 'success') {
             DISTRICT_JSON = data.data;
             localStorage.setItem("district", JSON.stringify(data.data))
+            var district_obj = prepare_selectpicker(data.data);
+            $("#district").html(district_obj);
+            $('#district').selectpicker({
+              size: 7
+            });
           }
         },
         error: function(error) {
@@ -97,6 +123,15 @@ $(function() {
 
   function get_province() {
     var PROVINCE_JSON = {};
+    if(localStorage.getItem("province")) {
+      var province = JSON.parse(localStorage.getItem("province"));
+      var province_obj = prepare_selectpicker(province);
+      $("#province").html(province_obj);
+      $('#province').selectpicker({
+        size: 7
+      });
+      return false;
+    }
     $.ajax({
         url: basepath + "provinces",
         type: "GET",
@@ -105,10 +140,14 @@ $(function() {
 					xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-          console.log(data);
           if(data.status == 'success') {
             PROVINCE_JSON = data.data;
             localStorage.setItem("province", JSON.stringify(data.data))
+            var province_obj = prepare_selectpicker(data.data);
+            $("#province").html(province_obj);
+            $('#province').selectpicker({
+              size: 7
+            });
           }
         },
         error: function(error) {
@@ -121,6 +160,15 @@ $(function() {
 
   function get_region() {
     var REGION_JSON = {};
+    if(localStorage.getItem("region")) {
+      var region = JSON.parse(localStorage.getItem("region"));
+      var region_obj = prepare_selectpicker(region);
+      $("#region").html(region_obj);
+      $('#region').selectpicker({
+        size: 7
+      });
+      return false;
+    }
     $.ajax({
         url: basepath + "regions",
         type: "GET",
@@ -132,6 +180,11 @@ $(function() {
           if(data.status == 'success') {
             REGION_JSON = data.data;
             localStorage.setItem("region", JSON.stringify(data.data))
+            var region_obj = prepare_selectpicker(data.data);
+            $("#region").html(region_obj);
+            $('#region').selectpicker({
+              size: 7
+            });
           }
         },
         error: function(error) {
@@ -144,6 +197,15 @@ $(function() {
 
   function get_facility() {
     var FACILITY_JSON = {};
+    if(localStorage.getItem("facility")) {
+      var facility = JSON.parse(localStorage.getItem("facility"));
+      var facility_obj = prepare_selectpicker(facility);
+      $("#facility").html(facility_obj);
+      $('#facility').selectpicker({
+        size: 7
+      });
+      return false;
+    }
     $.ajax({
         url: basepath + "facilities",
         type: "GET",
@@ -156,6 +218,11 @@ $(function() {
           if(data.status == 'success') {
             FACILITY_JSON = data.data;
             localStorage.setItem("facility", JSON.stringify(data.data))
+            var facility_obj = prepare_selectpicker(data.data);
+            $("#facility").html(facility_obj);
+            $('#facility').selectpicker({
+              size: 7
+            });
           }
         },
         error: function(error) {
@@ -166,53 +233,13 @@ $(function() {
     });// Ajax
   };// Get Facility
 
-  function prepare_dropDown(){
-    var llg_obj = llg.map((llg) => {
-      return `<option value = "${llg.id}">${llg.name}</option>`;
+  function prepare_selectpicker(obj) {
+    var str = obj.map(obj => {
+      return `<option value = "${obj.id}">${obj.name}</option>`;
     })
-    var district_obj = district.map((llg) => {
-      return `<option value = "${llg.id}">${llg.name}</option>`;
-    })
-    var province_obj = province.map((llg) => {
-      return `<option value = "${llg.id}">${llg.name}</option>`;
-    })
-    var region_obj = region.map((llg) => {
-      return `<option value = "${llg.id}">${llg.name}</option>`;
-    })
-    var facility_obj = facility.map((llg) => {
-      return `<option value = "${llg.id}">${llg.name}</option>`;
-    })
-
-    district_obj = district_obj.join('');
-    llg_obj = llg_obj.join('');
-    province_obj = province_obj.join('');
-    region_obj = region_obj.join('');
-    facility_obj = facility_obj.join('');
-
-
-    $("#province").html(province_obj);
-    $('#province').selectpicker({
-      size: 7
-    });
-    $("#facility").html(facility_obj);
-    $('#facility').selectpicker({
-      size: 7
-    });
-    $("#region").html(region_obj);
-    $('#region').selectpicker({
-      size: 7
-    });
-    $("#district").html(district_obj);
-    $('#district').selectpicker({
-      size: 7
-    });
-    $("#llg").html(llg_obj);
-    $('#llg').selectpicker({
-      size: 7
-    });
+    str = str.join('');
+    return str;
   }
-
-  prepare_dropDown();
 
 
   $("#add").click(function(e) {

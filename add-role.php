@@ -91,19 +91,19 @@
                  <td><input type="radio" class = "agency" name="agency" value = "E"></td>
               </tr>
               <tr>
-                 <td>Agency Employee Management</td>
+                 <td>Employee Management</td>
                  <td><input type="radio" class = "agency-employee" name="agency-employee" value = "N" checked></td>
                  <td><input type="radio" class = "agency-employee" name="agency-employee" value = "R"></td>
                  <td><input type="radio" class = "agency-employee" name="agency-employee" value = "W"></td>
                  <td><input type="radio" class = "agency-employee" name="agency-employee" value = "E"></td>
               </tr>
-              <tr>
+              <!-- <tr>
                  <td>Division Employee Management</td>
                  <td><input type="radio" class = "division-employee" name="employee" value = "N" checked></td>
                  <td><input type="radio" class = "division-employee" name="employee" value = "R"></td>
                  <td><input type="radio" class = "division-employee" name="employee" value = "W"></td>
                  <td><input type="radio" class = "division-employee" name="employee" value = "E"></td>
-              </tr>
+              </tr> -->
               <tr>
                  <td>User Management</td>
                  <td><input type="radio" class = "user" name="user" value = "N" checked></td>
