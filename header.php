@@ -52,27 +52,27 @@
                             </li>
                             <li class="sub-link district">
                                 <a href="district.php">
-                                    District Setup
+                                    Districts
                                 </a>
                             </li>
                             <li class="sub-link province">
                                 <a href="province.php">
-                                    Province Setup
+                                    Provinces
                                 </a>
                             </li>
                             <li class="sub-link region">
                                 <a href="region.php">
-                                    Region Setup
+                                    Regions
                                 </a>
                             </li>
                             <li class="sub-link llg">
                                 <a href="llg.php">
-                                    LLG Setup
+                                    LLGs
                                 </a>
                             </li>
                             <li class="sub-link facility">
                                 <a href="facility.php">
-                                    Facility Setup
+                                    Facilities
                                 </a>
                             </li>
                           </ul>
@@ -90,17 +90,17 @@
                           <ul class="nav">
                             <li class="sub-link rank">
                                 <a href="employee-category-rank.php">
-                                    Rank Setup
+                                    Ranks
                                 </a>
                             </li>
                             <li class="sub-link category">
                                 <a href="employee-categories.php" >
-                                    Category Setup
+                                    Categories
                                 </a>
                             </li>
                             <li class="sub-link type">
                                 <a href="employment-type.php">
-                                    Type Setup
+                                    Types
                                 </a>
                             </li>
                           </ul>
@@ -118,7 +118,7 @@
                           <ul class="nav">
                             <li class="sub-link division">
                                 <a href="branch.php">
-                                    Division Setup
+                                    Divisions
                                 </a>
                             </li>
                           </ul>
@@ -136,7 +136,7 @@
                           <ul class="nav">
                             <li class="sub-link agency">
                                 <a href="agency.php">
-                                    Agency Setup
+                                    Agencies
                                 </a>
                             </li>
                           </ul>

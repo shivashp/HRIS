@@ -6,6 +6,8 @@ $(function() {
   get_region();
   get_facility();
 
+  var LLG, DISTRICT, PROVINCE, REGION, FACILITY;
+
 
   function edit_branch(i) {
     var id = BRANCH_JSON[i].id;
@@ -28,9 +30,7 @@ $(function() {
     $('#province').selectpicker('val', province);
     $('#region').selectpicker('val', region);
     $("#facility-name").val(name);
-
     $("#add").attr({"status": 1, "data-id": id});
-
   }
 
   $(document).delegate(".edit", "click", function() {
@@ -86,6 +86,7 @@ $(function() {
   function get_llg() {
     if(localStorage.getItem("llg")) {
       var llg = JSON.parse(localStorage.getItem("llg"));
+      LLG = llg;
       var llg_obj = prepare_selectpicker(llg);
       $("#llg").html(llg_obj);
       $('#llg').selectpicker({
@@ -102,6 +103,7 @@ $(function() {
         },
         success: function(data) {
           if(data.status == 'success') {
+            LLG = data.data;
             localStorage.setItem("llg", JSON.stringify(data.data))
             var llg_obj = prepare_selectpicker(data.data);
             $("#llg").html(llg_obj);
@@ -122,6 +124,7 @@ $(function() {
     var DISTRICT_JSON = {};
     if(localStorage.getItem("district")) {
       var district = JSON.parse(localStorage.getItem("district"));
+      DISTRICT = district;
       var district_obj = prepare_selectpicker(district);
       $("#district").html(district_obj);
       $('#district').selectpicker({
@@ -138,7 +141,7 @@ $(function() {
         },
         success: function(data) {
           if(data.status == 'success') {
-            DISTRICT_JSON = data.data;
+            DISTRICT = data.data;
             localStorage.setItem("district", JSON.stringify(data.data))
             var district_obj = prepare_selectpicker(data.data);
             $("#district").html(district_obj);
@@ -159,6 +162,7 @@ $(function() {
     var PROVINCE_JSON = {};
     if(localStorage.getItem("province")) {
       var province = JSON.parse(localStorage.getItem("province"));
+      PROVINCE = province;
       var province_obj = prepare_selectpicker(province);
       $("#province").html(province_obj);
       $('#province').selectpicker({
@@ -175,7 +179,7 @@ $(function() {
         },
         success: function(data) {
           if(data.status == 'success') {
-            PROVINCE_JSON = data.data;
+            PROVINCE = data.data;
             localStorage.setItem("province", JSON.stringify(data.data))
             var province_obj = prepare_selectpicker(data.data);
             $("#province").html(province_obj);
@@ -196,6 +200,7 @@ $(function() {
     var REGION_JSON = {};
     if(localStorage.getItem("region")) {
       var region = JSON.parse(localStorage.getItem("region"));
+      REGION = region;
       var region_obj = prepare_selectpicker(region);
       $("#region").html(region_obj);
       $('#region').selectpicker({
@@ -212,7 +217,7 @@ $(function() {
         },
         success: function(data) {
           if(data.status == 'success') {
-            REGION_JSON = data.data;
+            REGION = data.data;
             localStorage.setItem("region", JSON.stringify(data.data))
             var region_obj = prepare_selectpicker(data.data);
             $("#region").html(region_obj);
@@ -233,6 +238,7 @@ $(function() {
     var FACILITY_JSON = {};
     if(localStorage.getItem("facility")) {
       var facility = JSON.parse(localStorage.getItem("facility"));
+      FACILITY = facility;
       var facility_obj = prepare_selectpicker(facility);
       $("#facility").html(facility_obj);
       $('#facility').selectpicker({
@@ -250,7 +256,7 @@ $(function() {
         success: function(data) {
           console.log(data);
           if(data.status == 'success') {
-            FACILITY_JSON = data.data;
+            FACILITY = data.data;
             localStorage.setItem("facility", JSON.stringify(data.data))
             var facility_obj = prepare_selectpicker(data.data);
             $("#facility").html(facility_obj);
@@ -324,11 +330,11 @@ $(function() {
           if(data.status == 'success') {
             showSuccess("Branch Updated Successfully!");
             pullMenu();
-            $("#facility").selectpicker('render');
-            $('#llg').selectpicker('render');
-            $('#district').selectpicker('render');
-            $('#province').selectpicker('render');
-            $('#region').selectpicker('render');
+            $("#facility").selectpicker('val', -1);
+            $('#llg').selectpicker('val', -1);
+            $('#district').selectpicker('val', -1);
+            $('#province').selectpicker('val', -1);
+            $('#region').selectpicker('val', -1);
             get_branches();
           } else {
             showError(data.message);
@@ -341,6 +347,14 @@ $(function() {
         },
     });// Ajax
   }
+
+  $(".sp-add-btn").click(function() {
+    $("#facility").selectpicker('val', -1);
+    $('#llg').selectpicker('val', -1);
+    $('#district').selectpicker('val', -1);
+    $('#province').selectpicker('val', -1);
+    $('#region').selectpicker('val', -1);    
+  })
 
   function add_branch() {
     var type = $("#facility").val();

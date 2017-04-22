@@ -6,6 +6,40 @@ $(function() {
   get_region();
   get_facility();
 
+  var LLG, DISTRICT, PROVINCE, REGION, FACILITY;
+
+
+  function edit_agency(i) {    
+    var id = AGENCY_JSON[i].id;
+    var type = AGENCY_JSON[i].facility_type;
+    var llg = AGENCY_JSON[i].llg;
+    var district = AGENCY_JSON[i].district;
+    var province = AGENCY_JSON[i].province;
+    var region = AGENCY_JSON[i].region;
+    var name = AGENCY_JSON[i].facility_name;
+
+    var llg = search_data(LLG, llg);
+    var district = search_data(DISTRICT, district);
+    var province = search_data(PROVINCE, province);
+    var region = search_data(REGION, region);
+    var type = search_data(FACILITY, type);
+
+    $("#facility").selectpicker('val', type);
+    $('#llg').selectpicker('val', llg);
+    $('#district').selectpicker('val', district);
+    $('#province').selectpicker('val', province);
+    $('#region').selectpicker('val', region);
+    $("#facility-name").val(name);
+    $("#add").attr({"status": 1, "data-id": id});
+  }
+
+  $(document).delegate(".edit", "click", function() {
+    var i = $(this).attr("data-id");
+    edit_agency(i);
+    slideMenu();
+  })
+
+
   function get_agencies() {
     $.ajax({
         url: basepath + "agencies",
@@ -16,6 +50,7 @@ $(function() {
         },
         success: function(data) {
           if(data.status == 'success') {
+            AGENCY_JSON = data.data;
             var st="";
             for (var i = 0; i < data.data.length; i++) {
               var district = data.data[i].district;
@@ -32,7 +67,7 @@ $(function() {
               st += "                          <td>"+province+"<\/td>";
               st += "                          <td>"+region+"<\/td>";
               st += "                          <td class=\"per agency-write text-right\">";
-              st += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"><i class=\"material-icons\">edit<\/i><\/a>";
+              st += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               st += "                          <\/td>";
               st += "                      <\/tr>";
             }
@@ -52,6 +87,7 @@ $(function() {
   function get_llg() {
     if(localStorage.getItem("llg")) {
       var llg = JSON.parse(localStorage.getItem("llg"));
+      LLG = llg;
       var llg_obj = prepare_selectpicker(llg);
       $("#llg").html(llg_obj);
       $('#llg').selectpicker({
@@ -64,10 +100,11 @@ $(function() {
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
-					xhr.setRequestHeader('Token', TOKEN);
+          xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
           if(data.status == 'success') {
+            LLG = data.data;
             localStorage.setItem("llg", JSON.stringify(data.data))
             var llg_obj = prepare_selectpicker(data.data);
             $("#llg").html(llg_obj);
@@ -88,6 +125,7 @@ $(function() {
     var DISTRICT_JSON = {};
     if(localStorage.getItem("district")) {
       var district = JSON.parse(localStorage.getItem("district"));
+      DISTRICT = district;
       var district_obj = prepare_selectpicker(district);
       $("#district").html(district_obj);
       $('#district').selectpicker({
@@ -100,11 +138,11 @@ $(function() {
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
-					xhr.setRequestHeader('Token', TOKEN);
+          xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
           if(data.status == 'success') {
-            DISTRICT_JSON = data.data;
+            DISTRICT = data.data;
             localStorage.setItem("district", JSON.stringify(data.data))
             var district_obj = prepare_selectpicker(data.data);
             $("#district").html(district_obj);
@@ -125,6 +163,7 @@ $(function() {
     var PROVINCE_JSON = {};
     if(localStorage.getItem("province")) {
       var province = JSON.parse(localStorage.getItem("province"));
+      PROVINCE = province;
       var province_obj = prepare_selectpicker(province);
       $("#province").html(province_obj);
       $('#province').selectpicker({
@@ -137,11 +176,11 @@ $(function() {
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
-					xhr.setRequestHeader('Token', TOKEN);
+          xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
           if(data.status == 'success') {
-            PROVINCE_JSON = data.data;
+            PROVINCE = data.data;
             localStorage.setItem("province", JSON.stringify(data.data))
             var province_obj = prepare_selectpicker(data.data);
             $("#province").html(province_obj);
@@ -162,6 +201,7 @@ $(function() {
     var REGION_JSON = {};
     if(localStorage.getItem("region")) {
       var region = JSON.parse(localStorage.getItem("region"));
+      REGION = region;
       var region_obj = prepare_selectpicker(region);
       $("#region").html(region_obj);
       $('#region').selectpicker({
@@ -174,11 +214,11 @@ $(function() {
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
-					xhr.setRequestHeader('Token', TOKEN);
+          xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
           if(data.status == 'success') {
-            REGION_JSON = data.data;
+            REGION = data.data;
             localStorage.setItem("region", JSON.stringify(data.data))
             var region_obj = prepare_selectpicker(data.data);
             $("#region").html(region_obj);
@@ -199,6 +239,7 @@ $(function() {
     var FACILITY_JSON = {};
     if(localStorage.getItem("facility")) {
       var facility = JSON.parse(localStorage.getItem("facility"));
+      FACILITY = facility;
       var facility_obj = prepare_selectpicker(facility);
       $("#facility").html(facility_obj);
       $('#facility').selectpicker({
@@ -211,12 +252,12 @@ $(function() {
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
-					xhr.setRequestHeader('Token', TOKEN);
+          xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
           console.log(data);
           if(data.status == 'success') {
-            FACILITY_JSON = data.data;
+            FACILITY = data.data;
             localStorage.setItem("facility", JSON.stringify(data.data))
             var facility_obj = prepare_selectpicker(data.data);
             $("#facility").html(facility_obj);
@@ -241,9 +282,82 @@ $(function() {
     return str;
   }
 
+  function update_agency() {
+    var id = $("#add").attr("data-id");
+    var type = $("#facility").val();
+    var llg = $("#llg").val();
+    var district = $("#district").val();
+    var province = $("#province").val();
+    var region = $("#region").val();
+    var name = $("#facility-name").val();
+    var arr = [name.isBlank("Name"), type.isBlank("Facility Type"), llg.isBlank("LLG"), district.isBlank("District"), province.isBlank("Province"), region.isBlank("Region")];
+    if(checkEmpty(arr)){
+			return false;
+		}
+
+    $.ajax({
+        url: basepath + "agencies/"+id,
+        type: "PUT",
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+          $(".loader").show();
+          $("#add").hide();
+					xhr.setRequestHeader('Token', TOKEN);
+        },
+        data: JSON.stringify({
+          // "is_branch": "true",
+          "facility_name": name,
+          "facility_type_id": type,
+          "llg_id": llg,
+          "district_id": district,
+          "province_id": province,
+          "region_id": region
+        }),
+        success: function(data) {
+          $(".loader").hide();
+          $("#add").show();
+          if(data.status == 'success') {
+            showSuccess("Agency Updated Successfully!");
+            pullMenu();
+            $("#facility").selectpicker('val', -1);
+            $('#llg').selectpicker('val', -1);
+            $('#district').selectpicker('val', -1);
+            $('#province').selectpicker('val', -1);
+            $('#region').selectpicker('val', -1);
+            get_agencies();
+          } else {
+            showError(data.message);
+          }
+        },
+        error: function(error) {
+          $(".loader").hide();
+          $("#add").show();
+          showError("Error in Server! Try again!")
+        },
+    });// Ajax
+  }
 
   $("#add").click(function(e) {
     e.preventDefault();
+    var status = $(this).attr("status");
+    if(status === "1") {
+      update_agency();
+    } else {
+      add_agency();
+    }
+  })
+
+  $(".sp-add-btn").click(function() {
+    $("#facility").selectpicker('val', -1);
+    $('#llg').selectpicker('val', -1);
+    $('#district').selectpicker('val', -1);
+    $('#province').selectpicker('val', -1);
+    $('#region').selectpicker('val', -1);
+  })
+
+
+  function add_agency() {
     var type = $("#facility").val();
     var llg = $("#llg").val();
     var district = $("#district").val();
@@ -291,9 +405,17 @@ $(function() {
           showError("Error in Server! Try again!")
         },
     });// Ajax
+  }
 
 
-  })// Add
-
+  function search_data(obj, search_item, key1 = "name") {
+      var index = -1;
+      $.each(obj, function(key, value) {
+        if(value[key1] === search_item){
+          index = value.id
+        }
+      })
+      return index;
+  }
 
 })

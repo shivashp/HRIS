@@ -17,11 +17,12 @@ get_role();
             ROLE_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
+              var id = data.data[i].id;
               var name = data.data[i].role_type;
               str += "<tr>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"text-right\">";
-              str += "                              <a class=\"btn btn-simple btn-danger btn-icon\" href='add-role.php?action=edit&id="+i+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += "                              <a class=\"btn btn-simple btn-danger btn-icon\" href='add-role.php?action=edit&id="+id+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }

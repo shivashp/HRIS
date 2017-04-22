@@ -97,6 +97,20 @@ String.prototype.isEmail = function (type = 'Email') {
   return true;
 };
 
+function parseURL() {
+  var str = window.location.search;
+  var objURL = {};
+
+  str.replace(
+      new RegExp( "([^?=&]+)(=([^&]*))?", "g" ),
+      function( $0, $1, $2, $3 ){
+          objURL[ $1 ] = $3;
+      }
+  );
+  return objURL;
+}
+
+
 function active(link, className = "link"){
   $(document).ready(function() {
     $("." + className).removeClass("active");

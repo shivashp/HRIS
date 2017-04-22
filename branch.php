@@ -8,7 +8,7 @@
     <div class="card">
         <div class="card-content">
             <h4 class="card-title">Add Division</h4>
-            <form method="get" action="#" class="form-horizontal">
+            <form method="get" id="form" action="#" class="form-horizontal">
                 <div class="card-content">
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Facility Name</label>

@@ -3,8 +3,6 @@
 <script>
   var role_action = "<?php $_GET['action']; ?>";
   var id = "<?php $_GET['id']; ?>";
-  console.log(role_action);
-  console.log(id);
 
 </script>
 

@@ -1,4 +1,53 @@
 $(function() {
+  var params = parseURL();
+  var count = Object.keys(params).length
+
+  if(count > 0 ) {
+    if(params.action == 'edit' && params.id !== undefined) {
+      prepareEdit(params.id);
+    }
+  }
+
+
+  function prepareEdit(id) {
+    $.ajax({
+        url: basepath + "roles/"+id,
+        type: "GET",
+        contentType: 'application/json',
+        dataType: 'json',
+        success: function(data) {
+          if(data.status == 'success') {
+            var agency = data.data.agency_management_perm;
+            var employee = data.data.agency_emp_perm;
+            var company  = data.data.company_management_perm;
+            var config = data.data.config_management_perm;
+            var division = data.data.division_management_perm;
+            var user = data.data.user_management_perm;
+            var role = data.data.role_type;
+            var activate = data.data.activate;
+
+            $("input[name=agency][value='"+agency+"']").prop("checked",true);
+            $("input[name=agency-employee][value='"+employee+"']").prop("checked",true);
+            $("input[name=company][value='"+company+"']").prop("checked",true);
+            $("input[name=config][value='"+config+"']").prop("checked",true);
+            $("input[name=division][value='"+division+"']").prop("checked",true);
+            $("input[name=user][value='"+user+"']").prop("checked",true);
+            $("#role-name").val(role);
+            $("#role-code").val(role);
+            if(activate) {
+                $("#role-activate").prop("checked", true);
+            }
+            $("#add").attr("data-status", 1);
+          } else {
+              showError("Error in Server! Try again!")
+          }
+          return false;
+        },
+        error: function(error) {
+          showError("Error in Server! Try again!")
+        },
+    });// Ajax
+  }
 
 
   $("#add").click(function(e) {
@@ -32,27 +81,28 @@ $(function() {
           "user_management_perm": user
         }
 
-
-    if(role_action == 'edit') {
-      update_role(json);
+    var status = $(this).attr("data-status");
+    if(status){
+      update_role(json, params.id);
     } else {
       add_role(json);
     }
+
   })
 
 
 
-function update_role(json) {
+function update_role(json, id) {
   $.ajax({
-      url: basepath + "roles/"+ID,
-      type: "POST",
+      url: basepath + "roles/"+id,
+      type: "PUT",
       contentType: 'application/json',
       dataType: 'json',
       beforeSend: function(xhr) {
         xhr.setRequestHeader('Token', TOKEN);
       },
       data: JSON.stringify(json),
-      success: function(data) {
+      success: function(data) {        
         if(data.status == 'success') {
           showSuccess(name + " Role Updated Successfully!");
           setTimeout(function() {

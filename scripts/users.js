@@ -11,8 +11,7 @@ $(function() {
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {
-          console.log(data);
+        success: function(data) {          
           var str ='';
           if(data.status === 'success') {
             for (var i = 0; i < data.data.length; i++) {
