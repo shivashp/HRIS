@@ -123,7 +123,7 @@
       <div class="row">
           <div class="col-md-12" style = "text-align:center;margin-top:30px">
               <div class="form-group form-button">
-                <button type="submit" id="add" class="btn btn-fill btn-success sp-save-btn">Save</button>
+                <span class="loader"><img src="img/loader.gif"></span><button type="submit" id="add" class="btn btn-fill btn-success sp-save-btn">Save</button>
                 <a href="roles.php" class="btn btn-fill btn-danger">Cancel</a>
               </div>
           </div>

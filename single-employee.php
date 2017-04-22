@@ -454,7 +454,7 @@
       <div class="card">
           <div class="card-content">
               <h4 class="card-title">Add Certification</h4>
-              <form method="get" action="#" class="form-horizontal">
+              <form method="get" action="#" id="certification-form" class="form-horizontal">
                   <div class="card-content">
 
                     <div class="row">
@@ -539,7 +539,7 @@
                   <th>Regulatory Body</th>
                   <th>Last Renewal Date</th>
                   <th>Expiry Date</th>
-                  <!-- <th class="text-center">Actions</th> -->
+                  <th class="agencyemp-write text-center">Actions</th>
                 </tr>
               </thead>
               <tbody id="certification-body">
@@ -816,6 +816,153 @@
 
   </div><!-- form-section -->
 </div><!-- content -->
+
+
+<!-- Classic Modal -->
+<div class="modal fade" id="training-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="training-modal-header modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="material-icons">clear</i>
+                </button>
+                <h4 class="modal-title" id="t-training-name"></h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">Organizer Name</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-organizer-name"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">Institute</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-institute"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">Funding Source</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-funding-source"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">Duration</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-duration"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">Start Date</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-start-date"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">End Date</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-end-date"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">City</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-city"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">Province</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-province"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">State</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-state"></span>
+                  </div>
+                </div><!-- row -->
+
+                <div class="row training-row">
+                  <div class="col-md-4">
+                    <span class="training-label">Country</span>
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    <span class="training-value" id="t-country"></span>
+                  </div>
+                </div><!-- row -->
+
+
+
+
+
+
+            </div><!-- modal-body -->
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--  End Modal -->
 
 <?php include('footer.php'); ?>
 <script src = 'scripts/single-employee.js'></script>

@@ -99,10 +99,14 @@ function update_role(json, id) {
       contentType: 'application/json',
       dataType: 'json',
       beforeSend: function(xhr) {
+        $(".loader").show();
+        $("#add").hide();
         xhr.setRequestHeader('Token', TOKEN);
       },
       data: JSON.stringify(json),
-      success: function(data) {        
+      success: function(data) {
+        $(".loader").hide();
+        $("#add").show();
         if(data.status == 'success') {
           showSuccess(name + " Role Updated Successfully!");
           setTimeout(function() {
@@ -113,6 +117,8 @@ function update_role(json, id) {
         }
       },
       error: function(error) {
+        $(".loader").hide();
+        $("#add").show();
         showError("Error in Server! Try again!")
       },
   });// Ajax

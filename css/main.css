@@ -329,6 +329,32 @@ padding-bottom: 8px;
 .container {
     max-width: 100%;
 }
+span.training-label {
+    font-size: 18px;
+    font-weight: 500;
+}
+span.training-value {
+    font-weight: 300;
+    font-size: 17px;
+}
+.training-row {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ece9e9;
+}
+.training-modal-header.modal-header {
+    background: #355089;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.training-modal-header h4.modal-title {
+    font-weight: 400;
+}
+.training-modal-header button.close {
+    color: white !important;
+    padding-top: 6px;
+}
 /* ========================================= */
 /*           Training & Certification        */
 /* ========================================= */

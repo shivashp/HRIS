@@ -22,6 +22,10 @@ $(function() {
 	get_qualifications();
 	get_country();
 
+	var TRAININGS;
+	var CERTIFICATIONS;
+	var QUALIFICATIONS;
+
 
 	function get_country() {
 		var country_obj = COUNTRY_LIST.map((country) => {
@@ -36,25 +40,30 @@ $(function() {
 	}
 
 	$("#add-training").click(function() {
-    $(".form-horizontal")[0].reset();
+    $('.form-horizontal').trigger("reset");
     var value = $(this).attr("value");
     (value == 1)?pullMenu(".training-input", "#add-training", "Training"):slideMenu(".training-input", "#add-training");
   });//add-training
 
 	$("#add-certification").click(function() {
-    $(".form-horizontal")[0].reset();
+		$('.form-horizontal').trigger("reset");
     var value = $(this).attr("value");
-    (value == 1)?pullMenu(".certification-input", "#add-certification", "Certification"):slideMenu(".certification-input", "#add-certification");
+		if(value == 1){
+			pullMenu(".certification-input", "#add-certification", "Certification");
+			$("#save-certification").attr("data-status", "0");
+		} else {
+			slideMenu(".certification-input", "#add-certification")
+		}
   });//add-certification
 
 	$("#add-qualification").click(function() {
-    $(".form-horizontal")[0].reset();
+    $('.form-horizontal').trigger("reset");
     var value = $(this).attr("value");
     (value == 1)?pullMenu(".qualification-input", "#add-qualification", "Qualification"):slideMenu(".qualification-input", "#add-qualification");
   });//add-qualification
 
 	$("#add-emp-extra").click(function() {
-    $(".form-horizontal")[0].reset();
+    $('.form-horizontal').trigger("reset");
     var value = $(this).attr("value");
     (value == 1)?pullMenu(".emp-extra-input", "#add-emp-extra", "Employee Extras"):slideMenu(".emp-extra-input", "#add-emp-extra");
   });//add-qualification
@@ -191,66 +200,7 @@ $(function() {
     });// Ajax
 	})
 
-	$("#save-certification").click(function() {
-		var reg_type = $("#registration-type").val();
-		var reg_body = $("#regulatory-body").val();
-		var reg_number = $("#registration-number").val();
-		var expiry_date = $("#expiry-date").val() || '';
-		var renewal_date = $("#last-renewal-date").val() || '';
 
-		if(expiry_date.trim() !== ''){
-      expiry_date = new Date(expiry_date);
-      expiry_date = moment(expiry_date).format("YYYY-MM-DD");
-    }
-		if(renewal_date.trim() !== ''){
-      renewal_date = new Date(renewal_date);
-      renewal_date = moment(renewal_date).format("YYYY-MM-DD");
-    }
-
-		 var my_json = {
-			"expiry_date": expiry_date,
-			"last_renewal_date": renewal_date,
-			"registration_number": reg_number,
-			"registration_type": reg_type,
-			"regulatory_body": reg_body
-		 }
-
-		 $.each(my_json, function(key, value) {
-       if(value == '' || value == null || value == undefined) {
-         delete my_json[key];
-       }
-     })
-
-		$.ajax({
-        url: basepath + "employees/"+action_id+"/certifications",
-        type: "POST",
-        contentType: 'application/json',
-        dataType: 'json',
-        beforeSend: function(xhr) {
-          $(".loader").show();
-          $("#add").hide();
-					xhr.setRequestHeader('Token', TOKEN);
-        },
-        data: JSON.stringify(my_json),
-        success: function(data) {
-          $(".loader").hide();
-          $("#add").show();
-          if(data.status == 'success') {
-            showSuccess("Certification Added Successfully!");
-            pullMenu(".certification-input", "#add-certification");
-						get_certifications();
-          } else {
-            showError(data.message);
-          }
-        },
-        error: function(error) {
-          $(".loader").hide();
-          $("#add").show();
-          showError("Error in Server! Try again!")
-        },
-    });// Ajax
-
-	})
 
 	$("#save-qualification").click(function() {
 		var name = $("#qualification-name").val();
@@ -331,6 +281,7 @@ $(function() {
         success: function(data) {
 				var str="";
           if(data.status == "success") {
+						QUALIFICATIONS = data.data;
 						for (var i = 0; i < data.data.length; i++) {
 							var name = data.data[i].name;
 							var city = data.data[i].city;
@@ -373,28 +324,29 @@ $(function() {
           xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-				var str="";
+					TRAININGS = data.data
+					var str="";
           if(data.status == "success") {
 						for (var i = 0; i < data.data.length; i++) {
-							var organizer = data.data[i].organiser_name;
-							var funding = data.data[i].funding_source;
-							var duration = data.data[i].duration;
-							var institute = data.data[i].institute;
-							var city = data.data[i].city;
-							var state = data.data[i].state;
-							var province = data.data[i].province;
-							var country = data.data[i].country;
-							var start_date = data.data[i].start_date;
-							var end_date = data.data[i].end_date;
-							var name =data.data[i].name;
+							var organizer = data.data[i].organiser_name || "N/A";
+							var funding = data.data[i].funding_source || "N/A";
+							var duration = data.data[i].duration || "N/A";
+							var institute = data.data[i].institute || "N/A";
+							var city = data.data[i].city || "N/A";
+							var state = data.data[i].state || "N/A";
+							var province = data.data[i].province || "N/A";
+							var country = data.data[i].country || "N/A";
+							var start_date = data.data[i].start_date || "N/A";
+							var end_date = data.data[i].end_date || "N/A";
+							var name =data.data[i].name || "N/A";
 							str += "<tr>";
-							str += "                  <td>Training Name of Person<\/td>";
-							str += "                  <td>IT training Nepal Pvt. Ltd.<\/td>";
-							str += "                  <td>2 months<\/td>";
-							str += "                  <td>Institute Name<\/td>";
-							str += "                  <td>2016-12-12<\/td>";
-							str += "                  <td>Nepal<\/td>";
-							str += "                  <td class=\"text-center\"><a href=\"#\" class=\"btn btn-success btn-sm\">Edit<\/a><a href=\"#\" class=\"btn btn-success btn-sm\">View<\/a><\/td>";
+							str += "                  <td>"+name+"<\/td>";
+							str += "                  <td>"+organizer+"<\/td>";
+							str += "                  <td>"+duration+"<\/td>";
+							str += "                  <td>"+institute+"<\/td>";
+							str += "                  <td>"+start_date + "<\/td>";
+							str += "                  <td>"+country +"<\/td>";
+							str += "                  <td class=\"text-center\"><a href=\"#\" class=\"edit-training btn btn-success btn-sm\">Edit<\/a><a href=\"#\" class=\"view-training btn btn-success btn-sm\" data-id=\""+i+"\">View<\/a><\/td>";
 							str += "                <\/tr>";
 						}
           }
@@ -417,27 +369,29 @@ $(function() {
           xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-				var str="";
+					CERTIFICATIONS = data.data;
+					var str="";
           if(data.status == "success") {
 						for (var i = 0; i < data.data.length; i++) {
 							var expiry_date = data.data[i].expiry_date;
 							var last_renewal_date = data.data[i].last_renewal_date;
 							var registration_number = data.data[i].registration_number;
 							var registration_type = data.data[i].registration_type;
-							var registration_body = data.data[i].registration_body;
+							var regulatory_body = data.data[i].regulatory_body;
 
 							str += "<tr>";
-							str += "                  <td>1234<\/td>";
-							str += "                  <td>New<\/td>";
-							str += "                  <td>Freakoids<\/td>";
-							str += "                  <td>2016-12-12<\/td>";
-							str += "                  <td>2016-14-13<\/td>";
-							// str += "                  <td class=\"text-center\"><a href=\"#\" class=\"btn btn-success btn-sm\">View<\/a><\/td>";
+							str += "                  <td>"+registration_number +"<\/td>";
+							str += "                  <td>"+registration_type+"<\/td>";
+							str += "                  <td>"+regulatory_body +"<\/td>";
+							str += "                  <td>"+last_renewal_date +"<\/td>";
+							str += "                  <td>"+expiry_date +"<\/td>";
+							str += "                  <td class=\"agencyemp-write text-center\"><a href=\"#\" class=\"edit-certification btn btn-success btn-sm\" data-id=\""+i+"\">Edit<\/a><\/td>";
 							str += "                <\/tr>";
 
 						}
           }
 					$("#certification-body").html(str);
+					check_permissions();
         },
         error: function(error) {
           $(".loader").hide();
@@ -456,7 +410,6 @@ $(function() {
           xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-					console.log(data);
           if(data) {
             var id = data.id;
             var first_name = data.first_name || "N/A";
@@ -483,8 +436,6 @@ $(function() {
 						var emp_category = "N/A";
 						var branch_agency = "N/A";
 						var emp_type = "N/A";
-
-						console.log(village);
 
 						middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
 
@@ -518,8 +469,6 @@ $(function() {
 						$("#date-of-commencement").html(date_of_commencement);
 						$("#emp-category").html(emp_category);
 
-
-
           }
         },
         error: function(error) {
@@ -528,5 +477,171 @@ $(function() {
           showError("Error in Server! Try again!")
         },
     });// Ajax
+	}//get user-details
+
+	$(document).delegate(".view-training", "click", function() {
+		var i = $(this).attr("data-id");
+		var organizer = TRAININGS[i].organiser_name || "N/A";
+		var funding = TRAININGS[i].funding_source || "N/A";
+		var duration = TRAININGS[i].duration || "N/A";
+		var institute = TRAININGS[i].institute || "N/A";
+		var city = TRAININGS[i].city || "N/A";
+		var state = TRAININGS[i].state || "N/A";
+		var province = TRAININGS[i].province || "N/A";
+		var country = TRAININGS[i].country || "N/A";
+		var start_date = TRAININGS[i].start_date || "N/A";
+		var end_date = TRAININGS[i].end_date || "N/A";
+		var name =TRAININGS[i].name || "N/A";
+
+		$("#t-training-name").html(name);
+		$("#t-organizer-name").html(organizer);
+		$("#t-institute").html(institute);
+		$("#t-funding-source").html(funding);
+		$("#t-duration").html(duration);
+		$("#t-start-date").html(start_date);
+		$("#t-end-date").html(end_date);
+		$("#t-city").html(city);
+		$("#t-province").html(province);
+		$("#t-state").html(state);
+		$("#t-country").html(country);
+
+		$("#training-modal").modal();
+	})
+
+
+/* ===========================================================================
+**												Certification
+** =========================================================================== */
+
+
+/* ------------ Actions to be performed on save button click ---------------- */
+$("#save-certification").click(function() {
+	var reg_type = $("#registration-type").val();
+	var reg_body = $("#regulatory-body").val();
+	var reg_number = $("#registration-number").val();
+	var expiry_date = $("#expiry-date").val() || '';
+	var renewal_date = $("#last-renewal-date").val() || '';
+
+	if(expiry_date.trim() !== ''){
+		expiry_date = new Date(expiry_date);
+		expiry_date = moment(expiry_date).format("YYYY-MM-DD");
 	}
+	if(renewal_date.trim() !== ''){
+		renewal_date = new Date(renewal_date);
+		renewal_date = moment(renewal_date).format("YYYY-MM-DD");
+	}
+
+	 var my_json = {
+		"expiry_date": expiry_date,
+		"last_renewal_date": renewal_date,
+		"registration_number": reg_number,
+		"registration_type": reg_type,
+		"regulatory_body": reg_body
+	 }
+
+	 $.each(my_json, function(key, value) {
+		 if(value == '' || value == null || value == undefined) {
+			 delete my_json[key];
+		 }
+	 })
+
+	 var status = $(this).attr("data-status");
+	 if(status == "1"){
+		 var cert_id = $(this).attr("data-certification");
+		 update_certification(my_json, action_id, cert_id)
+	 } else {
+		 add_certification(my_json, action_id)
+	 }
+})
+
+
+/* --------------------- Insert data in form to edit ------------------------ */
+$(document).delegate(".edit-certification", "click", function() {
+
+	var i = $(this).attr("data-id");
+	var id = CERTIFICATIONS[i].id;
+	var expiry_date = CERTIFICATIONS[i].expiry_date;
+	var last_renewal_date = CERTIFICATIONS[i].last_renewal_date;
+	var registration_number = CERTIFICATIONS[i].registration_number;
+	var registration_type = CERTIFICATIONS[i].registration_type;
+	var regulatory_body = CERTIFICATIONS[i].regulatory_body;
+
+	$("#registration-type").val(registration_type);
+	$("#regulatory-body").val(regulatory_body);
+	$("#registration-number").val(registration_number);
+	$("#expiry-date").val(expiry_date) || '';
+	$("#last-renewal-date").val(last_renewal_date) || '';
+	$("#save-certification").attr("data-status", "1");
+	$("#save-certification").attr("data-certification", id);
+
+	var value = $("#add-certification").attr("value");
+	(value == 1)?pullMenu(".certification-input", "#add-certification", "certification"):slideMenu(".certification-input", "#add-certification");
+})// edit-certification
+
+
+/* --------------------- Add a new certification ------------------------ */
+function add_certification(json, action_id) {
+	$.ajax({
+			url: basepath + "employees/"+action_id+"/certifications",
+			type: "POST",
+			contentType: 'application/json',
+			dataType: 'json',
+			beforeSend: function(xhr) {
+				$(".loader").show();
+				$("#add").hide();
+				xhr.setRequestHeader('Token', TOKEN);
+			},
+			data: JSON.stringify(json),
+			success: function(data) {
+				$(".loader").hide();
+				$("#add").show();
+				if(data.status == 'success') {
+					showSuccess("Certification Added Successfully!");
+					pullMenu(".certification-input", "#add-certification", "Certification");
+					get_certifications();
+				} else {
+					showError(data.message);
+				}
+			},
+			error: function(error) {
+				$(".loader").hide();
+				$("#add").show();
+				showError("Error in Server! Try again!")
+			},
+	});// Ajax
+}
+
+/* --------------------- Update a certification ------------------------ */
+function update_certification(json, action_id, id) {
+	$.ajax({
+			url: basepath + "employees/"+action_id+"/certifications/"+id,
+			type: "PUT",
+			contentType: 'application/json',
+			dataType: 'json',
+			beforeSend: function(xhr) {
+				$(".loader").show();
+				$("#save-certification").hide();
+				xhr.setRequestHeader('Token', TOKEN);
+			},
+			data: JSON.stringify(json),
+			success: function(data) {
+				$(".loader").hide();
+				$("#save-certification").show();
+				if(data.status == 'success') {
+					showSuccess("Certification Updated Successfully!");
+					pullMenu(".certification-input", "#add-certification", "Certification");
+					get_certifications();
+				} else {
+					showError(data.message);
+				}
+			},
+			error: function(error) {
+				$(".loader").hide();
+				$("#save-certification").show();
+				showError("Error in Server! Try again!")
+			},
+	});// Ajax
+}// update_certification
+
+
 });
