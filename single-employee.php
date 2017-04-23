@@ -5,7 +5,12 @@
           </script>';
   }
 ?>
-
+<style>
+.tab-pane .col-md-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+</style>
 <script>
   var action_id = "<?php echo $_GET['action']; ?>" || false;
 </script>
@@ -21,6 +26,7 @@
           <div class="tab-content">
               <div class="tab-pane active" id="personal">
                 <div class="row">
+                  <div class="col-md-6">
                     <div class="se-single-data row">
                       <div class="col-sm-4">
                         <span class="se-label">First Name</span>
@@ -80,6 +86,119 @@
                         <span class="se-value" id="dob"></span>
                       </div>
                     </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">Phone No</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="phone"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-6">
+                        <span class="se-label">Alternate Phone No</span>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <span class="se-value" id="phone1"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">Email</span>
+                      </div>
+                      <div class="col-sm-8">
+                        <span class="se-value" id="email"></span>
+                      </div>
+                    </div><!--se-single-data-->
+                  </div><!-- col-md-6-->
+
+                  <div class="col-md-6">
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">Address 1</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="address1"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">Village</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="village"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">District</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="district"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">Region</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="region"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">Address 2</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="address2"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">LLG</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="llg"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">Province</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="province"></span>
+                      </div>
+                    </div><!--se-single-data-->
+
+                    <div class="se-single-data row">
+                      <div class="col-sm-4">
+                        <span class="se-label">Country</span>
+                      </div>
+
+                      <div class="col-sm-8">
+                        <span class="se-value" id="country"></span>
+                      </div>
+                    </div><!--se-single-data-->
+                  </div><!-- col-md-6-->
+
                 </div><!-- row -->
               </div><!-- personal -->
           </div><!--tab-content-->
@@ -91,130 +210,10 @@
           <i class="material-icons">assignment</i>
       </div>
         <div class="card-content">
-            <h4 class="card-title">Contact Details</h4>
-            <form class="form-horizontal">
-              <div class="row">
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Address 1</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="address1"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Village</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="village"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">District</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="district"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Region</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="region"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Phone No</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="phone"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Alternate Phone No</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="phone1"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Address 2</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="address2"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">LLG</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="llg"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Province</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="province"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Country</span>
-                    </div>
-
-                    <div class="col-sm-8">
-                      <span class="se-value" id="country"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-4">
-                      <span class="se-label">Email</span>
-                    </div>
-                    <div class="col-sm-8">
-                      <span class="se-value" id="email"></span>
-                    </div>
-                  </div><!--se-single-data-->
-              </div><!-- row -->
-            </form>
-        </div>
-    </div><!-- card-->
-
-    <div class="card">
-      <div class="card-header card-header-icon" data-background-color="purple">
-          <i class="material-icons">assignment</i>
-      </div>
-        <div class="card-content">
             <h4 class="card-title">Employment Details</h4>
-            <form class="form-horizontal">
+            <form class="form-horizontal tab-pane">
               <div class="row">
+                <div class="col-md-6">
                   <div class="se-single-data row">
                     <div class="col-sm-6">
                       <span class="se-label">Employee Number</span>
@@ -254,7 +253,8 @@
                       <span class="se-value" id="emp_type"></span>
                     </div>
                   </div><!--se-single-data-->
-
+                </div><!-- col-md-6-->
+                <div class="col-md-6">
                   <div class="se-single-data row">
                     <div class="col-sm-6">
                       <span class="se-label">Salary Step</span>
@@ -284,7 +284,7 @@
                       <span class="se-value" id="emp-category"></span>
                     </div>
                   </div><!--se-single-data-->
-
+                </div><!-- col-md-6-->
               </div><!-- row -->
             </form>
         </div>

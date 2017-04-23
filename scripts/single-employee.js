@@ -469,6 +469,8 @@ $(function() {
 						$("#date-of-commencement").html(date_of_commencement);
 						$("#emp-category").html(emp_category);
 
+						$(".card").fadeIn("fast");
+
           }
         },
         error: function(error) {
@@ -546,6 +548,7 @@ $("#save-certification").click(function() {
 	 })
 
 	 var status = $(this).attr("data-status");
+	 console.log(status);
 	 if(status == "1"){
 		 var cert_id = $(this).attr("data-certification");
 		 update_certification(my_json, action_id, cert_id)
@@ -629,6 +632,7 @@ function update_certification(json, action_id, id) {
 				$("#save-certification").show();
 				if(data.status == 'success') {
 					showSuccess("Certification Updated Successfully!");
+					$("#save-certification").attr("data-status", "0");
 					pullMenu(".certification-input", "#add-certification", "Certification");
 					get_certifications();
 				} else {

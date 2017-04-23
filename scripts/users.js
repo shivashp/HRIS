@@ -11,7 +11,7 @@ $(function() {
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {          
+        success: function(data) {
           var str ='';
           if(data.status === 'success') {
             for (var i = 0; i < data.data.length; i++) {
@@ -37,6 +37,7 @@ $(function() {
             }
             $("#data-body").html(str);
             $('#datatables').DataTable();
+            $(".card").fadeIn("fast");
           }
         },
         error: function(error) {

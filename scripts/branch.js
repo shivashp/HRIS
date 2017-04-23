@@ -73,6 +73,7 @@ $(function() {
             $("#data-body").html(st);
             check_permissions();
             var table = $('#datatables').DataTable();
+            $(".card").fadeIn("fast");
           }
         },
         error: function(error) {
@@ -353,7 +354,7 @@ $(function() {
     $('#llg').selectpicker('val', -1);
     $('#district').selectpicker('val', -1);
     $('#province').selectpicker('val', -1);
-    $('#region').selectpicker('val', -1);    
+    $('#region').selectpicker('val', -1);
   })
 
   function add_branch() {

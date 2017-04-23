@@ -28,6 +28,7 @@ get_role();
             }
             $("#data-body").html(str);
             $('#datatables').DataTable();
+            $(".card").fadeIn("fast");
           }
         },
         error: function(error) {

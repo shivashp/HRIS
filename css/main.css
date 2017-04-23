@@ -6,6 +6,14 @@
 html .per {
   display: none;
 }
+.card {
+  display: none;
+  margin-bottom:55px;
+}
+
+/* =============================================
+                  Style Reset
+/* ============================================= */
 .table > thead > tr > th {
   font-size: 17px;
 }
@@ -28,6 +36,12 @@ html .per {
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+.form-group.is-focused .form-control, .btn-group.bootstrap-select.show-tick.open .select-with-transition {
+      background-image: linear-gradient(#355089, #253a67), linear-gradient(#D2D2D2, #D2D2D2) !important;
+}
+.dropdown-menu li a:hover, .dropdown-menu li a:focus, .dropdown-menu li a:active {
+    background-color: #355089;
 }
 /* =============================================
                   Sidebar
@@ -399,4 +413,19 @@ form#employee-search {
 div#branch-agency-select {
     margin-top: 16px;
     margin-bottom: -5px;
+}
+
+/* ========================================= */
+/*           Create Employee                 */
+/* ========================================= */
+
+.add-emp-row {
+    margin-top: 25px;
+}
+.add-emp-row>h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: #efefef;
+  padding-left: 10px;
+  margin-top: 10px;
 }

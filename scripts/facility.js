@@ -28,6 +28,7 @@ get_facility();
             $("#data-body").html(str);
             check_permissions();
             $('#datatables').DataTable();
+            $(".card").fadeIn("fast");
           }
         },
         error: function(error) {

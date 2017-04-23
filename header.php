@@ -30,7 +30,7 @@
           <div class="logo logo-mini"> <a href="#" class="simple-text"> HRIS </a> </div>
           <div class="sidebar-wrapper">
               <ul class="nav" id="main">
-                  <li class="link dashboard">
+                  <li class="per link dashboard">
                       <a href="dashboard.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
                           <p>Dashboard</p>
                       </a>
@@ -158,10 +158,15 @@
                                 </a>
                             </li>
                             <li class="sub-link add-employee agencyemp-write">
-                                <a href="create-employee.php">
+                                <a href="add-employee.php">
                                     Add Employee
                                 </a>
                             </li>
+                            <!-- <li class="sub-link add-employee agencyemp-write">
+                                <a href="create-employee.php">
+                                    Create Employee
+                                </a>
+                            </li> -->
 
                           </ul>
                       </div><!-- Agency Employee Management -->

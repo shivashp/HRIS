@@ -165,6 +165,7 @@ function get_employees() {
           $("#data-body").html(data1.map(data => generate_table(data)).join(''));
           check_permissions();
           $('#datatables').DataTable();
+          $(".card").fadeIn("fast");
         }
       },
       error: function(error) {

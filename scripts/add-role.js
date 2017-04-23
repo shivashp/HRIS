@@ -7,7 +7,8 @@ $(function() {
       prepareEdit(params.id);
     }
   }
-
+  
+$(".card").fadeIn("fast");
 
   function prepareEdit(id) {
     $.ajax({

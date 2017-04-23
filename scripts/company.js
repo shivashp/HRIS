@@ -16,7 +16,7 @@ var COUNTRY_LIST = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguil
 		,"Yemen","Zambia","Zimbabwe"];
 
 var token = localStorage.getItem("token");
-
+$(".card").fadeIn("fast");
 $(function() {
 	demo.initFormExtendedDatetimepickers();
   (function() {
@@ -40,7 +40,7 @@ $(function() {
 		var arr = [name.isBlank('Name'), desc.isBlank('Desc'), symbol.isBlank('Symbol'), country.isBlank('Country')]
 		if(checkEmpty(arr)){
 			return false;
-		}				
+		}
 		$.ajax({
         url: basepath + "company",
         type: "POST",

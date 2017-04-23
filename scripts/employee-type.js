@@ -29,6 +29,7 @@ get_type();
             $("#data-body").html(str);
             check_permissions();
             var table = $('#datatables').DataTable();
+            $(".card").fadeIn("fast");
           }
         },
         error: function(error) {

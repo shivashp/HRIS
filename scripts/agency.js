@@ -9,7 +9,7 @@ $(function() {
   var LLG, DISTRICT, PROVINCE, REGION, FACILITY;
 
 
-  function edit_agency(i) {    
+  function edit_agency(i) {
     var id = AGENCY_JSON[i].id;
     var type = AGENCY_JSON[i].facility_type;
     var llg = AGENCY_JSON[i].llg;
@@ -74,6 +74,7 @@ $(function() {
             $("#data-body").html(st);
             check_permissions();
             var table = $('#datatables').DataTable();
+            $(".card").fadeIn("fast");
           }
         },
         error: function(error) {

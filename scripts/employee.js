@@ -43,6 +43,7 @@ function get_agency_employee() {
           EMPLOYEES = data1;
           $("#data-body").html(data1.map(data => generate_table(data)).join(''));
           $('#datatables').DataTable();
+          $(".card").fadeIn("fast");
 
         }
       },
@@ -62,7 +63,7 @@ function generate_table(data) {
   str += "                          <td>"+data.address1+"<\/td>";
   str += "                          <td>"+data.contact_number+"<\/td>";
   str += "                          <td>"+data.country+"<\/td>";
-  str += "                          <td class=\"text-right\">";  
+  str += "                          <td class=\"text-right\">";
   str += "                              <a class=\"btn btn-success btn-sm btn-icon edit\" href= \"single-employee.php?action="+data.id+"\">View<\/a>";
   str += "                              <a class=\"btn btn-success btn-sm btn-danger btn-icon edit\" data-id=\""+data.i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
   str += "                          <\/td>";
