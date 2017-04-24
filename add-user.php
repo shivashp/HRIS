@@ -2,7 +2,7 @@
 
 <div class="content">
   <div class ="username-input">
-    <div class="card">
+    <div class="card" style="display:inline-block">
         <div class="card-content">
             <h4 class="card-title">Add Username</h4>
             <div class="col-md-8 col-md-offset-2">
