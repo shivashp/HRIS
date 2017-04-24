@@ -85,7 +85,7 @@ $(function() {
         },
         error: function(error) {
           $(".loader").hide();
-          $("#login-btn").show();
+          
           showError("Error in Server! Try again!")
         },
     });// Ajax
