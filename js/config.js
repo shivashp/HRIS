@@ -96,6 +96,13 @@ String.prototype.isEmail = function (type = 'Email') {
   else
   return true;
 };
+var isNull = function(value, type = 'Field') {
+  if(value === null) {
+    showError(" Please Choose " + type);
+    return false;
+  }
+  return true;
+}
 
 function parseURL() {
   var str = window.location.search;

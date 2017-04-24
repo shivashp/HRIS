@@ -292,10 +292,11 @@ $(function() {
     var province = $("#province").val();
     var region = $("#region").val();
     var name = $("#facility-name").val();
-    var arr = [name.isBlank("Name"), type.isBlank("Facility Type"), llg.isBlank("LLG"), district.isBlank("District"), province.isBlank("Province"), region.isBlank("Region")];
+    var arr = [name.isBlank("Name"), isNull(type, "Facility Type"), isNull(llg, "LLG"), isNull(district,"District"), isNull(province, "Province"), isNull(region, "Region")];
     if(checkEmpty(arr)){
-			return false;
-		}
+      return false;
+  }
+
 
     $.ajax({
         url: basepath + "agencies/"+id,
@@ -366,10 +367,11 @@ $(function() {
     var province = $("#province").val();
     var region = $("#region").val();
     var name = $("#facility-name").val();
-    var arr = [name.isBlank("Name"), type.isBlank("Facility Type"), llg.isBlank("LLG"), district.isBlank("District"), province.isBlank("Province"), region.isBlank("Region")];
+    var arr = [name.isBlank("Name"), isNull(type, "Facility Type"), isNull(llg, "LLG"), isNull(district,"District"), isNull(province, "Province"), isNull(region, "Region")];
     if(checkEmpty(arr)){
-			return false;
-		}
+      return false;
+  }
+
 
     $.ajax({
         url: basepath + "agencies",

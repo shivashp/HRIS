@@ -56,9 +56,9 @@
               </div><!-- col-md-4-->
 
               <div class="col-md-4">
-                <div class="form-group label-floating">
-                    <label class="control-label"></label>
-                    <input type="text" name="dob" id="dob" class="datepicker form-control" placeholder="Date of Birth">
+                <div class="form-group">
+                    <label class="control-label date-label">Date of Birth</label>
+                    <input type="text" name="dob" id="dob" class="datepicker form-control" >
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
@@ -192,9 +192,9 @@
 
             <div class="row add-emp-row">
               <div class="col-md-4">
-                <div class="form-group label-floating">
-                    <label class="control-label"></label>
-                    <input type="text" name="startdate" id="start-date" class="datepicker form-control" placeholder="Date of Commencement">
+               <div class="form-group " style="margin-top:0">
+                  <label class="control-label date-label">Date of Commencement</label>
+                    <input type="text" name="startdate" id="start-date" class="datepicker form-control">
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
@@ -248,11 +248,11 @@
               </div><!-- col-md-4-->
 
               <div class="col-md-4" id="contract-end">
-                <div class="form-group label-floating" style="margin-top:0">
-                  <label class="control-label"></label>
-                  <input type="text" class="form-control datepicker" id="contract-end-date" placeholder="Contract End Date">
+                <div class="form-group " style="margin-top:0">
+                  <label class="control-label date-label">Contract End Date</label>
+                  <input type="text" class="form-control datepicker" id="contract-end-date" >
                 </div>
-              </div><!-- col-md-4-->
+              </div><!-- <colgroup></colgroup>l-md-4-->
             </div><!--row -->
 
             <div class="row text-center" style="margin-top:20px;">
@@ -280,7 +280,9 @@
   label.error {
     color: #f44336;
   }
-  .form-control, .form-group .form-control {
-    font-weight: bold;
-  }
+  label.control-label.date-label {
+    font-size: 14px;
+    margin-top: -27px;
+    margin-bottom: 8px;
+}
 </style>

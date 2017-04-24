@@ -54,6 +54,9 @@ html .per {
 .dropdown-menu li a:hover, .dropdown-menu li a:focus, .dropdown-menu li a:active {
     background-color: #355089;
 }
+  .form-control, .form-group .form-control {
+    font-weight: bold;
+  }
 /* =============================================
                   Sidebar
 /* ============================================= */

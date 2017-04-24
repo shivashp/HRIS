@@ -29,270 +29,151 @@
           <h4 class="card-title">Personal Details</h4>
           <div class="tab-content">
               <div class="tab-pane active" id="personal">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">First Name</span>
-                      </div>
+              
 
-                      <div class="col-sm-8">
-                        <span class="se-value" id="first-name"></span>
-                      </div>
-                    </div><!--se-single-data-->
+              <div class="row">
+              <div class="col-md-4">
+                <table class="table table-striped">
+                  <tr>
+                    <td>First Name</td>
+                    <td> : </td>
+                    <td id="first-name">Apple</td>
+                  </tr>
+                  <tr>
+                    <td>Middle Name</td>
+                    <td> : </td>
+                    <td id="middle-name">Ball</td>
+                  </tr>
+                  <tr>
+                    <td>Last Name</td>
+                    <td> : </td>
+                    <td id="last-name">Cat</td>
+                  </tr>
+                  <tr>
+                    <td>Age</td>
+                    <td> : </td>
+                    <td id="age">44</td>
+                  </tr>
+                  <tr>
+                    <td>Sex</td>
+                    <td> : </td>
+                    <td id="sex">Male</td>
+                  </tr>
+                  
+                  <tr>
+                    <td>Date of Birth</td>
+                    <td> : </td>
+                    <td id="dob"></td>
+                  </tr>
+                  <tr>
+                    <td>Phone No.</td>
+                    <td> : </td>
+                    <td id="phone"></td>
+                  </tr>
+                  <tr>
+                    <td>Alternate Phone No.</td>
+                    <td> : </td>
+                    <td id="phone1"></td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                    <td> : </td>
+                    <td id="email"></td>
+                  </tr>
+                </table>
+              </div>
+              
+               <div class="col-md-4">
+                <table class="table table-striped">
+                  <tr>
+                    <td>Address one</td>
+                    <td> : </td>
+                    <td id="address1"></td>
+                  </tr>
+                  <tr>
+                    <td>Address two</td>
+                    <td> : </td>
+                    <td id="address2"></td>
+                  </tr>
+                  <tr>
+                    <td>Village</td>
+                    <td> : </td>
+                    <td id="village"></td>
+                  </tr>
+                  <tr>
+                    <td>LLG</td>
+                    <td> : </td>
+                    <td id="llg"></td>
+                  </tr>
+                  <tr>
+                    <td>District</td>
+                    <td> : </td>
+                    <td id="district"></td>
+                  </tr>
+                  <tr>
+                    <td>Province</td>
+                    <td> : </td>
+                    <td id="province"></td>
+                  </tr>
+                  <tr>
+                    <td>Region</td>
+                    <td> : </td>
+                    <td id="region"></td>
+                  </tr>
+                  <tr>
+                    <td>Country</td>
+                    <td> : </td>
+                    <td id="country"></td>
+                  </tr>
+                  
+                </table>
+              </div>
 
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Last Name</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="last-name"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Sex</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="sex"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Middle Name</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="middle-name"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Age</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="age"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Date of Birth</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="dob"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Phone No</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="phone"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-6">
-                        <span class="se-label">Alternate Phone No</span>
-                      </div>
-
-                      <div class="col-sm-6">
-                        <span class="se-value" id="phone1"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Email</span>
-                      </div>
-                      <div class="col-sm-8">
-                        <span class="se-value" id="email"></span>
-                      </div>
-                    </div><!--se-single-data-->
-                  </div><!-- col-md-6-->
-
-                  <div class="col-md-6">
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Address 1</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="address1"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Village</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="village"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">District</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="district"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Region</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="region"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Address 2</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="address2"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">LLG</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="llg"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Province</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="province"></span>
-                      </div>
-                    </div><!--se-single-data-->
-
-                    <div class="se-single-data row">
-                      <div class="col-sm-4">
-                        <span class="se-label">Country</span>
-                      </div>
-
-                      <div class="col-sm-8">
-                        <span class="se-value" id="country"></span>
-                      </div>
-                    </div><!--se-single-data-->
-                  </div><!-- col-md-6-->
-
-                </div><!-- row -->
+               <div class="col-md-4">
+                <table class="table table-striped">
+                   <tr>
+                    <td>Employment No.</td>
+                    <td> : </td>
+                    <td id="emp-number"></td>
+                  </tr>                 
+                   <tr>
+                    <td>Branch / Agency</td>
+                    <td> : </td>
+                    <td id="branch-agency"></td>
+                  </tr>
+                   <tr>
+                    <td>Employee Type</td>
+                    <td> : </td>
+                    <td id="emp_type"></td>
+                  </tr>
+                   <tr>
+                    <td>Employee Category</td>
+                    <td> : </td>
+                    <td id="emp-category"></td>
+                  </tr>
+                   <tr>
+                    <td>Salary Step</td>
+                    <td> : </td>
+                    <td id="salary-step"></td>
+                  </tr>
+                   <tr>
+                    <td>Date of Commencement</td>
+                    <td> : </td>
+                    <td id="date-of-commencement"></td>
+                  </tr>
+                  <tr>
+                    <td>Retirement Age</td>
+                    <td> : </td>
+                    <td id="retirement-age"></td>
+                  </tr>
+                </table>
+              </div>
+                
+              </div><!-- row -->
               </div><!-- personal -->
           </div><!--tab-content-->
       </div><!-- card-content -->
     </div><!-- card -->
-
-    <div class="card">
-      <div class="card-header card-header-icon" data-background-color="purple">
-          <i class="material-icons">assignment</i>
-      </div>
-        <div class="card-content">
-            <h4 class="card-title">Employment Details</h4>
-            <form class="form-horizontal tab-pane">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="se-single-data row">
-                    <div class="col-sm-6">
-                      <span class="se-label">Employee Number</span>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <span class="se-value" id="emp-number"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-6">
-                      <span class="se-label">Retirement Age</span>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <span class="se-value" id="retirement-age"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-6">
-                      <span class="se-label">Branch/Agency</span>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <span class="se-value" id="branch-agency"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-6">
-                      <span class="se-label">Employee Type</span>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <span class="se-value" id="emp_type"></span>
-                    </div>
-                  </div><!--se-single-data-->
-                </div><!-- col-md-6-->
-                <div class="col-md-6">
-                  <div class="se-single-data row">
-                    <div class="col-sm-6">
-                      <span class="se-label">Salary Step</span>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <span class="se-value" id="salary-step"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-6">
-                      <span class="se-label">Date of Commencement</span>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <span class="se-value" id="date-of-commencement"></span>
-                    </div>
-                  </div><!--se-single-data-->
-
-                  <div class="se-single-data row">
-                    <div class="col-sm-6">
-                      <span class="se-label">Employee Category</span>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <span class="se-value" id="emp-category"></span>
-                    </div>
-                  </div><!--se-single-data-->
-                </div><!-- col-md-6-->
-              </div><!-- row -->
-            </form>
-        </div>
-    </div><!-- card-->
 
     <div class ="training-input">
       <div class="card">

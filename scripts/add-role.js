@@ -60,14 +60,46 @@ $(".card").fadeIn("fast");
     if(!title.isBlank("Title") || !code.isBlank("Code")){
       return false;
     }
-    var company = $(".company:checked").val();
-    var division = $(".division:checked").val();
-    var agency = $(".agency:checked").val();
-    var agency_employee = $(".agency-employee:checked").val();
-    // var division_employee = $(".division-employee:checked").val();
-    var user = $(".user:checked").val();
-    var config = $(".config:checked").val();
+
+  
     var activate = true;
+
+    company = $("input[name=company]:checkbox:checked").map(function()
+    {
+    return $(this).val();
+    }).get();
+    company  = company[company.length-1]
+
+    division = $("input[name=division]:checkbox:checked").map(function()
+    {
+    return $(this).val();
+    }).get();
+    division  = division[division.length-1]
+
+    agency = $("input[name=agency]:checkbox:checked").map(function()
+    {
+    return $(this).val();
+    }).get();
+    agency  = agency[agency.length-1]
+
+    agency_employee = $("input[name=agency-employee]:checkbox:checked").map(function()
+    {
+    return $(this).val();
+    }).get();
+    agency_employee  = agency_employee[agency_employee.length-1]
+
+    user = $("input[name=user]:checkbox:checked").map(function()
+    {
+    return $(this).val();
+    }).get();
+    user  = user[user.length-1]
+
+     config = $("input[name=config]:checkbox:checked").map(function()
+    {
+    return $(this).val();
+    }).get();
+    config  = config[config.length-1]
+
 
     var json = {
           "activate": activate,
@@ -82,6 +114,7 @@ $(".card").fadeIn("fast");
           "role_code": code,
           "user_management_perm": user
         }
+
 
     var status = $(this).attr("data-status");
     if(status){
@@ -153,5 +186,64 @@ function add_role(json) {
   });// Ajax
 }
 
+
+/* =============================================== 
+**                              Checkbox Edit Handle
+** =============================================== */
+
+$(".company").change(function() {
+    var per = $(this).val();        
+    map_permissions('company', per)
+  })
+  
+  $(".division").change(function() {
+    var per = $(this).val();
+    map_permissions('division', per);
+  })
+
+    $(".agency").change(function() {
+    var per = $(this).val();
+    map_permissions('agency', per);
+  })
+  
+  $(".user").change(function() {
+    var per = $(this).val();
+    map_permissions('user', per);
+  })
+
+  $(".config").change(function() {
+    var per = $(this).val();
+    map_permissions('config', per);
+  })
+
+  $(".agency-employee").change(function() {
+    var per = $(this).val();
+    map_permissions('agency-employee', per);
+  })
+  
+  function map_permissions(name, per) {
+   
+    switch(per) {
+      case 'R':        
+        $('input[name='+name+']').prop('checked', false);
+        $('input[name='+name+'][value=R]').prop('checked', true);
+        break;
+      case 'W':
+        $('input[name='+name+']').prop('checked', false);
+        $('input[name='+name+'][value=R]').prop('checked', true);
+        $('input[name='+name+'][value=W]').prop('checked', true);
+        break;
+      case 'E':
+        $('input[name='+name+']').prop('checked', false);
+        $('input[name='+name+'][value=R]').prop('checked', true);
+        $('input[name='+name+'][value=W]').prop('checked', true);
+        $('input[name='+name+'][value=E]').prop('checked', true);
+        break;
+      case 'N': 
+        $('input[name='+name+']').prop('checked', false);
+        $('input[name='+name+'][value=N]').prop('checked', true);
+        break;
+     }
+  }
 
 })// Document

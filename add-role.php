@@ -63,52 +63,52 @@
            <tbody>
              <tr>
                 <td>Company Management</td>
-                <td><input type="radio" class="company" name="company" value = "N" checked></td>
-                <td><input type="radio" class="company" name="company" value = "R"></td>
-                <td><input type="radio" class="company" name="company" value = "W"></td>
-                <td><input type="radio" class="company" name="company" value = "E"></td>
+                <td><input type="checkbox" class="company" name="company" value = "N" checked></td>
+                <td><input type="checkbox" class="company" name="company" value = "R"></td>
+                <td><input type="checkbox" class="company" name="company" value = "W"></td>
+                <td><input type="checkbox" class="company" name="company" value = "E"></td>
              </tr>
               <tr>
                  <td>Division Management</td>
-                 <td><input type="radio" class = "division" name="division" value = "N" checked></td>
-                 <td><input type="radio" class = "division" name="division" value = "R"></td>
-                 <td><input type="radio" class = "division" name="division" value = "W"></td>
-                 <td><input type="radio" class = "division" name="division" value = "E"></td>
+                 <td><input type="checkbox" class = "division" name="division" value = "N" checked></td>
+                 <td><input type="checkbox" class = "division" name="division" value = "R"></td>
+                 <td><input type="checkbox" class = "division" name="division" value = "W"></td>
+                 <td><input type="checkbox" class = "division" name="division" value = "E"></td>
               </tr>
               <tr>
                  <td>Agency Mangement</td>
-                 <td><input type="radio" class = "agency" name="agency" value = "N" checked></td>
-                 <td><input type="radio" class = "agency" name="agency" value = "R"></td>
-                 <td><input type="radio" class = "agency" name="agency" value = "W"></td>
-                 <td><input type="radio" class = "agency" name="agency" value = "E"></td>
+                 <td><input type="checkbox" class = "agency" name="agency" value = "N" checked></td>
+                 <td><input type="checkbox" class = "agency" name="agency" value = "R"></td>
+                 <td><input type="checkbox" class = "agency" name="agency" value = "W"></td>
+                 <td><input type="checkbox" class = "agency" name="agency" value = "E"></td>
               </tr>
               <tr>
                  <td>Employee Management</td>
-                 <td><input type="radio" class = "agency-employee" name="agency-employee" value = "N" checked></td>
-                 <td><input type="radio" class = "agency-employee" name="agency-employee" value = "R"></td>
-                 <td><input type="radio" class = "agency-employee" name="agency-employee" value = "W"></td>
-                 <td><input type="radio" class = "agency-employee" name="agency-employee" value = "E"></td>
+                 <td><input type="checkbox" class = "agency-employee" name="agency-employee" value = "N" checked></td>
+                 <td><input type="checkbox" class = "agency-employee" name="agency-employee" value = "R"></td>
+                 <td><input type="checkbox" class = "agency-employee" name="agency-employee" value = "W"></td>
+                 <td><input type="checkbox" class = "agency-employee" name="agency-employee" value = "E"></td>
               </tr>
               <!-- <tr>
                  <td>Division Employee Management</td>
-                 <td><input type="radio" class = "division-employee" name="employee" value = "N" checked></td>
-                 <td><input type="radio" class = "division-employee" name="employee" value = "R"></td>
-                 <td><input type="radio" class = "division-employee" name="employee" value = "W"></td>
-                 <td><input type="radio" class = "division-employee" name="employee" value = "E"></td>
+                 <td><input type="checkbox" class = "division-employee" name="employee" value = "N" checked></td>
+                 <td><input type="checkbox" class = "division-employee" name="employee" value = "R"></td>
+                 <td><input type="checkbox" class = "division-employee" name="employee" value = "W"></td>
+                 <td><input type="checkbox" class = "division-employee" name="employee" value = "E"></td>
               </tr> -->
               <tr>
                  <td>User Management</td>
-                 <td><input type="radio" class = "user" name="user" value = "N" checked></td>
-                 <td><input type="radio" class = "user" name="user" value = "R"></td>
-                 <td><input type="radio" class = "user" name="user" value = "W"></td>
-                 <td><input type="radio" class = "user" name="user" value = "E"></td>
+                 <td><input type="checkbox" class = "user" name="user" value = "N" checked></td>
+                 <td><input type="checkbox" class = "user" name="user" value = "R"></td>
+                 <td><input type="checkbox" class = "user" name="user" value = "W"></td>
+                 <td><input type="checkbox" class = "user" name="user" value = "E"></td>
               </tr>
               <tr>
-                 <td>Configuration Management</td>
-                 <td><input type="radio" class = "config" name="config" value = "N" checked></td>
-                 <td><input type="radio" class = "config" name="config" value = "R"></td>
-                 <td><input type="radio" class = "config" name="config" value = "W"></td>
-                 <td><input type="radio" class = "config" name="config" value = "E"></td>
+                 <td>Employee Configuration Management</td>
+                 <td><input type="checkbox" class = "config" name="config" value = "N" checked></td>
+                 <td><input type="checkbox" class = "config" name="config" value = "R"></td>
+                 <td><input type="checkbox" class = "config" name="config" value = "W"></td>
+                 <td><input type="checkbox" class = "config" name="config" value = "E"></td>
               </tr>
            </tbody>
         </table>

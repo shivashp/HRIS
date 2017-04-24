@@ -35,8 +35,9 @@ $(function() {
 		country_obj = country_obj.join('');
 		$(".country").html(country_obj);
 		$('.country').selectpicker({
-      size: 7
-    });
+		      size: 7,
+		      liveSearch: true
+		});
 	}
 
 	$("#add-training").click(function() {

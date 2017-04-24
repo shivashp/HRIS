@@ -302,10 +302,12 @@ $(function() {
     var province = $("#province").val();
     var region = $("#region").val();
     var name = $("#facility-name").val();
-    var arr = [name.isBlank("Name"), type.isBlank("Facility Type"), llg.isBlank("LLG"), district.isBlank("District"), province.isBlank("Province"), region.isBlank("Region")];
+
+    var arr = [name.isBlank("Name"), isNull(type, "Facility Type"), isNull(llg, "LLG"), isNull(district,"District"), isNull(province, "Province"), isNull(region, "Region")];
     if(checkEmpty(arr)){
-			return false;
-		}
+      return false;
+  }
+
 
     $.ajax({
         url: basepath + "branches/"+id,
@@ -330,7 +332,7 @@ $(function() {
           $(".loader").hide();
           $("#add").show();
           if(data.status == 'success') {
-            showSuccess("Branch Updated Successfully!");
+            showSuccess("Division Updated Successfully!");
             pullMenu();
             $("#facility").selectpicker('val', -1);
             $('#llg').selectpicker('val', -1);
@@ -365,10 +367,12 @@ $(function() {
     var province = $("#province").val();
     var region = $("#region").val();
     var name = $("#facility-name").val();
-    var arr = [name.isBlank("Name"), type.isBlank("Facility Type"), llg.isBlank("LLG"), district.isBlank("District"), province.isBlank("Province"), region.isBlank("Region")];
+
+    var arr = [name.isBlank("Name"), isNull(type, "Facility Type"), isNull(llg, "LLG"), isNull(district,"District"), isNull(province, "Province"), isNull(region, "Region")];
     if(checkEmpty(arr)){
 			return false;
-		}
+	}
+
 
     $.ajax({
         url: basepath + "branches",
@@ -393,7 +397,7 @@ $(function() {
           $(".loader").hide();
           $("#add").show();
           if(data.status == 'success') {
-            showSuccess("Branch Added Successfully!");
+            showSuccess("Division Added Successfully!");
             pullMenu();
             get_branches();
           } else {
