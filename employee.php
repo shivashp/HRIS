@@ -1,5 +1,9 @@
 <?php include('header.php'); ?>
 <div class="content">
+ <div class="page-loader">
+  <img src="img/loader.gif"><br>
+  <div class="page-loader-text">Please Wait...</div>
+</div><!-- page-loader-->
   <div class="card">
       <div class="card-header card-header-icon" data-background-color="purple">
           <i class="material-icons">assignment</i>
@@ -10,8 +14,9 @@
               <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                   <thead>
                       <tr>
-                        <th>Emp No.</th>
                         <th>Name</th>
+                        <th>Emp No.</th>
+
                         <th>Address</th>
                         <th>Contact</th>
                         <th>Country</th>

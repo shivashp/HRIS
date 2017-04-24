@@ -7,12 +7,16 @@
 </script>
 
 <div class="content">
+ <div class="page-loader">
+  <img src="img/loader.gif"><br>
+  <div class="page-loader-text">Please Wait...</div>
+</div><!-- page-loader-->
   <div class="card">
       <div class="card-header card-header-icon" data-background-color="purple">
           <i class="material-icons">assignment</i>
       </div>
       <div class="card-content">
-          <h4 class="card-title">Add Role</h4>
+          <h4 class="card-title" id="role-title">Add Role</h4>
           <form class="form-horizontal">
             <div class="row">
               <div class="col-md-6">
@@ -34,16 +38,6 @@
                         </div>
                     </div>
                 </div><!--row-->
-                <div class="row">
-                    <label class="col-md-3 label-on-left">Activate</label>
-                    <div class="col-md-9">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="checkbox" id="role-activate" class="form-control" placeholder="Code">
-                        </div>
-                    </div>
-                </div><!--row-->
-                <br><br>
               </div>
             </div><!--row -->
           </form>
@@ -124,7 +118,7 @@
           <div class="col-md-12" style = "text-align:center;margin-top:30px">
               <div class="form-group form-button">
                 <span class="loader"><img src="img/loader.gif"></span><button type="submit" id="add" class="btn btn-fill btn-success sp-save-btn">Save</button>
-                <a href="roles.php" class="btn btn-fill btn-danger">Cancel</a>
+                <a href="role.php" class="btn btn-fill btn-danger">Cancel</a>
               </div>
           </div>
       </div>

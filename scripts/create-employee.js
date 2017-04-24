@@ -21,6 +21,7 @@ get_branches();
 get_type();
 get_category();
 
+  $(".page-loader").hide();
   $(".card").fadeIn("fast");
   $("#branch-agency").change(function() {
     var name = $(this).val();

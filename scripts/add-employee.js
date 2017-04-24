@@ -65,6 +65,21 @@ $("#add").click(function(e) {
 });
 })
 
+$("#last-name").on("focusout", function() {
+  console.log("Focus out");
+   $(window).keyup(function (e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 9) {
+          // next_select("#sex");
+        }
+    });
+})
+
+function next_select(nextSelect) {
+  
+  $(nextSelect).selectpicker("toggle");
+}
+
 function add_data() {
   var first_name = $("#first-name").val();
   var middle_name = $("#middle-name").val();
@@ -222,7 +237,8 @@ function get_category() {
           str = str.join('');
           $("#employee-category").html(str);
           $('#employee-category').selectpicker({
-            size: 7
+            size: 7,
+            liveSearch: true
           });
         }
       },
@@ -269,7 +285,8 @@ function get_agencies() {
     agency_obj = agency_obj.join('');
     $("#agency").html(agency_obj);
     $('#agency').selectpicker({
-      size: 7
+      size: 7,
+      liveSearch: true
     });
     return false;
   }
@@ -290,7 +307,8 @@ function get_agencies() {
           agency_obj = agency_obj.join('');
           $("#agency").html(agency_obj);
           $('#agency').selectpicker({
-            size: 7
+            size: 7,
+            liveSearch: true
           });
         }
       },
@@ -312,7 +330,8 @@ function get_branches() {
     branch_obj = branch_obj.join('');
     $("#branch").html(branch_obj);
     $('#branch').selectpicker({
-      size: 7
+      size: 7,
+      liveSearch: true
     });
     return false;
   }
@@ -333,7 +352,8 @@ function get_branches() {
           branch_obj = branch_obj.join('');
           $("#branch").html(branch_obj);
           $('#branch').selectpicker({
-            size: 7
+            size: 7,
+            liveSearch: true
           });
         }
       },
@@ -352,7 +372,8 @@ function get_llg() {
     var llg_obj = prepare_selectpicker(llg);
     $("#llg").html(llg_obj);
     $('#llg').selectpicker({
-      size: 7
+      size: 7,
+      liveSearch: true
     });
     return false;
   }
@@ -370,7 +391,8 @@ function get_llg() {
           var llg_obj = prepare_selectpicker(data.data);
           $("#llg").html(llg_obj);
           $('#llg').selectpicker({
-            size: 7
+            size: 7,
+            liveSearch: true
           });
         }
       },
@@ -390,7 +412,8 @@ function get_district() {
     var district_obj = prepare_selectpicker(district);
     $("#district").html(district_obj);
     $('#district').selectpicker({
-      size: 7
+      size: 7,
+      liveSearch: true
     });
     return false;
   }
@@ -408,7 +431,8 @@ function get_district() {
           var district_obj = prepare_selectpicker(data.data);
           $("#district").html(district_obj);
           $('#district').selectpicker({
-            size: 7
+            size: 7,
+            liveSearch: true
           });
         }
       },
@@ -428,7 +452,8 @@ function get_province() {
     var province_obj = prepare_selectpicker(province);
     $("#province").html(province_obj);
     $('#province').selectpicker({
-      size: 7
+      size: 7,
+      liveSearch: true
     });
     return false;
   }
@@ -446,7 +471,8 @@ function get_province() {
           var province_obj = prepare_selectpicker(data.data);
           $("#province").html(province_obj);
           $('#province').selectpicker({
-            size: 7
+            size: 7,
+            liveSearch: true
           });
         }
       },
@@ -466,7 +492,8 @@ function get_region() {
     var region_obj = prepare_selectpicker(region);
     $("#region").html(region_obj);
     $('#region').selectpicker({
-      size: 7
+      size: 7,
+      liveSearch: true
     });
     return false;
   }
@@ -484,7 +511,8 @@ function get_region() {
           var region_obj = prepare_selectpicker(data.data);
           $("#region").html(region_obj);
           $('#region').selectpicker({
-            size: 7
+            size: 7,
+            liveSearch: true
           });
         }
       },

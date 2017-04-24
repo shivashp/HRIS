@@ -5,9 +5,10 @@ $(function() {
   if(count > 0 ) {
     if(params.action == 'edit' && params.id !== undefined) {
       prepareEdit(params.id);
+      $("#role-title").html("Edit Role");
     }
   }
-  
+$(".page-loader").hide();
 $(".card").fadeIn("fast");
 
   function prepareEdit(id) {
@@ -25,7 +26,7 @@ $(".card").fadeIn("fast");
             var division = data.data.division_management_perm;
             var user = data.data.user_management_perm;
             var role = data.data.role_type;
-            var activate = data.data.activate;
+            var activate = true;
 
             $("input[name=agency][value='"+agency+"']").prop("checked",true);
             $("input[name=agency-employee][value='"+employee+"']").prop("checked",true);
@@ -66,7 +67,7 @@ $(".card").fadeIn("fast");
     // var division_employee = $(".division-employee:checked").val();
     var user = $(".user:checked").val();
     var config = $(".config:checked").val();
-    var activate = $("#role-activate").is(':checked');
+    var activate = true;
 
     var json = {
           "activate": activate,

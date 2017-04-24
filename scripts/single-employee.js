@@ -468,7 +468,7 @@ $(function() {
 						$("#salary-step").html(salary_step);
 						$("#date-of-commencement").html(date_of_commencement);
 						$("#emp-category").html(emp_category);
-
+						$(".page-loader").hide();
 						$(".card").fadeIn("fast");
 
           }

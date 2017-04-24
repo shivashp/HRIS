@@ -67,7 +67,7 @@ String.prototype.isBlank = function (type = 'Field') {
   var value = this.toString();
   value = value.trim();
   if (value == '' || (/^\s*$/.test(value))) {
-    showError(type + " Can Not Be Empty");
+    showError(type + " Cannot Be Empty");
     return false;
   }
   else

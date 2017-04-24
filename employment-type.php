@@ -1,6 +1,10 @@
 <?php include('header.php'); ?>
 
 <div class="content">
+ <div class="page-loader">
+  <img src="img/loader.gif"><br>
+  <div class="page-loader-text">Please Wait...</div>
+</div><!-- page-loader-->
   <div class="row per config-write">
     <a class="btn btn-success pull-right sp-add-btn">Add</a>
   </div><!-- row-->

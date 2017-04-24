@@ -165,6 +165,7 @@ function get_employees() {
           $("#data-body").html(data1.map(data => generate_table(data)).join(''));
           check_permissions();
           $('#datatables').DataTable();
+          $(".page-loader").hide();
           $(".card").fadeIn("fast");
         }
       },
@@ -180,8 +181,8 @@ function generate_table(data) {
   data.user_id = data.user_id + "";
   var str = '';
   str += "<tr>";
-  str += "                          <td>"+data.employee_number+"<\/td>";
   str += "                          <td>"+data.name+"<\/td>";
+  str += "                          <td>"+data.employee_number+"<\/td>";
   str += "                          <td>"+data.address1+"<\/td>";
   str += "                          <td>"+data.country+"<\/td>";
   str += "                          <td class=\"text-right\">";

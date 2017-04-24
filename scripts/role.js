@@ -21,13 +21,14 @@ get_role();
               var name = data.data[i].role_type;
               str += "<tr>";
               str += "                          <td>"+name+"<\/td>";
-              str += "                          <td class=\"text-right\">";
+              str += "                          <td class=\"user-write text-right\">";
               str += "                              <a class=\"btn btn-simple btn-danger btn-icon\" href='add-role.php?action=edit&id="+id+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
             $("#data-body").html(str);
             $('#datatables').DataTable();
+            $(".page-loader").hide();
             $(".card").fadeIn("fast");
           }
         },

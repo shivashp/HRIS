@@ -1,6 +1,10 @@
 <?php include('header.php'); ?>
 
 <div class="content">
+ <div class="page-loader">
+  <img src="img/loader.gif"><br>
+  <div class="page-loader-text">Please Wait...</div>
+</div><!-- page-loader-->
   <div class="card">
       <div class="card-header card-header-icon" data-background-color="purple">
           <i class="material-icons">person</i>
@@ -41,6 +45,7 @@
             <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
+                <label class="control-label">Sex</label>
                     <select class="selectpicker" name="sex" id="sex" data-style="select-with-transition" title="Choose Sex" data-size="7">
                       <option value="M">Male</option>
                       <option value="F">Female</option>
@@ -122,7 +127,7 @@
             <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
-                    <label class="control-label"></label>
+                    <label class="control-label">Country</label>
                     <select class="selectpicker1" name="country" id="country" data-style="select-with-transition" title="Choose Country" data-size="7">
 
                     </select>
@@ -196,6 +201,7 @@
 
               <div class="col-md-4">
                 <div class="form-group label-floating">
+                <label class="control-label">Branch / Agency</label>
                   <select class="selectpicker" id="branch-agency" data-style="select-with-transition" title="Choose Branch/Agency" data-size="7">
                     <option value="branch" selected>Branch</option>
                     <option value="agency">Agency</option>
@@ -205,6 +211,7 @@
 
               <div class="col-md-4" id="choose-agency">
                 <div class="form-group label-floating">
+                <label class="control-label">Agency</label>
                   <select class="selectpicker1" id="agency" data-style="select-with-transition" title="Choose Agency" data-size="7">
 
                   </select>
@@ -213,6 +220,7 @@
 
               <div class="col-md-4" id="choose-branch">
                 <div class="form-group label-floating">
+                <label class="control-label">Branch</label>
                   <select id="branch" data-style="select-with-transition" title="Choose Branch" data-size="7">
                   </select>
                 </div>
@@ -223,6 +231,7 @@
             <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating"  style="margin-top:0">
+                <label class="control-label">Employee Category</label>
                   <select id="employee-category" data-style="select-with-transition" title="Choose Employee Category" data-size="7">
 
                   </select>
@@ -231,6 +240,7 @@
 
               <div class="col-md-4">
                 <div class="form-group label-floating"  style="margin-top:0">
+                <label class="control-label">Employee Type</label>
                   <select id="employee-type" data-style="select-with-transition" title="Choose Employee Type" data-size="7">
 
                   </select>
@@ -246,7 +256,7 @@
             </div><!--row -->
 
             <div class="row text-center" style="margin-top:20px;">
-              <input type="submit" name="Save" class="btn btn-success" id="add" >
+              <button type="submit" name="Save" class="btn btn-success" id="add">Save</button>
               <input type="reset" class="btn btn-danger" name="Clear">
             </div>
           </form>
@@ -269,5 +279,8 @@
   }
   label.error {
     color: #f44336;
+  }
+  .form-control, .form-group .form-control {
+    font-weight: bold;
   }
 </style>

@@ -29,6 +29,7 @@ get_district();
             $("#data-body").html(str);
             check_permissions();
             var table = $('#datatables').DataTable();
+            $(".page-loader").hide();
             $(".card").fadeIn("fast");
           }
         },

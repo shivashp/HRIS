@@ -27,9 +27,9 @@ $(function() {
                 middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
 
                 str += "<tr>";
-                str += "                          <td>"+employee_number+"<\/td>";
-                str += "                          <td>"+username+"<\/td>";
                 str += "                          <td>"+first_name + middle_name + last_name+"<\/td>";
+                str += "                          <td>"+employee_number+"<\/td>";
+                str += "                          <td>"+username+"<\/td>";                
                 str += "                          <td>"+contact+"<\/td>";
                 str += "                          <td>"+address1+"<\/td>";
                 str += "                          <td>"+country+"<\/td>";
@@ -37,6 +37,7 @@ $(function() {
             }
             $("#data-body").html(str);
             $('#datatables').DataTable();
+            $(".page-loader").hide();
             $(".card").fadeIn("fast");
           }
         },

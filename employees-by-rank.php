@@ -1,6 +1,10 @@
 <?php include('header.php'); ?>
 
 <div class="content">
+ <div class="page-loader">
+  <img src="img/loader.gif"><br>
+  <div class="page-loader-text">Please Wait...</div>
+</div><!-- page-loader-->
   <div class='row'>
     <div class="col-md-3 pull-right">
       <select data-style="btn btn-success btn-round" title="Choose Rank" id="rank" data-size="7">

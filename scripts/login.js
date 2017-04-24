@@ -45,8 +45,6 @@ $(function() {
           "password": password
         }),
         success: function(data) {
-          $(".loader").hide();
-          $("#login-btn").show();
           if(data.status == 'success') {
             var token = data.data.access_token;
             var role_id = data.data.role_id;
@@ -59,8 +57,6 @@ $(function() {
           }
         },
         error: function(error) {
-          $(".loader").hide();
-          $("#login-btn").show();
           showError("Error in Server! Try again!")
         },
     });// Ajax
@@ -75,6 +71,8 @@ $(function() {
         dataType: 'json',
         success: function(data) {
           if(data.status == 'success') {
+            $(".loader").hide();
+            $("#login-btn").show();
             delete data.data['id'];
             delete data.data['activate'];
             delete data.data['role_type'];

@@ -10,7 +10,18 @@ html .per {
   display: none;
   margin-bottom:55px;
 }
-
+.page-loader {
+    text-align: center;
+    top: 40%;
+    left: 30%;
+    position: fixed;
+}
+.page-loader>img {
+    width: 6%;
+}
+.page-loader-text {
+    margin-top: 15px;
+}
 /* =============================================
                   Style Reset
 /* ============================================= */

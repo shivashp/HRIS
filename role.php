@@ -1,6 +1,13 @@
 <?php include('header.php'); ?>
 
 <div class="content">
+<div class="row per user-write">
+    <a href= "add-role.php" class="btn btn-success pull-right sp-add-btn">Add Role</a>
+  </div><!-- row-->
+   <div class="page-loader">
+  <img src="img/loader.gif"><br>
+  <div class="page-loader-text">Please Wait...</div>
+</div><!-- page-loader-->
   <div class ="form-input">
     <div class="card">
         <div class="card-content">
@@ -42,7 +49,7 @@
                   <thead>
                       <tr>
                           <th>Name</th>
-                          <th class="disabled-sorting text-right">Actions</th>
+                          <th class="user-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>
                   <tbody id="data-body">

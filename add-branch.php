@@ -1,6 +1,10 @@
 <?php include('header.php'); ?>
 
 <div class="content">
+ <div class="page-loader">
+  <img src="img/loader.gif"><br>
+  <div class="page-loader-text">Please Wait...</div>
+</div><!-- page-loader-->
   <div class="form-section">
     <div class="card">
         <form method="get" action="#" class="form-horizontal">

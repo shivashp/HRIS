@@ -1,6 +1,10 @@
 <?php include('header.php'); ?>
 
 <div class="content">
+ <div class="page-loader">
+  <img src="img/loader.gif"><br>
+  <div class="page-loader-text">Please Wait...</div>
+</div><!-- page-loader-->
   <div class ="username-input">
     <div class="card" style="display:inline-block">
         <div class="card-content">
@@ -34,7 +38,7 @@
   </div><!-- username-input -->
 
   <div class ="password-input">
-    <div class="card">
+    <div class="card"  style="display:inline-block">
         <div class="card-content">
             <h4 class="card-title">Update Password</h4>
             <div class="col-md-8 col-md-offset-2">
@@ -67,8 +71,8 @@
             <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                 <thead>
                     <tr>
-                      <th>Emp No.</th>
                       <th>Name</th>
+                      <th>Emp No.</th>                      
                       <th>Address</th>
                       <th>Country</th>
                       <th class="disabled-sorting text-right">Actions</th>

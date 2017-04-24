@@ -43,6 +43,7 @@ function get_agency_employee() {
           EMPLOYEES = data1;
           $("#data-body").html(data1.map(data => generate_table(data)).join(''));
           $('#datatables').DataTable();
+          $(".page-loader").hide();
           $(".card").fadeIn("fast");
 
         }
@@ -58,8 +59,8 @@ function get_agency_employee() {
 function generate_table(data) {
   var str = '';
   str += "<tr>";
+    str += "                          <td>"+data.name+"<\/td>";
   str += "                          <td>"+data.employee_number+"<\/td>";
-  str += "                          <td>"+data.name+"<\/td>";
   str += "                          <td>"+data.address1+"<\/td>";
   str += "                          <td>"+data.contact_number+"<\/td>";
   str += "                          <td>"+data.country+"<\/td>";
