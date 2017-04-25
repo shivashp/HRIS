@@ -8,6 +8,14 @@ $(function() {
   get_type();
   get_category();
 
+  $(".select-with-transition").focusin(function() {
+    $(this).addClass("activeSelect");
+  })
+  $(".select-with-transition").focusout(function() {
+    $(this).removeClass("activeSelect");
+  })
+
+
 $("#add").click(function(e) {
   $("#myform").validate({
     rules: {
@@ -65,19 +73,10 @@ $("#add").click(function(e) {
 });
 })
 
-$("#last-name").on("focusout", function() {
-  console.log("Focus out");
-   $(window).keyup(function (e) {
-        var code = (e.keyCode ? e.keyCode : e.which);
-        if (code == 9) {
-          // next_select("#sex");
-        }
-    });
-})
 
 function next_select(nextSelect) {
-  
-  $(nextSelect).selectpicker("toggle");
+
+  $(nextSelect).selectpicker("show");
 }
 
 function add_data() {

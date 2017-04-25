@@ -28,14 +28,14 @@ $(".card").fadeIn("fast");
             var role = data.data.role_type;
             var activate = true;
 
-            $("input[name=agency][value='"+agency+"']").prop("checked",true);
-            $("input[name=agency-employee][value='"+employee+"']").prop("checked",true);
-            $("input[name=company][value='"+company+"']").prop("checked",true);
-            $("input[name=config][value='"+config+"']").prop("checked",true);
-            $("input[name=division][value='"+division+"']").prop("checked",true);
-            $("input[name=user][value='"+user+"']").prop("checked",true);
+            map_permissions('agency', agency);
+            map_permissions('agency-employee', employee);
+            map_permissions('company', company);
+            map_permissions('config', config);
+            map_permissions('division', division);
+            map_permissions('user', user);
+
             $("#role-name").val(role);
-            $("#role-code").val(role);
             if(activate) {
                 $("#role-activate").prop("checked", true);
             }
@@ -56,12 +56,12 @@ $(".card").fadeIn("fast");
     e.preventDefault();
 
     var title = $("#role-name").val();
-    var code = $("#role-code").val();
-    if(!title.isBlank("Title") || !code.isBlank("Code")){
+    var code = title;
+    if(!title.isBlank("Title")){
       return false;
     }
 
-  
+
     var activate = true;
 
     company = $("input[name=company]:checkbox:checked").map(function()
@@ -172,7 +172,7 @@ function add_role(json) {
       data: JSON.stringify(json),
       success: function(data) {
         if(data.status == 'success') {
-          showSuccess(name + " Role Updated Successfully!");
+          showSuccess(name + " Role Added Successfully!");
           setTimeout(function() {
             window.location.href = 'role.php';
           }, settimeout);
@@ -187,15 +187,15 @@ function add_role(json) {
 }
 
 
-/* =============================================== 
+/* ===============================================
 **                              Checkbox Edit Handle
 ** =============================================== */
 
 $(".company").change(function() {
-    var per = $(this).val();        
+    var per = $(this).val();
     map_permissions('company', per)
   })
-  
+
   $(".division").change(function() {
     var per = $(this).val();
     map_permissions('division', per);
@@ -205,7 +205,7 @@ $(".company").change(function() {
     var per = $(this).val();
     map_permissions('agency', per);
   })
-  
+
   $(".user").change(function() {
     var per = $(this).val();
     map_permissions('user', per);
@@ -220,11 +220,11 @@ $(".company").change(function() {
     var per = $(this).val();
     map_permissions('agency-employee', per);
   })
-  
+
   function map_permissions(name, per) {
-   
+
     switch(per) {
-      case 'R':        
+      case 'R':
         $('input[name='+name+']').prop('checked', false);
         $('input[name='+name+'][value=R]').prop('checked', true);
         break;
@@ -239,7 +239,7 @@ $(".company").change(function() {
         $('input[name='+name+'][value=W]').prop('checked', true);
         $('input[name='+name+'][value=E]').prop('checked', true);
         break;
-      case 'N': 
+      case 'N':
         $('input[name='+name+']').prop('checked', false);
         $('input[name='+name+'][value=N]').prop('checked', true);
         break;

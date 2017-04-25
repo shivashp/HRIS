@@ -28,16 +28,7 @@
                             <input type="text" id="role-name" class="form-control" placeholder="Title">
                         </div>
                     </div>
-                </div><!--row-->
-                <div class="row">
-                    <label class="col-md-3 label-on-left">Code</label>
-                    <div class="col-md-9">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="role-code" class="form-control" placeholder="Code">
-                        </div>
-                    </div>
-                </div><!--row-->
+                </div><!--row-->                
               </div>
             </div><!--row -->
           </form>

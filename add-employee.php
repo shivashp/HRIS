@@ -62,7 +62,9 @@
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
+            </div><!--row -->
 
+            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Address one</label>
@@ -70,9 +72,7 @@
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
-            </div><!--row -->
 
-            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Address two</label>
@@ -88,6 +88,9 @@
                 </div>
               </div><!-- col-md-4-->
 
+            </div><!--row -->
+
+            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">LLG</label>
@@ -95,9 +98,7 @@
                     </select>
                 </div>
               </div><!-- col-md-4-->
-            </div><!--row -->
 
-            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">District</label>
@@ -114,6 +115,9 @@
                 </div>
               </div><!-- col-md-4-->
 
+            </div><!--row -->
+
+            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Region</label>
@@ -122,9 +126,7 @@
                     </select>
                 </div>
               </div><!-- col-md-4-->
-            </div><!--row -->
 
-            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Country</label>
@@ -141,7 +143,9 @@
                   <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
+            </div><!--row -->
 
+            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Phone No.</label>
@@ -149,9 +153,6 @@
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
-            </div><!--row -->
-
-            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Alternate Phone No.</label>
@@ -192,7 +193,7 @@
 
             <div class="row add-emp-row">
               <div class="col-md-4">
-               <div class="form-group " style="margin-top:0">
+               <div class="form-group " style="margin-top:15px">
                   <label class="control-label date-label">Date of Commencement</label>
                     <input type="text" name="startdate" id="start-date" class="datepicker form-control">
                     <div class="help-block with-errors"></div>
@@ -230,8 +231,8 @@
 
             <div class="row add-emp-row">
               <div class="col-md-4">
-                <div class="form-group label-floating"  style="margin-top:0">
-                <label class="control-label">Employee Category</label>
+                <div class="form-group"  style="margin-top:0">
+                <label class="control-label date-label">Employee Category</label>
                   <select id="employee-category" data-style="select-with-transition" title="Choose Employee Category" data-size="7">
 
                   </select>

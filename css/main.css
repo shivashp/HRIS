@@ -57,6 +57,20 @@ html .per {
   .form-control, .form-group .form-control {
     font-weight: bold;
   }
+.bs-placeholder>.filter-option {
+    color: #AAAAAA;
+}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    text-transform: capitalize;
+}
+.activeSelect {
+  background-image: linear-gradient(#253a67, #355089), linear-gradient(#253a67, #355089);
+  background-size: 100% 2px, 100% 1px;
+}
+.select-with-transition .caret, .select-with-transition .ripple-container {
+  display: inline-block;
+  color: #AAA;
+}
 /* =============================================
                   Sidebar
 /* ============================================= */

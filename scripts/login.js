@@ -8,7 +8,7 @@ function showError(message) {
   $(".sp-alert-danger").show();
 }
 
-String.prototype.isBlank = function (type = 'Field') {
+String.prototype.isBlank = function (type) {
   var value = this.toString();
   value = value.trim();
   if (value == '' || (/^\s*$/.test(value))) {
@@ -72,7 +72,6 @@ $(function() {
         success: function(data) {
           if(data.status == 'success') {
             $(".loader").hide();
-            $("#login-btn").show();
             delete data.data['id'];
             delete data.data['activate'];
             delete data.data['role_type'];
@@ -85,7 +84,8 @@ $(function() {
         },
         error: function(error) {
           $(".loader").hide();
-          
+          $("#login-btn").show();
+
           showError("Error in Server! Try again!")
         },
     });// Ajax
