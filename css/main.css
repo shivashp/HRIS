@@ -175,6 +175,12 @@ div#ov1erlay {
 .btn-success {
   background-color: #355089 !important;
 }
+.btn.btn-person {
+  background-color: #208981;
+}
+.btn.btn-person:hover, .btn.btn-person:active, .btn.btn-person:focus {
+  background-color: #0E736C;
+}
 .btn {
   font-weight: 600;
     font-size: 14px;

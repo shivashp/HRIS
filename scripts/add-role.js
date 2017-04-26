@@ -17,7 +17,11 @@ $(".card").fadeIn("fast");
         type: "GET",
         contentType: 'application/json',
         dataType: 'json',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader('Token', TOKEN);
+        },
         success: function(data) {
+          console.log(data);
           if(data.status == 'success') {
             var agency = data.data.agency_management_perm;
             var employee = data.data.agency_emp_perm;
@@ -100,7 +104,6 @@ $(".card").fadeIn("fast");
     }).get();
     config  = config[config.length-1]
 
-
     var json = {
           "activate": activate,
           "agency_emp_perm": agency_employee,
@@ -114,7 +117,6 @@ $(".card").fadeIn("fast");
           "role_code": code,
           "user_management_perm": user
         }
-
 
     var status = $(this).attr("data-status");
     if(status){

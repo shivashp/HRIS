@@ -15,6 +15,7 @@ get_role();
         success: function(data) {
           if(data.status == 'success') {
             ROLE_JSON = data.data;
+            console.log(data);
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var id = data.data[i].id;
@@ -27,6 +28,7 @@ get_role();
               str += "                      <\/tr>";
             }
             $("#data-body").html(str);
+            check_permissions();
             $('#datatables').DataTable();
             $(".page-loader").hide();
             $(".card").fadeIn("fast");

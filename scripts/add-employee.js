@@ -10,6 +10,7 @@ $(function() {
 
   $(".select-with-transition").focusin(function() {
     $(this).addClass("activeSelect");
+    // $(this).parent().addClass("open");
   })
   $(".select-with-transition").focusout(function() {
     $(this).removeClass("activeSelect");

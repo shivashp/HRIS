@@ -9,6 +9,7 @@ get_role();
 
 $(document).delegate(".assign-user", "click", function() {
   pullMenu(".password-input");
+  $("html, body").animate({scrollTop: 0});
   $(".form-horizontal")[0].reset();
   var index = $(this).attr("data-id");
   $("#save-user").attr("data-id", index);
@@ -17,7 +18,11 @@ $(document).delegate(".assign-user", "click", function() {
 });//assign-username
 
 $(document).delegate(".update-password", "click", function() {
+  var id = $(this).attr("data-id");
+  var role_id = $(this).attr("data-role");
+  prepareEdit(id, role_id);
   pullMenu(".username-input");
+  $("html, body").animate({scrollTop: 0});
   $(".form-horizontal")[0].reset();
   var index = $(this).attr("data-id");
   $("#update-user").attr("data-id", index);
@@ -30,6 +35,53 @@ $(".close-menu").click(function() {
   $("#save-user").attr("data-id", "");
   pullMenu(".username-input");
   pullMenu(".password-input");
+})
+
+function search_data(obj, search_item, key1 = "name") {
+    var index = -1;
+    $.each(obj, function(key, value) {
+      if(value[key1] == search_item){
+        index = value.id
+      }
+    })
+    return index;
+}
+
+function prepareEdit(id, role) {
+  var id = search_data(ROLES, id, "id");
+  $("#edit-role").selectpicker('val', role);
+}
+
+$("#update-role").click(function(e) {
+  e.preventDefault();
+  var user_id = $("#update-user").attr("data-id");
+  var role_id = $("#edit-role").val();
+  $.ajax({
+      url: basepath + "users/"+user_id + "?action=update_role",
+      type: "PUT",
+      contentType: 'application/json',
+      dataType: 'json',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Token', TOKEN);
+      },
+      data: JSON.stringify({
+        role_id: role_id
+      }),
+      success: function(data) {
+        if(data.status == 'success') {
+          showSuccess("Role Updated Successfully!");
+          pullMenu(".password-input");
+          get_employees()
+        } else {
+          showError(data.message);
+        }
+      },
+      error: function(error) {
+        $(".loader").hide();
+        $("#add").show();
+        showError("Error in Server! Try again!")
+      },
+  });// Ajax
 })
 
 
@@ -136,6 +188,7 @@ function get_employees() {
       },
       success: function(data) {
         var data1 = [];
+        console.log(data);
         if(data.status === 'success') {
           for (var i = 0; i < data.data.length; i++) {
               var id = data.data[i].id;
@@ -147,6 +200,7 @@ function get_employees() {
               var email = data.data[i].email_address;
               var country = data.data[i].country;
               var employee_number = data.data[i].employement_number;
+              var role_id = data.data[i].role_id;
 
               middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
               var json = {
@@ -157,7 +211,8 @@ function get_employees() {
                 employee_number: employee_number,
                 country: country,
                 email: email,
-                user_id: user_id
+                user_id: user_id,
+                role_id: role_id
               }
               data1.push(json);
           }
@@ -187,9 +242,9 @@ function generate_table(data) {
   str += "                          <td>"+data.country+"<\/td>";
   str += "                          <td class=\"text-right\">";
   if(data.user_id.trim() !== '') {
-      str += "                              <a class=\"btn btn-success btn-sm btn-icon update-password\" data-id= \""+data.user_id+"\">Update Password<\/a>";
+      str += "                              <a class=\"btn btn-success btn-sm btn-icon update-password\" data-id= \""+data.user_id+"\" data-role= \""+data.role_id+"\"><i class='material-icons'>settings</i><\/a>";
   } else {
-      str += "                              <a class=\"btn btn-success btn-sm btn-icon assign-user\" data-id= \""+data.i+"\">Assign Username<\/a>";
+      str += "                              <a class=\"btn btn-person btn-sm btn-icon assign-user\" data-id= \""+data.i+"\"><i class='material-icons'>person_add</i><\/a>";
   }
   str += "                          <\/td>";
   str += "                      <\/tr>";
@@ -213,7 +268,11 @@ function get_role() {
       		})
       		str = str.join('');
       		$("#roles").html(str);
+          $("#edit-role").html(str);
       		$('#roles').selectpicker({
+            size: 7
+          });
+          $('#edit-role').selectpicker({
             size: 7
           });
         }

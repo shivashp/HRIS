@@ -23,13 +23,15 @@ $(function() {
                 var country = data.data[i].employee_data.country;
                 var contact = data.data[i].employee_data.contact_number;
                 var username = data.data[i].user_name;
+                var role = data.data[i].role_name;
 
                 middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
 
                 str += "<tr>";
                 str += "                          <td>"+first_name + middle_name + last_name+"<\/td>";
                 str += "                          <td>"+employee_number+"<\/td>";
-                str += "                          <td>"+username+"<\/td>";                
+                str += "                          <td>"+username+"<\/td>";
+                str += "                          <td>"+role+"<\/td>";
                 str += "                          <td>"+contact+"<\/td>";
                 str += "                          <td>"+address1+"<\/td>";
                 str += "                          <td>"+country+"<\/td>";

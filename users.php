@@ -18,7 +18,7 @@
                     <th>Name</th>
                       <th>Emp No.</th>
                       <th>Username</th>
-                      
+                      <th>Role</th>
                       <th>Contact No.</th>
                       <th>Address</th>
                       <th>Country</th>

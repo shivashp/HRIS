@@ -233,7 +233,7 @@
                                 <li>
                                   <a href="#">Settings</a>
                                 </li>
-                                <li>
+                                <li style="cursor:pointer">
                                   <a class="logout">Logout</a>
                                 </li>
                               </ul>

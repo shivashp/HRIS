@@ -51,7 +51,13 @@ $(function() {
             localStorage.clear();
             localStorage.setItem('username', username);
             localStorage.setItem('token', token);
-            get_permissions(role_id);
+
+            delete data.data.permissions['id'];
+            delete data.data.permissions['activate'];
+            delete data.data.permissions['role_type'];
+            localStorage.setItem("per_json", JSON.stringify(data.data.permissions))
+            window.location.href = "dashboard.php";
+
           } else {
             showError(data.message);
           }

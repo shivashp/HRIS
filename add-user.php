@@ -37,29 +37,55 @@
     </div><!-- card-->
   </div><!-- username-input -->
 
-  <div class ="password-input">
-    <div class="card"  style="display:inline-block">
-        <div class="card-content">
-            <h4 class="card-title">Update Password</h4>
-            <div class="col-md-8 col-md-offset-2">
-              <form class="form-horizontal">
-                  <div class="form-group label-floating">
-                      <label class="control-label">Password</label>
-                      <input type="password" id="update-password" class="form-control">
-                  </div>
-                  <div class="form-group label-floating">
-                      <label class="control-label">Retype Password</label>
-                      <input type="password" id="conf_update_password" class="form-control">
-                  </div>
-                  <div style="margin-top:50px;margin-bottom:20px;text-align:center">
-                    <button type="submit" id="update-user" class="btn btn-fill btn-success">Save</button>
-                    <button type="button" id="" class="close-menu btn btn-danger" data-dismiss="modal">Close</button>
-                  </div>
-              </form>
+  <div class="row">
+    <div class="col-md-6">
+      <div class ="password-input">
+        <div class="card"  style="display:inline-block">
+            <div class="card-content">
+                <h4 class="card-title">Update Password</h4>
+                <div class="col-md-12">
+                  <form class="form-horizontal">
+                      <div class="form-group label-floating">
+                          <label class="control-label">Password</label>
+                          <input type="password" id="update-password" class="form-control">
+                      </div>
+                      <div class="form-group label-floating">
+                          <label class="control-label">Retype Password</label>
+                          <input type="password" id="conf_update_password" class="form-control">
+                      </div>
+                      <div style="margin-top:50px;margin-bottom:20px;text-align:center">
+                        <button type="submit" id="update-user" class="btn btn-fill btn-success">Save</button>
+                        <button type="button" id="" class="close-menu btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </form>
+                </div>
             </div>
-        </div>
-    </div><!-- card-->
-  </div><!-- password-input -->
+        </div><!-- card-->
+      </div><!-- password-input -->
+    </div><!-- col-md-6 -->
+    <div class="col-md-6">
+      <div class ="password-input">
+        <div class="card"  style="display:inline-block">
+            <div class="card-content">
+                <h4 class="card-title">Update Role</h4>
+                <div class="col-md-12">
+                  <form class="form-horizontal">
+                      <div class="form-group" style="margin-top:56px;">
+                          <label class="control-label date-label">Role</label>
+                          <select id="edit-role" data-style="select-with-transition" title="Choose Role" data-size="7">
+                          </select>
+                      </div>
+                      <div style="margin-top:55px;margin-bottom:20px;text-align:center">
+                        <button type="submit" id="update-role" class="btn btn-fill btn-success">Save</button>
+                        <button type="button" id="" class="close-menu btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </form>
+                </div>
+            </div>
+        </div><!-- card-->
+      </div><!-- password-input -->
+    </div><!-- col-md-6 -->
+  </div><!-- row -->
 
   <div class="card">
       <div class="card-header card-header-icon" data-background-color="purple">
@@ -72,7 +98,7 @@
                 <thead>
                     <tr>
                       <th>Name</th>
-                      <th>Emp No.</th>                      
+                      <th>Emp No.</th>
                       <th>Address</th>
                       <th>Country</th>
                       <th class="disabled-sorting text-right">Actions</th>
