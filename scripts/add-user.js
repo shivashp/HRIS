@@ -20,7 +20,8 @@ $(document).delegate(".assign-user", "click", function() {
 $(document).delegate(".update-password", "click", function() {
   var id = $(this).attr("data-id");
   var role_id = $(this).attr("data-role");
-  prepareEdit(id, role_id);
+  var name = $(this).attr("data-name");
+  prepareEdit(id, role_id, name);
   pullMenu(".username-input");
   $("html, body").animate({scrollTop: 0});
   $(".form-horizontal")[0].reset();
@@ -47,8 +48,9 @@ function search_data(obj, search_item, key1 = "name") {
     return index;
 }
 
-function prepareEdit(id, role) {
+function prepareEdit(id, role, name) {
   var id = search_data(ROLES, id, "id");
+  $(".update-password-name").html("of "+name);
   $("#edit-role").selectpicker('val', role);
 }
 
@@ -235,14 +237,14 @@ function get_employees() {
 function generate_table(data) {
   data.user_id = data.user_id + "";
   var str = '';
-  str += "<tr>";
+  str += "<tr class=\"active-row-"+data.user_id+"\">";
   str += "                          <td>"+data.name+"<\/td>";
   str += "                          <td>"+data.employee_number+"<\/td>";
   str += "                          <td>"+data.address1+"<\/td>";
   str += "                          <td>"+data.country+"<\/td>";
   str += "                          <td class=\"text-right\">";
   if(data.user_id.trim() !== '') {
-      str += "                              <a class=\"btn btn-success btn-sm btn-icon update-password\" data-id= \""+data.user_id+"\" data-role= \""+data.role_id+"\"><i class='material-icons'>settings</i><\/a>";
+      str += "                              <a class=\"btn btn-success btn-sm btn-icon update-password\" data-id= \""+data.user_id+"\" data-name=\""+data.name+"\" data-role= \""+data.role_id+"\"><i class='material-icons'>settings</i><\/a>";
   } else {
       str += "                              <a class=\"btn btn-person btn-sm btn-icon assign-user\" data-id= \""+data.i+"\"><i class='material-icons'>person_add</i><\/a>";
   }

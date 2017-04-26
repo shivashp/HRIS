@@ -9,11 +9,14 @@ $(function() {
   get_category();
 
   $(".select-with-transition").focusin(function() {
-    $(this).addClass("activeSelect");
+    var selector = $(this).attr("data-id");
+    console.log(selector);
+    $("button[data-id=\""+selector+"\"]").addClass("activeSelect");
     // $(this).parent().addClass("open");
   })
   $(".select-with-transition").focusout(function() {
-    $(this).removeClass("activeSelect");
+    var selector = $(this).attr("data-id");
+    $("button[data-id=\""+selector+"\"]").removeClass("activeSelect");
   })
 
 
@@ -71,7 +74,8 @@ $("#add").click(function(e) {
     submitHandler: function() {
       add_data();
     }
-});
+  });
+  add_data();
 })
 
 
@@ -110,6 +114,10 @@ function add_data() {
   var is_branch = $("#branch-agency").val() == 'branch'?true:false;
 
   if(!sex.isBlank("Sex") || !country.isBlank("Country") || !branch_agency_id.isBlank("Branch / Agency") || !employee_category.isBlank("Employee Category") || !employee_type.isBlank("Employee Type")){
+    return false;
+  }
+  if(branch_agency.trim() === '' || branch_agency == undefined) {
+    showError("Please choose Branch / Agency")
     return false;
   }
 
@@ -542,7 +550,7 @@ var COUNTRY_LIST = ["Afghanistan","Dominica","Dominican Republic","Ecuador","Egy
       })
       country_obj = country_obj.join('');
       $("#country").html(country_obj);
-      $('#country').selectpicker({
+      $("#country").selectpicker({
         size: 7,
         liveSearch: true
       });

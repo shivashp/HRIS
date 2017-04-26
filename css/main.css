@@ -310,7 +310,7 @@ h3#dashboard-title {
 /*           Create Employee                 */
 /* ========================================= */
 
-#choose-agency, #contract-end {
+#choose-agency,#choose-branch, #contract-end {
   display: none;
 }
 .input-group .input-group-addon {

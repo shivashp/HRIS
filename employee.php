@@ -1,5 +1,8 @@
 <?php include('header.php'); ?>
 <div class="content">
+<div class="agencyemp-write row per division-write">
+  <a href="add-employee.php" class="btn btn-success pull-right sp-add-btn">Add</a>
+</div><!-- row-->
  <div class="page-loader">
   <img src="img/loader.gif"><br>
   <div class="page-loader-text">Please Wait...</div>
@@ -16,7 +19,6 @@
                       <tr>
                         <th>Name</th>
                         <th>Emp No.</th>
-
                         <th>Address</th>
                         <th>Contact</th>
                         <th>Country</th>

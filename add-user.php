@@ -24,6 +24,7 @@
                       <input type="password" id="conf_password" class="form-control">
                   </div>
                   <div class="form-group label-floating">
+                    <label class="control-label">Role</label>
                       <select data-style="btn select-with-transition sp-select" id="roles"  title="Choose Role">
                       </select>
                   </div>
@@ -42,7 +43,7 @@
       <div class ="password-input">
         <div class="card"  style="display:inline-block">
             <div class="card-content">
-                <h4 class="card-title">Update Password</h4>
+                <h4 class="card-title">Update Password <span class="update-password-name"></span></h4>
                 <div class="col-md-12">
                   <form class="form-horizontal">
                       <div class="form-group label-floating">
@@ -67,7 +68,7 @@
       <div class ="password-input">
         <div class="card"  style="display:inline-block">
             <div class="card-content">
-                <h4 class="card-title">Update Role</h4>
+                <h4 class="card-title">Update Role <span class="update-password-name"></span></h4>
                 <div class="col-md-12">
                   <form class="form-horizontal">
                       <div class="form-group" style="margin-top:56px;">
