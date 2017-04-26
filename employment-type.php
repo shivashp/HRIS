@@ -1,4 +1,7 @@
-<?php include('header.php'); ?>
+<?php
+$page_permission = array("key" => "config_management_perm", "value" => "R");
+include('header.php');
+?>
 
 <div class="content">
  <div class="page-loader">

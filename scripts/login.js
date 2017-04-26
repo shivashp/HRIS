@@ -1,4 +1,5 @@
 var basepath = "http://139.59.37.232:5000/api/";
+var basepath = "http://182.93.91.147:5000/api/";
 function clearAlert() {
   $(".sp-alert-danger").html('');
   $(".sp-alert-danger").hide();
@@ -51,11 +52,12 @@ $(function() {
             localStorage.clear();
             localStorage.setItem('username', username);
             localStorage.setItem('token', token);
-            document.cookie = "token="+token;
             delete data.data.permissions['id'];
             delete data.data.permissions['activate'];
             delete data.data.permissions['role_type'];
             localStorage.setItem("per_json", JSON.stringify(data.data.permissions))
+            document.cookie = "token="+token;
+            document.cookie = "permissions="+JSON.stringify(data.data.permissions);
             window.location.href = "dashboard.php";
 
           } else {

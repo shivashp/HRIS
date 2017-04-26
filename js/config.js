@@ -1,4 +1,5 @@
-var basepath = "http://139.59.37.232:5000/api/";
+var basepath = "http://182.93.91.147:5000/api/";
+// var basepath = "http://139.59.37.232:5000/api/";
 
 var settimeout = 1000;
 $(".logout").click(function() {

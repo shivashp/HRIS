@@ -1,4 +1,8 @@
-<?php include('header.php'); ?>
+<?php
+$page_permission = array("key" => "config_management_perm", "value" => "R");
+include('header.php');
+?>
+
 <div class="content">
   <div class="row per config-write">
     <a class="btn btn-success pull-right sp-add-btn">Add</a>

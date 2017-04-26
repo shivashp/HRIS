@@ -1,4 +1,7 @@
-<?php include('header.php'); ?>
+<?php
+$page_permission = array("key" => "company_management_perm", "value" => "R");
+include('header.php');
+?>
 
 <div class="content">
   <div class="row per company-write">

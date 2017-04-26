@@ -3,12 +3,22 @@
     header("location:index.html");
     die();
   }
+
+  $PERMISSIONS = array('N' => 0, 'R' => 1, 'W' => 2, 'E' => 3);
+  $USER_PERMISSIONS = json_decode($_COOKIE['permissions'], true);
+  if(isset($page_permission)) {
+    $key = $page_permission['key'];
+    $value = $page_permission['value']; // Required Permission
+    $user_value = $USER_PERMISSIONS[$key]; // Available Permission
+    $req_val = $PERMISSIONS[$value];
+    $aval_val = $PERMISSIONS[$user_value];
+    if($req_val > $aval_val) {
+      header("location:dashboard.php");
+    }
+  }
  ?>
 <script>
   var TOKEN = localStorage.getItem('token');
-  if(TOKEN === undefined || TOKEN == '' || TOKEN == null){
-    window.location.href = "index.html";
-  }
 </script>
 <!Doctype html>
 <html lang="en" class = "per1 per2">

@@ -12,8 +12,7 @@ function get_agency_employee() {
       beforeSend: function(xhr) {
         xhr.setRequestHeader('Token', TOKEN);
       },
-      success: function(data) {
-        console.log(data);
+      success: function(data) {        
         var data1 = [];
         if(data.status === 'success') {
           for (var i = 0; i < data.data.length; i++) {

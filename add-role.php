@@ -1,12 +1,14 @@
-<?php include('header.php'); ?>
+<?php
+  $page_permission = array("key" => "user_management_perm", "value" => "W");
+  include('header.php');
+?>
 
 <script>
   var role_action = "<?php $_GET['action']; ?>";
   var id = "<?php $_GET['id']; ?>";
-
 </script>
 
-<div class="content">
+<div class="content user-write">
  <div class="page-loader">
   <img src="img/loader.gif"><br>
   <div class="page-loader-text">Please Wait...</div>
@@ -28,7 +30,7 @@
                             <input type="text" id="role-name" class="form-control" placeholder="Title">
                         </div>
                     </div>
-                </div><!--row-->                
+                </div><!--row-->
               </div>
             </div><!--row -->
           </form>

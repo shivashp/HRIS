@@ -29,7 +29,7 @@
           <h4 class="card-title">Personal Details</h4>
           <div class="tab-content">
               <div class="tab-pane active" id="personal">
-              
+
 
               <div class="row">
               <div class="col-md-4">
@@ -59,7 +59,7 @@
                     <td> : </td>
                     <td id="sex">Male</td>
                   </tr>
-                  
+
                   <tr>
                     <td>Date of Birth</td>
                     <td> : </td>
@@ -82,7 +82,7 @@
                   </tr>
                 </table>
               </div>
-              
+
                <div class="col-md-4">
                 <table class="table table-striped">
                   <tr>
@@ -125,7 +125,7 @@
                     <td> : </td>
                     <td id="country"></td>
                   </tr>
-                  
+
                 </table>
               </div>
 
@@ -135,7 +135,7 @@
                     <td>Employment No.</td>
                     <td> : </td>
                     <td id="emp-number"></td>
-                  </tr>                 
+                  </tr>
                    <tr>
                     <td>Branch / Agency</td>
                     <td> : </td>
@@ -168,7 +168,7 @@
                   </tr>
                 </table>
               </div>
-                
+
               </div><!-- row -->
               </div><!-- personal -->
           </div><!--tab-content-->
