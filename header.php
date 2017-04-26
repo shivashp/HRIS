@@ -1,3 +1,9 @@
+<?php
+  if(!isset($_COOKIE['token'])) {
+    header("location:index.html");
+    die();
+  }
+ ?>
 <script>
   var TOKEN = localStorage.getItem('token');
   if(TOKEN === undefined || TOKEN == '' || TOKEN == null){

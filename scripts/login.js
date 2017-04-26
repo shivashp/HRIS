@@ -51,7 +51,7 @@ $(function() {
             localStorage.clear();
             localStorage.setItem('username', username);
             localStorage.setItem('token', token);
-
+            document.cookie = "token="+token;
             delete data.data.permissions['id'];
             delete data.data.permissions['activate'];
             delete data.data.permissions['role_type'];
