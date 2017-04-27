@@ -8,17 +8,6 @@ $(function() {
   get_type();
   get_category();
 
-  $(".select-with-transition").focusin(function() {
-    var selector = $(this).attr("data-id");
-    $("button[data-id=\""+selector+"\"]").addClass("activeSelect");
-    // $(this).parent().addClass("open");
-  })
-  $(".select-with-transition").focusout(function() {
-    var selector = $(this).attr("data-id");
-    $("button[data-id=\""+selector+"\"]").removeClass("activeSelect");
-  })
-
-
 $("#add").click(function(e) {
   $("#myform").validate({
     rules: {
@@ -66,7 +55,7 @@ $("#add").click(function(e) {
       }
     },
     messages: {
-      firstname: 'First name is required',      
+      firstname: 'First name is required',
     },
     errorPlacement: function(error, element) {
         $(element).next('div').html(error);

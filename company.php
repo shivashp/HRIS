@@ -17,7 +17,7 @@ include('header.php');
             <div class="card-content">
                 <div class="row">
                     <label class="col-sm-2 label-on-left">Company Name</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-5">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <input type="text" id="name" class="form-control" placeholder = "Company Name" value>
@@ -26,7 +26,7 @@ include('header.php');
                 </div>
                 <div class="row">
                     <label class="col-sm-2 label-on-left">Description</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-5">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <textarea id="desc" class="form-control" rows="3" placeholder="Description about company"></textarea>
@@ -35,7 +35,7 @@ include('header.php');
                 </div>
                 <div class="row">
                     <label class="col-sm-2 label-on-left">Currency Symbol</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-5">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <input type="text" id="symbol" class="form-control" placeholder="eg. $, €">
@@ -44,15 +44,16 @@ include('header.php');
                 </div>
                 <div class="row">
                   <label class="col-sm-2 label-on-left">Country</label>
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                         <div class="form-group label-floating is-empty">
-                          <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="country"  title="Choose Country">
+                          <select data-style="btn select-with-transition sp-select" id="country"  title="Choose Country">
                           </select>
                         </div>
                     </div>
                 </div>
                 <div class="row sp-save-btn-row">
                   <span class="loader"><img src="img/loader.gif"></span><button type="button" id="submit" class="btn btn-success">Save</button>
+                  <button type="reset" id="reset" class="btn btn-danger">Clear</button>
                 </div>
             </div><!-- card-content -->
         </form>

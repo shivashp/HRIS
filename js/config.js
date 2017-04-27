@@ -118,7 +118,17 @@ function parseURL() {
   return objURL;
 }
 
+// Manage active state of dropdown menus
+$(document).delegate(".select-with-transition", "focusin", function() {
+  var selector = $(this).attr("data-id");
+  $("button[data-id=\""+selector+"\"]").addClass("activeSelect");
+})
+$(document).delegate(".select-with-transition", "focusout", function() {
+  var selector = $(this).attr("data-id");
+  $("button[data-id=\""+selector+"\"]").removeClass("activeSelect");
+})
 
+// Switch nav link active status
 function active(link, className = "link"){
   $(document).ready(function() {
     $("." + className).removeClass("active");

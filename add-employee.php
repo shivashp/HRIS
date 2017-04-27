@@ -241,7 +241,7 @@
               </div><!-- col-md-4-->
 
               <div class="col-md-4">
-                <div class="form-group label-floating"  style="margin-top:0">
+                <div class="form-group label-floating"  style="margin-top:3px">
                 <label class="control-label">Employee Type</label>
                   <select id="employee-type" data-style="select-with-transition" title="Choose Employee Type" data-size="7">
 
