@@ -141,7 +141,6 @@ get_rank();
     var name = $("#category-name").val();
     var id = $("#add").attr("data-id");
     var rank = $("#category-rank").val();
-    console.log(rank);
     if(!name.isBlank("Name")){
       return false;
     }
@@ -192,6 +191,7 @@ get_rank();
     }
   })
   $(document).delegate(".edit", "click", function() {
+    $("#category-name").focus();
     var i = $(this).attr("data-id");
     edit_category(i);
     slideMenu();

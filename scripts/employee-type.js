@@ -138,6 +138,7 @@ get_type();
     }
   })
   $(document).delegate(".edit", "click", function() {
+    $("#type-name").focus();
     var i = $(this).attr("data-id");
     edit_type(i);
     slideMenu();

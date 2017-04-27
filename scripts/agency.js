@@ -37,6 +37,7 @@ $(function() {
     var i = $(this).attr("data-id");
     edit_agency(i);
     slideMenu();
+    $("#facility-name").focus();
   })
 
 

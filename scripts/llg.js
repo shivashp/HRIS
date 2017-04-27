@@ -141,5 +141,6 @@ get_llg();
     var i = $(this).attr("data-id");
     edit_llg(i);
     slideMenu();
+    $("#llg-name").focus();
   })
 })// Document

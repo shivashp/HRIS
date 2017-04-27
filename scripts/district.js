@@ -141,5 +141,6 @@ get_district();
     var i = $(this).attr("data-id");
     edit_district(i);
     slideMenu();
+    $("#district-name").focus();
   })
 })// Document

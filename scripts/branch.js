@@ -37,6 +37,7 @@ $(function() {
     var i = $(this).attr("data-id");
     edit_branch(i);
     slideMenu();
+    $("#facility-name").focus();
   })
 
   function get_branches() {

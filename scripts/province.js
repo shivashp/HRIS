@@ -141,5 +141,6 @@ get_province();
     var i = $(this).attr("data-id");
     edit_province(i);
     slideMenu();
+    $("#province-name").focus();
   })
 })// Document

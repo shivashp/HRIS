@@ -130,7 +130,6 @@ get_facility();
   $("#add").click(function(e) {
     e.preventDefault();
     var status = $(this).attr("status");
-    console.log(status);
     if(status === "1") {
       update_facility();
     } else {
@@ -141,5 +140,6 @@ get_facility();
     var i = $(this).attr("data-id");
     edit_facility(i);
     slideMenu();
+    $("#facility-name").focus();
   })
 })// Document

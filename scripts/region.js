@@ -141,5 +141,6 @@ get_region();
     var i = $(this).attr("data-id");
     edit_region(i);
     slideMenu();
+    $("#region-name").focus();    
   })
 })// Document

@@ -15,6 +15,7 @@ $(document).delegate(".assign-user", "click", function() {
   $("#save-user").attr("data-id", index);
   var value = $(this).attr("value");
   (value == 1)?pullMenu(".username-input"):slideMenu(".username-input");
+  $("#username").focus();
 });//assign-username
 
 $(document).delegate(".update-password", "click", function() {
@@ -29,6 +30,7 @@ $(document).delegate(".update-password", "click", function() {
   $("#update-user").attr("data-id", index);
   var value = $(this).attr("value");
   (value == 1)?pullMenu(".password-input"):slideMenu(".password-input");
+  $("#update-password").focus();
 });//update-password
 
 $(".close-menu").click(function() {

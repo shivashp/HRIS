@@ -138,6 +138,7 @@ get_rank();
     }
   })
   $(document).delegate(".edit", "click", function() {
+    $("#rank-name").focus();
     var i = $(this).attr("data-id");
     edit_rank(i);
     slideMenu();
