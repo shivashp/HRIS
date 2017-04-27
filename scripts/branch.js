@@ -342,6 +342,7 @@ $(function() {
             $('#province').selectpicker('val', -1);
             $('#region').selectpicker('val', -1);
             get_branches();
+            reset_dropdown();
           } else {
             showError(data.message);
           }
@@ -355,12 +356,16 @@ $(function() {
   }
 
   $(".sp-add-btn").click(function() {
+    reset_dropdown();
+  })
+
+  function reset_dropdown() {
     $("#facility").selectpicker('val', -1);
     $('#llg').selectpicker('val', -1);
     $('#district').selectpicker('val', -1);
     $('#province').selectpicker('val', -1);
     $('#region').selectpicker('val', -1);
-  })
+  }
 
   function add_branch() {
     var type = $("#facility").val();
@@ -402,6 +407,7 @@ $(function() {
             showSuccess("Division Added Successfully!");
             pullMenu();
             get_branches();
+            reset_dropdown();
           } else {
             showError(data.message);
           }
