@@ -1,8 +1,6 @@
 $(function() {
 
   get_employees();
-
-
   function get_employees() {
     $.ajax({
         url: basepath + "users",
@@ -37,10 +35,12 @@ $(function() {
                 str += "                          <td>"+country+"<\/td>";
                 str += "</tr>";
             }
+            $('#datatables').DataTable().destroy();
             $("#data-body").html(str);
             $('#datatables').DataTable();
             $(".page-loader").hide();
             $(".card").fadeIn("fast");
+
           }
         },
         error: function(error) {

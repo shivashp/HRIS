@@ -26,9 +26,10 @@ get_type();
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
+            $('#datatables').DataTable().destroy();
             $("#data-body").html(str);
             check_permissions();
-            var table = $('#datatables').DataTable();
+            $('#datatables').DataTable();
             $(".page-loader").hide();
             $(".card").fadeIn("fast");
           }

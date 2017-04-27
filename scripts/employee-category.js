@@ -72,6 +72,7 @@ get_rank();
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
+            $('#datatables').DataTable().destroy();
             $("#data-body").html(str);
             check_permissions();
             var table = $('#datatables').DataTable();

@@ -10,7 +10,6 @@ $(function() {
 
   $(".select-with-transition").focusin(function() {
     var selector = $(this).attr("data-id");
-    console.log(selector);
     $("button[data-id=\""+selector+"\"]").addClass("activeSelect");
     // $(this).parent().addClass("open");
   })
@@ -61,11 +60,13 @@ $("#add").click(function(e) {
         required: true
       },
       retirement_age: {
-        required: true
+        required: true,
+        min:17,
+        max:70
       }
     },
     messages: {
-      firstname: 'First name is required'
+      firstname: 'First name is required',      
     },
     errorPlacement: function(error, element) {
         $(element).next('div').html(error);
@@ -75,7 +76,6 @@ $("#add").click(function(e) {
       add_data();
     }
   });
-  add_data();
 })
 
 

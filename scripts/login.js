@@ -1,5 +1,5 @@
 var basepath = "http://139.59.37.232:5000/api/";
-var basepath = "http://182.93.91.147:5000/api/";
+// var basepath = "http://182.93.91.147:5000/api/";
 function clearAlert() {
   $(".sp-alert-danger").html('');
   $(".sp-alert-danger").hide();
@@ -61,10 +61,12 @@ $(function() {
             window.location.href = "dashboard.php";
 
           } else {
+            $("#login-btn").show();
             showError(data.message);
           }
         },
         error: function(error) {
+          $("#login-btn").show();
           showError("Error in Server! Try again!")
         },
     });// Ajax

@@ -19,7 +19,7 @@ include('header.php');
                 <div class="card-content">
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Facility Name</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-6">
                             <div class="form-group label-floating is-empty">
                                 <label class="control-label"></label>
                                 <input type="text" id="facility-name" class="form-control" placeholder = "Facility Name" value>

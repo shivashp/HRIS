@@ -50,7 +50,7 @@ function search_data(obj, search_item, key1 = "name") {
 
 function prepareEdit(id, role, name) {
   var id = search_data(ROLES, id, "id");
-  $(".update-password-name").html("of "+name);
+  $(".update-password-name").html(name);
   $("#edit-role").selectpicker('val', role);
 }
 

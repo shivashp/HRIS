@@ -3,7 +3,7 @@ $page_permission = array("key" => "agency_emp_perm", "value" => "R");
 include('header.php');
 ?>
 <div class="content">
-<div class="agencyemp-write row per division-write">
+<div class="agencyemp-write row">
   <a href="add-employee.php" class="btn btn-success pull-right sp-add-btn">Add</a>
 </div><!-- row-->
  <div class="page-loader">

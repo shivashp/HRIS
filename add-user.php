@@ -46,7 +46,7 @@
       <div class ="password-input">
         <div class="card"  style="display:inline-block">
             <div class="card-content">
-                <h4 class="card-title">Update Password <span class="update-password-name"></span></h4>
+                <h4 class="card-title">Name: <span class="update-password-name"></span></h4>
                 <div class="col-md-12">
                   <form class="form-horizontal">
                       <div class="form-group label-floating">
@@ -71,7 +71,7 @@
       <div class ="password-input">
         <div class="card"  style="display:inline-block">
             <div class="card-content">
-                <h4 class="card-title">Update Role <span class="update-password-name"></span></h4>
+                <h4 class="card-title">Name: <span class="update-password-name"></span></h4>
                 <div class="col-md-12">
                   <form class="form-horizontal">
                       <div class="form-group" style="margin-top:56px;">

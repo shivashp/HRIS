@@ -27,6 +27,7 @@ get_role();
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
+            // $('#datatables').DataTable().destroy();
             $("#data-body").html(str);
             check_permissions();
             $('#datatables').DataTable();

@@ -175,7 +175,7 @@
       </div><!-- card-content -->
     </div><!-- card -->
 
-    <div class ="training-input">
+    <div class ="training-input agencyemp-write">
       <div class="card">
           <div class="card-content">
               <h4 class="card-title">Add Training</h4>
@@ -311,7 +311,7 @@
       <div class="card-header card-header-icon" data-background-color="purple">
           <i class="material-icons">assignment</i>
       </div>
-      <div class="card-header card-header-icon" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
+      <div class="card-header card-header-icon agencyemp-write" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
           <a href="#" id="add-training">Add Training</a>
       </div>
 
@@ -335,7 +335,7 @@
         </div>
     </div><!-- card-->
 
-    <div class ="certification-input">
+    <div class ="certification-input agencyemp-write">
       <div class="card">
           <div class="card-content">
               <h4 class="card-title">Add Certification</h4>
@@ -410,7 +410,7 @@
       <div class="card-header card-header-icon" data-background-color="purple">
           <i class="material-icons">assignment</i>
       </div>
-      <div class="card-header card-header-icon" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
+      <div class="card-header card-header-icon agencyemp-write" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
           <a href="#" id="add-certification">Add Certification</a>
       </div>
 
@@ -434,7 +434,7 @@
         </div>
     </div><!-- card-->
 
-    <div class ="qualification-input">
+    <div class ="qualification-input agencyemp-write">
       <div class="card">
           <div class="card-content">
               <h4 class="card-title">Add Qualification</h4>
@@ -540,7 +540,7 @@
       <div class="card-header card-header-icon" data-background-color="purple">
           <i class="material-icons">assignment</i>
       </div>
-      <div class="card-header card-header-icon" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
+      <div class="card-header card-header-icon agencyemp-write" data-background-color="purple" style="float:right;font-size: 18px;font-weight: 400;background: #4c68a2;">
           <a href="#" id="add-qualification">Add Qualification</a>
       </div>
 
@@ -567,7 +567,7 @@
         </div>
     </div><!-- card-->
 
-    <div class ="emp-extra-input">
+    <div class ="emp-extra-input agencyemp-write">
       <div class="card">
           <div class="card-content">
               <h4 class="card-title">Add Employee Extras</h4>

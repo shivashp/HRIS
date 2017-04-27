@@ -150,14 +150,14 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Phone No.</label>
-                    <input type="text" name="phone" id="phone" class="form-control">
+                    <input type="number" name="phone" id="phone" class="form-control">
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Alternate Phone No.</label>
-                    <input type="text" id="phone" class="form-control">
+                    <input type="number" id="phone1" class="form-control">
                 </div>
               </div><!-- col-md-4-->
             </div><!--row -->

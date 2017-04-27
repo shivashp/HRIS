@@ -70,6 +70,7 @@ $(function() {
               st += "                          <\/td>";
               st += "                      <\/tr>";
             }
+            $('#datatables').DataTable().destroy();
             $("#data-body").html(st);
             check_permissions();
             var table = $('#datatables').DataTable();
