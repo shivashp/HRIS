@@ -172,7 +172,7 @@ function add_data() {
         if(data.status == 'success') {
           showSuccess("Employee Added Successfully!");
           setTimeout(function() {
-              window.location.href= 'employee.php'
+              window.location.href= 'employee'
           }, 1000)
         } else {
           showError(data.message);

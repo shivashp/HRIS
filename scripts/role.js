@@ -23,7 +23,7 @@ get_role();
               str += "<tr>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"user-write text-right\">";
-              str += "                              <a class=\"btn btn-simple btn-danger btn-icon\" href='add-role.php?action=edit&id="+id+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += "                              <a class=\"btn btn-simple btn-danger btn-icon\" href='add-role?action=edit&id="+id+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }

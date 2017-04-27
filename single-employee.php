@@ -1,7 +1,7 @@
 <?php include('header.php');
   if(!isset($_GET['action'])){
     echo '<script>
-            window.location.href="employee.php"
+            window.location.href="employee"
           </script>';
   }
 ?>

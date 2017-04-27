@@ -5,7 +5,7 @@ var settimeout = 1000;
 $(".logout").click(function() {
   localStorage.clear();
   deleteAllCookies();
-  window.location.href="index.html";
+  window.location.href="index";
 })
 
 function deleteAllCookies() {

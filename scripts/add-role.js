@@ -147,7 +147,7 @@ function update_role(json, id) {
         if(data.status == 'success') {
           showSuccess(name + " Role Updated Successfully!");
           setTimeout(function() {
-            window.location.href = 'role.php';
+            window.location.href = 'role';
           }, settimeout);
         } else {
           showError(data.message);
@@ -176,7 +176,7 @@ function add_role(json) {
         if(data.status == 'success') {
           showSuccess(name + " Role Added Successfully!");
           setTimeout(function() {
-            window.location.href = 'role.php';
+            window.location.href = 'role';
           }, settimeout);
         } else {
           showError(data.message);

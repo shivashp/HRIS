@@ -1,6 +1,6 @@
 <?php
   if(!isset($_COOKIE['token'])) {
-    header("location:index.html");
+    header("location:index");
     die();
   }
 
@@ -13,7 +13,7 @@
     $req_val = $PERMISSIONS[$value];
     $aval_val = $PERMISSIONS[$user_value];
     if($req_val > $aval_val) {
-      header("location:dashboard.php");
+      header("location:dashboard");
     }
   }
  ?>
@@ -47,7 +47,7 @@
           <div class="sidebar-wrapper">
               <ul class="nav" id="main">
                   <li class="per link dashboard">
-                      <a href="dashboard.php" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
+                      <a href="dashboard" class="menu" data-name = 'branch'> <i class="material-icons">dashboard</i>
                           <p>Dashboard</p>
                       </a>
                   </li>
@@ -62,32 +62,32 @@
                       <div class="collapse" id="companyManagement">
                           <ul class="nav">
                             <li class="sub-link ndoh per company-write">
-                                <a href="company.php">
+                                <a href="company">
                                     NDOH Setup
                                 </a>
                             </li>
                             <li class="sub-link district">
-                                <a href="district.php">
+                                <a href="district">
                                     Districts
                                 </a>
                             </li>
                             <li class="sub-link province">
-                                <a href="province.php">
+                                <a href="province">
                                     Provinces
                                 </a>
                             </li>
                             <li class="sub-link region">
-                                <a href="region.php">
+                                <a href="region">
                                     Regions
                                 </a>
                             </li>
                             <li class="sub-link llg">
-                                <a href="llg.php">
+                                <a href="llg">
                                     LLGs
                                 </a>
                             </li>
                             <li class="sub-link facility">
-                                <a href="facility.php">
+                                <a href="facility">
                                     Facilities
                                 </a>
                             </li>
@@ -105,17 +105,17 @@
                       <div class="collapse" id="employeeconfiguration">
                           <ul class="nav">
                             <li class="sub-link rank">
-                                <a href="employee-category-rank.php">
+                                <a href="employee-category-rank">
                                     Ranks
                                 </a>
                             </li>
                             <li class="sub-link category">
-                                <a href="employee-categories.php" >
+                                <a href="employee-categories" >
                                     Categories
                                 </a>
                             </li>
                             <li class="sub-link type">
-                                <a href="employment-type.php">
+                                <a href="employment-type">
                                     Types
                                 </a>
                             </li>
@@ -133,7 +133,7 @@
                       <div class="collapse" id="divisionmgmt">
                           <ul class="nav">
                             <li class="sub-link division">
-                                <a href="branch.php">
+                                <a href="branch">
                                     Divisions
                                 </a>
                             </li>
@@ -151,7 +151,7 @@
                       <div class="collapse" id="agencymgmt">
                           <ul class="nav">
                             <li class="sub-link agency">
-                                <a href="agency.php">
+                                <a href="agency">
                                     Agencies
                                 </a>
                             </li>
@@ -169,17 +169,17 @@
                       <div class="collapse" id="employee">
                           <ul class="nav">
                             <li class="sub-link employees agencyemp-read">
-                                <a href="employee.php">
+                                <a href="employee">
                                     Employees
                                 </a>
                             </li>
                             <li class="sub-link add-employee agencyemp-write">
-                                <a href="add-employee.php">
+                                <a href="add-employee">
                                     Add Employee
                                 </a>
                             </li>
                             <!-- <li class="sub-link add-employee agencyemp-write">
-                                <a href="create-employee.php">
+                                <a href="create-employee">
                                     Create Employee
                                 </a>
                             </li> -->
@@ -198,22 +198,22 @@
                       <div class="collapse" id="usermanagement">
                           <ul class="nav">
                             <li class="sub-link users user-read">
-                                <a href="users.php" class="menu">
+                                <a href="users" class="menu">
                                     Users
                                 </a>
                             </li>
                             <li class="sub-link add-user user-write">
-                                <a href="add-user.php" class="menu">
+                                <a href="add-user" class="menu">
                                     Add User
                                 </a>
                             </li>
                             <li class = "sub-link roles user-read">
-                                <a href="role.php" class="menu">
+                                <a href="role" class="menu">
                                     Roles
                                 </a>
                             </li>
                             <li class="sub-link add-role user-write">
-                                <a href="add-role.php" class="menu">
+                                <a href="add-role" class="menu">
                                     Add Role
                                 </a>
                             </li>
