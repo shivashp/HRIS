@@ -21,7 +21,9 @@ function deleteAllCookies() {
 
 check_permissions()
 function check_permissions(){
-  var permission = JSON.parse(localStorage.getItem("per_json"));
+  // var permission = JSON.parse(localStorage.getItem("per_json"));
+  var permission = JSON.parse(getCookie('permissions'));
+  console.log(permission);
   $.map(permission, function(value, key) {
     key = key.split("_");
     if(key[1] === "emp"){
@@ -29,6 +31,22 @@ function check_permissions(){
     }
     map_permission(key[0], value);
   });
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
 
 function map_permission(key, value) {

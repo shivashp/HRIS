@@ -45,7 +45,7 @@ $(function() {
           "user_name": username,
           "password": password
         }),
-        success: function(data) { 
+        success: function(data) {
           if(data.status == 'success') {
             var token = data.data.access_token;
             var role_id = data.data.role_id;
