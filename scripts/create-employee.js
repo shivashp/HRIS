@@ -327,7 +327,7 @@ get_category();
           $("#add").show();
           if(data.status == 'success') {
             showSuccess("Employee Added Successfully!");
-            window.location.href= 'employee'
+            window.location.href= 'employee.php'
           } else {
             showError(data.message);
           }

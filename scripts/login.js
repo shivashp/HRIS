@@ -58,7 +58,7 @@ $(function() {
             localStorage.setItem("per_json", JSON.stringify(data.data.permissions))
             document.cookie = "token="+token;
             document.cookie = "permissions="+JSON.stringify(data.data.permissions);
-            window.location.href = "dashboard";
+            window.location.href = "dashboard.php";
 
           } else {
 	    $(".loader").hide();
