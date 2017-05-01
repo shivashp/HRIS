@@ -61,7 +61,7 @@
                       </a>
                       <div class="collapse" id="companyManagement">
                           <ul class="nav">
-                            <li class="sub-link ndoh per company-write">
+                            <li style="display:none;" class="sub-link ndoh per4 company-write">
                                 <a href="company">
                                     NDOH Setup
                                 </a>

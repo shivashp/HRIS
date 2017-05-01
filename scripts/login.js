@@ -1,5 +1,5 @@
 var basepath = "http://139.59.37.232:5000/api/";
-// var basepath = "http://182.93.91.147:5000/api/";
+var basepath = "http://182.93.91.147:5000/api/";
 function clearAlert() {
   $(".sp-alert-danger").html('');
   $(".sp-alert-danger").hide();
@@ -45,7 +45,7 @@ $(function() {
           "user_name": username,
           "password": password
         }),
-        success: function(data) {
+        success: function(data) { 
           if(data.status == 'success') {
             var token = data.data.access_token;
             var role_id = data.data.role_id;
@@ -61,11 +61,13 @@ $(function() {
             window.location.href = "dashboard";
 
           } else {
+	    $(".loader").hide();
             $("#login-btn").show();
             showError(data.message);
           }
         },
         error: function(error) {
+	  $(".loader").hide();
           $("#login-btn").show();
           showError("Error in Server! Try again!")
         },
