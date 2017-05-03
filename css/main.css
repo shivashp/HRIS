@@ -6,6 +6,9 @@
 html .per {
   display: none;
 }
+html {
+  overflow: hidden;
+}
 .card {
   display: none;
   margin-bottom:55px;
@@ -38,9 +41,6 @@ html .per {
 .table > thead > tr > th {
   font-size: 17px;
 }
-.main-panel, .main-panel {
-    overflow-y: auto;
-  }
   .perfect-scrollbar-on .sidebar .sidebar-wrapper, .sidebar .sidebar-wrapper, .perfect-scrollbar-on
   .main-panel, .main-panel {
   overflow: auto !important;

@@ -42,8 +42,8 @@ include('header.php');
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <select class="selectpicker" data-style="btn select-with-transition sp-select" id="special-character">
-                              <option value="true">Yes</option>
-                              <option value="false" selected>No</option>
+                              <option value=true>Yes</option>
+                              <option value=false selected>No</option>
                             </select>
                         </div>
                     </div>
@@ -101,7 +101,6 @@ include('header.php');
 <?php include('footer.php'); ?>
 <script src="scripts/password-policy.js"></script>
 <script>
-$(".card").fadeIn("fast");
 active('password-policy', 'sub-link')
 active('user-mgmt')
 </script>
