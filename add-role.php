@@ -3,10 +3,6 @@
   include('header.php');
 ?>
 
-<script>
-  var role_action = "<?php $_GET['action']; ?>";
-  var id = "<?php $_GET['id']; ?>";
-</script>
 
 <div class="content user-write">
  <div class="page-loader">

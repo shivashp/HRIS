@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+  if(isset($_COOKIE['token'])) {
+    header("location:dashboard.php");
+  }
+?>
+<!Doctype html>
 <html lang="en">
 
 <head>

@@ -41,7 +41,7 @@
     <div class="wrapper">
         <div class="sidebar" data-active-color="rose" data-background-color="black" data-image="img/sidebar-1.jpg">
           <div class="logo"> <a href="javascript:;" class="simple-text">
-              HRIS
+              <img src="img/ndoh_logo.png" id="ndoh-logo">
           </div>
           <div class="logo logo-mini"> <a href="#" class="simple-text"> HRIS </a> </div>
           <div class="sidebar-wrapper">
@@ -61,7 +61,7 @@
                       </a>
                       <div class="collapse" id="companyManagement">
                           <ul class="nav">
-                            <li style="display:none;" class="sub-link ndoh per4 company-write">
+                            <li class="sub-link ndoh per4 company-write">
                                 <a href="company.php">
                                     NDOH Setup
                                 </a>
@@ -217,6 +217,11 @@
                                     Add Role
                                 </a>
                             </li>
+                            <li class="sub-link password-policy user-write">
+                                <a href="password-policy.php" class="menu">
+                                    Password Policy
+                                </a>
+                            </li>
                           </ul>
                       </div><!-- User Management -->
                   </li><!-- User dropdown -->
@@ -247,7 +252,7 @@
                               </a>
                               <ul class="dropdown-menu">
                                 <li>
-                                  <a href="#">Settings</a>
+                                  <a href="change-password.php">Settings</a>
                                 </li>
                                 <li style="cursor:pointer">
                                   <a class="logout">Logout</a>

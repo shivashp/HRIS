@@ -5,7 +5,7 @@
 
 <div class="content">
 <div class="row per user-write">
-    <a href= "add-role" class="btn btn-success pull-right sp-add-btn">Add Role</a>
+    <a href= "add-role.php" class="btn btn-success pull-right sp-add-btn">Add Role</a>
   </div><!-- row-->
    <div class="page-loader">
   <img src="img/loader.gif"><br>

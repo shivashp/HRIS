@@ -20,10 +20,8 @@ function deleteAllCookies() {
 }
 
 check_permissions()
-function check_permissions(){
-  // var permission = JSON.parse(localStorage.getItem("per_json"));
+function check_permissions(){  
   var permission = JSON.parse(getCookie('permissions'));
-  console.log(permission);
   $.map(permission, function(value, key) {
     key = key.split("_");
     if(key[1] === "emp"){

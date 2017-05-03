@@ -7,9 +7,7 @@
     </div>
     <div class="col-sm-8">
 
-    </div>
-    <img src="img/ndoh_logo.png" id="ndoh-logo"><br>
-    <h3 id="dashboard-title">National Department of Health</h3>
+    </div>    
   </div>
 </div>
 <style>
