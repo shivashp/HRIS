@@ -5,7 +5,7 @@ var settimeout = 1000;
 $(".logout").click(function() {
   localStorage.clear();
   deleteAllCookies();
-  window.location.href="index";
+  window.location.href="index.php";
 })
 
 function deleteAllCookies() {
@@ -20,7 +20,7 @@ function deleteAllCookies() {
 }
 
 check_permissions()
-function check_permissions(){  
+function check_permissions(){
   var permission = JSON.parse(getCookie('permissions'));
   $.map(permission, function(value, key) {
     key = key.split("_");
