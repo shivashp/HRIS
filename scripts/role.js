@@ -43,6 +43,9 @@ function _urlPasser(id) {
                         $("td:first", nRow).html(index);
                         return nRow;
                     },
+                    "columnDefs": [
+                      { "width": "5px", "targets": 0 }
+                    ]
                 });
             $(".page-loader").hide();
             $(".card").fadeIn("fast");

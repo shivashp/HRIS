@@ -192,7 +192,6 @@ function get_employees() {
       },
       success: function(data) {
         var data1 = [];
-        console.log(data);
         if(data.status === 'success') {
           for (var i = 0; i < data.data.length; i++) {
               var id = data.data[i].id;
@@ -221,6 +220,7 @@ function get_employees() {
               data1.push(json);
           }
           EMPLOYEES = data1;
+          $('#datatables').DataTable().destroy();
           $("#data-body").html(data1.map(data => generate_table(data)).join(''));
           check_permissions();
           $('#datatables').DataTable({
@@ -229,6 +229,9 @@ function get_employees() {
                       $("td:first", nRow).html(index);
                       return nRow;
                   },
+                  "columnDefs": [
+                    { "width": "5px", "targets": 0 }
+                  ]
               });
           $(".page-loader").hide();
           $(".card").fadeIn("fast");

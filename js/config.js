@@ -8,6 +8,9 @@ $(".logout").click(function() {
   window.location.href="index.php";
 })
 
+var company_display_name = localStorage.getItem("company_name");
+$("#company-display-name").html(company_display_name);
+
 function deleteAllCookies() {
     var cookies = document.cookie.split(";");
 

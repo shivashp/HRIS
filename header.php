@@ -232,8 +232,8 @@
             <nav class="navbar navbar-blue navbar-absolute">
                 <div class="container-fluid">
                   <div class="navbar-minimize">
-                    <div class="main-header-section">
-                        National Department of Health</a>
+                    <div class="main-header-section" id="company-display-name">
+                        </a>
                     </div>
                   </div>
                   <div class="navbar-header">

@@ -21,6 +21,7 @@ String.prototype.isBlank = function (type) {
 };
 
 $(function() {
+  get_company_details();
   $("#login-btn").click(function(e) {
     e.preventDefault();
     var username = $("#username").val();
@@ -97,9 +98,29 @@ $(function() {
         error: function(error) {
           $(".loader").hide();
           $("#login-btn").show();
-
           showError("Error in Server! Try again!")
         },
     });// Ajax
   }
+
+  function get_company_details() {
+		$.ajax({
+	      url: basepath + "company",
+	      type: "GET",
+	      contentType: 'application/json',
+	      dataType: 'json',
+	      success: function(data) {
+	        if(data.status == 'success') {
+						var display_name = data.data.display_name;
+            localStorage.setItem("company_name", display_name);
+	        }
+	      },
+	      error: function(error) {
+	        showError("Error in Server! Try again!")
+	      },
+	  });// Ajax
+	}
+
+
+
 })

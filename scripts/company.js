@@ -408,13 +408,5 @@ $(function() {
 	      },
 	  });// Ajax
 	}
-	var data = {
-		'free_text_one': 1,
-		'free_text_two': 2,
-		'free_text_three': 3,
-		'free_text_four': 4,
-		'free_text_five': 5,
-	}
-
 
 })// Document
