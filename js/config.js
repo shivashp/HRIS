@@ -9,6 +9,7 @@ $(".logout").click(function() {
 })
 
 var company_display_name = localStorage.getItem("company_name");
+console.log(company_display_name);
 $("#company-display-name").html(company_display_name);
 
 function deleteAllCookies() {

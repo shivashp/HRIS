@@ -1,5 +1,6 @@
 var basepath = "http://139.59.37.232:5000/api/";
 var basepath = "http://182.93.91.147:5000/api/";
+var COMPANY_NAME;
 function clearAlert() {
   $(".sp-alert-danger").html('');
   $(".sp-alert-danger").hide();
@@ -59,6 +60,7 @@ $(function() {
             localStorage.setItem("per_json", JSON.stringify(data.data.permissions))
             document.cookie = "token="+token;
             document.cookie = "permissions="+JSON.stringify(data.data.permissions);
+            localStorage.setItem("company_name", COMPANY_NAME);
             window.location.href = "dashboard.php";
 
           } else {
@@ -76,34 +78,7 @@ $(function() {
   })// Login click
 
 
-  function get_permissions(id) {
-    $.ajax({
-        url: basepath + "roles/"+id,
-        type: "GET",
-        contentType: 'application/json',
-        dataType: 'json',
-        success: function(data) {
-          if(data.status == 'success') {
-            $(".loader").hide();
-            delete data.data['id'];
-            delete data.data['activate'];
-            delete data.data['role_type'];
-            localStorage.setItem("per_json", JSON.stringify(data.data))
-            window.location.href = "dashboard";
-          } else {
-              showError("Error in Server! Try again!")
-          }
-          return false;
-        },
-        error: function(error) {
-          $(".loader").hide();
-          $("#login-btn").show();
-          showError("Error in Server! Try again!")
-        },
-    });// Ajax
-  }
-
-  function get_company_details() {
+  function get_company_details() {    
 		$.ajax({
 	      url: basepath + "company",
 	      type: "GET",
@@ -112,7 +87,7 @@ $(function() {
 	      success: function(data) {
 	        if(data.status == 'success') {
 						var display_name = data.data.display_name;
-            localStorage.setItem("company_name", display_name);
+            COMPANY_NAME = display_name;
 	        }
 	      },
 	      error: function(error) {

@@ -66,12 +66,7 @@ $("#submit").click(function(e) {
 			"country": "PNG",
 			"display_name": display_name,
 			"district": district,
-			"email": email,
-			"free_text_five": "",
-			"free_text_four": "",
-			"free_text_one": "",
-			"free_text_three": "",
-			"free_text_two": "",
+			"email": email,			
 			"llg": llg,
 			"name": company_name,
 			"province": province,
@@ -290,7 +285,7 @@ var token = localStorage.getItem("token");
 $(".page-loader").hide();
 $(".card").fadeIn("fast");
 $(function() {
-	// get_company_details();
+	get_company_details();
 	demo.initFormExtendedDatetimepickers();
   (function() {
     var country_obj = COUNTRY_LIST.map((country) => {
