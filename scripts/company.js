@@ -290,7 +290,7 @@ var token = localStorage.getItem("token");
 $(".page-loader").hide();
 $(".card").fadeIn("fast");
 $(function() {
-	get_company_details();
+	// get_company_details();
 	demo.initFormExtendedDatetimepickers();
   (function() {
     var country_obj = COUNTRY_LIST.map((country) => {
@@ -359,7 +359,6 @@ $(function() {
 	        xhr.setRequestHeader('Token', TOKEN);
 	      },
 	      success: function(data) {
-					console.log(data);
 	        if(data.status == 'success') {
 						var address1 = data.data.address_one;
 						var address2 = data.data.address_two;
@@ -380,9 +379,9 @@ $(function() {
 						var web = data.data.web_address;
 						var free_text_one = data.data.free_text_one;
 
-						var text_array = [];
 						for (var i = 2; i < 6; i++) {
-							add_free_text(i);
+							var value = data.data['free_text_'+intToStr[i]]
+							add_free_text(value);
 						}
 
 						$("#company-name").val(name);
@@ -409,8 +408,12 @@ $(function() {
 	      },
 	  });// Ajax
 	}
-	for (var i = 2; i < 4; i++) {
-		add_free_text(i);
+	var data = {
+		'free_text_one': 1,
+		'free_text_two': 2,
+		'free_text_three': 3,
+		'free_text_four': 4,
+		'free_text_five': 5,
 	}
 
 
