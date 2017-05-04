@@ -109,8 +109,20 @@ html {
     font-weight: 400;
     font-size: 18px;
     padding-top: 13px;
+    padding-bottom:13px;
 }
-
+.navbar .navbar-minimize {
+    float: none;
+    text-align: center;
+}
+.navbar .navbar-collapse, .navbar .navbar-form {
+    position: absolute;
+    top: 13px;
+    right: 0;
+}
+.sidebar .nav, .off-canvas-sidebar .nav {
+    padding-bottom: 50px;
+}
 .wizard-card[data-color="rose"] .moving-tab {
       background-color: #355089;
       box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(42, 91, 193, 0.4);

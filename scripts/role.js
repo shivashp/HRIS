@@ -4,6 +4,13 @@ $(function() {
 
 get_role();
 
+
+function _urlPasser(id) {
+  document.cookie = "role_action=edit";
+  document.cookie = "role_id="+id;
+  window.location.href="add-role.php";
+}
+
   function get_role() {
     $.ajax({
         url: basepath + "roles",
@@ -23,7 +30,7 @@ get_role();
               str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"user-write text-right\">";
-              str += "                              <a class=\"edit btn btn-sm btn-success btn-icon like\" href='add-role.php?action=edit&id="+id+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";              
+              str += "                              <a class=\"edit btn btn-sm btn-success btn-icon like\" href1='add-role.php?action=edit&id="+id+"' data-id=\""+id+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -164,7 +171,6 @@ get_role();
   })
   $(document).delegate(".edit", "click", function() {
     var i = $(this).attr("data-id");
-    edit_role(i);
-    slideMenu();
+    _urlPasser(i);
   })
 })// Document

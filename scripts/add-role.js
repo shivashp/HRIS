@@ -8,6 +8,16 @@ $(function() {
       $("#role-title").html("Edit Role");
     }
   }
+
+  var action = getCookie('role_action');
+  var id = getCookie('role_id');
+  if(action === 'edit'){
+    if(id !== '') {
+      prepareEdit(id);
+      $("#role-title").html("Edit Role");
+      document.cookie = "role_action=add";
+    }
+  }
 $(".page-loader").hide();
 $(".card").fadeIn("fast");
 

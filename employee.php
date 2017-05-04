@@ -4,7 +4,7 @@ include('header.php');
 ?>
 <div class="content">
 <div class="agencyemp-write row">
-  <a href="add-employee" class="btn btn-success pull-right sp-add-btn">Add</a>
+  <a href="add-employee.php" class="btn btn-success pull-right sp-add-btn">Add</a>
 </div><!-- row-->
  <div class="page-loader">
   <img src="img/loader.gif"><br>

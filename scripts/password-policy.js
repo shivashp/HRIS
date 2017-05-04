@@ -10,8 +10,7 @@ function get_policy() {
       beforeSend: function(xhr) {
         xhr.setRequestHeader('Token', TOKEN);
       },
-      success: function(data) {
-        console.log(data);
+      success: function(data) {        
         if(data.status == 'success') {
           var max_len = data.data.max_len;
           var min_len = data.data.min_len;
@@ -83,7 +82,7 @@ $("#submit").click(function() {
         $(".loader").hide();
         $("#submit").show();
         if(data.status == 'success') {
-          showSuccess("Policy Updated Successfully!");          
+          showSuccess("Policy Updated Successfully!");
         } else {
           showError(data.message);
         }

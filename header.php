@@ -63,7 +63,7 @@
                           <ul class="nav">
                             <li class="sub-link ndoh per4 company-write">
                                 <a href="company.php">
-                                    NDOH Setup
+                                    Company Setup
                                 </a>
                             </li>
                             <li class="sub-link district">

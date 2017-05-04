@@ -16,73 +16,106 @@ var COUNTRY_LIST = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguil
 		,"Yemen","Zambia","Zimbabwe"];
 var FREE_TEXT_INDEX = 1;
 var MAX_COUNT = 5;
+var FREE_TEXT_ARRAY = [1];
+var intToStr = ['one', 'two', 'three', 'four', 'five'];
 get_llg();
 get_district();
 get_province();
 get_region();
 
+
 $("#submit").click(function(e) {
 	e.preventDefault();
-	$("#myform").validate({
-		rules: {
-			name: {
-				required: true,
-				minlength: 3
-			},
-			// lastname: {
-			// 	required: true,
-			// 	minlength: 3
-			// },
-			// dob: {
-			// 	required: true
-			// },
-			// // sex: {
-			// //   required: true
-			// // },
-			// address1: {
-			// 	required: true,
-			// 	minlength: 3
-			// },
-			// village: {
-			// 	required: true
-			// },
-			// email: {
-			// 	required: true,
-			// 	email: true
-			// },
-			// phone: {
-			// 	required: true
-			// },
-			// employeenumber: {
-			// 	required: true
-			// },
-			// salarystep: {
-			// 	required: true
-			// },
-			// startdate: {
-			// 	required: true
-			// },
-			// retirement_age: {
-			// 	required: true,
-			// 	min:17,
-			// 	max:70
-			// }
-		},
-		messages: {
-			name: 'Company name is required',
-		},
-		errorPlacement: function(error, element) {
-				$(element).next('div').html(error);
-				$(element).parent('div').addClass('has-error');
-		 },
-		submitHandler: function() {
-			add_data();
+	var company_name = $("#company-name").val();
+	var display_name = $("#display-name").val();
+	var code = $("#code").val();
+	var code_desc = $("#code-desc").val();
+	var address1 = $("#address1").val();
+	var address2 = $("#address2").val();
+	var district = $("#district").val();
+	var province = $("#province").val();
+	var region = $("#region").val();
+	var llg = $("#llg").val();
+	var village = $("#village").val();
+	var web = $("#web").val();
+	var email = $("#email").val();
+	var contact_name = $("#contact-name").val();
+	var contact_mobile = $("#contact-mobile").val();
+	var contact_email = $("#contact-email").val();
+	var contact_alternate_email = $("#contact-alternate-email").val();
+
+	if(!company_name.isBlank("Company Name") || !display_name.isBlank("Display Name")) {
+		return false;
+	}
+
+	var json = {};
+	for (var i = 0; i < FREE_TEXT_ARRAY.length; i++) {
+		var val = FREE_TEXT_ARRAY[i];
+		var key = 'free_text_'+ intToStr[i];
+		json[key] = $("#free-text-val-"+val).val();
+	}
+
+	var my_json = {
+			"address_one": address1,
+			"address_two": address2,
+			"company_code": code,
+			"company_code_desc": code_desc,
+			"contact_person_alt_email": contact_alternate_email,
+			"contact_person_email": contact_email,
+			"contact_person_name": contact_name,
+			"country": "PNG",
+			"display_name": display_name,
+			"district": district,
+			"email": email,
+			"free_text_five": "",
+			"free_text_four": "",
+			"free_text_one": "",
+			"free_text_three": "",
+			"free_text_two": "",
+			"llg": llg,
+			"name": company_name,
+			"province": province,
+			"region": region,
+			"village": village,
+			"web_address": web
 		}
-	});
+		Object.assign(my_json, json);
+		// Traverse each data and remove any blank, null and undefined value rows
+	  $.each(my_json, function(key, value) {
+	    if(value === '' || value === null || value === undefined) {
+	      delete my_json[key];
+	    }
+	  })
+		add_data(my_json);
 })//submit
 
-function add_data() {
-
+function add_data(json) {
+	$.ajax({
+      url: basepath + "company",
+      type: "PUT",
+      contentType: 'application/json',
+      dataType: 'json',
+      beforeSend: function(xhr) {
+        $(".loader").show();
+        $("#submit").hide();
+        xhr.setRequestHeader('Token', TOKEN);
+      },
+      data: JSON.stringify(json),
+      success: function(data) {
+        $(".loader").hide();
+        $("#submit").show();
+        if(data.status == 'success') {
+          showSuccess("Company Details Updated Successfully!");
+        } else {
+          showError(data.message);
+        }
+      },
+      error: function(error) {
+        $(".loader").hide();
+        $("#submit").show();
+        showError("Error in Server! Try again!")
+      },
+  });// Ajax
 }
 
 
@@ -257,6 +290,7 @@ var token = localStorage.getItem("token");
 $(".page-loader").hide();
 $(".card").fadeIn("fast");
 $(function() {
+	get_company_details();
 	demo.initFormExtendedDatetimepickers();
   (function() {
     var country_obj = COUNTRY_LIST.map((country) => {
@@ -271,18 +305,28 @@ $(function() {
   })() // country list
 
 	$("#add-free-text").click(function() {
+		add_free_text();
+	})
+
+	function add_free_text(val = '') {
 		FREE_TEXT_INDEX++;
 		if(FREE_TEXT_INDEX == MAX_COUNT){
 			$("#add-free-text").hide();
 		}
+		FREE_TEXT_ARRAY.push(FREE_TEXT_INDEX);
 		$("#free-text-row").append(freeText(FREE_TEXT_INDEX));
 		$("#free-text-"+FREE_TEXT_INDEX).hide().fadeIn(500);
 		$("#add-free-text").attr("value", FREE_TEXT_INDEX);
-	})
+		$("#free-text-val-"+FREE_TEXT_INDEX).val(val);
+
+	}
 
 	$(document).delegate(".delete-free-text", "click", function() {
 		var val = $(this).attr("value");
 		MAX_COUNT++;
+		FREE_TEXT_ARRAY = jQuery.grep(FREE_TEXT_ARRAY, function(value) {
+		  return value != val;
+		});
 		$("#free-text-"+val).hide("slow", function(){
 			$("#free-text-"+val).remove();
 		});
@@ -297,10 +341,77 @@ $(function() {
 		str += "                    <div class=\"col-sm-8\">";
 		str += "                        <div class=\"form-group label-floating is-empty\">";
 		str += "                            <label class=\"control-label\"><\/label>";
-		str += "                            <input type=\"text\" id=\"contact-alternate-email\" class=\"form-control\" placeholder = \"Free Text\" value> <a href=\"#\" class=\"delete-free-text\" value=\""+i+"\"><i class=\"material-icons\">remove_circle_outline<\/i><\/a>";
+		str += "                            <input type=\"text\" id=\"free-text-val-"+i+"\" class=\"form-control\" placeholder = \"Free Text\" value> <a href=\"#\" class=\"delete-free-text\" value=\""+i+"\"><i class=\"material-icons\">remove_circle_outline<\/i><\/a>";
 		str += "                        <\/div>";
 		str += "                    <\/div>";
 		str += "                  <\/div>";
 		return str;
 	}
+
+
+	function get_company_details() {
+		$.ajax({
+	      url: basepath + "company",
+	      type: "GET",
+	      contentType: 'application/json',
+	      dataType: 'json',
+	      beforeSend: function(xhr) {
+	        xhr.setRequestHeader('Token', TOKEN);
+	      },
+	      success: function(data) {
+					console.log(data);
+	        if(data.status == 'success') {
+						var address1 = data.data.address_one;
+						var address2 = data.data.address_two;
+						var code = data.data.company_code;
+						var code_desc = data.data.company_code_desc;
+						var contact_person_alt_email = data.data.contact_person_alt_email;
+						var contact_person_email = data.data.contact_person_email;
+						var contact_person_name = data.data.contact_person_name;
+						var country = data.data.country;
+						var display_name = data.data.display_name;
+						var district = data.data.district;
+						var email = data.data.email;
+						var llg = data.data.llg;
+						var name = data.data.name;
+						var province = data.data.province;
+						var region = data.data.region;
+						var village = data.data.village;
+						var web = data.data.web_address;
+						var free_text_one = data.data.free_text_one;
+
+						var text_array = [];
+						for (var i = 2; i < 6; i++) {
+							add_free_text(i);
+						}
+
+						$("#company-name").val(name);
+						$("#display-name").val(display_name);
+						$("#code").val(code);
+						$("#code-desc").val(code_desc);
+						$("#address1").val(address1);
+						$("#address2").val(address2);
+						$("#district").val(district);
+						$("#province").val(province);
+						$("#region").val(region);
+						$("#llg").val(llg);
+						$("#vilalge").val(village);
+						$("#web").val(web);
+						$("#email").val(email);
+						$("#contact-name").val(contact_person_name);
+						$("#contact-mobile").val(contact_mobile);
+						$("#contact-email").val(contact_person_email);
+						$("#contact-alternate-email").val(contact_person_alt_email);
+	        }
+	      },
+	      error: function(error) {
+	        showError("Error in Server! Try again!")
+	      },
+	  });// Ajax
+	}
+	for (var i = 2; i < 4; i++) {
+		add_free_text(i);
+	}
+
+
 })// Document

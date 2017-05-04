@@ -21,8 +21,8 @@ include('header.php');
                     <div class="col-sm-8">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" name="firstname" id="first-name" class="form-control" required>
-                            <div class="help-block with-errors"></div>
+                            <input type="text" name="firstname" id="company-name" class="form-control" placeholder="Company Name">
+                            <div class="help-block with-errors">Company Name is required</div>
                         </div>
                     </div>
                   </div>
@@ -32,7 +32,7 @@ include('header.php');
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <input type="text" name="displayName" id="display-name" class="form-control" placeholder = "Display Name" value>
-                            <div class="help-block with-errors"></div>
+                            <div class="help-block with-errors">Display Name is required</div>
                         </div>
                     </div>
                   </div>
@@ -65,7 +65,7 @@ include('header.php');
                     <div class="col-sm-8">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" id="address" class="form-control" placeholder = "Address 1" value>
+                            <input type="text" id="address1" class="form-control" placeholder = "Address 1" value>
                         </div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ include('header.php');
                     <div class="col-sm-8">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" id="address" class="form-control" placeholder = "Address 2" value>
+                            <input type="text" id="address2" class="form-control" placeholder = "Address 2" value>
                         </div>
                     </div>
                   </div>
@@ -87,8 +87,6 @@ include('header.php');
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="district"  title="Choose District">
-                              <option value="">District 1</option>
-                              <option value="">District 2</option>
                             </select>
                         </div>
                     </div>
@@ -99,8 +97,6 @@ include('header.php');
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="province"  title="Choose Province">
-                              <option value="">Province 1</option>
-                              <option value="">Province 2</option>
                             </select>
                         </div>
                     </div>
@@ -114,8 +110,6 @@ include('header.php');
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="region"  title="Choose Region">
-                              <option value="">Region 1</option>
-                              <option value="">Region 2</option>
                             </select>
                         </div>
                     </div>
@@ -126,8 +120,6 @@ include('header.php');
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="llg"  title="Choose LLG">
-                              <option value="">LLG 1</option>
-                              <option value="">LLG 2</option>
                             </select>
                         </div>
                     </div>
@@ -218,7 +210,7 @@ include('header.php');
                     <div class="col-sm-8">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" id="free-text-1" class="form-control" placeholder = "Free Text" value>
+                            <input type="text" id="free-text-val-1" class="form-control" placeholder = "Free Text" value>
                         </div>
                     </div>
                   </div>
