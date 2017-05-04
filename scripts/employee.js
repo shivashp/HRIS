@@ -12,7 +12,7 @@ function get_agency_employee() {
       beforeSend: function(xhr) {
         xhr.setRequestHeader('Token', TOKEN);
       },
-      success: function(data) {        
+      success: function(data) {
         var data1 = [];
         if(data.status === 'success') {
           for (var i = 0; i < data.data.length; i++) {
@@ -41,7 +41,13 @@ function get_agency_employee() {
           }
           EMPLOYEES = data1;
           $("#data-body").html(data1.map(data => generate_table(data)).join(''));
-          $('#datatables').DataTable();
+          $('#datatables').DataTable({
+                 "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                      var index = iDisplayIndexFull + 1;
+                      $("td:first", nRow).html(index);
+                      return nRow;
+                  },
+              });
           check_permissions();
           $(".page-loader").hide();
           $(".card").fadeIn("fast");
@@ -59,7 +65,8 @@ function get_agency_employee() {
 function generate_table(data) {
   var str = '';
   str += "<tr>";
-    str += "                          <td>"+data.name+"<\/td>";
+  str += "<td></td>";
+  str += "                          <td>"+data.name+"<\/td>";
   str += "                          <td>"+data.employee_number+"<\/td>";
   str += "                          <td>"+data.address1+"<\/td>";
   str += "                          <td>"+data.contact_number+"<\/td>";

@@ -60,6 +60,7 @@ include('header.php');
               <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                   <thead>
                       <tr>
+                          <th class="disabled-sorting">Sn.</th>
                           <th>Name</th>
                           <th>Rank</th>
                           <th class="per config-write disabled-sorting text-right">Actions</th>

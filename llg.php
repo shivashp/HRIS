@@ -1,4 +1,4 @@
-<?php 
+<?php
 $page_permission = array("key" => "company_management_perm", "value" => "R");
 include('header.php');
 ?>
@@ -51,6 +51,7 @@ include('header.php');
               <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                   <thead>
                       <tr>
+                          <th class="disabled-sorting">Sn.</th>
                           <th>Name</th>
                           <th class="per company-write disabled-sorting text-right">Actions</th>
                       </tr>

@@ -223,7 +223,13 @@ function get_employees() {
           EMPLOYEES = data1;
           $("#data-body").html(data1.map(data => generate_table(data)).join(''));
           check_permissions();
-          $('#datatables').DataTable();
+          $('#datatables').DataTable({
+                 "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                      var index = iDisplayIndexFull + 1;
+                      $("td:first", nRow).html(index);
+                      return nRow;
+                  },
+              });
           $(".page-loader").hide();
           $(".card").fadeIn("fast");
         }
@@ -240,6 +246,7 @@ function generate_table(data) {
   data.user_id = data.user_id + "";
   var str = '';
   str += "<tr class=\"active-row-"+data.user_id+"\">";
+  str += "<td></td>";
   str += "                          <td>"+data.name+"<\/td>";
   str += "                          <td>"+data.employee_number+"<\/td>";
   str += "                          <td>"+data.address1+"<\/td>";

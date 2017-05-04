@@ -15,22 +15,28 @@ get_role();
         success: function(data) {
           if(data.status == 'success') {
             ROLE_JSON = data.data;
-            console.log(data);
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var id = data.data[i].id;
               var name = data.data[i].role_type;
               str += "<tr>";
+              str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"user-write text-right\">";
-              str += "                              <a class=\"btn btn-simple btn-danger btn-icon\" href='add-role.php?action=edit&id="+id+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += "                              <a class=\"edit btn btn-sm btn-success btn-icon like\" href='add-role.php?action=edit&id="+id+"' data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";              
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
             // $('#datatables').DataTable().destroy();
             $("#data-body").html(str);
             check_permissions();
-            $('#datatables').DataTable();
+            $('#datatables').DataTable({
+                   "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                        var index = iDisplayIndexFull + 1;
+                        $("td:first", nRow).html(index);
+                        return nRow;
+                    },
+                });
             $(".page-loader").hide();
             $(".card").fadeIn("fast");
           }

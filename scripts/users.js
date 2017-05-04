@@ -26,6 +26,7 @@ $(function() {
                 middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
 
                 str += "<tr>";
+                str += "<td></td>";
                 str += "                          <td>"+first_name + middle_name + last_name+"<\/td>";
                 str += "                          <td>"+employee_number+"<\/td>";
                 str += "                          <td>"+username+"<\/td>";
@@ -37,7 +38,13 @@ $(function() {
             }
             $('#datatables').DataTable().destroy();
             $("#data-body").html(str);
-            $('#datatables').DataTable();
+            $('#datatables').DataTable({
+                   "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                        var index = iDisplayIndexFull + 1;
+                        $("td:first", nRow).html(index);
+                        return nRow;
+                    },
+                });
             $(".page-loader").hide();
             $(".card").fadeIn("fast");
 

@@ -20,16 +20,23 @@ get_region();
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
               str += "<tr>";
+              str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"per company-write text-right\">";
-              str += "                              <a class=\"btn btn-simple btn-danger btn-icon edit\" data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
             $('#datatables').DataTable().destroy();
             $("#data-body").html(str);
             check_permissions();
-            var table = $('#datatables').DataTable();
+            var table = $('#datatables').DataTable({
+                   "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                        var index = iDisplayIndexFull + 1;
+                        $("td:first", nRow).html(index);
+                        return nRow;
+                    },
+                });
             $(".page-loader").hide();
             $(".card").fadeIn("fast");
           }
@@ -141,6 +148,6 @@ get_region();
     var i = $(this).attr("data-id");
     edit_region(i);
     slideMenu();
-    $("#region-name").focus();    
+    $("#region-name").focus();
   })
 })// Document
