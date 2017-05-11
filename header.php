@@ -233,7 +233,7 @@
                 <div class="container-fluid">
                   <div class="navbar-minimize">
                     <div class="main-header-section" id="company-display-name">
-                      NATIONAL DEPARTMENT OF HEALTH                        
+                      NATIONAL DEPARTMENT OF HEALTH
                     </div>
                   </div>
                   <div class="navbar-header">

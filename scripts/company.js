@@ -66,7 +66,7 @@ $("#submit").click(function(e) {
 			"country": "PNG",
 			"display_name": display_name,
 			"district": district,
-			"email": email,			
+			"email": email,
 			"llg": llg,
 			"name": company_name,
 			"province": province,
@@ -100,6 +100,7 @@ function add_data(json) {
         $(".loader").hide();
         $("#submit").show();
         if(data.status == 'success') {
+					$("#company-display-name").html(json.display_name);
           showSuccess("Company Details Updated Successfully!");
         } else {
           showError(data.message);

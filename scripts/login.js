@@ -1,6 +1,6 @@
 var basepath = "http://139.59.37.232:5000/api/";
 var basepath = "http://182.93.91.147:5000/api/";
-var COMPANY_NAME;
+var COMPANY_NAME = "NATIONAL DEPARTMENT OF HEALTH";
 function clearAlert() {
   $(".sp-alert-danger").html('');
   $(".sp-alert-danger").hide();
@@ -78,13 +78,13 @@ $(function() {
   })// Login click
 
 
-  function get_company_details() {    
+  function get_company_details() {
 		$.ajax({
 	      url: basepath + "company",
 	      type: "GET",
 	      contentType: 'application/json',
 	      dataType: 'json',
-	      success: function(data) {
+	      success: function(data) {          
 	        if(data.status == 'success') {
 						var display_name = data.data.display_name;
             COMPANY_NAME = display_name;
