@@ -1,5 +1,6 @@
-var basepath = "http://182.93.91.147:5000/api/";
-// var basepath = "http://192.168.100.47:5000/api/";
+// var basepath = "http://182.93.91.147:5000/api/";
+var basepath = "http://192.168.100.47:5000/api/";
+var DEL_FLAG = true;
 
 var settimeout = 1000;
 $(".logout").click(function() {
@@ -7,6 +8,13 @@ $(".logout").click(function() {
   deleteAllCookies();
   window.location.href="index.php";
 })
+function prepare_selectpicker(obj) {
+  var str = obj.map(obj => {
+    return `<option value = "${obj.id}">${obj.name}</option>`;
+  })
+  str = str.join('');
+  return str;
+}
 
 var company_display_name = localStorage.getItem("company_name");
 $("#company-display-name").html(company_display_name);
@@ -181,6 +189,7 @@ function checkEmpty(arr){
 $(document).ready(function() {
   $(".sp-add-btn").click(function() {
     $(".form-horizontal")[0].reset();
+    $('.selectpicker1').selectpicker('val', -1);
     var value = $(this).attr("value");
     (value == 1)?pullMenu():slideMenu();
   });//sp-add-btn

@@ -27,6 +27,15 @@ include('header.php');
                           </div>
                       </div>
                   </div><!--row-->
+                  <div class="row">
+                      <label class="col-md-3 label-on-left">Region Code</label>
+                      <div class="col-md-9">
+                          <div class="form-group label-floating is-empty">
+                              <label class="control-label"></label>
+                              <input type="text" id="region-code" class="form-control">
+                          </div>
+                      </div>
+                  </div><!--row-->
                 </div>
               </div><!--row -->
                 <div class="row">
@@ -52,7 +61,8 @@ include('header.php');
                   <thead>
                       <tr>
                           <th class="disabled-sorting sn">Sn.</th>
-                          <th>Name</th>
+                          <th>Region Code</th>
+                          <th>Region Name</th>
                           <th class="per company-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

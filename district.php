@@ -18,12 +18,39 @@ include('header.php');
             <form class="form-horizontal">
               <div class="row">
                 <div class="col-md-6">
+                  <!-- <div class="row">
+                      <label class="col-md-3 label-on-left">Region</label>
+                      <div class="col-md-9">
+                          <div class="form-group label-floating is-empty">
+                              <label class="control-label"></label>
+                              <input type="text" id="region" disabled class="form-control">
+                          </div>
+                      </div>
+                  </div><!-row--> 
+                  <div class="row">
+                      <label class="col-md-3 label-on-left">Province</label>
+                      <div class="col-md-9">
+                          <div class="form-group label-floating is-empty">
+                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="province"  title="Choose Province">
+                              </select>
+                          </div>
+                      </div>
+                  </div><!--row-->
                   <div class="row">
                       <label class="col-md-3 label-on-left">District Name</label>
                       <div class="col-md-9">
                           <div class="form-group label-floating is-empty">
                               <label class="control-label"></label>
                               <input type="text" id="district-name" class="form-control">
+                          </div>
+                      </div>
+                  </div><!--row-->
+                  <div class="row">
+                      <label class="col-md-3 label-on-left">District Code</label>
+                      <div class="col-md-9">
+                          <div class="form-group label-floating is-empty">
+                              <label class="control-label"></label>
+                              <input type="text" id="district-code" class="form-control">
                           </div>
                       </div>
                   </div><!--row-->
@@ -52,7 +79,9 @@ include('header.php');
                   <thead>
                       <tr>
                           <th class="disabled-sorting sn">Sn.</th>
-                          <th>Name</th>
+                          <th>District Code</th>
+                          <th>District</th>
+                          <th>Province</th>
                           <th class="per company-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

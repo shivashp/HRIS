@@ -13,17 +13,19 @@ get_region();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-          console.log(data);
           if(data.status == 'success') {
             REGION_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
+              var id = data.data[i].id;
+              var code = data.data[i].region_code || "N/A";
               str += "<tr>";
               str += "<td></td>";
+              str += "                          <td>"+code+"<\/td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"per company-write text-right\">";
-              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a><a href=\"#\" class=\"delete btn btn-sm btn-danger btn-icon like\"  data-id=\""+id+"\"><i class=\"material-icons\">delete<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -52,7 +54,12 @@ get_region();
 
   function add_region(){
     var name = $("#region-name").val();
-    if(!name.isBlank("Name")){
+    var code = $("#region-code").val();
+    if(!name.isBlank("Name") || !code.isBlank("Region Code")){
+      return false;
+    }
+    if(code.length > 5) {
+      showError("Region Code Cannot be Greater Than 5 letters/digits")
       return false;
     }
     $.ajax({
@@ -66,7 +73,8 @@ get_region();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "name": name
+          "name": name,
+          "region_code": code
         }),
         success: function(data) {
           $(".loader").hide();
@@ -135,6 +143,33 @@ get_region();
     });// Ajax
   }
 
+  function delete_region(id) {
+    $.ajax({
+        url: basepath + "regions/"+id,
+        type: "DELETE",
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+          $(".loader").show();
+          $("#add").hide();
+          xhr.setRequestHeader('Token', TOKEN);
+        },
+        success: function(data) {
+          if(data.status == 'success') {
+            showSuccess("Region Deleted Successfully!");
+            get_region();
+          } else {
+            showError(data.message);
+          }
+        },
+        error: function(error) {
+          $(".loader").hide();
+          $("#add").show();
+          showError("Error in Server! Try again!")
+        }
+    });// Ajax
+  }
+
   $("#add").click(function(e) {
     e.preventDefault();
     var status = $(this).attr("status");
@@ -149,5 +184,22 @@ get_region();
     edit_region(i);
     slideMenu();
     $("#region-name").focus();
+  })
+  $(document).delegate(".delete", "click", function() {
+    var i = $(this).attr("data-id");
+    swal({
+            title: 'Are you sure?',
+            text: 'You will not be able to recover this!',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it',
+            confirmButtonClass: "btn btn-success",
+            cancelButtonClass: "btn btn-danger",
+            buttonsStyling: false
+        }).then(function() {
+          delete_region(i);
+        }, function(dismiss) {
+        })
   })
 })// Document

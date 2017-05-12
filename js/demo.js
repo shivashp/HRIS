@@ -447,7 +447,7 @@ demo = {
     	}else if(type == 'warning-message-and-cancel'){
             swal({
                     title: 'Are you sure?',
-                    text: 'You will not be able to recover this imaginary file!',
+                    text: 'You will not be able to recover this!',
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonText: 'Yes, delete it!',
@@ -458,7 +458,7 @@ demo = {
                 }).then(function() {
                   swal({
                     title: 'Deleted!',
-                    text: 'Your imaginary file has been deleted.',
+                    text: 'Your file has been deleted.',
                     type: 'success',
                     confirmButtonClass: "btn btn-success",
                     buttonsStyling: false

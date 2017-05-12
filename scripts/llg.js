@@ -3,6 +3,7 @@ var LLG_JSON;
 $(function() {
 
 get_llg();
+get_district();
 
   function get_llg() {
     $.ajax({
@@ -19,9 +20,13 @@ get_llg();
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
+              var code = data.data[i].llg_code || 'N/A';
+              var district = data.data[i].district || 'N/A';
               str += "<tr>";
               str += "<td></td>";
+              str += "                          <td>"+code+"<\/td>";
               str += "                          <td>"+name+"<\/td>";
+              str += "                          <td>"+district+"<\/td>";
               str += "                          <td class=\"per company-write text-right\">";
               str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
@@ -52,7 +57,13 @@ get_llg();
 
   function add_llg(){
     var name = $("#llg-name").val();
-    if(!name.isBlank("Name")){
+    var code = $("#llg-code").val();
+    var district = $("#district").val();
+    if(!isNull(district, "District") || !name.isBlank("Name") || !code.isBlank("LLG Code")){
+      return false;
+    }
+    if(code.length > 5) {
+      showError("LLG Code Cannot be Greater Than 5 letters/digits");
       return false;
     }
     $.ajax({
@@ -66,7 +77,9 @@ get_llg();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "name": name
+          "name": name,
+          "llg_code":code,
+          "district_id":district
         }),
         success: function(data) {
           $(".loader").hide();
@@ -134,6 +147,44 @@ get_llg();
         }
     });// Ajax
   }
+
+  function get_district() {
+    // var DISTRICT_JSON = {};
+    // if(localStorage.getItem("district")) {
+    //   var district = JSON.parse(localStorage.getItem("district"));
+    //   DISTRICT = district;
+    //   var district_obj = prepare_selectpicker(district);
+    //   $("#district").html(district_obj);
+    //   $('#district').selectpicker({
+    //     size: 7
+    //   });
+    //   return false;
+    // }
+    $.ajax({
+        url: basepath + "districts",
+        type: "GET",
+        contentType: 'application/json',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader('Token', TOKEN);
+        },
+        success: function(data) {
+          if(data.status == 'success') {
+            DISTRICT = data.data;
+            localStorage.setItem("district", JSON.stringify(data.data))
+            var district_obj = prepare_selectpicker(data.data);
+            $("#district").html(district_obj);
+            $('#district').selectpicker({
+              size: 7
+            });
+          }
+        },
+        error: function(error) {
+          $(".loader").hide();
+          $("#submit").show();
+          showError("Error in Server! Try again!")
+        },
+    });// Ajax
+  };// Get District
 
   $("#add").click(function(e) {
     e.preventDefault();

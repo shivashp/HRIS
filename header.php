@@ -88,7 +88,7 @@
                             </li>
                             <li class="sub-link facility">
                                 <a href="facility.php">
-                                    Facilities
+                                    Facility Type
                                 </a>
                             </li>
                           </ul>
