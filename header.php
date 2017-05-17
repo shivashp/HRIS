@@ -119,6 +119,11 @@
                                     Types
                                 </a>
                             </li>
+                            <li class="sub-link position-title">
+                                <a href="position-title-setup.php">
+                                    Position Title Setup
+                                </a>
+                            </li>
                           </ul>
                       </div><!-- employee configuration -->
                   </li><!-- employee dropdown -->

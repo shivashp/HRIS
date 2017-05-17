@@ -22,6 +22,18 @@
             <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
+                    <label class="control-label">Salutation</label>
+                    <select class="selectpicker" name="salutation" id="salutation" data-style="select-with-transition" title="Choose Salutation" data-size="7">
+                      <option value="Mr">Mr.</option>
+                      <option value="Ms">Ms.</option>
+                      <option value="Dr">Dr.</option>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+              </div><!-- col-md-4-->
+
+              <div class="col-md-4">
+                <div class="form-group label-floating">
                     <label class="control-label">First Name</label>
                     <input type="text" name="firstname" id="first-name" class="form-control">
                     <div class="help-block with-errors"></div>
@@ -36,6 +48,9 @@
                 </div>
               </div><!-- col-md-4-->
 
+            </div><!--row -->
+
+            <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Last Name</label>
@@ -43,9 +58,7 @@
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
-            </div><!--row -->
-
-            <div class="row add-emp-row">
+              
               <div class="col-md-4">
                 <div class="form-group label-floating">
                 <label class="control-label">Sex</label>

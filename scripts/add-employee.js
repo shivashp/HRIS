@@ -74,6 +74,7 @@ function next_select(nextSelect) {
 }
 
 function add_data() {
+  var salutation = $("#salutation").val();
   var first_name = $("#first-name").val();
   var middle_name = $("#middle-name").val();
   var last_name = $("#last-name").val();
@@ -102,7 +103,7 @@ function add_data() {
   var end_date = $("#contract-end-date").val() || '';
   var is_branch = $("#branch-agency").val() == 'branch'?true:false;
 
-  if(!sex.isBlank("Sex") || !country.isBlank("Country") || !branch_agency_id.isBlank("Branch / Agency") || !employee_category.isBlank("Employee Category") || !employee_type.isBlank("Employee Type")){
+  if(!salutation.isBlank("Salutation") || !sex.isBlank("Sex") || !country.isBlank("Country") || !branch_agency_id.isBlank("Branch / Agency") || !employee_category.isBlank("Employee Category") || !employee_type.isBlank("Employee Type")){
     return false;
   }
   if(branch_agency.trim() === '' || branch_agency == undefined) {

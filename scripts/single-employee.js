@@ -127,12 +127,64 @@ $(function() {
         },
     });// Ajax
 	})// Emp extras
+	$('.date-obj').on('dp.change', function(e){
+		var start_date = $("#start-date").val() || '';
+		var end_date = $("#end-date").val() || '';
+
+		if(start_date.trim() !== ''){
+      start_date = new Date(start_date);
+      start_date = moment(start_date).format("YYYY-MM-DD");
+    } else {
+			return false;
+		}
+		if(end_date.trim() !== ''){
+      end_date = new Date(end_date);
+      end_date = moment(end_date).format("YYYY-MM-DD");
+    } else {
+			return false;
+		}
+		var end = moment(end_date);
+		var start = moment(start_date);
+		var duration = end.from(start, true);
+		var diff = end.diff(start, 'days') // 1
+		if(diff < 1) {
+			showError("Trainig Duration cannot be less than 1 day");
+			return false;
+		}
+		$("#duration").val(duration);
+	})
+
+	$(".qual-date-obj").on('dp.change', function() {		
+		var start_date = $("#qualification-start-date").val();
+		var end_date = $("#qualification-end-date").val();
+
+				if(start_date.trim() !== ''){
+		      start_date = new Date(start_date);
+		      start_date = moment(start_date).format("YYYY-MM-DD");
+		    } else {
+					return false;
+				}
+				if(end_date.trim() !== ''){
+		      end_date = new Date(end_date);
+		      end_date = moment(end_date).format("YYYY-MM-DD");
+		    } else {
+					return false;
+				}
+				var end = moment(end_date);
+				var start = moment(start_date);
+				var duration = end.from(start, true);
+				var diff = end.diff(start, 'days') // 1
+				if(diff < 2) {
+					showError("Qualification Duration cannot be less than 2 days");
+					return false;
+				}
+				$("#qual-duration").val(duration);
+	})
 
 	$("#save-training").click(function() {
 		var name = $("#name").val();
 		var organizer = $("#organizer-name").val();
 		var funding = $("#funding-source").val();
-		var duration = $("#duration").val();
 		var institute = $("#institute").val();
 		var city = $("#training-city").val();
 		var state = $("#training-state").val();
@@ -140,15 +192,23 @@ $(function() {
 		var start_date = $("#start-date").val() || '';
 		var end_date = $("#end-date").val() || '';
 		var country = $("#training-country").val();
+		var duration = $("#duration").val() || '';
 
-		if(end_date.trim() !== ''){
-      end_date = new Date(end_date);
-      end_date = moment(end_date).format("YYYY-MM-DD");
-    }
+
 		if(start_date.trim() !== ''){
       start_date = new Date(start_date);
       start_date = moment(start_date).format("YYYY-MM-DD");
-    }
+    } else {
+			showError("Please Select Start Date");
+			return false;
+		}
+		if(end_date.trim() !== ''){
+      end_date = new Date(end_date);
+      end_date = moment(end_date).format("YYYY-MM-DD");
+    } else {
+			showError("Please Select End Date");
+			return false;
+		}
 
 		 var my_json = {
 			 "organiser_name" : organizer,
@@ -521,6 +581,12 @@ $(function() {
 $("#save-certification").click(function() {
 	var reg_type = $("#registration-type").val();
 	var reg_body = $("#regulatory-body").val();
+	/* ----------------------- New ------------------------------ */
+	var reg_body_addr1 = $("#regulatory-body-addr1").val();
+	var reg_body_addr2 = $("#regulatory-body-addr2").val();
+	var country = $("#regulatory-country").val();
+	var issue_date = $("#issue-date").val();
+	/* ----------------------- New ------------------------------ */
 	var reg_number = $("#registration-number").val();
 	var expiry_date = $("#expiry-date").val() || '';
 	var renewal_date = $("#last-renewal-date").val() || '';
@@ -549,7 +615,6 @@ $("#save-certification").click(function() {
 	 })
 
 	 var status = $(this).attr("data-status");
-	 console.log(status);
 	 if(status == "1"){
 		 var cert_id = $(this).attr("data-certification");
 		 update_certification(my_json, action_id, cert_id)

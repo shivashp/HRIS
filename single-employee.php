@@ -213,16 +213,6 @@
                       </div><!--row-->
 
                       <div class="row">
-                          <label class="col-sm-2 label-on-left">Duration</label>
-                          <div class="col-sm-10">
-                              <div class="form-group label-floating is-empty">
-                                  <label class="control-label"></label>
-                                  <input type="text" id="duration" class="form-control" placeholder = "Duration" value>
-                              </div>
-                          </div>
-                      </div><!--row-->
-
-                      <div class="row">
                           <label class="col-sm-2 label-on-left">Institute</label>
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
@@ -278,7 +268,7 @@
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
                                   <label class="control-label"></label>
-                                  <input name="dob" type="text" id="start-date" class="form-control datepicker" />
+                                  <input name="dob" type="text" id="start-date" class="form-control datepicker date-obj" />
                               </div>
                           </div>
                       </div><!--row-->
@@ -288,7 +278,17 @@
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
                                   <label class="control-label"></label>
-                                  <input name="dob" type="text" id="end-date" class="form-control datepicker" />
+                                  <input name="dob" type="text" id="end-date" class="form-control datepicker date-obj" />
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Duration</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="duration" class="form-control" placeholder = "Duration" value disabled>
                               </div>
                           </div>
                       </div><!--row-->
@@ -363,11 +363,52 @@
                       </div><!--row-->
 
                       <div class="row">
+                          <label class="col-sm-2 label-on-left">Regulatory Body Address 1</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="regulatory-body-addr1" class="form-control" placeholder = "Regulatory Body Address 1" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Regulatory Body Address 2</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input type="text" id="regulatory-body-addr2" class="form-control" placeholder = "Regulatory Body Address 2" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Regulatory Body Country</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <select class="selectpicker1 country" data-style="btn select-with-transition sp-select" id="regulatory-country"  title="Choose Country">
+                                  </select>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
                           <label class="col-sm-2 label-on-left">Registration Number</label>
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
                                   <label class="control-label"></label>
                                   <input type="text" id="registration-number" class="form-control" placeholder = "Registration Number" value>
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Issue Date</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="issue-date" class="form-control datepicker" placeholder="Issue Date" />
                               </div>
                           </div>
                       </div><!--row-->
@@ -466,7 +507,7 @@
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
                                   <label class="control-label"></label>
-                                  <input name="dob" type="text" id="qualification-start-date" class="form-control datepicker" placeholder="Start Date"/>
+                                  <input name="dob" type="text" id="qualification-start-date" class="form-control datepicker qual-date-obj" placeholder="Start Date"/>
                               </div>
                           </div>
                       </div><!--row-->
@@ -476,7 +517,17 @@
                           <div class="col-sm-10">
                               <div class="form-group label-floating is-empty">
                                   <label class="control-label"></label>
-                                  <input name="dob" type="text" id="qualification-end-date" class="form-control datepicker" placeholder="End Date" />
+                                  <input name="dob" type="text" id="qualification-end-date" class="form-control datepicker qual-date-obj" placeholder="End Date" />
+                              </div>
+                          </div>
+                      </div><!--row-->
+
+                      <div class="row">
+                          <label class="col-sm-2 label-on-left">Duration</label>
+                          <div class="col-sm-10">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label"></label>
+                                  <input name="dob" type="text" id="qual-duration" class="form-control datepicker" placeholder="Duration" disabled/>
                               </div>
                           </div>
                       </div><!--row-->
@@ -834,12 +885,6 @@
                     <span class="training-value" id="t-country"></span>
                   </div>
                 </div><!-- row -->
-
-
-
-
-
-
             </div><!-- modal-body -->
             <div class="modal-footer">
 
@@ -850,6 +895,7 @@
 <!--  End Modal -->
 
 <?php include('footer.php'); ?>
+<script src="js/moment.min.js" charset="utf-8"></script>
 <script src = 'scripts/single-employee.js'></script>
 <script>
   active('employee')
