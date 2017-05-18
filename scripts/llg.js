@@ -13,12 +13,12 @@ get_district();
         beforeSend: function(xhr) {
 					xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {
-          console.log(data);
+        success: function(data) {          
           if(data.status == 'success') {
             LLG_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
+              var id = data.data[i].id;
               var name = data.data[i].name;
               var code = data.data[i].llg_code || 'N/A';
               var district = data.data[i].district || 'N/A';
@@ -28,7 +28,7 @@ get_district();
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td>"+district+"<\/td>";
               str += "                          <td class=\"per company-write text-right\">";
-              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a><a href=\"#\" class=\"delete btn btn-sm btn-danger btn-icon like\"  data-id=\""+id+"\"><i class=\"material-icons\">delete<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -201,4 +201,47 @@ get_district();
     slideMenu();
     $("#llg-name").focus();
   })
+
+  function delete_llg(id) {
+    $.ajax({
+        url: basepath + "llg/"+id,
+        type: "DELETE",
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader('Token', TOKEN);
+        },
+        success: function(data) {
+          if(data.status == 'success') {
+            showSuccess("LLG Deleted Successfully!");
+            get_llg();
+          } else {
+            showError(data.message);
+          }
+        },
+        error: function(error) {
+          showError("Error in Server! Try again!")
+        }
+    });// Ajax
+  }
+  $(document).delegate(".delete", "click", function() {
+    var i = $(this).attr("data-id");
+    swal({
+            title: 'Are you sure?',
+            text: 'You will not be able to recover this!',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it',
+            confirmButtonClass: "btn btn-success",
+            cancelButtonClass: "btn btn-danger",
+            buttonsStyling: false
+        }).then(function() {
+          delete_llg(i);
+        }, function(dismiss) {
+        })
+  })
+
+
+
 })// Document
