@@ -180,6 +180,7 @@ div#ov1erlay {
 }
 .sidebar[data-active-color="rose"] li.active > a, .off-canvas-sidebar[data-active-color="rose"] li.active > a {
     background: #355089;
+    background: #3aaf85;
     box-shadow: none;
 }
 
