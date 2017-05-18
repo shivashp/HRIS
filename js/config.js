@@ -1,5 +1,5 @@
-var basepath = "http://182.93.91.147:5000/api/";
-// var basepath = "http://192.168.100.47:5000/api/";
+// var basepath = "http://182.93.91.147:5000/api/";
+var basepath = "http://192.168.100.47:5000/api/";
 var DEL_FLAG = true;
 
 var settimeout = 1000;

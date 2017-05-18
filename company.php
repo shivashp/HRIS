@@ -1,244 +1,158 @@
 <?php
-$page_permission = array("key" => "company_management_perm", "value" => "W");
+$page_permission = array("key" => "company_management_perm", "value" => "R");
 include('header.php');
 ?>
 
 <div class="content">
- <div class="page-loader">
+  <div class="row per division-write">
+    <a href="company-setup.php" class="btn btn-success pull-right">Edit</a>
+  </div><!-- row-->
+   <div class="page-loader">
   <img src="img/loader.gif"><br>
   <div class="page-loader-text">Please Wait...</div>
 </div><!-- page-loader-->
-  <div class="form-section">
+  <div class="card">
+      <div class="card-header card-header-text" data-background-color="rose">
+          <h4 class="card-title"><span class="fa fa-home"> </span> Company Details</h4>
+      </div>
+      <div class="card-content">
+        <div class="row">
+        <div class="col-md-6">
+          <table class="table table-striped">
+            <tr>
+              <td>Company Name</td>
+              <td> : </td>
+              <td id="company-name"></td>
+            </tr>
+            <tr>
+              <td>Company Code</td>
+              <td> : </td>
+              <td id="code"></td>
+            </tr>
+            <tr>
+              <td>Code Description</td>
+              <td> : </td>
+              <td id="code-desc"></td>
+            </tr>
+            <tr>
+              <td>Address 1</td>
+              <td> : </td>
+              <td id="address1"></td>
+            </tr>
+            <tr>
+              <td>Address 2</td>
+              <td> : </td>
+              <td id="address2"></td>
+            </tr>
+            <tr>
+              <td>Village</td>
+              <td> : </td>
+              <td id="village"></td>
+            </tr>
+            <tr>
+              <td>LLG</td>
+              <td> : </td>
+              <td id="llg"></td>
+            </tr>
+            <tr>
+              <td>District</td>
+              <td> : </td>
+              <td id="district"></td>
+            </tr>
+          </table>
+        </div>
+
+         <div class="col-md-6">
+          <table class="table table-striped">
+            <tr>
+              <td>Province</td>
+              <td> : </td>
+              <td id="province"></td>
+            </tr>
+            <tr>
+              <td>Region</td>
+              <td> : </td>
+              <td id="region"></td>
+            </tr>
+            <tr>
+              <td>Country</td>
+              <td> : </td>
+              <td id="country"></td>
+            </tr>
+            <tr>
+              <td>Web Address</td>
+              <td> : </td>
+              <td id="web"></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td> : </td>
+              <td id="email"></td>
+            </tr>
+            <tr>
+              <td>Contact Person Name</td>
+              <td> : </td>
+              <td id="contact-name"></td>
+            </tr>
+            <tr>
+              <td>Contact Person Mobile</td>
+              <td> : </td>
+              <td id="contact-mobile"></td>
+            </tr>
+            <tr>
+              <td>Contact Person Email</td>
+              <td> : </td>
+              <td id="contact-email"></td>
+            </tr>
+
+          </table>
+        </div>
+
+        </div><!-- row -->
+      </div> <!-- end content-->
+  </div><!--  end card  -->
+  <div class="col-md-8">
     <div class="card">
-        <form method="get" id="myform" class="form-horizontal">
-            <div class="card-header card-header-text" data-background-color="rose">
-                <h4 class="card-title">Company Setup</h4>
-            </div>
-            <div class="card-content">
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Company Name</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" name="firstname" id="company-name" class="form-control" placeholder="Company Name">
-                            <div class="help-block with-errors">Company Name is required</div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Display Name</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" name="displayName" id="display-name" class="form-control" placeholder = "Display Name" value>
-                            <div class="help-block with-errors">Display Name is required</div>
-                        </div>
-                    </div>
-                  </div>
-                </div><!-- row -->
+        <div class="card-header card-header-text" data-background-color="rose">
+            <h4 class="card-title"><span class="fa fa-home"> </span> Free Text</h4>
+        </div>
+        <div class="card-content">
+          <table class="table table-striped" id="free-text-content">
+            <tr id="free-text-1-container">
+              <td>Free Text 1</td>
+              <td> : </td>
+              <td id="free-text-1"></td>
+            </tr>
+          </table>
+        </div> <!-- end content-->
+    </div><!--  end card  -->
+  </div>
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Company Code</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="code" class="form-control" placeholder = "Company Code" multiline value>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Code Description</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="code-desc" class="form-control" placeholder = "Company Code Description" value>
-                        </div>
-                    </div>
-                  </div>
-                </div><!-- row -->
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Address 1</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="address1" class="form-control" placeholder = "Address 1" value>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Address 2</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="address2" class="form-control" placeholder = "Address 2" value>
-                        </div>
-                    </div>
-                  </div>
-                </div><!-- row -->
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">District</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="district"  title="Choose District">
-                            </select>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Province</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="province"  title="Choose Province">
-                            </select>
-                        </div>
-                    </div>
-                  </div>
-                </div><!-- row -->
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Region</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="region"  title="Choose Region">
-                            </select>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">LLG</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="llg"  title="Choose LLG">
-                            </select>
-                        </div>
-                    </div>
-                  </div>
-                </div><!-- row -->
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Village/Town</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="village" class="form-control" placeholder = "Village/Town" value>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                  </div>
-                </div><!-- row -->
-
-                <hr>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Web Address</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="web" class="form-control" placeholder = "Web Address" value>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Email</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="email" class="form-control" placeholder = "Email" value>
-                        </div>
-                    </div>
-                  </div>
-                </div><!-- row -->
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left" style="padding-left:0">Contact Person Name</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="contact-name" class="form-control" placeholder = "Contact Person Name" value>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Contact Person Mobile</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="number" id="contact-mobile" class="form-control" placeholder = "Contact Person Mobile" value>
-                        </div>
-                    </div>
-                  </div>
-                </div><!-- row -->
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left" style="padding-left:0">Contact Person Email</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="email" id="contact-email" class="form-control" placeholder = "Contact Person Email" value>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left" style="padding-left:0">Contact Person Alternate Email</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="email" id="contact-alternate-email" class="form-control" placeholder = "Contact Person Alternate Email" value>
-                        </div>
-                    </div>
-                  </div>
-                </div><!-- row -->
-
-                <div class="row" id="free-text-row">
-                  <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left" style="padding-left:0">Free Text</label>
-                    <div class="col-sm-8">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="free-text-val-1" class="form-control" placeholder = "Free Text" value>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row" style="text-align:center;margin-top:50px;">
-                  <a href="#" id="add-free-text" value="1" style="color:#355089"><i class="material-icons">add_circle</i></a>
-                </div>
-
-                <div class="row sp-save-btn-row" style="margin-top:80px">
-                  <span class="loader"><img src="img/loader.gif"></span><button type="submit" id="submit" class="btn btn-success">Save</button>
-                  <button type="reset" id="reset" class="btn btn-danger">Clear</button>
-                </div>
-            </div><!-- card-content -->
-        </form>
-    </div><!-- card -->
-  </div><!-- form-section -->
 </div>
-
 <?php include('footer.php'); ?>
-<script src="js/jquery-validate.js" charset="utf-8"></script>
 <script src="scripts/company.js"></script>
 <script>
 active('ndoh', 'sub-link')
 active('company');
 </script>
 <style media="screen">
-  .card-content {
-    padding-right: 35px !important;
-    padding-left: 0 !important;
-  }
+.c-free-text {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+.c-free-text-label>h4 {
+    font-weight: 400;
+    font-size: 1.2em;
+}
+.c-free-text-label {
+    float: left;
+}
+.c-free-text-value {
+    float: left;
+    margin-top: 12px;
+    margin-left: 25px;
+}
 </style>

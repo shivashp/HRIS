@@ -7,6 +7,7 @@ $(function() {
   get_region();
   get_type();
   get_category();
+  get_position_title();
 
 $("#add").click(function(e) {
   $("#myform").validate({
@@ -99,11 +100,12 @@ function add_data() {
   var branch_agency = $("#branch-agency").val();
   var branch_agency_id = (branch_agency == "branch")?$("#branch").val():$("#agency").val();
   var employee_category = $("#employee-category").val();
+  var position_title = $("#position-title").val();
   var employee_type = $("#employee-type").val();
   var end_date = $("#contract-end-date").val() || '';
   var is_branch = $("#branch-agency").val() == 'branch'?true:false;
 
-  if(!salutation.isBlank("Salutation") || !sex.isBlank("Sex") || !country.isBlank("Country") || !branch_agency_id.isBlank("Branch / Agency") || !employee_category.isBlank("Employee Category") || !employee_type.isBlank("Employee Type")){
+  if(!salutation.isBlank("Salutation") || !sex.isBlank("Sex") || !country.isBlank("Country") || !branch_agency_id.isBlank("Branch / Agency") || !employee_category.isBlank("Employee Category") || !position_title.isBlank("Position Title") || !employee_type.isBlank("Employee Type")){
     return false;
   }
   if(branch_agency.trim() === '' || branch_agency == undefined) {
@@ -146,7 +148,8 @@ function add_data() {
     "employee_category_id" : employee_category,
     "employee_type_id" : employee_type,
     "contract_end_date": end_date,
-    "is_branch":is_branch
+    "is_branch":is_branch,
+    "employee_position_id": position_title
   }
 
   // Traverse each data and remove any blank, null and undefined value rows
@@ -521,6 +524,36 @@ function get_region() {
       },
   });// Ajax
 };// Get Region
+
+function get_position_title() {
+  $.ajax({
+      url: basepath + "emppositions",
+      type: "GET",
+      contentType: 'application/json',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Token', TOKEN);
+      },
+      success: function(data) {
+        if(data.status == 'success') {
+          console.log(data);
+          var str = data.data.map((position) => {
+            return `<option value= "${position.id}">${position.emp_pos_title}</option>`;
+          });
+          str = str.join('');
+          $("#position-title").html(str);
+          $('#position-title').selectpicker({
+            size: 7,
+            liveSearch: true
+          });
+        }
+      },
+      error: function(error) {
+        $(".loader").hide();
+        $("#submit").show();
+        showError("Error in Server! Try again!")
+      },
+  });// Ajax
+};// Get Position Title
 
 function prepare_selectpicker(obj) {
   var str = obj.map(obj => {

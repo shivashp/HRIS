@@ -154,7 +154,7 @@ $(function() {
 		$("#duration").val(duration);
 	})
 
-	$(".qual-date-obj").on('dp.change', function() {		
+	$(".qual-date-obj").on('dp.change', function() {
 		var start_date = $("#qualification-start-date").val();
 		var end_date = $("#qualification-end-date").val();
 
@@ -494,9 +494,10 @@ $(function() {
 						var retirement_age = data.retirement_age || "N/A";
 						var salary_step = data.salary_step || "N/A";
 						var date_of_commencement = data.date_of_commencement || "N/A";
-						var emp_category = "N/A";
-						var branch_agency = "N/A";
-						var emp_type = "N/A";
+						var emp_category = data.employee_category || "N/A";
+						var branch_agency = data.employee_branch || "N/A";
+						var emp_type = data.employee_type || "N/A";
+						var emp_position = data.employee_position || "N/A"
 
 						middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
 
@@ -529,6 +530,7 @@ $(function() {
 						$("#salary-step").html(salary_step);
 						$("#date-of-commencement").html(date_of_commencement);
 						$("#emp-category").html(emp_category);
+						$("#emp-position").html(emp_position);
 						$(".page-loader").hide();
 						$(".card").fadeIn("fast");
 
@@ -605,7 +607,12 @@ $("#save-certification").click(function() {
 		"last_renewal_date": renewal_date,
 		"registration_number": reg_number,
 		"registration_type": reg_type,
-		"regulatory_body": reg_body
+		"regulatory_body": reg_body,
+		"regulatory_body_address_one": reg_body_addr1,
+		"regulatory_body_address_two": reg_body_addr2,
+		"regulatory_body_address_three": "",
+		"regulatory_body_address_country": country,
+		"issue_data": issue_date
 	 }
 
 	 $.each(my_json, function(key, value) {
@@ -635,6 +642,11 @@ $(document).delegate(".edit-certification", "click", function() {
 	var registration_type = CERTIFICATIONS[i].registration_type;
 	var regulatory_body = CERTIFICATIONS[i].regulatory_body;
 
+	var reg_body_addr1 = CERTIFICATIONS[i].regulatory_body_address_one;
+	var reg_body_addr2 = CERTIFICATIONS[i].regulatory_body_address_two;
+	var country = CERTIFICATIONS[i].regulatory_body_address_country;
+	var issue_date = CERTIFICATIONS[i].issue_date;
+
 	$("#registration-type").val(registration_type);
 	$("#regulatory-body").val(regulatory_body);
 	$("#registration-number").val(registration_number);
@@ -642,6 +654,10 @@ $(document).delegate(".edit-certification", "click", function() {
 	$("#last-renewal-date").val(last_renewal_date) || '';
 	$("#save-certification").attr("data-status", "1");
 	$("#save-certification").attr("data-certification", id);
+	$("#regulatory-body-addr1").val(reg_body_addr1);
+	$("#regulatory-body-addr2").val(reg_body_addr2);
+	$("#regulatory-country").selectpicker('val', country);
+	$("#issue-date").val(issue_date);
 
 	var value = $("#add-certification").attr("value");
 	(value == 1)?pullMenu(".certification-input", "#add-certification", "certification"):slideMenu(".certification-input", "#add-certification");

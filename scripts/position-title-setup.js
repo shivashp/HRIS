@@ -6,7 +6,7 @@ get_position_title();
 
   function get_position_title() {
     $.ajax({
-        url: basepath + "empcategoryranks",
+        url: basepath + "emppositions",
         type: "GET",
         contentType: 'application/json',
         beforeSend: function(xhr) {
@@ -18,12 +18,15 @@ get_position_title();
             POSITION_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
-              var name = data.data[i].name;
+              var title = data.data[i].emp_pos_title;
+              var code = data.data[i].emp_pos_code;
+              var sequence = data.data[i].emp_pos_sequence;
+
               str += "<tr>";
               str += "<td></td>";
-              str += "                          <td>"+name+"<\/td>";
-              str += "                          <td>"+name+"<\/td>";
-              str += "                          <td>"+name+"<\/td>";
+              str += "                          <td>"+title+"<\/td>";
+              str += "                          <td>"+code+"<\/td>";
+              str += "                          <td>"+sequence+"<\/td>";
               str += "                          <td class=\"per config-write text-right\">";
               str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += "                          <\/td>";
@@ -49,7 +52,7 @@ get_position_title();
           showError("Error in Server! Try again!")
         },
     });// Ajax
-  };// Get Rank
+  };// Get Position Title
 
 
   function add_position_title(){
@@ -60,10 +63,8 @@ get_position_title();
     if(!title.isBlank("Position Title") || !code.isBlank("Position Code") || !sequence.isBlank("Sequence")){
       return false;
     }
-    console.log(title, code, sequence);
-    return false;
     $.ajax({
-        url: basepath + "empcategoryranks",
+        url: basepath + "emppositions",
         type: "POST",
         contentType: 'application/json',
         dataType: 'json',
@@ -73,14 +74,16 @@ get_position_title();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "name": name
+          "emp_pos_title":title,
+          "emp_pos_code": code,
+          "emp_pos_sequence": sequence
         }),
         success: function(data) {
           $(".loader").hide();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            showSuccess("Rank Added Successfully!");
+            showSuccess("Position Title Added Successfully!");
             pullMenu();
             get_position_title();
           } else {
@@ -96,20 +99,26 @@ get_position_title();
   }// Add Rank
 
   function edit_position_title(i) {
-    var name = POSITION_JSON[i].name;
+    var title = POSITION_JSON[i].emp_pos_title;
+    var code = POSITION_JSON[i].emp_pos_code;
+    var sequence = POSITION_JSON[i].emp_pos_sequence;
     var id = POSITION_JSON[i].id;
-    $("#rank-name").val(name);
+    $("#position-title").val(title);
+    $("#position-code").val(code);
+    $("#sequence").val(sequence);
     $("#add").attr({"status": 1, "data-id": id});
   }
 
   function update_position_title(){
-    var name = $("#rank-name").val();
+    var title = $("#position-title").val();
+    var code = $("#position-code").val();
+    var sequence = $("#sequence").val();
     var id = $("#add").attr("data-id");
-    if(!name.isBlank("Name")){
+    if(!title.isBlank("Position Title") || !code.isBlank("Position Code") || !sequence.isBlank("Sequence")){
       return false;
     }
     $.ajax({
-        url: basepath + "empcategoryranks/"+id,
+        url: basepath + "emppositions/"+id,
         type: "PUT",
         contentType: 'application/json',
         dataType: 'json',
@@ -119,7 +128,9 @@ get_position_title();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         data: JSON.stringify({
-          "name": name
+          "emp_pos_title":title,
+          "emp_pos_code": code,
+          "emp_pos_sequence": sequence
         }),
         success: function(data) {
           $(".loader").hide();
@@ -127,7 +138,7 @@ get_position_title();
           console.log(data);
           if(data.status == 'success') {
             $(this).attr("status", 0)
-            showSuccess("Rank Updated Successfully!");
+            showSuccess("Position Title Updated Successfully!");
             pullMenu();
             get_position_title();
           } else {
@@ -152,7 +163,7 @@ get_position_title();
     }
   })
   $(document).delegate(".edit", "click", function() {
-    $("#rank-name").focus();
+    $("#position-title").focus();
     var i = $(this).attr("data-id");
     edit_position_title(i);
     slideMenu();

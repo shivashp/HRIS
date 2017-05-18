@@ -146,6 +146,11 @@
                     <td> : </td>
                     <td id="emp_type"></td>
                   </tr>
+                  <tr>
+                   <td>Employee Position</td>
+                   <td> : </td>
+                   <td id="emp-position"></td>
+                  </tr>
                    <tr>
                     <td>Employee Category</td>
                     <td> : </td>

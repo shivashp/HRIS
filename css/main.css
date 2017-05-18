@@ -96,12 +96,14 @@ html {
 .nav li.panel {
     margin-bottom: 0;
     border-bottom: 1px solid #364a73;
+    border-bottom: 1px solid #3d4957;
 }
 /* =============================================
                   Navbar
 /* ============================================= */
 .navbar.navbar-blue {
     background: #355089;
+    background: #2B3643;
     color: white;
     padding-top: 10px;
     border-radius: 0;
@@ -132,6 +134,7 @@ html {
 }
 #datatables th {
     background: #355089;
+    background: #4B8DF8;
     color: white;
     padding-top: 9px !important;
     padding-bottom: 8px !important;
@@ -183,9 +186,11 @@ div#ov1erlay {
 .sidebar .nav li:hover > a, .sidebar .nav li.active > [data-toggle="collapse"], .off-canvas-sidebar .nav li:hover > a, .off-canvas-sidebar .nav li.active > [data-toggle="collapse"] {
   background: #355089;
   box-shadow: none;
+  background: #1CAF9A;
 }
 .sidebar:before, .sidebar:after, .off-canvas-sidebar:before, .off-canvas-sidebar:after {
   background: #253a67;
+  background: #364150;
 }
 .label {
   box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
@@ -196,9 +201,11 @@ div#ov1erlay {
 }
 .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
   background: #355089;
+  background: #4B8DF8;
 }
 .btn-success {
   background-color: #355089 !important;
+  background-color: #627894 !important;
 }
 .btn.btn-person {
   background-color: #208981;
@@ -282,6 +289,7 @@ a.navbar-brand {
 }
 .sidebar .nav>li>div>ul>li:hover a, .sidebar .nav>li>div>ul>li.active a {
     background: #192d56;
+    background: #3E4B5C;
 }
 table > thead > tr > th {
     font-weight: 500 !important;
@@ -321,6 +329,7 @@ h3#dashboard-title {
 }
 .card [data-background-color="rose"], .card [data-background-color="purple"] {
     background: #355089;
+    background: #4B8DF8;
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(42, 91, 193, 0.4);
 }
 .btn.btn-success:focus, .btn.btn-success:active, .btn.btn-success:hover, .navbar .navbar-nav > li > a.btn.btn-success:focus, .navbar .navbar-nav > li > a.btn.btn-success:active, .navbar .navbar-nav > li > a.btn.btn-success:hover {
@@ -488,3 +497,19 @@ div#branch-agency-select {
   padding-left: 10px;
   margin-top: 10px;
 }
+/* ------------------------------------------ New Color Change --------------------------------------- */
+.sidebar, .off-canvas-sidebar {
+  box-shadow: none;
+}
+.sidebar .nav li > a, .off-canvas-sidebar .nav li > a {
+  border-radius: 0;
+}
+/*.select-with-transition {
+        background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#cac1c1, #8e8686);
+  }
+.form-control, .form-group .form-control {
+          background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#cac1c1, #8e8686);
+  }*/
+  .form-group label.control-label {
+    color: #656060;
+  }

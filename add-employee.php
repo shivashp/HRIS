@@ -15,7 +15,7 @@
       <div class="card-content">
           <h4 class="card-title">Add Employee</h4>
           <form class="form-horizontal" id="myform">
-            <div class="row add-emp-row" style="background: #253a67;margin-left: -20px;margin-right: -20px;">
+            <div class="row add-emp-row" style="background: #4B8DF8;margin-left: -20px;margin-right: -20px;">
               <h3>Personal Details</h3>
             </div>
 
@@ -58,7 +58,7 @@
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
-              
+
               <div class="col-md-4">
                 <div class="form-group label-floating">
                 <label class="control-label">Sex</label>
@@ -175,7 +175,7 @@
               </div><!-- col-md-4-->
             </div><!--row -->
 
-            <div class="row add-emp-row" style="background: #253a67;margin-left: -20px;margin-right: -20px;">
+            <div class="row add-emp-row" style="background: #4B8DF8;margin-left: -20px;margin-right: -20px;">
               <h3>Employment Details</h3>
             </div>
 
@@ -255,6 +255,16 @@
 
               <div class="col-md-4">
                 <div class="form-group label-floating"  style="margin-top:3px">
+                    <label class="control-label">Position Title</label>
+                    <select class="selectpicker1" name="position-title" id="position-title" data-style="select-with-transition" title="Choose Position" data-size="7">
+
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+              </div><!-- col-md-4-->
+
+              <div class="col-md-4">
+                <div class="form-group label-floating"  style="margin-top:3px">
                 <label class="control-label">Employee Type</label>
                   <select id="employee-type" data-style="select-with-transition" title="Choose Employee Type" data-size="7">
 
@@ -272,7 +282,7 @@
 
             <div class="row text-center" style="margin-top:20px;">
               <button type="submit" name="Save" class="btn btn-success" id="add">Save</button>
-              <input type="reset" class="btn btn-danger" name="Clear">
+              <input type="reset" class="btn btn-danger" value="Clear" name="Clear">
             </div>
           </form>
       </div> <!-- end content-->
