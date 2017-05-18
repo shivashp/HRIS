@@ -73,7 +73,7 @@ function generate_table(data) {
   str += "                          <td>"+data.country+"<\/td>";
   str += "                          <td class=\"text-right\">";
   str += "                              <a class=\"btn btn-success btn-sm btn-icon\" href= \"single-employee.php?action="+data.id+"\">View<\/a>";
-  str += "                              <a class=\"btn btn-success btn-sm btn-danger agencyemp-write btn-icon edit\" data-id=\""+data.i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+  str += "                              <a class=\"btn btn-success btn-sm btn-danger agencyemp-write btn-icon\" href= \"edit-employee.php?action="+data.id+"\" data-id=\""+data.i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
   str += "                          <\/td>";
   str += "                      <\/tr>";
   return str;
