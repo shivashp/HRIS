@@ -103,10 +103,11 @@ html {
 /* ============================================= */
 .navbar.navbar-blue {
     background: #355089;
-    background: #2B3643;
+    background: #364150;
     color: white;
-    padding-top: 10px;
+    padding-top: 17px;
     border-radius: 0;
+    padding-bottom: 15px;
 }
 .main-header-section {
     text-transform: uppercase;
@@ -319,7 +320,7 @@ li.nav-title i {
   margin-left: 0px;
 }
 #ndoh-logo {
-    width: 40%;
+    width: 25%;
 }
 div#dashboard-title-bar {
     text-align: center;
@@ -330,7 +331,7 @@ h3#dashboard-title {
 }
 .card [data-background-color="rose"], .card [data-background-color="purple"] {
     background: #355089;
-    background: #4B8DF8;
+    background: #627894;
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(42, 91, 193, 0.4);
 }
 .btn.btn-success:focus, .btn.btn-success:active, .btn.btn-success:hover, .navbar .navbar-nav > li > a.btn.btn-success:focus, .navbar .navbar-nav > li > a.btn.btn-success:active, .navbar .navbar-nav > li > a.btn.btn-success:hover {

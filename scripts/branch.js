@@ -382,6 +382,15 @@ $(function() {
     var region = $("#region").val();
     var name = $("#facility-name").val();
 
+    /* -------------------- New -------------- */
+    var address1 = $("#address1").val();
+    var address2 = $("#address2").val();
+    var village = $("#village").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+
+
+
     var arr = [name.isBlank("Name"), isNull(type, "Facility Type"), isNull(llg, "LLG"), isNull(district,"District"), isNull(province, "Province"), isNull(region, "Region")];
     if(checkEmpty(arr)){
 			return false;

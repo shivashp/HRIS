@@ -36,6 +36,51 @@ include('header.php');
                         </div>
                     </div><!-- row -->
                     <div class="row">
+                        <label class="col-sm-2 label-on-left">Address 1</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="address1" class="form-control" placeholder = "Address 1" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Address 2</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="address2" class="form-control" placeholder = "Address 2" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Village</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="village" class="form-control" placeholder = "Village" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Email</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="email" id="email" class="form-control" placeholder = "Email" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Phone</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="phone" class="form-control" placeholder = "Phone" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
                       <label class="col-sm-2 label-on-left">LLG</label>
                         <div class="col-sm-6">
                             <div class="form-group label-floating is-empty">
@@ -115,6 +160,6 @@ include('header.php');
 <?php include('footer.php'); ?>
 <script src="scripts/branch.js"></script>
 <script>
-active('division', 'sub-link')
+active('branch', 'sub-link')
 active('division')
 </script>

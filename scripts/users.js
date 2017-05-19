@@ -10,12 +10,13 @@ $(function() {
           xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
+          console.log(data);
           var str ='';
           if(data.status === 'success') {
             for (var i = 0; i < data.data.length; i++) {
                 var first_name = data.data[i].employee_data.first_name;
                 var last_name = data.data[i].employee_data.last_name;
-                var middle_name = data.data[i].employee_data.middle_name;
+                var middle_name = data.data[i].employee_data.middle_name || '';
                 var employee_number = data.data[i].employee_data.employement_number;
                 var address1 = data.data[i].employee_data.address_one;
                 var country = data.data[i].employee_data.country;

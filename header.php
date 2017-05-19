@@ -128,7 +128,7 @@
                       </div><!-- employee configuration -->
                   </li><!-- employee dropdown -->
 
-                  <li class="link division panel per division-read">
+                  <li class="link division panel per division-read agency-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#divisionmgmt">
                           <i class="material-icons">domain</i>
                           <p>Division Management
@@ -137,9 +137,14 @@
                       </a>
                       <div class="collapse" id="divisionmgmt">
                           <ul class="nav">
-                            <li class="sub-link division">
+                            <li class="sub-link branch">
                                 <a href="branch.php">
-                                    Divisions
+                                    Division / Branch
+                                </a>
+                            </li>
+                            <li class="sub-link agency per agency-read">
+                                <a href="agency.php">
+                                    Agency
                                 </a>
                             </li>
                           </ul>

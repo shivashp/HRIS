@@ -13,16 +13,18 @@ get_facility();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
+          console.log(data);
           if(data.status == 'success') {
             FACILITY_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
+              var id = data.data[i].id;
               var name = data.data[i].name;
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"per company-write text-right\">";
-              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a><a href=\"#\" class=\"delete btn btn-sm btn-danger btn-icon like\"  data-id=\""+id+"\"><i class=\"material-icons\">delete<\/i><\/a>";
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -149,4 +151,46 @@ get_facility();
     slideMenu();
     $("#facility-name").focus();
   })
+
+
+  function delete_facility(id) {
+    $.ajax({
+        url: basepath + "facilities/"+id,
+        type: "DELETE",
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader('Token', TOKEN);
+        },
+        success: function(data) {
+          if(data.status == 'success') {
+            showSuccess("Facility Deleted Successfully!");
+            get_facility();
+          } else {
+            showError(data.message);
+          }
+        },
+        error: function(error) {
+          showError("Error in Server! Try again!")
+        }
+    });// Ajax
+  }
+  $(document).delegate(".delete", "click", function() {
+    var i = $(this).attr("data-id");
+    swal({
+            title: 'Are you sure?',
+            text: 'You will not be able to recover this!',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it',
+            confirmButtonClass: "btn btn-success",
+            cancelButtonClass: "btn btn-danger",
+            buttonsStyling: false
+        }).then(function() {
+          delete_facility(i);
+        }, function(dismiss) {
+        })
+  })
+
 })// Document

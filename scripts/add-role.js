@@ -13,6 +13,7 @@ $(function() {
   var id = getCookie('role_id');
   if(action === 'edit'){
     if(id !== '') {
+      console.log("ID", id);
       prepareEdit(id);
       $("#role-title").html("Edit Role");
       document.cookie = "role_action=add";
@@ -130,7 +131,8 @@ $(".card").fadeIn("fast");
 
     var status = $(this).attr("data-status");
     if(status){
-      update_role(json, params.id);
+      var action_id = getCookie('role_id');
+      update_role(json, action_id);
     } else {
       add_role(json);
     }
@@ -200,7 +202,7 @@ function add_role(json) {
 
 
 /* ===============================================
-**                              Checkbox Edit Handle
+**               Checkbox Edit Handle
 ** =============================================== */
 
 $(".company").change(function() {
