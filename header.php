@@ -66,9 +66,9 @@
                                     Company Details
                                 </a>
                             </li>
-                            <li class="sub-link district">
-                                <a href="district.php">
-                                    Districts
+                            <li class="sub-link region">
+                                <a href="region.php">
+                                    Regions
                                 </a>
                             </li>
                             <li class="sub-link province">
@@ -76,9 +76,9 @@
                                     Provinces
                                 </a>
                             </li>
-                            <li class="sub-link region">
-                                <a href="region.php">
-                                    Regions
+                            <li class="sub-link district">
+                                <a href="district.php">
+                                    Districts
                                 </a>
                             </li>
                             <li class="sub-link llg">
@@ -266,6 +266,9 @@
                                 </li>
                                 <li style="cursor:pointer">
                                   <a class="logout">Logout</a>
+                                </li>
+                                <li style="display:none;">
+                                  <a href="#" id="refresh-control"></a>
                                 </li>
                               </ul>
                           </li>

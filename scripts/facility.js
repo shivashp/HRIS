@@ -13,18 +13,21 @@ get_facility();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-          console.log(data);
           if(data.status == 'success') {
             FACILITY_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var id = data.data[i].id;
               var name = data.data[i].name;
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("facility", "facilities", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"per company-write text-right\">";
-              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a><a href=\"#\" class=\"delete btn btn-sm btn-danger btn-icon like\"  data-id=\""+id+"\"><i class=\"material-icons\">delete<\/i><\/a>";
+              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -50,7 +53,6 @@ get_facility();
     });// Ajax
   };// Get Facility
 
-
   function add_facility(){
     var name = $("#facility-name").val();
     if(!name.isBlank("Name")){
@@ -72,7 +74,6 @@ get_facility();
         success: function(data) {
           $(".loader").hide();
           $("#add").show();
-          console.log(data);
           if(data.status == 'success') {
             showSuccess("Facility Added Successfully!");
             pullMenu();
@@ -191,6 +192,10 @@ get_facility();
           delete_facility(i);
         }, function(dismiss) {
         })
+  })
+
+  $("#refresh-control").click(function() {
+    get_facility();
   })
 
 })// Document

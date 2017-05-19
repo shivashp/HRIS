@@ -63,6 +63,7 @@ include('header.php');
                           <th class="disabled-sorting sn">Sn.</th>
                           <th>Region Code</th>
                           <th>Region Name</th>
+                          <th>Status</th>
                           <th class="per company-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

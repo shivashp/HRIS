@@ -26,7 +26,7 @@ include('header.php');
                               <input type="text" id="region" disabled class="form-control">
                           </div>
                       </div>
-                  </div><!-row--> 
+                  </div><!-row-->
                   <div class="row">
                       <label class="col-md-3 label-on-left">Province</label>
                       <div class="col-md-9">
@@ -82,6 +82,7 @@ include('header.php');
                           <th>District Code</th>
                           <th>District</th>
                           <th>Province</th>
+                          <th>Status</th>
                           <th class="per company-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

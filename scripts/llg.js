@@ -1,7 +1,7 @@
 var LLG_JSON;
 
 $(function() {
-
+ 
 get_llg();
 get_district();
 
@@ -13,7 +13,7 @@ get_district();
         beforeSend: function(xhr) {
 					xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {          
+        success: function(data) {
           if(data.status == 'success') {
             LLG_JSON = data.data;
             var str="";
@@ -22,13 +22,17 @@ get_district();
               var name = data.data[i].name;
               var code = data.data[i].llg_code || 'N/A';
               var district = data.data[i].district || 'N/A';
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("facility", "llg", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+code+"<\/td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td>"+district+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"per company-write text-right\">";
-              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a><a href=\"#\" class=\"delete btn btn-sm btn-danger btn-icon like\"  data-id=\""+id+"\"><i class=\"material-icons\">delete<\/i><\/a>";
+              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -242,6 +246,8 @@ get_district();
         })
   })
 
-
+  $("#refresh-control").click(function() {
+    get_llg();
+  })
 
 })// Document

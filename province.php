@@ -73,6 +73,7 @@ include('header.php');
                           <th>Province Code</th>
                           <th>Province</th>
                           <th>Region</th>
+                          <th>Status</th>
                           <th class="per company-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

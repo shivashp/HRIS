@@ -71,6 +71,58 @@ function map_permission(key, value) {
   }
   $(".per").show();
 }
+function status_generator(func, endpoint, flag, id) {
+  var label = '';
+  var button = '';
+  if(!flag) {
+    label = "<span class='label label-success'>Active</span>";
+    button = "<a href=\"#\" class=\"deactivate-field btn btn-sm btn-danger btn-icon like\" data-func=\""+func+"\" data-path=\""+endpoint+"\"  data-id=\""+id+"\">Deactivate<\/a>"
+  } else {
+    label = "<span class='label label-danger'>Inactive</span>";
+    button = "<a href=\"#\" class=\"activate-field btn btn-sm btn-info btn-icon like\" data-func=\""+func+"\" data-path=\""+endpoint+"\"  data-id=\""+id+"\">Activate<\/a>"
+  }
+  return {
+    label, button
+  };
+}
+
+function toggle_activate(endpoint, del_flag, id) {
+  $.ajax({
+      url: basepath + endpoint + "/"+id,
+      type: "PUT",
+      contentType: 'application/json',
+      dataType: 'json',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Token', TOKEN);
+      },
+      data: JSON.stringify({
+        "del_flag":del_flag
+      }),
+      success: function(data) {
+        if(data.status == 'success') {
+          $("#refresh-control").click();
+        } else {
+          showError(data.message);
+        }
+      },
+      error: function(error) {
+        showError("Error in Server! Try again!")
+      }
+  });// Ajax
+}
+
+$(document).delegate(".activate-field", "click", function() {
+  var id = $(this).attr("data-id");
+  var path = $(this).attr("data-path");
+  var func = $(this).attr("data-func");
+  toggle_activate(path, false, id)
+})
+$(document).delegate(".deactivate-field", "click", function() {
+  var id = $(this).attr("data-id");
+  var path = $(this).attr("data-path");
+  var func = $(this).attr("data-func");
+  toggle_activate(path, true, id)
+})
 
 function toggle_top_menu(className = '.form-input') {
   $(className).slideToggle("slow");

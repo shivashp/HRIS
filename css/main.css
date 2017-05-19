@@ -195,8 +195,8 @@ div#ov1erlay {
   background: #364150;
 }
 .label {
-  box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
-  font-size: 13px;
+  /*box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
+  font-size: 13px;*/
 }
 .label-danger {
   background-color: #f44336;

@@ -20,12 +20,15 @@ get_region();
               var name = data.data[i].name;
               var id = data.data[i].id;
               var code = data.data[i].region_code || "N/A";
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("facility", "regions", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+code+"<\/td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td class=\"per company-write text-right\">";
-              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a><a href=\"#\" class=\"delete btn btn-sm btn-danger btn-icon like\"  data-id=\""+id+"\"><i class=\"material-icons\">delete<\/i><\/a>";
+              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -201,5 +204,9 @@ get_region();
           delete_region(i);
         }, function(dismiss) {
         })
+  })
+
+  $("#refresh-control").click(function() {
+    get_province();
   })
 })// Document

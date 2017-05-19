@@ -73,6 +73,7 @@ include('header.php');
                           <th>LLG Code</th>
                           <th>LLG Name</th>
                           <th>District</th>
+                          <th>Status</th>
                           <th class="per company-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

@@ -22,13 +22,17 @@ get_region();
               var code = data.data[i].province_code;
               var region = data.data[i].region;
               var id = data.data[i].id;
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("facility", "provinces", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+code+"<\/td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td>"+region+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"per company-write text-right\">";
-              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a><a href=\"#\" class=\"delete btn btn-sm btn-danger btn-icon like\"  data-id=\""+id+"\"><i class=\"material-icons\">delete<\/i><\/a>";
+              str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -242,4 +246,9 @@ get_region();
     str = str.join('');
     return str;
   }
+
+  $("#refresh-control").click(function() {
+    get_province();
+  })
+
 })// Document
