@@ -12,8 +12,7 @@ get_position_title();
         beforeSend: function(xhr) {
 					xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {
-          console.log(data);
+        success: function(data) {          
           if(data.status == 'success') {
             POSITION_JSON = data.data;
             var str="";

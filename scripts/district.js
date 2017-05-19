@@ -274,6 +274,9 @@ $("#province").change(function() {
 
   function prepare_selectpicker(obj) {
     var str = obj.map(obj => {
+      if(obj.del_flag){
+        return '';
+      }
       return `<option value = "${obj.id}">${obj.name}</option>`;
     })
     str = str.join('');
