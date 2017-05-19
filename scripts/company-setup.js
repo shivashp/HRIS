@@ -103,6 +103,7 @@ function add_data(json) {
         if(data.status == 'success') {
 					$("#company-display-name").html(json.display_name);
           showSuccess("Company Details Updated Successfully!");
+					localStorage.setItem("company_name", json.display_name);
 					setTimeout(function () {
 							window.location.href = "company.php";
 					}, 1000);

@@ -70,8 +70,8 @@ include('header.php');
                   <thead>
                       <tr>
                           <th class="disabled-sorting sn">Sn.</th>
-                          <th>Title</th>
                           <th>Code</th>
+                          <th>Title</th>
                           <th>Sequence</th>
                           <th class="per config-write disabled-sorting text-right">Actions</th>
                       </tr>

@@ -32,8 +32,7 @@ var intToStr = ['one', 'two', 'three', 'four', 'five'];
 						var village = data.data.village;
 						var web = data.data.web_address;
 						var free_text_one = data.data.free_text_one;
-						var contact_mobile = data.data.description || '';
-
+						var contact_mobile = data.data.description || '';           
 						for (var i = 1; i < 5; i++) {
 							var value = data.data['free_text_'+intToStr[i]]
               if(value.trim() !== ''){

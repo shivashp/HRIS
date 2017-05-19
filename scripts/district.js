@@ -35,7 +35,7 @@ $("#province").change(function() {
               var province = data.data[i].province;
               var code = data.data[i].district_code || 'N/A';
               var del_flag = data.data[i].del_flag;
-              var status = status_generator("facility", "llg", del_flag, id);
+              var status = status_generator("facility", "districts", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+code+"<\/td>";

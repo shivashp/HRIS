@@ -60,6 +60,7 @@ $(function() {
             localStorage.setItem("per_json", JSON.stringify(data.data.permissions))
             document.cookie = "token="+token;
             document.cookie = "permissions="+JSON.stringify(data.data.permissions);
+            localStorage.setItem("company_name", COMPANY_NAME);
             window.location.href = "dashboard.php";
 
           } else {
@@ -77,7 +78,7 @@ $(function() {
   })// Login click
 
 
-  function get_company_details() {    
+  function get_company_details() {
 		$.ajax({
 	      url: basepath + "company",
 	      type: "GET",
@@ -87,7 +88,6 @@ $(function() {
 	        if(data.status == 'success') {
 						var display_name = data.data.display_name;
             COMPANY_NAME = display_name;
-            localStorage.setItem("company_name", COMPANY_NAME);
 	        }
 	      },
 	      error: function(error) {

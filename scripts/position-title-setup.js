@@ -24,8 +24,8 @@ get_position_title();
 
               str += "<tr>";
               str += "<td></td>";
-              str += "                          <td>"+title+"<\/td>";
               str += "                          <td>"+code+"<\/td>";
+              str += "                          <td>"+title+"<\/td>";
               str += "                          <td>"+sequence+"<\/td>";
               str += "                          <td class=\"per config-write text-right\">";
               str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
@@ -41,6 +41,7 @@ get_position_title();
                         $("td:first", nRow).html(index);
                         return nRow;
                     },
+                     "order": [[ 3, "desc" ]]
                 });
             $(".page-loader").hide();
             $(".card").fadeIn("fast");

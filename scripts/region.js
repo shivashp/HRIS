@@ -26,6 +26,7 @@ get_region();
               str += "<td></td>";
               str += "                          <td>"+code+"<\/td>";
               str += "                          <td>"+name+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"per company-write text-right\">";
               str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
               str += status.button;
@@ -207,6 +208,6 @@ get_region();
   })
 
   $("#refresh-control").click(function() {
-    get_province();
+    get_region();
   })
 })// Document
