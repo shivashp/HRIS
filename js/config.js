@@ -82,7 +82,7 @@ function status_generator(func, endpoint, flag, id) {
     button = "<a href=\"#\" class=\"deactivate-field btn btn-sm btn-danger btn-icon like\" data-func=\""+func+"\" data-path=\""+endpoint+"\"  data-id=\""+id+"\">Deactivate<\/a>"
   } else {
     label = "<span class='label label-danger'>Inactive</span>";
-    button = "<a href=\"#\" class=\"activate-field btn btn-sm btn-info btn-icon like\" data-func=\""+func+"\" data-path=\""+endpoint+"\"  data-id=\""+id+"\">Activate<\/a>"
+    button = "<a href=\"#\" class=\"activate-field btn btn-sm btn-info btn-icon like\" data-func=\""+func+"\" data-path=\""+endpoint+"\"  data-id=\""+id+"\">&nbsp;&nbsp;Activate&nbsp;&nbsp;<\/a>"
   }
   return {
     label, button
