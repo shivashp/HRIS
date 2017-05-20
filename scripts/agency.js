@@ -15,6 +15,16 @@ $(function() {
     var region = AGENCY_JSON[i].region;
     var name = AGENCY_JSON[i].facility_name;
 
+    var address1 = AGENCY_JSON[i].address_one;
+    var address2 = AGENCY_JSON[i].address_two;
+    var email = AGENCY_JSON[i].email;
+    var code = AGENCY_JSON[i].branch_code;
+    var code_desc = AGENCY_JSON[i].branch_code_desc;
+    var web = AGENCY_JSON[i].web_address;
+    var contact_person_name = AGENCY_JSON[i].contact_person_name;
+    var contact_person_email = AGENCY_JSON[i].contact_person_email;
+    var contact_person_alt_email = AGENCY_JSON[i].contact_person_alt_email;
+
     var llg = search_data(LLG, llg);
     var district = search_data(DISTRICT, district);
     var province = search_data(PROVINCE, province);
@@ -106,6 +116,17 @@ $(function() {
     var province = $("#province").val();
     var region = $("#region").val();
     var name = $("#facility-name").val();
+
+    var address1 = $("#address1").val();
+    var address2 = $("#address2").val();
+    var email = $("#email").val();
+    var code = $("#division-code").val();
+    var code_desc = $("#division-code-desc").val();
+    var web = $("#web-address").val();
+    var contact_person_name = $("#contact-person-name").val();
+    var contact_person_email = $("#contact_person_email").val();
+    var contact_person_alt_email = $("#contact_person_alt_email").val();
+
     var arr = [name.isBlank("Name"), isNull(type, "Facility Type"), isNull(llg, "LLG"), isNull(district,"District"), isNull(province, "Province"), isNull(region, "Region")];
     if(checkEmpty(arr)){
       return false;
@@ -129,7 +150,16 @@ $(function() {
           "llg_id": llg,
           "district_id": district,
           "province_id": province,
-          "region_id": region
+          "region_id": region,
+          "branch_code": code,
+          "branch_code_desc": code_desc,
+          "address_one": address1,
+          "address_two": address2,
+          "web_address": web,
+          "email": email,
+          "contact_person_name": contact_person_name,
+          "contact_person_email": contact_person_email,
+          "contact_person_alt_email": contact_person_alt_email,
         }),
         success: function(data) {
           $(".loader").hide();
@@ -181,6 +211,17 @@ $(function() {
     var province = $("#province").val();
     var region = $("#region").val();
     var name = $("#facility-name").val();
+
+    var address1 = $("#address1").val();
+    var address2 = $("#address2").val();
+    var email = $("#email").val();
+    var code = $("#division-code").val();
+    var code_desc = $("#division-code-desc").val();
+    var web = $("#web-address").val();
+    var contact_person_name = $("#contact-person-name").val();
+    var contact_person_email = $("#contact_person_email").val();
+    var contact_person_alt_email = $("#contact_person_alt_email").val();
+
     var arr = [name.isBlank("Name"), isNull(type, "Facility Type"), isNull(llg, "LLG"), isNull(district,"District"), isNull(province, "Province"), isNull(region, "Region")];
     if(checkEmpty(arr)){
       return false;
@@ -204,7 +245,16 @@ $(function() {
           "llg_id": llg,
           "district_id": district,
           "province_id": province,
-          "region_id": region
+          "region_id": region,
+          "branch_code": code,
+          "branch_code_desc": code_desc,
+          "address_one": address1,
+          "address_two": address2,
+          "web_address": web,
+          "email": email,
+          "contact_person_name": contact_person_name,
+          "contact_person_email": contact_person_email,
+          "contact_person_alt_email": contact_person_alt_email,
         }),
         success: function(data) {
           $(".loader").hide();

@@ -36,6 +36,87 @@ include('header.php');
                         </div>
                     </div><!-- row -->
                     <div class="row">
+                        <label class="col-sm-2 label-on-left">Agency Code</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="division-code" class="form-control" placeholder = "Agency Code" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Code Description</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="division-code-desc" class="form-control" placeholder = "Agency Code Description" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Web Address</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="web-address" class="form-control" placeholder = "Web Address" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Email</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="email" id="email" class="form-control" placeholder = "Email" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Contact Person Name</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="contact-person-name" class="form-control" placeholder = "Contact Person Name" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Contact Person Email</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="email" id="contact-person-email" class="form-control" placeholder = "Contact Person Email" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Contact Person Alternate Email</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="email" id="contact-person-alt-email" class="form-control" placeholder = "Contact Person Alternate Email" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Address 1</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="address1" class="form-control" placeholder = "Address 1" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Address 2</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" id="address2" class="form-control" placeholder = "Address 2" value>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
                       <label class="col-sm-2 label-on-left">LLG</label>
                         <div class="col-sm-6">
                             <div class="form-group label-floating is-empty">

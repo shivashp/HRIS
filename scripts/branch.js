@@ -5,7 +5,7 @@ $(function() {
   hris.get_facility("select");
 
 
-  function edit_branch(i) {
+  function edit_branch(i) {    
     var id = BRANCH_JSON[i].id;
     var type = BRANCH_JSON[i].facility_type;
     var llg = BRANCH_JSON[i].llg;
@@ -13,6 +13,17 @@ $(function() {
     var province = BRANCH_JSON[i].province;
     var region = BRANCH_JSON[i].region;
     var name = BRANCH_JSON[i].facility_name;
+
+    var address1 = BRANCH_JSON[i].address_one;
+    var address2 = BRANCH_JSON[i].address_two;
+    var email = BRANCH_JSON[i].email;
+    var code = BRANCH_JSON[i].branch_code;
+    var code_desc = BRANCH_JSON[i].branch_code_desc;
+    var web = BRANCH_JSON[i].web_address;
+    var contact_person_name = BRANCH_JSON[i].contact_person_name;
+    var contact_person_email = BRANCH_JSON[i].contact_person_email;
+    var contact_person_alt_email = BRANCH_JSON[i].contact_person_alt_email;
+
 
     var llg = search_data(LLG, llg);
     var district = search_data(DISTRICT, district);
@@ -26,6 +37,16 @@ $(function() {
     $('#province').selectpicker('val', province);
     $('#region').selectpicker('val', region);
     $("#facility-name").val(name);
+
+    $("#address1").val(address1);
+    $("#address2").val(address2);
+    $("#email").val(email);
+    $("#division-code").val(code);
+    $("#division-code-desc").val(code_desc);
+    $("#web-address").val(web);
+    $("#contact-person-name").val(contact_person_name);
+    $("#contact_person_email").val(contact_person_email);
+    $("#contact_person_alt_email").val(contact_person_alt_email);
     $("#add").attr({"status": 1, "data-id": id});
   }
 
@@ -115,6 +136,16 @@ $(function() {
     var region = $("#region").val();
     var name = $("#facility-name").val();
 
+    var address1 = $("#address1").val();
+    var address2 = $("#address2").val();
+    var email = $("#email").val();
+    var code = $("#division-code").val();
+    var code_desc = $("#division-code-desc").val();
+    var web = $("#web-address").val();
+    var contact_person_name = $("#contact-person-name").val();
+    var contact_person_email = $("#contact_person_email").val();
+    var contact_person_alt_email = $("#contact_person_alt_email").val();
+
     var arr = [name.isBlank("Name"), isNull(type, "Facility Type"), isNull(llg, "LLG"), isNull(district,"District"), isNull(province, "Province"), isNull(region, "Region")];
     if(checkEmpty(arr)){
       return false;
@@ -138,7 +169,16 @@ $(function() {
           "llg_id": llg,
           "district_id": district,
           "province_id": province,
-          "region_id": region
+          "region_id": region,
+          "branch_code": code,
+          "branch_code_desc": code_desc,
+          "address_one": address1,
+          "address_two": address2,
+          "web_address": web,
+          "email": email,
+          "contact_person_name": contact_person_name,
+          "contact_person_email": contact_person_email,
+          "contact_person_alt_email": contact_person_alt_email,
         }),
         success: function(data) {
           $(".loader").hide();
@@ -188,9 +228,14 @@ $(function() {
     /* -------------------- New -------------- */
     var address1 = $("#address1").val();
     var address2 = $("#address2").val();
-    var village = $("#village").val();
     var email = $("#email").val();
-    var phone = $("#phone").val();
+    var code = $("#division-code").val();
+    var code_desc = $("#division-code-desc").val();
+    var web = $("#web-address").val();
+    var contact_person_name = $("#contact-person-name").val();
+    var contact_person_email = $("#contact_person_email").val();
+    var contact_person_alt_email = $("#contact_person_alt_email").val();
+
 
 
 
@@ -217,7 +262,16 @@ $(function() {
           "llg_id": llg,
           "district_id": district,
           "province_id": province,
-          "region_id": region
+          "region_id": region,
+          "branch_code": code,
+          "branch_code_desc": code_desc,
+          "address_one": address1,
+          "address_two": address2,
+          "web_address": web,
+          "email": email,
+          "contact_person_name": contact_person_name,
+          "contact_person_email": contact_person_email,
+          "contact_person_alt_email": contact_person_alt_email,
         }),
         success: function(data) {
           $(".loader").hide();
