@@ -9,7 +9,7 @@ $(".logout").click(function() {
   window.location.href="index.php";
 })
 function prepare_selectpicker(obj) {
-  var str = obj.map(obj => {
+  var str = obj.map(obj => {     
     if(obj.del_flag){
       return '';
     }

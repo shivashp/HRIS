@@ -4,8 +4,8 @@ var PROVINCE;
 $(function() {
 
 get_district();
-//get_region();
-get_province();
+
+hris.get_province("select");
 
 $("#province").change(function() {
   var province = $(this).val();
@@ -197,91 +197,6 @@ $("#province").change(function() {
     $("#district-name").focus();
   })
 
-  function get_region() {
-    if(localStorage.getItem("region")) {
-      var region = JSON.parse(localStorage.getItem("region"));
-      REGION = region;
-      var region_obj = prepare_selectpicker(region);
-      $("#region").html(region_obj);
-      $('#region').selectpicker({
-        size: 7
-      });
-      return false;
-    }
-    $.ajax({
-        url: basepath + "regions",
-        type: "GET",
-        contentType: 'application/json',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Token', TOKEN);
-        },
-        success: function(data) {
-          if(data.status == 'success') {
-            REGION = data.data;
-            localStorage.setItem("region", JSON.stringify(data.data))
-            var region_obj = prepare_selectpicker(data.data);
-            $("#region").html(region_obj);
-            $('#region').selectpicker({
-              size: 7
-            });
-          }
-        },
-        error: function(error) {
-          $(".loader").hide();
-          $("#submit").show();
-          showError("Error in Server! Try again!")
-        },
-    });// Ajax
-  };// Get Region
-
-  function get_province() {
-    // var PROVINCE_JSON = {};
-    // if(localStorage.getItem("province")) {
-    //   var province = JSON.parse(localStorage.getItem("province"));
-    //   PROVINCE = province;
-    //   var province_obj = prepare_selectpicker(province);
-    //   $("#province").html(province_obj);
-    //   $('#province').selectpicker({
-    //     size: 7
-    //   });
-    //   return false;
-    // }
-    $.ajax({
-        url: basepath + "provinces",
-        type: "GET",
-        contentType: 'application/json',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Token', TOKEN);
-        },
-        success: function(data) {
-          if(data.status == 'success') {
-            PROVINCE = data.data;
-            localStorage.setItem("province", JSON.stringify(data.data))
-            var province_obj = prepare_selectpicker(data.data);
-            $("#province").html(province_obj);
-            $('#province').selectpicker({
-              size: 7
-            });
-          }
-        },
-        error: function(error) {
-          $(".loader").hide();
-          $("#submit").show();
-          showError("Error in Server! Try again!")
-        },
-    });// Ajax
-  };// Get Province
-
-  function prepare_selectpicker(obj) {
-    var str = obj.map(obj => {
-      if(obj.del_flag){
-        return '';
-      }
-      return `<option value = "${obj.id}">${obj.name}</option>`;
-    })
-    str = str.join('');
-    return str;
-  }
 
   function delete_district(id) {
     $.ajax({

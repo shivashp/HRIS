@@ -18,11 +18,9 @@ var FREE_TEXT_INDEX = 1;
 var MAX_COUNT = 5;
 var FREE_TEXT_ARRAY = [1];
 var intToStr = ['one', 'two', 'three', 'four', 'five'];
-get_llg();
-get_district();
-get_province();
-get_region();
 
+
+hris.get_address_details();
 
 $("#submit").click(function(e) {
 	e.preventDefault();
@@ -119,192 +117,13 @@ function add_data(json) {
   });// Ajax
 }
 
-
-function get_llg() {
-	if(localStorage.getItem("llg")) {
-		var llg = JSON.parse(localStorage.getItem("llg"));
-		LLG = llg;
-		var llg_obj = prepare_selectpicker(llg);
-		$("#llg").html(llg_obj);
-		$('#llg').selectpicker({
-			size: 7,
-			liveSearch: true
-		});
-		return false;
-	}
-	$.ajax({
-			url: basepath + "llg",
-			type: "GET",
-			contentType: 'application/json',
-			beforeSend: function(xhr) {
-				xhr.setRequestHeader('Token', TOKEN);
-			},
-			success: function(data) {
-				if(data.status == 'success') {
-					LLG = data.data;
-					localStorage.setItem("llg", JSON.stringify(data.data))
-					var llg_obj = prepare_selectpicker(data.data);
-					$("#llg").html(llg_obj);
-					$('#llg').selectpicker({
-						size: 7,
-						liveSearch: true
-					});
-				}
-			},
-			error: function(error) {
-				$(".loader").hide();
-				$("#submit").show();
-				showError("Error in Server! Try again!")
-			},
-	});// Ajax
-};// Get LLG
-
-function get_district() {
-	var DISTRICT_JSON = {};
-	if(localStorage.getItem("district")) {
-		var district = JSON.parse(localStorage.getItem("district"));
-		DISTRICT = district;
-		var district_obj = prepare_selectpicker(district);
-		$("#district").html(district_obj);
-		$('#district').selectpicker({
-			size: 7,
-			liveSearch: true
-		});
-		return false;
-	}
-	$.ajax({
-			url: basepath + "districts",
-			type: "GET",
-			contentType: 'application/json',
-			beforeSend: function(xhr) {
-				xhr.setRequestHeader('Token', TOKEN);
-			},
-			success: function(data) {
-				if(data.status == 'success') {
-					DISTRICT = data.data;
-					localStorage.setItem("district", JSON.stringify(data.data))
-					var district_obj = prepare_selectpicker(data.data);
-					$("#district").html(district_obj);
-					$('#district').selectpicker({
-						size: 7,
-						liveSearch: true
-					});
-				}
-			},
-			error: function(error) {
-				$(".loader").hide();
-				$("#submit").show();
-				showError("Error in Server! Try again!")
-			},
-	});// Ajax
-};// Get District
-
-function get_province() {
-	var PROVINCE_JSON = {};
-	if(localStorage.getItem("province")) {
-		var province = JSON.parse(localStorage.getItem("province"));
-		PROVINCE = province;
-		var province_obj = prepare_selectpicker(province);
-		$("#province").html(province_obj);
-		$('#province').selectpicker({
-			size: 7,
-			liveSearch: true
-		});
-		return false;
-	}
-	$.ajax({
-			url: basepath + "provinces",
-			type: "GET",
-			contentType: 'application/json',
-			beforeSend: function(xhr) {
-				xhr.setRequestHeader('Token', TOKEN);
-			},
-			success: function(data) {
-				if(data.status == 'success') {
-					PROVINCE = data.data;
-					localStorage.setItem("province", JSON.stringify(data.data))
-					var province_obj = prepare_selectpicker(data.data);
-					$("#province").html(province_obj);
-					$('#province').selectpicker({
-						size: 7,
-						liveSearch: true
-					});
-				}
-			},
-			error: function(error) {
-				$(".loader").hide();
-				$("#submit").show();
-				showError("Error in Server! Try again!")
-			},
-	});// Ajax
-};// Get Province
-
-function get_region() {
-	var REGION_JSON = {};
-	if(localStorage.getItem("region")) {
-		var region = JSON.parse(localStorage.getItem("region"));
-		REGION = region;
-		var region_obj = prepare_selectpicker(region);
-		$("#region").html(region_obj);
-		$('#region').selectpicker({
-			size: 7,
-			liveSearch: true
-		});
-		return false;
-	}
-	$.ajax({
-			url: basepath + "regions",
-			type: "GET",
-			contentType: 'application/json',
-			beforeSend: function(xhr) {
-				xhr.setRequestHeader('Token', TOKEN);
-			},
-			success: function(data) {
-				if(data.status == 'success') {
-					REGION = data.data;
-					localStorage.setItem("region", JSON.stringify(data.data))
-					var region_obj = prepare_selectpicker(data.data);
-					$("#region").html(region_obj);
-					$('#region').selectpicker({
-						size: 7,
-						liveSearch: true
-					});
-				}
-			},
-			error: function(error) {
-				$(".loader").hide();
-				$("#submit").show();
-				showError("Error in Server! Try again!")
-			},
-	});// Ajax
-};// Get Region
-
-function prepare_selectpicker(obj) {
-	var str = obj.map(obj => {
-		return `<option value = "${obj.id}">${obj.name}</option>`;
-	})
-	str = str.join('');
-	return str;
-}
-
 var token = localStorage.getItem("token");
 $(".page-loader").hide();
 $(".card").fadeIn("fast");
 $(function() {
 	get_company_details();
 	demo.initFormExtendedDatetimepickers();
-  (function() {
-    var country_obj = COUNTRY_LIST.map((country) => {
-      var str = `<option value ="${country}">${country}</option>`;
-      return str;
-    })
-    country_obj = country_obj.join('');
-    $("#country").html(country_obj);
-    $('#country').selectpicker({
-      size: 7
-    });
-  })() // country list
-
+	hris.get_country();
 	$("#add-free-text").click(function() {
 		add_free_text();
 	})

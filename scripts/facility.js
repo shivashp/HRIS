@@ -153,47 +153,6 @@ get_facility();
     $("#facility-name").focus();
   })
 
-
-  function delete_facility(id) {
-    $.ajax({
-        url: basepath + "facilities/"+id,
-        type: "DELETE",
-        contentType: 'application/json',
-        dataType: 'json',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Token', TOKEN);
-        },
-        success: function(data) {
-          if(data.status == 'success') {
-            showSuccess("Facility Deleted Successfully!");
-            get_facility();
-          } else {
-            showError(data.message);
-          }
-        },
-        error: function(error) {
-          showError("Error in Server! Try again!")
-        }
-    });// Ajax
-  }
-  $(document).delegate(".delete", "click", function() {
-    var i = $(this).attr("data-id");
-    swal({
-            title: 'Are you sure?',
-            text: 'You will not be able to recover this!',
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, keep it',
-            confirmButtonClass: "btn btn-success",
-            cancelButtonClass: "btn btn-danger",
-            buttonsStyling: false
-        }).then(function() {
-          delete_facility(i);
-        }, function(dismiss) {
-        })
-  })
-
   $("#refresh-control").click(function() {
     get_facility();
   })

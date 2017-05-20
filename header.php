@@ -149,25 +149,7 @@
                             </li>
                           </ul>
                       </div><!-- Division Management -->
-                  </li><!-- Division dropdown -->
-
-                  <li class="link agency panel per agency-read">
-                      <a data-toggle="collapse" data-parent = "#main" href="#agencymgmt">
-                          <i class="material-icons">location_city</i>
-                          <p>Agency Management
-                              <b class="caret"></b>
-                          </p>
-                      </a>
-                      <div class="collapse" id="agencymgmt">
-                          <ul class="nav">
-                            <li class="sub-link agency">
-                                <a href="agency.php">
-                                    Agencies
-                                </a>
-                            </li>
-                          </ul>
-                      </div><!-- Agency Management -->
-                  </li><!-- Agency dropdown -->
+                  </li><!-- Division dropdown -->                  
 
                   <li class="link employee panel per agencyemp-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#employee">
@@ -242,7 +224,7 @@
             <nav class="navbar navbar-blue navbar-absolute">
                 <div class="container-fluid">
                   <div class="navbar-minimize">
-                    <div class="main-header-section" id="company-display-name">                      
+                    <div class="main-header-section" id="company-display-name">
                     </div>
                   </div>
                   <div class="navbar-header">

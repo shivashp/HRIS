@@ -14,5 +14,6 @@
 <script src="js/sweetalert2.js"></script>
 <script src="js/material-dashboard.js"></script>
 <script src="js/demo.js"></script>
+<script src="js/common_function.js" charset="utf-8"></script>
 <script src="js/config.js"></script>
 </html>

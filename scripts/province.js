@@ -3,7 +3,7 @@ var PROVINCE_JSON;
 $(function() {
 
 get_province();
-get_region();
+hris.get_region("select");
 
   function get_province() {
     $.ajax({
@@ -171,42 +171,6 @@ get_region();
     $("#province-name").focus();
   })
 
-  function get_region() {
-    // if(localStorage.getItem("region")) {
-    //   var region = JSON.parse(localStorage.getItem("region"));
-    //   REGION = region;
-    //   var region_obj = prepare_selectpicker(region);
-    //   $("#region").html(region_obj);
-    //   $('#region').selectpicker({
-    //     size: 7
-    //   });
-    //   return false;
-    // }
-    $.ajax({
-        url: basepath + "regions",
-        type: "GET",
-        contentType: 'application/json',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Token', TOKEN);
-        },
-        success: function(data) {
-          if(data.status == 'success') {
-            REGION = data.data;
-            localStorage.setItem("region", JSON.stringify(data.data))
-            var region_obj = prepare_selectpicker(data.data);
-            $("#region").html(region_obj);
-            $('#region').selectpicker({
-              size: 7
-            });
-          }
-        },
-        error: function(error) {
-          $(".loader").hide();
-          $("#submit").show();
-          showError("Error in Server! Try again!")
-        },
-    });// Ajax
-  };// Get Region
 
   function delete_province(id) {
     $.ajax({
@@ -245,7 +209,7 @@ get_region();
         return '';
       }
       return `<option value = "${obj.id}">${obj.name}</option>`;
-    })    
+    })
     str = str.join('');
     return str;
   }

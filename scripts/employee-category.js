@@ -170,8 +170,7 @@ get_rank();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            $(this).attr("status", 0);
-            // generate_select(RANK_JSON, null);
+            $(this).attr("status", 0);            
             $('#category-rank').selectpicker('render');
             showSuccess("Category Updated Successfully!");
             pullMenu();

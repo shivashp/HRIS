@@ -1,9 +1,9 @@
 var LLG_JSON;
 
 $(function() {
- 
+
 get_llg();
-get_district();
+hris.get_district("select")
 
   function get_llg() {
     $.ajax({
@@ -152,44 +152,6 @@ get_district();
     });// Ajax
   }
 
-  function get_district() {
-    // var DISTRICT_JSON = {};
-    // if(localStorage.getItem("district")) {
-    //   var district = JSON.parse(localStorage.getItem("district"));
-    //   DISTRICT = district;
-    //   var district_obj = prepare_selectpicker(district);
-    //   $("#district").html(district_obj);
-    //   $('#district').selectpicker({
-    //     size: 7
-    //   });
-    //   return false;
-    // }
-    $.ajax({
-        url: basepath + "districts",
-        type: "GET",
-        contentType: 'application/json',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Token', TOKEN);
-        },
-        success: function(data) {
-          if(data.status == 'success') {
-            DISTRICT = data.data;
-            localStorage.setItem("district", JSON.stringify(data.data))
-            var district_obj = prepare_selectpicker(data.data);
-            $("#district").html(district_obj);
-            $('#district').selectpicker({
-              size: 7
-            });
-          }
-        },
-        error: function(error) {
-          $(".loader").hide();
-          $("#submit").show();
-          showError("Error in Server! Try again!")
-        },
-    });// Ajax
-  };// Get District
-
   $("#add").click(function(e) {
     e.preventDefault();
     var status = $(this).attr("status");
@@ -206,46 +168,7 @@ get_district();
     $("#llg-name").focus();
   })
 
-  function delete_llg(id) {
-    $.ajax({
-        url: basepath + "llg/"+id,
-        type: "DELETE",
-        contentType: 'application/json',
-        dataType: 'json',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Token', TOKEN);
-        },
-        success: function(data) {
-          if(data.status == 'success') {
-            showSuccess("LLG Deleted Successfully!");
-            get_llg();
-          } else {
-            showError(data.message);
-          }
-        },
-        error: function(error) {
-          showError("Error in Server! Try again!")
-        }
-    });// Ajax
-  }
-  $(document).delegate(".delete", "click", function() {
-    var i = $(this).attr("data-id");
-    swal({
-            title: 'Are you sure?',
-            text: 'You will not be able to recover this!',
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, keep it',
-            confirmButtonClass: "btn btn-success",
-            cancelButtonClass: "btn btn-danger",
-            buttonsStyling: false
-        }).then(function() {
-          delete_llg(i);
-        }, function(dismiss) {
-        })
-  })
-
+  
   $("#refresh-control").click(function() {
     get_llg();
   })
