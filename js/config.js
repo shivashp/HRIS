@@ -245,6 +245,13 @@ function checkEmpty(arr){
 	return false;
 }
 
+$("#reset").click(function() {
+  $(".selectpicker1").selectpicker('val', -1);
+})
+$("#clear").click(function() {
+  $(".selectpicker1").selectpicker('val', -1);
+})
+
 $(document).ready(function() {
   $(".sp-add-btn").click(function() {
     $(".form-horizontal")[0].reset();

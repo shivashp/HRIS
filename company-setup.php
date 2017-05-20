@@ -82,15 +82,16 @@ include('header.php');
 
                 <div class="row">
                   <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">District</label>
+                    <label class="col-sm-4 label-on-left">Region</label>
                     <div class="col-sm-8">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="district"  title="Choose District">
+                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="region"  title="Choose Region">
                             </select>
                         </div>
                     </div>
                   </div>
+
                   <div class="col-md-6">
                     <label class="col-sm-4 label-on-left">Province</label>
                     <div class="col-sm-8">
@@ -105,15 +106,16 @@ include('header.php');
 
                 <div class="row">
                   <div class="col-md-6">
-                    <label class="col-sm-4 label-on-left">Region</label>
+                    <label class="col-sm-4 label-on-left">District</label>
                     <div class="col-sm-8">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="region"  title="Choose Region">
+                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="district"  title="Choose District">
                             </select>
                         </div>
                     </div>
                   </div>
+
                   <div class="col-md-6">
                     <label class="col-sm-4 label-on-left">LLG</label>
                     <div class="col-sm-8">

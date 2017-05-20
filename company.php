@@ -18,7 +18,7 @@ include('header.php');
       <div class="card-content">
         <div class="row">
         <div class="col-md-6">
-          <table class="table table-striped">
+          <table class="table table-striped table-list">
             <tr>
               <td>Company Name</td>
               <td> : </td>
@@ -63,7 +63,7 @@ include('header.php');
         </div>
 
          <div class="col-md-6">
-          <table class="table table-striped">
+          <table class="table table-striped table-list">
             <tr>
               <td>Province</td>
               <td> : </td>
@@ -117,7 +117,7 @@ include('header.php');
             <h4 class="card-title"><span class="fa fa-home"> </span> Free Text</h4>
         </div>
         <div class="card-content">
-          <table class="table table-striped" id="free-text-content">
+          <table class="table table-striped table-list" id="free-text-content">
             <tr id="free-text-1-container">
               <td>Free Text 1</td>
               <td> : </td>

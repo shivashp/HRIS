@@ -15,6 +15,10 @@ get_user_details();
 /* =============================================================
 **                  Update User Data
 ** ============================================================= */
+$("#add").click(function(e){
+  e.preventDefault();
+  update_data();
+})
 function update_data() {
   var salutation = $("#salutation").val();
   var first_name = $("#first-name").val();
@@ -115,7 +119,7 @@ function update_data() {
         $(".loader").hide();
         $("#add").show();
         if(data.status == 'success') {
-          showSuccess("Employee Added Successfully!");
+          showSuccess("Employee Updated Successfully!");
           setTimeout(function() {
               window.location.href= 'employee.php'
           }, 1000)
@@ -143,7 +147,7 @@ function update_data() {
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {
+        success: function(data) {          
           if(data) {
             var id = data.id;
             var first_name = data.first_name;
@@ -161,16 +165,19 @@ function update_data() {
 						var region = data.region;
             var email = data.email_address;
             var contact_number =data.contact_number;
-						var phone1 = data.alt_phone_number;
+						var phone1 = data.alt_contact_number;
             var country = data.country;
             var employee_number = data.employement_number;
 						var retirement_age = data.retirement_age;
 						var salary_step = data.salary_step;
 						var date_of_commencement = data.date_of_commencement;
-						var emp_category = data.employee_category;
+						var emp_category = data.employee_category_id;
 						var branch_agency = data.employee_branch;
-						var emp_type = data.employee_type;
-						var emp_position = data.employee_position
+						var emp_type = data.employee_type_id;
+						var emp_position = data.employee_position_id;
+            var employee_branch_id = data.employee_branch_id;
+            var salutation = data.salutation;
+            var is_branch = data.is_branch;
 
 						$("#first-name").val(first_name);
 						$("#last-name").val(last_name);
@@ -193,17 +200,25 @@ function update_data() {
 						$("#address2").val(address2);
 						$("#email").val(email);
 						$("#village").val(village);
-						$("#emp-number").val(employee_number);
+						$("#employee-number").val(employee_number);
 						$("#retirement-age").val(retirement_age);
 
-/*******/						$("#branch-agency").val(branch_agency); /******** Need to check whether it's branch or agency ***********/
 
-            $("#emp-type").selectpicker('val', emp_type);
-            $("#emp-category").selectpicker('val', emp_category);
-            $("#emp-position").selectpicker('val', emp_position);
+            $("#branch-agency").selectpicker('val', (is_branch)?'branch':'agency');
+            if(is_branch){
+              $("#branch").selectpicker('val', employee_branch_id);
+              showBranch()
+            } else {
+              $("#agency").selectpicker('val', employee_branch_id);
+              showAgency()
+            }
+            $("#salutation").selectpicker('val', salutation);
+            $("#employee-type").selectpicker('val', emp_type);
+            $("#employee-category").selectpicker('val', emp_category);
+            $("#position-title").selectpicker('val', emp_position);
 
 						$("#salary-step").val(salary_step);
-						$("#date-of-commencement").val(date_of_commencement);
+						$("#start-date").val(date_of_commencement);
 
 						$(".page-loader").hide();
 						$(".card").fadeIn("fast");
@@ -302,20 +317,6 @@ function update_data() {
   };// Get Type
 
   function get_agencies() {
-    // if(localStorage.getItem("agencies")) {
-    //   var agency = JSON.parse(localStorage.getItem("agencies"));
-    //   AGENCY = agency;
-    //   var agency_obj = agency.map(obj => {
-    //     return `<option value = "${obj.id}">${obj.facility_name}</option>`;
-    //   })
-    //   agency_obj = agency_obj.join('');
-    //   $("#agency").html(agency_obj);
-    //   $('#agency').selectpicker({
-    //     size: 7,
-    //     liveSearch: true
-    //   });
-    //   return false;
-    // }
     $.ajax({
         url: basepath + "agencies",
         type: "GET",

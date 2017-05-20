@@ -21,6 +21,7 @@ $(function() {
 	get_certifications();
 	get_qualifications();
 	get_country();
+	get_emp_extras();
 
 	var TRAININGS;
 	var CERTIFICATIONS;
@@ -64,19 +65,70 @@ $(function() {
   });//add-qualification
 
 	$("#add-emp-extra").click(function() {
-    $('.form-horizontal').trigger("reset");
     var value = $(this).attr("value");
-    (value == 1)?pullMenu(".emp-extra-input", "#add-emp-extra", "Employee Extras"):slideMenu(".emp-extra-input", "#add-emp-extra");
+    (value == 1)?pullMenu(".emp-extra-input", "#add-emp-extra", "Employee Relatives"):slideMenu(".emp-extra-input", "#add-emp-extra");
   });//add-qualification
 
 
+/* --------------------------------------------------------------------- *
+**													Emp Extras
+** --------------------------------------------------------------------- */
 
-	$("#add-emp-extra").click(function() {
+function get_emp_extras() {
+	$.ajax({
+			url: basepath + "employees/"+action_id+"/empextras",
+			type: "GET",
+			contentType: 'application/json',
+			dataType: 'json',
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader('Token', TOKEN);
+			},
+			success: function(data) {
+				if(data.status == 'success') {
+					var father_name = data.data.emp_father_name;
+					var mother_name = data.data.emp_mother_name;
+					var children = data.data.emp_num_of_children;
+					var emp_single = data.data.emp_single;
+					var maritial_status = (data.data.emp_single)?'Single':'Married';
+					var wife_name = data.data.emp_wife_name;
+					var address = data.data.ref_address;
+					var contact = data.data.ref_contact_number;
+					var ref_name = data.data.ref_name;
+
+
+
+					// Edit Case
+					$("#father-name").val(father_name);
+					$("#mother-name").val(mother_name);
+					$("#children").val(children);
+					$("#maritial-status").selectpicker('val', emp_single);
+					$("#wife-name").val(wife_name);
+					$("#emp-address").val(address);
+					$("#emp-contact-number").val(contact);
+					$("#emp-ref-name").val(ref_name);
+
+					$("#e-father-name").html(father_name);
+					$("#e-mother-name").html(mother_name);
+					$("#e-no-of-children").html(children);
+					$("#e-maritial-status").html(maritial_status);
+					$("#e-wife-name").html(wife_name);
+					$("#e-ref-address").html(address);
+					$("#e-ref-contact").html(contact);
+					$("#e-ref-name").html(ref_name);
+				}
+			},
+			error: function(error) {
+				showError("Error in Server! Try again!")
+			},
+	});// Ajax
+}
+
+	$("#save-emp-extra").click(function() {
 		var father_name = $("#father-name").val();
 		var mother_name = $("#mother-name").val();
 		var children = $("#children").val();
 		var maritial_status = $("#maritial-status").val();
-		var wife_name = $("#wife_name").val();
+		var wife_name = $("#wife-name").val();
 		var address = $("#emp-address").val();
 		var contact = $("#emp-contact-number").val();
 		var ref_name = $("#emp-ref-name").val();
@@ -92,6 +144,7 @@ $(function() {
 			"ref_name": ref_name
 		 }
 
+
 		 $.each(my_json, function(key, value) {
        if(value == '' || value == null || value == undefined) {
          delete my_json[key];
@@ -100,7 +153,7 @@ $(function() {
 
 		$.ajax({
         url: basepath + "employees/"+action_id+"/empextras",
-        type: "POST",
+        type: "PUT",
         contentType: 'application/json',
         dataType: 'json',
         beforeSend: function(xhr) {
@@ -113,7 +166,7 @@ $(function() {
           $(".loader").hide();
           $("#add").show();
           if(data.status == 'success') {
-            showSuccess("Emp Extras Added Successfully!");
+            showSuccess("Emp Extras Updated Successfully!");
             pullMenu(".emp-extras-input", "#add-emp-extras");
 						// get_trainings();
           } else {

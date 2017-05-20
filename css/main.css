@@ -382,6 +382,9 @@ img#prfl-img {
   margin-right: 10px;
   color: #3aaf85;
 }
+.table-list tr td:first-child {
+    font-weight: bold;
+}
 li.nav-item.active>a {
     color: white !important;
     background: #3aaf85;

@@ -23,7 +23,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Salutation</label>
-                    <select class="selectpicker" name="salutation" id="salutation" data-style="select-with-transition" title="Choose Salutation" data-size="7">
+                    <select class="selectpicker selectpicker1" name="salutation" id="salutation" data-style="select-with-transition" title="Choose Salutation" data-size="7">
                       <option value="Mr">Mr.</option>
                       <option value="Ms">Ms.</option>
                       <option value="Dr">Dr.</option>
@@ -62,7 +62,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                 <label class="control-label">Sex</label>
-                    <select class="selectpicker" name="sex" id="sex" data-style="select-with-transition" title="Choose Sex" data-size="7">
+                    <select class="selectpicker selectpicker1" name="sex" id="sex" data-style="select-with-transition" title="Choose Sex" data-size="7">
                       <option value="M">Male</option>
                       <option value="F">Female</option>
                       <option value="O">Others</option>
@@ -110,7 +110,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">LLG</label>
-                    <select id="llg" name="llg" data-style="select-with-transition" title="Choose LLG" data-size="7">
+                    <select class="selectpicker1" id="llg" name="llg" data-style="select-with-transition" title="Choose LLG" data-size="7">
                     </select>
                 </div>
               </div><!-- col-md-4-->
@@ -118,7 +118,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">District</label>
-                    <select id="district" data-style="select-with-transition" title="Choose District" data-size="7">
+                    <select class="selectpicker1" id="district" data-style="select-with-transition" title="Choose District" data-size="7">
                     </select>
                 </div>
               </div><!-- col-md-4-->
@@ -126,7 +126,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                   <label class="control-label">Province</label>
-                  <select id="province" data-style="select-with-transition" title="Choose Province" data-size="7">
+                  <select class="selectpicker1" id="province" data-style="select-with-transition" title="Choose Province" data-size="7">
                   </select>
                 </div>
               </div><!-- col-md-4-->
@@ -136,7 +136,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Region</label>
-                    <select id="region" data-style="select-with-transition" title="Choose Region" data-size="7">
+                    <select class="selectpicker1" id="region" data-style="select-with-transition" title="Choose Region" data-size="7">
                     </select>
                 </div>
               </div><!-- col-md-4-->
@@ -144,7 +144,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Country</label>
-                    <select name="country" id="country" data-style="select-with-transition" title="Choose Country" data-size="7">
+                    <select class="selectpicker1" name="country" id="country" data-style="select-with-transition" title="Choose Country" data-size="7">
                       <option value="Nepal">Nepal</option>
                     </select>
                 </div>
@@ -163,14 +163,14 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Phone No.</label>
-                    <input type="number" name="phone" id="phone" class="form-control">
+                    <input type="text" name="phone" id="phone" class="form-control">
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Alternate Phone No.</label>
-                    <input type="number" id="phone1" class="form-control">
+                    <input type="text" id="phone1" class="form-control">
                 </div>
               </div><!-- col-md-4-->
             </div><!--row -->
@@ -199,7 +199,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">Retirement Age</label>
-                    <input type="number" name="retirement_age" id="retirement-age" class="form-control">
+                    <input type="text" name="retirement_age" id="retirement-age" class="form-control">
                     <div class="help-block with-errors"></div>
                 </div>
               </div><!-- col-md-4-->
@@ -217,7 +217,7 @@
               <div class="col-md-4">
                 <div class="form-group label-floating">
                 <label class="control-label">Branch / Agency</label>
-                  <select class="selectpicker" id="branch-agency" data-style="select-with-transition" title="Choose Branch/Agency" data-size="7">
+                  <select class="selectpicker selectpicker1" id="branch-agency" data-style="select-with-transition" title="Choose Branch/Agency" data-size="7">
                     <option value="branch">Branch</option>
                     <option value="agency">Agency</option>
                   </select>
@@ -236,7 +236,7 @@
               <div class="col-md-4" id="choose-branch">
                 <div class="form-group label-floating">
                 <label class="control-label">Branch</label>
-                  <select id="branch" data-style="select-with-transition" title="Choose Branch" data-size="7">
+                  <select class="selectpicker1" id="branch" data-style="select-with-transition" title="Choose Branch" data-size="7">
                   </select>
                 </div>
               </div><!-- col-md-4-->
@@ -247,7 +247,7 @@
               <div class="col-md-4">
                 <div class="form-group"  style="margin-top:0">
                 <label class="control-label date-label">Employee Category</label>
-                  <select id="employee-category" data-style="select-with-transition" title="Choose Employee Category" data-size="7">
+                  <select class="selectpicker1" id="employee-category" data-style="select-with-transition" title="Choose Employee Category" data-size="7">
 
                   </select>
                 </div>
@@ -266,23 +266,25 @@
               <div class="col-md-4">
                 <div class="form-group label-floating"  style="margin-top:3px">
                 <label class="control-label">Employee Type</label>
-                  <select id="employee-type" data-style="select-with-transition" title="Choose Employee Type" data-size="7">
+                  <select class="selectpicker1" id="employee-type" data-style="select-with-transition" title="Choose Employee Type" data-size="7">
 
                   </select>
                 </div>
               </div><!-- col-md-4-->
 
+            </div><!--row -->
+            <div class="row" style="margin-top:30px;">
               <div class="col-md-4" id="contract-end">
                 <div class="form-group " style="margin-top:0">
                   <label class="control-label date-label">Contract End Date</label>
                   <input type="text" class="form-control datepicker" id="contract-end-date" >
                 </div>
               </div><!-- <colgroup></colgroup>l-md-4-->
-            </div><!--row -->
+            </div>
 
             <div class="row text-center" style="margin-top:20px;">
               <button type="submit" name="Save" class="btn btn-success" id="add">Save</button>
-              <input type="reset" class="btn btn-danger" value="Clear" name="Clear">
+              <input type="reset" id="reset" class="btn btn-danger" value="Clear" name="Clear">
             </div>
           </form>
       </div> <!-- end content-->

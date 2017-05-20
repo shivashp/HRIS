@@ -6,8 +6,7 @@
   var action_id = '<?php echo $_GET['action']; ?>';
   if(action_id === undefined || action_id === null || action_id === '') {
     window.location.href="employee.php";
-  }
-  console.log(action_id);
+  }  
 </script>
 <div class="content">
  <div class="page-loader">

@@ -55,7 +55,7 @@ hris = {
       });// Ajax
     })
   },// GET REGION
-  get_province: function(type="normal") {
+  get_province: function(type="normal", id=null) {
     return new Promise((resolve, reject) => {
       $.ajax({
     			url: basepath + "provinces",
@@ -68,12 +68,24 @@ hris = {
     				if(data.status == 'success') {
               if(type === "select"){
                 PROVINCE = data.data;
-      					var province_obj = prepare_selectpicker(data.data);
+								if(id !== null) {
+									var newData = data.data.filter((data) => {
+										if(data.region_id != id) {
+											return false;
+										} else {
+											return true;
+										}
+									})
+								} else {
+									var newData = data.data;
+								}
+      					var province_obj = prepare_selectpicker(newData);
       					$("#province").html(province_obj);
       					$('#province').selectpicker({
       						size: 7,
       						liveSearch: true
       					});
+								$('#province').selectpicker('refresh');
                 resolve(province_obj);
               } else {
                 resolve(data.data);
@@ -86,7 +98,7 @@ hris = {
     	});// Ajax
     })
   },// GET PROVINCE
-  get_district: function(type="normal") {
+  get_district: function(type="normal", id=null) {
     return new Promise((resolve, reject) => {
       $.ajax({
     			url: basepath + "districts",
@@ -99,12 +111,24 @@ hris = {
     				if(data.status == 'success') {
               DISTRICT = data.data;
               if(type === "select"){
-      					var district_obj = prepare_selectpicker(data.data);
+								if(id !== null) {
+									var newData = data.data.filter((data) => {
+										if(data.province_id != id) {
+											return false;
+										} else {
+											return true;
+										}
+									})
+								} else {
+									var newData = data.data;
+								}
+      					var district_obj = prepare_selectpicker(newData);
       					$("#district").html(district_obj);
       					$('#district').selectpicker({
       						size: 7,
       						liveSearch: true
       					});
+								$('#district').selectpicker('refresh');
                 resolve(district_obj);
               } else {
                 resolve(data.data);
@@ -117,7 +141,7 @@ hris = {
     	});// Ajax
     })
   }, //GET DISTRICT
-  get_llg: function(type="normal") {
+  get_llg: function(type="normal", id=null) {
     return new Promise((resolve, reject) => {
       $.ajax({
     			url: basepath + "llg",
@@ -129,13 +153,25 @@ hris = {
     			success: function(data) {
     				if(data.status == 'success') {
               if(type === "select"){
+								if(id !== null) {
+									var newData = data.data.filter((data) => {
+										if(data.district_id != id) {
+											return false;
+										} else {
+											return true;
+										}
+									})
+								} else {
+									var newData = data.data;
+								}
                 LLG = data.data;
-      					var llg_obj = prepare_selectpicker(data.data);
+      					var llg_obj = prepare_selectpicker(newData);
       					$("#llg").html(llg_obj);
       					$('#llg').selectpicker({
       						size: 7,
       						liveSearch: true
       					});
+								$('#llg').selectpicker('refresh');
                 resolve(llg_obj);
               } else {
                 resolve(data.data);
@@ -150,9 +186,29 @@ hris = {
   },//Get LLG
   get_address_details: function() {
     this.get_region("select");
-    this.get_province("select");
+		this.get_province("select")
     this.get_district("select");
     this.get_llg("select");
+
+		$("#province").prop("disabled", true);
+		$("#district").prop("disabled", true);
+		$("#llg").prop("disabled", true);
+
+		$("#region").change(function() {
+			var id = $(this).val();
+			hris.get_province("select", id);
+			$("#province").prop("disabled", false);
+		})
+		$("#province").change(function() {
+			var id = $(this).val();
+			hris.get_district("select", id);
+			$("#district").prop("disabled", false);
+		})
+		$("#district").change(function() {
+			var id = $(this).val();
+			hris.get_llg("select", id);
+			$("#llg").prop("disabled", false);
+		})
   }, // Get address details
   get_facility: function(type="normal") {
     return new Promise((resolve, reject) => {

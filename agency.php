@@ -158,7 +158,7 @@ include('header.php');
                         <div class="col-md-12" style = "text-align:center;margin-top:30px">
                             <div class="form-group form-button">
                               <span class="loader"><img src="img/loader.gif"></span><button type="submit" id="add" class="btn btn-fill btn-success sp-save-btn">Save</button>
-                              <button type="reset" class="btn btn-fill btn-danger"><i class="material-icons">delete_forever</i> Clear</button>
+                              <button type="reset" id="clear" class="btn btn-fill btn-danger"><i class="material-icons">delete_forever</i> Clear</button>
                             </div>
                         </div>
                     </div>
