@@ -109,16 +109,8 @@
             <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
-                    <label class="control-label">LLG</label>
-                    <select class="selectpicker1" id="llg" name="llg" data-style="select-with-transition" title="Choose LLG" data-size="7">
-                    </select>
-                </div>
-              </div><!-- col-md-4-->
-
-              <div class="col-md-4">
-                <div class="form-group label-floating">
-                    <label class="control-label">District</label>
-                    <select class="selectpicker1" id="district" data-style="select-with-transition" title="Choose District" data-size="7">
+                    <label class="control-label">Region</label>
+                    <select class="selectpicker1" id="region" data-style="select-with-transition" title="Choose Region" data-size="7">
                     </select>
                 </div>
               </div><!-- col-md-4-->
@@ -130,13 +122,22 @@
                   </select>
                 </div>
               </div><!-- col-md-4-->
+
+              <div class="col-md-4">
+                <div class="form-group label-floating">
+                    <label class="control-label">District</label>
+                    <select class="selectpicker1" id="district" data-style="select-with-transition" title="Choose District" data-size="7">
+                    </select>
+                </div>
+              </div><!-- col-md-4-->
+
             </div><!--row -->
 
             <div class="row add-emp-row">
               <div class="col-md-4">
                 <div class="form-group label-floating">
-                    <label class="control-label">Region</label>
-                    <select class="selectpicker1" id="region" data-style="select-with-transition" title="Choose Region" data-size="7">
+                    <label class="control-label">LLG</label>
+                    <select class="selectpicker1" id="llg" name="llg" data-style="select-with-transition" title="Choose LLG" data-size="7">
                     </select>
                 </div>
               </div><!-- col-md-4-->

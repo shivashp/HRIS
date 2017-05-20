@@ -117,19 +117,10 @@ include('header.php');
                         </div>
                     </div><!--row-->
                     <div class="row">
-                      <label class="col-sm-2 label-on-left">LLG</label>
+                      <label class="col-sm-2 label-on-left">Region</label>
                         <div class="col-sm-6">
                             <div class="form-group label-floating is-empty">
-                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="llg"  title="Choose LLG">
-                              </select>
-                            </div>
-                        </div>
-                    </div><!--row-->
-                    <div class="row">
-                      <label class="col-sm-2 label-on-left">District</label>
-                        <div class="col-sm-6">
-                            <div class="form-group label-floating is-empty">
-                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="district"  title="Choose District">
+                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="region"  title="Choose Region">
 
                               </select>
                             </div>
@@ -145,11 +136,20 @@ include('header.php');
                         </div>
                     </div><!--row-->
                     <div class="row">
-                      <label class="col-sm-2 label-on-left">Region</label>
+                      <label class="col-sm-2 label-on-left">District</label>
                         <div class="col-sm-6">
                             <div class="form-group label-floating is-empty">
-                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="region"  title="Choose Region">
+                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="district"  title="Choose District">
 
+                              </select>
+                            </div>
+                        </div>
+                    </div><!--row-->
+                    <div class="row">
+                      <label class="col-sm-2 label-on-left">LLG</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating is-empty">
+                              <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="llg"  title="Choose LLG">
                               </select>
                             </div>
                         </div>

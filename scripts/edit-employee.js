@@ -1,6 +1,6 @@
 $(function() {
 
-
+// hris.get_address_details();
 get_agencies();
 get_branches();
 get_llg();
@@ -11,6 +11,7 @@ get_type();
 get_category();
 get_position_title();
 get_user_details();
+
 
 /* =============================================================
 **                  Update User Data
@@ -147,7 +148,7 @@ function update_data() {
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {          
+        success: function(data) {
           if(data) {
             var id = data.id;
             var first_name = data.first_name;

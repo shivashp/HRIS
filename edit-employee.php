@@ -6,7 +6,7 @@
   var action_id = '<?php echo $_GET['action']; ?>';
   if(action_id === undefined || action_id === null || action_id === '') {
     window.location.href="employee.php";
-  }  
+  }
 </script>
 <div class="content">
  <div class="page-loader">
@@ -113,35 +113,36 @@
 
             <div class="row add-emp-row">
               <div class="col-md-4">
-                <div class="form-group">
-                    <label class="control-label date-label">LLG</label>
-                    <select id="llg" name="llg" data-style="select-with-transition" title="Choose LLG" data-size="7">
+                <div class="form-group label-floating">
+                    <label class="control-label">Region</label>
+                    <select class="selectpicker1" id="region" data-style="select-with-transition" title="Choose Region" data-size="7">
                     </select>
                 </div>
               </div><!-- col-md-4-->
 
               <div class="col-md-4">
-                <div class="form-group">
-                    <label class="control-label date-label">District</label>
-                    <select id="district" data-style="select-with-transition" title="Choose District" data-size="7">
-                    </select>
-                </div>
-              </div><!-- col-md-4-->
-
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="control-label date-label">Province</label>
-                  <select id="province" data-style="select-with-transition" title="Choose Province" data-size="7">
+                <div class="form-group label-floating">
+                  <label class="control-label">Province</label>
+                  <select class="selectpicker1" id="province" data-style="select-with-transition" title="Choose Province" data-size="7">
                   </select>
                 </div>
               </div><!-- col-md-4-->
+
+              <div class="col-md-4">
+                <div class="form-group label-floating">
+                    <label class="control-label">District</label>
+                    <select class="selectpicker1" id="district" data-style="select-with-transition" title="Choose District" data-size="7">
+                    </select>
+                </div>
+              </div><!-- col-md-4-->
+
             </div><!--row -->
 
             <div class="row add-emp-row">
               <div class="col-md-4">
-                <div class="form-group">
-                    <label class="control-label date-label">Region</label>
-                    <select id="region" data-style="select-with-transition" title="Choose Region" data-size="7">
+                <div class="form-group label-floating">
+                    <label class="control-label">LLG</label>
+                    <select class="selectpicker1" id="llg" name="llg" data-style="select-with-transition" title="Choose LLG" data-size="7">
                     </select>
                 </div>
               </div><!-- col-md-4-->
