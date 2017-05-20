@@ -13,17 +13,21 @@ get_type();
 					xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-          console.log(data);
           if(data.status == 'success') {
             TYPE_JSON = data.data;
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
+              var id = data.data[i].id;
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("employeetypes", "employeetypes", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"per config-write text-right\">";
               str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -36,6 +40,7 @@ get_type();
                         $("td:first", nRow).html(index);
                         return nRow;
                     },
+                    "order": [[ 1, "desc" ]]
                 });
             $(".page-loader").hide();
             $(".card").fadeIn("fast");
@@ -150,4 +155,9 @@ get_type();
     edit_type(i);
     slideMenu();
   })
+
+  $("#refresh-control").click(function() {
+    get_type();
+  })
+
 })// Document

@@ -102,6 +102,7 @@ include('header.php');
                         <th>District</th>
                         <th>Province</th>
                         <th>Region</th>
+                        <th>Status</th>
                         <th class="per agency-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

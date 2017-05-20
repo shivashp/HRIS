@@ -12,7 +12,7 @@ get_position_title();
         beforeSend: function(xhr) {
 					xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {          
+        success: function(data) {
           if(data.status == 'success') {
             POSITION_JSON = data.data;
             var str="";
@@ -20,14 +20,18 @@ get_position_title();
               var title = data.data[i].emp_pos_title;
               var code = data.data[i].emp_pos_code;
               var sequence = data.data[i].emp_pos_sequence;
-
+              var id = data.data[i].id;
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("emppositions", "emppositions", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+code+"<\/td>";
               str += "                          <td>"+title+"<\/td>";
               str += "                          <td>"+sequence+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"per config-write text-right\">";
               str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -81,7 +85,6 @@ get_position_title();
         success: function(data) {
           $(".loader").hide();
           $("#add").show();
-          console.log(data);
           if(data.status == 'success') {
             showSuccess("Position Title Added Successfully!");
             pullMenu();
@@ -135,7 +138,6 @@ get_position_title();
         success: function(data) {
           $(".loader").hide();
           $("#add").show();
-          console.log(data);
           if(data.status == 'success') {
             $(this).attr("status", 0)
             showSuccess("Position Title Updated Successfully!");
@@ -167,5 +169,9 @@ get_position_title();
     var i = $(this).attr("data-id");
     edit_position_title(i);
     slideMenu();
+  })
+
+  $("#refresh-control").click(function() {
+    get_position_title();
   })
 })// Document

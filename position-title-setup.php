@@ -73,6 +73,7 @@ include('header.php');
                           <th>Code</th>
                           <th>Title</th>
                           <th>Sequence</th>
+                          <th>Status</th>
                           <th class="per config-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

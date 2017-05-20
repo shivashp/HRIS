@@ -33,8 +33,7 @@ get_rank();
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Token', TOKEN);
         },
-        success: function(data) {
-          console.log(data);
+        success: function(data) {          
           if(data.status == 'success') {
             RANK_JSON = data.data;
             generate_select(data.data)
@@ -64,12 +63,17 @@ get_rank();
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
               var rank = data.data[i].emp_cat_rank;
+              var id = data.data[i].id;
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("empcategoryranks", "empcategories", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
               str += "                          <td>"+rank+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"per config-write text-right\">";
               str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -170,7 +174,7 @@ get_rank();
           $("#add").show();
           console.log(data);
           if(data.status == 'success') {
-            $(this).attr("status", 0);            
+            $(this).attr("status", 0);
             $('#category-rank').selectpicker('render');
             showSuccess("Category Updated Successfully!");
             pullMenu();
@@ -201,5 +205,9 @@ get_rank();
     var i = $(this).attr("data-id");
     edit_category(i);
     slideMenu();
+  })
+
+  $("#refresh-control").click(function() {
+    get_category();
   })
 })// Document

@@ -53,6 +53,7 @@
                       <tr>
                           <th class="disabled-sorting">Sn.</th>
                           <th>Name</th>
+                          <th>Status</th>
                           <th class="user-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

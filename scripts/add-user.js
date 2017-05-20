@@ -203,7 +203,7 @@ function get_employees() {
               var email = data.data[i].email_address;
               var country = data.data[i].country;
               var employee_number = data.data[i].employement_number;
-              var role_id = data.data[i].role_id;
+              var role_id = data.data[i].role_id;              
 
               middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
               var json = {
@@ -215,7 +215,7 @@ function get_employees() {
                 country: country,
                 email: email,
                 user_id: user_id,
-                role_id: role_id
+                role_id: role_id,
               }
               data1.push(json);
           }
@@ -298,7 +298,5 @@ function get_role() {
       },
   });// Ajax
 };// Get Role
-
-
 
 })// Document

@@ -10,7 +10,6 @@ $(function() {
           xhr.setRequestHeader('Token', TOKEN);
         },
         success: function(data) {
-          console.log(data);
           var str ='';
           if(data.status === 'success') {
             for (var i = 0; i < data.data.length; i++) {
@@ -23,6 +22,9 @@ $(function() {
                 var contact = data.data[i].employee_data.contact_number;
                 var username = data.data[i].user_name;
                 var role = data.data[i].role_name;
+                var id = data.data[i].id;
+                var del_flag = data.data[i].del_flag;
+                var status = status_generator("empcategoryranks", "users/"+id+"?action=update_activation", del_flag, '');
 
                 middle_name = (middle_name.trim() == '')?' ':` ${middle_name} `;
 
@@ -35,6 +37,8 @@ $(function() {
                 str += "                          <td>"+contact+"<\/td>";
                 str += "                          <td>"+address1+"<\/td>";
                 str += "                          <td>"+country+"<\/td>";
+                str += "<td>"+status.label+"</td>";
+                str += "<td>"+status.button + "</td>";
                 str += "</tr>";
             }
             $('#datatables').DataTable().destroy();
@@ -45,6 +49,7 @@ $(function() {
                         $("td:first", nRow).html(index);
                         return nRow;
                     },
+                    "order": [[ 2, "desc" ]]
                 });
             $(".page-loader").hide();
             $(".card").fadeIn("fast");
@@ -56,4 +61,8 @@ $(function() {
         },
     });// Ajax
   }// get employees
+
+  $("#refresh-control").click(function() {
+    get_employees();
+  })
 })

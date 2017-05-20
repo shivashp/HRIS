@@ -26,15 +26,21 @@ function _urlPasser(id) {
             for (var i = 0; i < data.data.length; i++) {
               var id = data.data[i].id;
               var name = data.data[i].role_type;
+              var id = data.data[i].id;
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("empcategoryranks", "roles", del_flag, id);
+
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"user-write text-right\">";
               str += "                              <a class=\"edit btn btn-sm btn-success btn-icon like\" href1='add-role.php?action=edit&id="+id+"' data-id=\""+id+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
-            // $('#datatables').DataTable().destroy();
+            $('#datatables').DataTable().destroy();
             $("#data-body").html(str);
             check_permissions();
             $('#datatables').DataTable({
@@ -45,7 +51,8 @@ function _urlPasser(id) {
                     },
                     "columnDefs": [
                       { "width": "5px", "targets": 0 }
-                    ]
+                    ],
+                    "order": [[ 1, "asc" ]]
                 });
             $(".page-loader").hide();
             $(".card").fadeIn("fast");
@@ -175,5 +182,9 @@ function _urlPasser(id) {
   $(document).delegate(".edit", "click", function() {
     var i = $(this).attr("data-id");
     _urlPasser(i);
+  })
+
+  $("#refresh-control").click(function() {
+    get_role();
   })
 })// Document

@@ -55,6 +55,9 @@ $(function() {
               var llg = data.data[i].llg;
               var province = data.data[i].province;
               var region = data.data[i].region;
+              var id = data.data[i].id;
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("empcategoryranks", "branches", del_flag, id);
               st += "<tr>";
               st += "<td></td>";
               st += "                          <td>"+facility_name+"<\/td>";
@@ -63,8 +66,10 @@ $(function() {
               st += "                          <td>"+district+"<\/td>";
               st += "                          <td>"+province+"<\/td>";
               st += "                          <td>"+region+"<\/td>";
+              st += "<td>"+status.label+"</td>";
               st += "                          <td class=\"per division-write text-right\">";
               st += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon\" data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              st += status.button;
               st += "                          <\/td>";
               st += "                      <\/tr>";
             }
@@ -243,5 +248,9 @@ $(function() {
       })
       return index;
   }
+
+  $("#refresh-control").click(function() {
+    get_branches();
+  })
 
 })

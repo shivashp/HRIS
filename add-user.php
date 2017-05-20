@@ -101,11 +101,11 @@
             <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                 <thead>
                     <tr>
-                      <th class="disabled-sorting sn">Sn.</th>                    
+                      <th class="disabled-sorting sn">Sn.</th>
                       <th>Name</th>
                       <th>Emp No.</th>
                       <th>Address</th>
-                      <th>Country</th>
+                      <th>Country</th>                      
                       <th class="disabled-sorting text-right">Actions</th>
                     </tr>
                 </thead>

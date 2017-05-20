@@ -19,11 +19,16 @@ get_rank();
             var str="";
             for (var i = 0; i < data.data.length; i++) {
               var name = data.data[i].name;
+              var id = data.data[i].id;
+              var del_flag = data.data[i].del_flag;
+              var status = status_generator("empcategoryranks", "empcategoryranks", del_flag, id);
               str += "<tr>";
               str += "<td></td>";
               str += "                          <td>"+name+"<\/td>";
+              str += "<td>"+status.label+"</td>";
               str += "                          <td class=\"per config-write text-right\">";
               str += "                              <a href=\"#\" class=\"edit btn btn-sm btn-success btn-icon like\"  data-id=\""+i+"\"><i class=\"material-icons\">edit<\/i><\/a>";
+              str += status.button;
               str += "                          <\/td>";
               str += "                      <\/tr>";
             }
@@ -149,5 +154,9 @@ get_rank();
     var i = $(this).attr("data-id");
     edit_rank(i);
     slideMenu();
+  })
+
+  $("#refresh-control").click(function() {
+    get_rank();
   })
 })// Document

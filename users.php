@@ -26,6 +26,8 @@
                       <th>Contact No.</th>
                       <th>Address</th>
                       <th>Country</th>
+                      <th>Status</th>
+                      <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="data-body">

@@ -9,7 +9,7 @@ $(".logout").click(function() {
   window.location.href="index.php";
 })
 function prepare_selectpicker(obj) {
-  var str = obj.map(obj => {     
+  var str = obj.map(obj => {
     if(obj.del_flag){
       return '';
     }
@@ -90,8 +90,12 @@ function status_generator(func, endpoint, flag, id) {
 }
 
 function toggle_activate(endpoint, del_flag, id) {
+  var baseUrl = basepath + endpoint + "/"+id;
+  if(id.trim() == '') {
+    baseUrl = basepath + endpoint;
+  }
   $.ajax({
-      url: basepath + endpoint + "/"+id,
+      url: baseUrl,
       type: "PUT",
       contentType: 'application/json',
       dataType: 'json',

@@ -63,6 +63,7 @@ include('header.php');
                           <th class="disabled-sorting sn">Sn.</th>
                           <th>Name</th>
                           <th>Rank</th>
+                          <th>Status</th>
                           <th class="per config-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>

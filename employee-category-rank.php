@@ -53,6 +53,7 @@ include('header.php');
                       <tr>
                           <th class="disabled-sorting sn">Sn.</th>
                           <th>Name</th>
+                          <th>Status</th>
                           <th class="per config-write disabled-sorting text-right">Actions</th>
                       </tr>
                   </thead>
