@@ -149,7 +149,7 @@
                             </li>
                           </ul>
                       </div><!-- Division Management -->
-                  </li><!-- Division dropdown -->                  
+                  </li><!-- Division dropdown -->
 
                   <li class="link employee panel per agencyemp-read">
                       <a data-toggle="collapse" data-parent = "#main" href="#employee">
@@ -220,41 +220,41 @@
               </ul>
           </div>
         </div>
-        <div class="main-panel">
-            <nav class="navbar navbar-blue navbar-absolute">
-                <div class="container-fluid">
-                  <div class="navbar-minimize">
-                    <div class="main-header-section" id="company-display-name">
-                    </div>
-                  </div>
-                  <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse">
-                          <span class="sr-only">Toggle navigation</span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                      </button>
-                  </div>
-                    <div class="collapse navbar-collapse">
-                      <ul class="nav navbar-nav navbar-right">
-                          <li class="dropdown">
-                              <a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="material-icons">account_circle</i> <span id="nav-username"></span> <b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li>
-                                  <a href="change-password.php">Settings</a>
-                                </li>
-                                <li style="cursor:pointer">
-                                  <a class="logout">Logout</a>
-                                </li>
-                                <li style="display:none;">
-                                  <a href="#" id="refresh-control"></a>
-                                </li>
-                              </ul>
-                          </li>
-                          <li class="separator hidden-lg hidden-md"></li>
-                      </ul>
-                    </div>
+        <nav class="navbar navbar-blue navbar-absolute navbar-fixed">
+            <div class="container-fluid">
+              <div class="navbar-minimize">
+                <div class="main-header-section" id="company-display-name">
                 </div>
-            </nav>
+              </div>
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+              </div>
+                <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                          <a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="material-icons">account_circle</i> <span id="nav-username"></span> <b class="caret"></b>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="change-password.php">Settings</a>
+                            </li>
+                            <li style="cursor:pointer">
+                              <a class="logout">Logout</a>
+                            </li>
+                            <li style="display:none;">
+                              <a href="#" id="refresh-control"></a>
+                            </li>
+                          </ul>
+                      </li>
+                      <li class="separator hidden-lg hidden-md"></li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="main-panel">

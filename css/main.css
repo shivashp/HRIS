@@ -46,7 +46,7 @@ html {
 }
   .perfect-scrollbar-on .sidebar .sidebar-wrapper, .sidebar .sidebar-wrapper, .perfect-scrollbar-on
   .main-panel, .main-panel {
-  overflow: auto !important;
+  /*overflow: auto !important;*/
 }
 ::-webkit-scrollbar {
     width: 12px;
@@ -509,12 +509,18 @@ div#branch-agency-select {
 .sidebar .nav li > a, .off-canvas-sidebar .nav li > a {
   border-radius: 0;
 }
-/*.select-with-transition {
-        background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#cac1c1, #8e8686);
-  }
-.form-control, .form-group .form-control {
-          background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#cac1c1, #8e8686);
-  }*/
   .form-group label.control-label {
     color: #656060;
+  }
+
+.navbar-fixed{
+      position: fixed;
+      z-index: 1032;
+      right: 0;
+      width: 100%;
+  }
+  @media (min-width: 991px){
+      .navbar-fixed{
+          width:calc(100% - 260px);
+      }
   }
