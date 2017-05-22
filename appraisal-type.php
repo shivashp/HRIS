@@ -14,25 +14,25 @@ include('header.php');
   <div class ="form-input">
     <div class="card">
         <div class="card-content">
-            <h4 class="card-title">Add Relative Type</h4>
+            <h4 class="card-title">Add Appraisal Type</h4>
             <form class="form-horizontal">
               <div class="row">
                 <div class="col-md-6">
                   <div class="row">
-                      <label class="col-md-3 label-on-left">Relative Type</label>
+                      <label class="col-md-3 label-on-left">Appraisal Type</label>
                       <div class="col-md-9">
                           <div class="form-group label-floating is-empty">
                               <label class="control-label"></label>
-                              <input type="text" id="relative-type" class="form-control">
+                              <input type="text" id="appraisal-type" class="form-control">
                           </div>
                       </div>
                   </div><!--row-->
                   <div class="row">
-                      <label class="col-md-3 label-on-left">Relative Code</label>
+                      <label class="col-md-3 label-on-left">Appraisal Code</label>
                       <div class="col-md-9">
                           <div class="form-group label-floating is-empty">
                               <label class="control-label"></label>
-                              <input type="text" id="relative-code" class="form-control">
+                              <input type="text" id="appraisal-code" class="form-control">
                           </div>
                       </div>
                   </div><!--row-->
@@ -55,7 +55,7 @@ include('header.php');
           <i class="material-icons">assignment</i>
       </div>
       <div class="card-content">
-          <h4 class="card-title">Relative Types</h4>
+          <h4 class="card-title">Appraisal Types</h4>
           <div class="material-datatables">
               <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                   <thead>
@@ -76,9 +76,9 @@ include('header.php');
   </div> <!--  end card  -->
 </div><!-- content -->
 <?php include('footer.php'); ?>
-<script src="scripts/relative-types.js" charset="utf-8"></script>
+<script src="scripts/appraisal-type.js" charset="utf-8"></script>
 <script>
-  active('relative-type', 'sub-link')
+  active('appraisal-type', 'sub-link')
   active('config')
   $(".card").show();
   $(".page-loader").hide();

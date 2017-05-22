@@ -1,6 +1,6 @@
 <?php
   if(!isset($_COOKIE['token'])) {
-    header("location:index");
+    header("location:index.php");
     die();
   }
 
@@ -132,6 +132,16 @@
                             <li class="sub-link benefits-setup">
                                 <a href="benefits-setup.php">
                                     Benefit Types
+                                </a>
+                            </li>
+                            <li class="sub-link disciplinary-type">
+                                <a href="disciplinary-type.php">
+                                    Disciplinary Types
+                                </a>
+                            </li>
+                            <li class="sub-link disciplinary-type">
+                                <a href="appraisal-type.php">
+                                    Appraisal Types
                                 </a>
                             </li>
                           </ul>
