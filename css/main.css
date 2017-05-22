@@ -84,6 +84,25 @@ html {
   display: inline-block;
   color: #AAA;
 }
+.nav-tabs {
+  background: #364150;
+margin-bottom: 90px;
+margin-top: -18px;
+margin-left: -15px;
+margin-right: -15px;
+border-radius: 0;
+letter-spacing: 0.7px;
+}
+.navbar.navbar-blue {
+  border-bottom:none;
+}
+.nav-tabs > li > a, .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+      /*text-decoration: underline;*/
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: transparent;
+    color: #00d8b9 !important;
+}
 /* =============================================
                   Sidebar
 /* ============================================= */
@@ -515,7 +534,7 @@ div#branch-agency-select {
 
 .navbar-fixed{
       position: fixed;
-      z-index: 1032;
+      z-index: 1030;
       right: 0;
       width: 100%;
   }
@@ -523,4 +542,12 @@ div#branch-agency-select {
       .navbar-fixed{
           width:calc(100% - 260px);
       }
+  }
+  .card .category:not([class*="text-"]) {
+      color: #827878;
+      font-size: 14px;
+      letter-spacing: 0.6px;
+      font-weight: 600;
+      text-transform: capitalize;
+      margin-top: -2px;
   }

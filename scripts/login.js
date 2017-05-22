@@ -61,7 +61,12 @@ $(function() {
             document.cookie = "token="+token;
             document.cookie = "permissions="+JSON.stringify(data.data.permissions);
             localStorage.setItem("company_name", COMPANY_NAME);
-            window.location.href = "dashboard.php";
+
+            if(!data.password_changed) {
+              window.location.href = "dashboard.php";
+            } else {
+              window.location.href = "change-password.php";
+            }
 
           } else {
 	    $(".loader").hide();
