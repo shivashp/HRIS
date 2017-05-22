@@ -21,7 +21,7 @@ $(function() {
 	get_certifications();
 	get_qualifications();
 	get_country();
-	get_emp_extras();
+	// get_emp_extras();
 
 	var TRAININGS;
 	var CERTIFICATIONS;
@@ -67,7 +67,32 @@ $(function() {
 	$("#add-emp-extra").click(function() {
     var value = $(this).attr("value");
     (value == 1)?pullMenu(".emp-extra-input", "#add-emp-extra", "Employee Relatives"):slideMenu(".emp-extra-input", "#add-emp-extra");
-  });//add-qualification
+  });//add-emp-extra
+
+	$("#add-emp-history").click(function() {
+    var value = $(this).attr("value");
+    (value == 1)?pullMenu(".emp-history-input", "#add-emp-history", "Employee History"):slideMenu(".emp-history-input", "#add-emp-history");
+  });//add-History
+
+	$("#add-benefits").click(function() {
+    var value = $(this).attr("value");
+    (value == 1)?pullMenu(".benefits-input", "#add-benefits", "Benefits"):slideMenu(".benefits-input", "#add-benefits");
+  });//add-benefits
+
+	$("#add-reference").click(function() {
+    var value = $(this).attr("value");
+    (value == 1)?pullMenu(".reference-input", "#add-reference", "References"):slideMenu(".reference-input", "#add-reference");
+  });//add-reference
+
+	$("#add-appraisals").click(function() {
+    var value = $(this).attr("value");
+    (value == 1)?pullMenu(".appraisals-input", "#add-appraisals", "Appraisal"):slideMenu(".appraisals-input", "#add-appraisals");
+  });//add-appraisals
+
+	$("#add-disciplinary").click(function() {
+    var value = $(this).attr("value");
+    (value == 1)?pullMenu(".disciplinary-input", "#add-disciplinary", "Disciplinary Record"):slideMenu(".disciplinary-input", "#add-disciplinary");
+  });//add-disciplinary
 
 
 /* --------------------------------------------------------------------- *

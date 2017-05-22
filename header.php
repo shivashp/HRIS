@@ -124,6 +124,16 @@
                                     Position Title
                                 </a>
                             </li>
+                            <li class="sub-link relative-type">
+                                <a href="relative-types.php">
+                                    Relative Types
+                                </a>
+                            </li>
+                            <li class="sub-link benefits-setup">
+                                <a href="benefits-setup.php">
+                                    Benefit Types
+                                </a>
+                            </li>
                           </ul>
                       </div><!-- employee configuration -->
                   </li><!-- employee dropdown -->
@@ -257,4 +267,13 @@
                 </div>
             </div>
         </nav>
+        <ul class="nav nav-tabs navbar-fixed" role="tablist">
+          <li role="presentation" class="active"><a href="#personal" aria-controls="home" role="tab" data-toggle="tab">Personal Details</a></li>
+          <li role="presentation"><a href="#training" aria-controls="training" role="tab" data-toggle="tab">Training / Certification</a></li>
+          <li role="presentation"><a href="#qualificatoin" aria-controls="qualificatoin" role="tab" data-toggle="tab">Qualifications</a></li>
+          <li role="presentation"><a href="#employment" aria-controls="employment" role="tab" data-toggle="tab">Employment History</a></li>
+          <li role="presentation"><a href="#benefits" aria-controls="benefits" role="tab" data-toggle="tab">Benefits</a></li>
+          <li role="presentation"><a href="#discipline" aria-controls="discipline" role="tab" data-toggle="tab">Disciplinary Records</a></li>
+          <li role="presentation"><a href="#appraisals" aria-controls="appraisals" role="tab" data-toggle="tab">Appraisals</a></li>
+        </ul>
         <div class="main-panel">

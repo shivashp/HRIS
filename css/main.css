@@ -85,13 +85,11 @@ html {
   color: #AAA;
 }
 .nav-tabs {
-  background: #364150;
-margin-bottom: 90px;
-margin-top: -18px;
-margin-left: -15px;
-margin-right: -15px;
-border-radius: 0;
-letter-spacing: 0.7px;
+    background: #364150;
+    margin-top: 80px;
+    border-radius: 0;
+    letter-spacing: 1px;
+    display: none;
 }
 .navbar.navbar-blue {
   border-bottom:none;

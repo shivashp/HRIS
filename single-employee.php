@@ -10,6 +10,12 @@
   padding-left: 0;
   padding-right: 0;
 }
+.nav-tabs {
+  display: block;
+}
+.main-panel > .content {
+    margin-top: 120px;
+}
 </style>
 <script>
   var action_id = "<?php echo $_GET['action']; ?>" || false;
@@ -22,15 +28,7 @@
 </div><!-- page-loader-->
   <div class="form-section">
 
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#personal" aria-controls="home" role="tab" data-toggle="tab">Personal Details</a></li>
-      <li role="presentation"><a href="#training" aria-controls="training" role="tab" data-toggle="tab">Training / Certification</a></li>
-      <li role="presentation"><a href="#qualificatoin" aria-controls="qualificatoin" role="tab" data-toggle="tab">Qualifications</a></li>
-      <li role="presentation"><a href="#employment" aria-controls="employment" role="tab" data-toggle="tab">Employment History</a></li>
-      <li role="presentation"><a href="#benefits" aria-controls="benefits" role="tab" data-toggle="tab">Benefits</a></li>
-      <li role="presentation"><a href="#discipline" aria-controls="discipline" role="tab" data-toggle="tab">Disciplinary Records</a></li>
-      <li role="presentation"><a href="#appraisals" aria-controls="appraisals" role="tab" data-toggle="tab">Appraisals</a></li>
-    </ul>
+
 
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="personal">
@@ -43,11 +41,17 @@
       <?php include("components/qualification.php"); ?>
     </div><!-- qualificatoin -->
     <div role="tabpanel" class="tab-pane" id="employment">
-
+      <?php include("components/emp-history.php"); ?>
     </div><!-- employment -->
-    <div role="tabpanel" class="tab-pane" id="benefits"></div><!-- benefits -->
-    <div role="tabpanel" class="tab-pane" id="discipline"></div><!-- discipline -->
-    <div role="tabpanel" class="tab-pane" id="appraisals"></div><!-- appraisals -->
+    <div role="tabpanel" class="tab-pane" id="benefits">
+      <?php include("components/benefits.php"); ?>
+    </div><!-- benefits -->
+    <div role="tabpanel" class="tab-pane" id="discipline">
+      <?php include("components/disciplinary-records.php"); ?>
+    </div><!-- discipline -->
+    <div role="tabpanel" class="tab-pane" id="appraisals">
+      <?php include("components/appraisals.php"); ?>
+    </div><!-- appraisals -->
   </div><!-- tab-content -->
   </div><!-- form-section -->
 </div><!-- content -->

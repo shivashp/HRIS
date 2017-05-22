@@ -14,34 +14,25 @@ include('header.php');
   <div class ="form-input">
     <div class="card">
         <div class="card-content">
-            <h4 class="card-title">Add Position Title</h4>
+            <h4 class="card-title">Add Relative Type</h4>
             <form class="form-horizontal">
               <div class="row">
                 <div class="col-md-6">
                   <div class="row">
-                      <label class="col-md-3 label-on-left">Position Title</label>
+                      <label class="col-md-3 label-on-left">Relative Type</label>
                       <div class="col-md-9">
                           <div class="form-group label-floating is-empty">
                               <label class="control-label"></label>
-                              <input type="text" id="position-title" class="form-control">
+                              <input type="text" id="relative-type" class="form-control">
                           </div>
                       </div>
                   </div><!--row-->
                   <div class="row">
-                      <label class="col-md-3 label-on-left">Position Code</label>
+                      <label class="col-md-3 label-on-left">Relative Code</label>
                       <div class="col-md-9">
                           <div class="form-group label-floating is-empty">
                               <label class="control-label"></label>
-                              <input type="text" id="position-code" class="form-control">
-                          </div>
-                      </div>
-                  </div><!--row-->
-                  <div class="row">
-                      <label class="col-md-3 label-on-left">Sequence</label>
-                      <div class="col-md-9">
-                          <div class="form-group label-floating is-empty">
-                              <label class="control-label"></label>
-                              <input type="text" id="sequence" class="form-control">
+                              <input type="text" id="relative-code" class="form-control">
                           </div>
                       </div>
                   </div><!--row-->
@@ -64,15 +55,14 @@ include('header.php');
           <i class="material-icons">assignment</i>
       </div>
       <div class="card-content">
-          <h4 class="card-title">Position Titles</h4>
+          <h4 class="card-title">Relative Types</h4>
           <div class="material-datatables">
               <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                   <thead>
                       <tr>
                           <th class="disabled-sorting sn">Sn.</th>
+                          <th>Type</th>
                           <th>Code</th>
-                          <th>Title</th>
-                          <th>Sequence</th>
                           <th>Status</th>
                           <th style="width:216px !important;" class="per config-write disabled-sorting text-right">Actions</th>
                       </tr>
@@ -86,9 +76,10 @@ include('header.php');
   </div> <!--  end card  -->
 </div><!-- content -->
 <?php include('footer.php'); ?>
-<script src="scripts/position-title-setup.js"></script>
+<script src="scripts/relative-types.js" charset="utf-8"></script>
 <script>
-  active('position-title', 'sub-link')
+  active('relative-type', 'sub-link')
   active('config')
   $(".card").show();
+  $(".page-loader").hide();
 </script>
