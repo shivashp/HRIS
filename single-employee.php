@@ -12,6 +12,7 @@
 }
 .nav-tabs {
   display: block;
+  z-index: 1000;
 }
 .main-panel > .content {
     margin-top: 120px;
