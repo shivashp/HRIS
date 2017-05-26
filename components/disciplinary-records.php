@@ -10,7 +10,8 @@
                     <div class="col-sm-10">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" id="disciplinary-type" class="form-control" placeholder = "Disciplinary Type" value>
+                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="disciplinary-type"  title="Choose Disciplinary Type">
+                            </select>
                         </div>
                     </div>
                 </div><!--row-->

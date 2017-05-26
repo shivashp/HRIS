@@ -9,8 +9,9 @@
                     <label class="col-sm-2 label-on-left">Type</label>
                     <div class="col-sm-10">
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="benefits-type" class="form-control" placeholder = "Benefits Type" value>
+                            <label class="control-label"></label>                            
+                            <select class="selectpicker1" data-style="btn select-with-transition sp-select" id="benefits-type"  title="Choose Benefit Type">
+                            </select>
                         </div>
                     </div>
                 </div><!--row-->
@@ -40,7 +41,7 @@
                       <div class="col-sm-10">
                           <div class="form-group label-floating is-empty">
                               <label class="control-label"></label>
-                              <textarea name="benefits-comments" class="form-control" rows="5" placeholder = "Comments"></textarea>
+                              <textarea id="benefits-comments" class="form-control" rows="5" placeholder = "Comments"></textarea>
                           </div>
                       </div>
                   </div><!--row-->

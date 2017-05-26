@@ -36,11 +36,21 @@
                   </div><!--row-->
 
                   <div class="row">
+                      <label class="col-sm-2 label-on-left">Reason of Leaving</label>
+                      <div class="col-sm-10">
+                          <div class="form-group label-floating is-empty">
+                              <label class="control-label"></label>
+                              <input type="text" id="emp-reason-leaving" class="form-control" placeholder = "Reason of Leaving" value>
+                          </div>
+                      </div>
+                  </div><!--row-->
+
+                  <div class="row">
                       <label class="col-sm-2 label-on-left">Description</label>
                       <div class="col-sm-10">
                           <div class="form-group label-floating is-empty">
                               <label class="control-label"></label>
-                              <textarea name="emp-history-desc" class="form-control" rows="5" placeholder = "Description"></textarea>
+                              <textarea id="emp-history-desc" class="form-control" rows="5" placeholder = "Description"></textarea>
                           </div>
                       </div>
                   </div><!--row-->
@@ -79,7 +89,7 @@
               <th class="text-center">Actions</th>
             </tr>
           </thead>
-          <tbody id="qualification-body">
+          <tbody id="emp-history-body">
 
           </tbody>
         </table>
@@ -96,11 +106,61 @@
               <div class="card-content">
 
                 <div class="row">
-                    <label class="col-sm-2 label-on-left">Type</label>
+                    <label class="col-sm-2 label-on-left">First Name</label>
                     <div class="col-sm-10">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" id="reference-type" class="form-control" placeholder = "References Type" value>
+                            <input type="text" id="reference-first-name" class="form-control" placeholder = "First Name" value>
+                        </div>
+                    </div>
+                </div><!--row-->
+
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Last Name</label>
+                    <div class="col-sm-10">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label"></label>
+                            <input type="text" id="reference-last-name" class="form-control" placeholder = "Last Name" value>
+                        </div>
+                    </div>
+                </div><!--row-->
+
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Address 1</label>
+                    <div class="col-sm-10">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label"></label>
+                            <input type="text" id="reference-address1" class="form-control" placeholder = "Address 1" value>
+                        </div>
+                    </div>
+                </div><!--row-->
+
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Address 2</label>
+                    <div class="col-sm-10">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label"></label>
+                            <input type="text" id="reference-address2" class="form-control" placeholder = "Address 2" value>
+                        </div>
+                    </div>
+                </div><!--row-->
+
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Email</label>
+                    <div class="col-sm-10">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label"></label>
+                            <input type="text" id="reference-email" class="form-control" placeholder = "Email" value>
+                        </div>
+                    </div>
+                </div><!--row-->
+
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Contact No.</label>
+                    <div class="col-sm-10">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label"></label>
+                            <input type="text" id="reference-contact-no" class="form-control" placeholder = "Contact No." value>
                         </div>
                     </div>
                 </div><!--row-->
@@ -111,16 +171,6 @@
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
                             <input type="text" id="reference-company" class="form-control" placeholder = "Company" value>
-                        </div>
-                    </div>
-                </div><!--row-->
-
-                <div class="row">
-                    <label class="col-sm-2 label-on-left">Address</label>
-                    <div class="col-sm-10">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" id="reference-address" class="form-control" placeholder = "Address" value>
                         </div>
                     </div>
                 </div><!--row-->
@@ -151,9 +201,12 @@
         <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
           <thead>
             <tr>
-              <th>Reference</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact</th>
               <th>Company</th>
-              <th>Address</th>
+              <th>Address 1</th>
+              <th>Address 2</th>
               <th class="text-center">Actions</th>
             </tr>
           </thead>

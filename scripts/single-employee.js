@@ -61,7 +61,13 @@ $(function() {
 	$("#add-qualification").click(function() {
     $('.form-horizontal').trigger("reset");
     var value = $(this).attr("value");
-    (value == 1)?pullMenu(".qualification-input", "#add-qualification", "Qualification"):slideMenu(".qualification-input", "#add-qualification");
+		if(value == 1) {
+				pullMenu(".qualification-input", "#add-qualification", "Qualification");
+				$("#save-qualification").attr("data-status", "0");
+		} else {
+				slideMenu(".qualification-input", "#add-qualification");
+		}
+
   });//add-qualification
 
 	$("#add-emp-extra").click(function() {
@@ -70,8 +76,14 @@ $(function() {
   });//add-emp-extra
 
 	$("#add-emp-history").click(function() {
+		$('.form-horizontal').trigger("reset");
     var value = $(this).attr("value");
-    (value == 1)?pullMenu(".emp-history-input", "#add-emp-history", "Employee History"):slideMenu(".emp-history-input", "#add-emp-history");
+		if(value == 1) {
+			pullMenu(".emp-history-input", "#add-emp-history", "Employee History");
+			$("#save-emp-history").attr("data-status", "0");
+		} else {
+			slideMenu(".emp-history-input", "#add-emp-history");
+		}
   });//add-History
 
 	$("#add-benefits").click(function() {

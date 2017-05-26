@@ -62,6 +62,9 @@
 <?php include('footer.php'); ?>
 <script src="js/moment.min.js" charset="utf-8"></script>
 <script src = 'scripts/single-employee.js'></script>
+<script src = 'scripts/emp-history.js'></script>
+<script src = 'scripts/benefits.js'></script>
+<script src = 'scripts/emp-disciplinary.js'></script>
 <script>
   active('employee')
   $(function() {
