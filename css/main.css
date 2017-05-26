@@ -46,7 +46,7 @@ html {
 }
   .perfect-scrollbar-on .sidebar .sidebar-wrapper, .sidebar .sidebar-wrapper, .perfect-scrollbar-on
   .main-panel, .main-panel {
-  /*overflow: auto !important;*/
+  overflow: auto !important;
 }
 ::-webkit-scrollbar {
     width: 12px;
